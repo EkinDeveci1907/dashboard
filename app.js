@@ -52,7 +52,8 @@ function showScan(date) {
         data: {
           labels: tlsLabels,
           datasets: [{ data: Object.values(data.tls), backgroundColor: tlsColors }]
-        }
+        },
+        options: { events: [] }   // static chart: no hover, clicking, or legend toggling
       });
 
       let kexLabels = Object.keys(data.kex_families);
