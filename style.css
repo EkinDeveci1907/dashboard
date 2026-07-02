@@ -82,3 +82,7 @@ tbody tr:hover { background: #f9fafb; }
 
 .headline { font-size: 15px; color: var(--ink); margin-bottom: 20px; }
 .headline strong { color: var(--indigo); font-size: 17px; }
+
+.legend { display: flex; gap: 18px; justify-content: center; margin-top: 14px; font-size: 13px; color: var(--muted); }
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }

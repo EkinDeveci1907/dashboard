@@ -53,8 +53,15 @@ function showScan(date) {
           labels: tlsLabels,
           datasets: [{ data: Object.values(data.tls), backgroundColor: tlsColors }]
         },
-        options: { events: [] }   // static chart: no hover, clicking, or legend toggling
+        options: { events: [], plugins: { legend: { display: false } } }   // static chart, plain legend shown below
       });
+
+      // plain caption under the chart, so the labels don't look like clickable buttons
+      let tlsLegend = "";
+      for (let i = 0; i < tlsLabels.length; i++) {
+        tlsLegend += "<span class='legend-item'><span class='dot' style='background:" + tlsColors[i] + "'></span>" + tlsLabels[i] + "</span>";
+      }
+      document.getElementById("tlsLegend").innerHTML = tlsLegend;
 
       let kexLabels = Object.keys(data.kex_families);
       let kexColors = [];
