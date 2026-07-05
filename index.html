@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PQC Monitor</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/css/jsvectormap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
@@ -14,7 +17,7 @@
     <header class="header">
       <div>
         <h1>PQC Deployment Monitor</h1>
-        <p class="tagline">Post-quantum cryptography adoption across the web</p>
+        <p class="tagline">Post-quantum readiness of Canadian websites</p>
       </div>
       <label class="date">Scan date
         <select id="datePicker"></select>
@@ -24,7 +27,7 @@
     <p id="headline" class="headline"></p>
 
     <section class="summary">
-      <div class="box"><div class="num" id="s-total">...</div><div class="label">sites scanned</div></div>
+      <div class="box"><div class="num" id="s-total">...</div><div class="label">Canadian sites</div></div>
       <div class="box"><div class="num" id="s-tls">...</div><div class="label">on TLS 1.3</div></div>
       <div class="box"><div class="num" id="s-pqc">...</div><div class="label">PQC key exchange</div></div>
       <div class="box"><div class="num" id="s-sig">...</div><div class="label">PQC signatures</div></div>
@@ -41,14 +44,25 @@
     </section>
 
     <section class="card">
-      <h2>PQC key exchange by sector</h2>
+      <h2>Canadian PQC readiness by sector</h2>
       <div id="sectorBars" class="sector-list"></div>
     </section>
 
     <section class="card">
+      <h2>How Canada compares to the world</h2>
+      <p>PQC key exchange adoption by country, across every site we scanned. Hover a country on the map to see its
+         percentage. Canada is at <strong id="canada-compare">...</strong>.</p>
+      <div id="worldMap" class="map"></div>
+      <h3 class="subhead">Countries with the most sites scanned</h3>
+      <canvas id="countryChart"></canvas>
+    </section>
+
+    <section class="card">
       <h2>Site directory</h2>
+      <p class="hint">Every site we scanned, in Canada and abroad. Filtered to Canada by default.</p>
       <div class="filters">
         <input id="search" placeholder="Search a site, e.g. rbc.com">
+        <select id="countryFilter"></select>
         <select id="sectorFilter"></select>
         <select id="kexFilter"></select>
         <label class="check"><input type="checkbox" id="tls12" checked> TLS 1.2</label>
@@ -67,9 +81,10 @@
     <section class="card">
       <h2>About this monitor</h2>
       <p>This is a public monitor of how fast <strong>post-quantum cryptography (PQC)</strong> is reaching real
-         websites. Each site is contacted with a TLS handshake; we record its TLS version, the key-exchange group
-         it negotiates (flagging the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature,
-         and the network / CDN that serves it.</p>
+         websites. The main view focuses on Canada; the map compares Canada to other countries. Each site is
+         contacted with a TLS handshake; we record its TLS version, the key-exchange group it negotiates (flagging
+         the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature, and the network / CDN
+         that serves it.</p>
       <p>Why it matters: an attacker can record encrypted traffic today and decrypt it once quantum computers
          arrive ("harvest now, decrypt later"). Post-quantum key exchange closes that window. Post-quantum
          certificate <em>signatures</em> are a separate, slower migration. No public certificate authority

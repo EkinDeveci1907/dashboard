@@ -86,3 +86,8 @@ tbody tr:hover { background: #f9fafb; }
 .legend { display: flex; gap: 18px; justify-content: center; margin-top: 14px; font-size: 13px; color: var(--muted); }
 .legend-item { display: flex; align-items: center; gap: 6px; }
 .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.map { height: 380px; width: 100%; }
+.subhead { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--ink); }
+.hint { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
+#countryChart { max-height: 340px; }

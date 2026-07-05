@@ -1,31 +1,33 @@
 {
   "scan_date": "2026-06-08",
-  "total": 803,
+  "country_focus": "CANADA",
+  "total": 211,
+  "total_all": 803,
   "tls": {
-    "TLSv1.3": 652,
-    "TLSv1.2": 151
+    "TLSv1.3": 159,
+    "TLSv1.2": 52
   },
-  "pqc_kex_pct": 40,
+  "pqc_kex_pct": 27,
   "pqc_signatures": 0,
   "kex_families": {
-    "X25519MLKEM768 (PQC)": 323,
-    "secp256r1": 113,
-    "X25519 (classical)": 338,
-    "other": 29
+    "secp256r1": 47,
+    "X25519 (classical)": 88,
+    "X25519MLKEM768 (PQC)": 58,
+    "other": 18
   },
   "cdn_families": {
-    "Google": 52,
-    "Akamai": 89,
-    "Amazon (AWS)": 61,
-    "Cloudflare": 168,
-    "Amazon CloudFront": 112,
-    "Fastly": 57,
-    "Azure Front Door": 21,
-    "Self-hosted": 163,
+    "Akamai": 32,
+    "Google": 3,
+    "Amazon CloudFront": 22,
+    "Cloudflare": 38,
+    "Fastly": 5,
+    "Azure Front Door": 7,
+    "Amazon (AWS)": 17,
+    "Self-hosted": 57,
     "Sucuri": 2,
-    "Microsoft (Azure)": 23,
-    "Imperva (Incapsula)": 5,
-    "F5": 3,
+    "Microsoft (Azure)": 15,
+    "Imperva (Incapsula)": 3,
+    "F5": 1,
     "Leaseweb": 1,
     "Radware": 1,
     "Network Solutions": 1,
@@ -33,64 +35,211 @@
     "OpenText": 1,
     "Nuday": 1,
     "Unknown": 1,
-    "Dropbox": 1,
-    "Oracle Cloud": 2,
-    "Automattic": 11,
-    "Gandi": 1,
-    "Rackspace": 1,
-    "Tencent Cloud": 3,
-    "Samsung SDS": 1,
-    "CDNvideo": 1,
-    "CDN77": 1,
-    "One.com": 1,
-    "Alibaba Cloud": 7,
-    "Naver Cloud": 1,
-    "Huawei Cloud": 1,
-    "Zenlayer": 1,
-    "Wix": 1,
-    "Free (hosting)": 1,
-    "Squarespace": 1,
-    "Link11": 1,
-    "Zoho": 1,
-    "OVH": 1,
-    "Hetzner": 1
+    "Automattic": 2
   },
   "sectors": {
-    "control": {
-      "total": 408,
-      "pqc": 215
-    },
     "gov": {
-      "total": 80,
-      "pqc": 18
+      "total": 54,
+      "pqc": 12
     },
     "bank": {
-      "total": 49,
-      "pqc": 16
-    },
-    "university": {
-      "total": 48,
+      "total": 33,
       "pqc": 10
     },
+    "university": {
+      "total": 39,
+      "pqc": 6
+    },
     "hospital": {
-      "total": 26,
+      "total": 24,
       "pqc": 9
     },
+    "control": {
+      "total": 12,
+      "pqc": 7
+    },
     "telco": {
-      "total": 14,
-      "pqc": 2
+      "total": 6,
+      "pqc": 1
     },
     "retail": {
-      "total": 68,
-      "pqc": 15
+      "total": 19,
+      "pqc": 5
     },
     "media": {
-      "total": 92,
-      "pqc": 32
+      "total": 9,
+      "pqc": 3
     },
     "transport": {
-      "total": 18,
-      "pqc": 6
+      "total": 15,
+      "pqc": 5
+    }
+  },
+  "countries": {
+    "USA": {
+      "total": 385,
+      "pqc": 206,
+      "pct": 54
+    },
+    "CANADA": {
+      "total": 211,
+      "pqc": 58,
+      "pct": 27
+    },
+    "INTL": {
+      "total": 8,
+      "pqc": 5,
+      "pct": 62
+    },
+    "UK": {
+      "total": 25,
+      "pqc": 12,
+      "pct": 48
+    },
+    "AUSTRALIA": {
+      "total": 8,
+      "pqc": 3,
+      "pct": 38
+    },
+    "RUSSIA": {
+      "total": 31,
+      "pqc": 4,
+      "pct": 13
+    },
+    "FRANCE": {
+      "total": 10,
+      "pqc": 2,
+      "pct": 20
+    },
+    "GERMANY": {
+      "total": 23,
+      "pqc": 10,
+      "pct": 43
+    },
+    "CHINA": {
+      "total": 32,
+      "pqc": 3,
+      "pct": 9
+    },
+    "KOREA": {
+      "total": 4,
+      "pqc": 2,
+      "pct": 50
+    },
+    "EU": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "JAPAN": {
+      "total": 12,
+      "pqc": 3,
+      "pct": 25
+    },
+    "BRAZIL": {
+      "total": 11,
+      "pqc": 3,
+      "pct": 27
+    },
+    "INDIA": {
+      "total": 7,
+      "pqc": 1,
+      "pct": 14
+    },
+    "SPAIN": {
+      "total": 8,
+      "pqc": 2,
+      "pct": 25
+    },
+    "INDONESIA": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "CZECHIA": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "ITALY": {
+      "total": 3,
+      "pqc": 1,
+      "pct": 33
+    },
+    "POLAND": {
+      "total": 3,
+      "pqc": 2,
+      "pct": 67
+    },
+    "QATAR": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "SINGAPORE": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "TAIWAN": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "SWITZERLAND": {
+      "total": 2,
+      "pqc": 0,
+      "pct": 0
+    },
+    "SWEDEN": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "NETHERLANDS": {
+      "total": 2,
+      "pqc": 1,
+      "pct": 50
+    },
+    "IRELAND": {
+      "total": 1,
+      "pqc": 1,
+      "pct": 100
+    },
+    "ARGENTINA": {
+      "total": 2,
+      "pqc": 0,
+      "pct": 0
+    },
+    "TURKEY": {
+      "total": 2,
+      "pqc": 1,
+      "pct": 50
+    },
+    "SLOVENIA": {
+      "total": 1,
+      "pqc": 1,
+      "pct": 100
+    },
+    "BELGIUM": {
+      "total": 2,
+      "pqc": 1,
+      "pct": 50
+    },
+    "MEXICO": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
+    },
+    "NEW ZEALAND": {
+      "total": 1,
+      "pqc": 1,
+      "pct": 100
+    },
+    "KAZAKHSTAN": {
+      "total": 1,
+      "pqc": 0,
+      "pct": 0
     }
   },
   "sites": [

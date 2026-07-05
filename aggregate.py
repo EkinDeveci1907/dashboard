@@ -62,15 +62,31 @@ def aggregate(csv_path, date):
         if r["site"] and r["tls_version"] and r["key_exchange"] and r["cert"] and r["cdn"]:
             rows.append(r)
 
+    # count every country so we can compare Canada against the rest of the world
+    countries = {}
+    for r in rows:
+        c = r["country"]
+        if c == "":
+            c = "OTHER"
+        if c not in countries:
+            countries[c] = {"total": 0, "pqc": 0, "pct": 0}
+        countries[c]["total"] = countries[c]["total"] + 1
+        if is_pqc(r["key_exchange"]):
+            countries[c]["pqc"] = countries[c]["pqc"] + 1
+    for c in countries:
+        countries[c]["pct"] = round(100 * countries[c]["pqc"] / countries[c]["total"])
+
+    # the dashboard is about Canada, so the headline numbers only use Canadian sites
+    canada = [r for r in rows if r["country"] == "CANADA"]
+
     tls_counts = {}
     kex_counts = {}
     cdn_counts = {}
     sectors = {}
-    sites = []
     pqc_count = 0
     sig_count = 0
 
-    for r in rows:
+    for r in canada:
         tls = r["tls_version"]
         if tls not in tls_counts:
             tls_counts[tls] = 0
@@ -99,24 +115,30 @@ def aggregate(csv_path, date):
         if is_pqc_sig(r["cert"]):
             sig_count = sig_count + 1
 
+    # the site table lists every site we scanned, not just Canada, so build it from all rows
+    sites = []
+    for r in rows:
         sites.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
                       "tls": r["tls_version"], "kex": r["key_exchange"],
-                      "cert": r["cert"], "cdn": cdn})
+                      "cert": r["cert"], "cdn": cdn_name(r["cdn"])})
 
-    if len(rows) > 0:
-        pqc_pct = round(100 * pqc_count / len(rows))
+    if len(canada) > 0:
+        pqc_pct = round(100 * pqc_count / len(canada))
     else:
         pqc_pct = 0
 
     return {
         "scan_date": date,
-        "total": len(rows),
+        "country_focus": "CANADA",
+        "total": len(canada),
+        "total_all": len(rows),
         "tls": tls_counts,
         "pqc_kex_pct": pqc_pct,
         "pqc_signatures": sig_count,
         "kex_families": kex_counts,
         "cdn_families": cdn_counts,
         "sectors": sectors,
+        "countries": countries,
         "sites": sites,
     }
 
