@@ -1,0 +1,251 @@
+site,sector,country,tls_version,key_exchange,cert,cdn
+canada.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+videotron.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+ebay.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+kijiji.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google
+blogspot.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+python.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+ca-servers.ca,web,CANADA,,,,
+realtor.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Imperva (Incapsula)
+radio-canada.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+youradchoices.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Squarespace
+d-zone.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare
+umontreal.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+uwo.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+psiphon.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",ecdsa_secp256r1_sha256,Cloudflare
+centris.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+services.gc.ca,web,CANADA,,,,
+turbulent.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS)
+eventbrite.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+freightpass.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+sportsnet.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+tsn.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS)
+whc.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+newswire.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",ecdsa_secp256r1_sha256,Cloudflare
+pinterest.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+uoguelph.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+dragonpass.ca,web,CANADA,,,,
+global.gc.ca,web,CANADA,,,,
+citynews.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+bnnbloomberg.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS)
+mywhc.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,OVH
+huffingtonpost.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+autotrader.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+yelp.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+playcasinoonline.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+tvanouvelles.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+wayfair.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Fastly
+globalresearch.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+casinolead.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+cgocable.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+tripadvisor.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+sympatico.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+realmoney-casino.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+intuit.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+realmoneygaming.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+gov.on.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Amazon CloudFront
+macleans.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+cira.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare
+ancestry.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+yellowpages.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+cogeco.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare
+gapcanada.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+webnames.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+gamblerzone.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+rapidenet.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,OVH
+jobbank.gc.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",ecdsa_secp256r1_sha256,Self-hosted
+thecanadianencyclopedia.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+ticketmaster.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly
+ovh.ca,web,CANADA,,,,
+vianet.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+ourcommons.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Microsoft (Azure)
+airbnb.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Amazon (AWS)
+namespro.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+weather.gc.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+clegc-gckey.gc.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+wowjobs.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+mr-bet.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+gouv.qc.ca,web,CANADA,,,,
+adsninja.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Amazon (AWS)
+bwanet.ca,web,CANADA,,,,
+cmaj.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+audible.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+cancer.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Microsoft (Azure)
+ctv.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+canadapost-postescanada.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+canoe.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+ryerson.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+wlu.ca,web,CANADA,TLSv1.2,"ECDH, secp384r1, 384 bits",rsa_pkcs1_sha512,Self-hosted
+wemesh.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+uwindsor.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+royallepage.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Google
+polymtl.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Imperva (Incapsula)
+nfb.ca,web,CANADA,TLSv1.3,"ECDH, secp384r1, 384 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+crave.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+rebel.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+siriusxm.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Imperva (Incapsula)
+uregina.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+ccohs.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS)
+canspace.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+metered.ca,web,CANADA,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Azure Front Door
+brocku.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Cloudflare
+glassdoor.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+canadiangeographic.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+clubrunner.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Microsoft (Azure)
+bellmedia.ca,web,CANADA,,,,
+blacksun.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+parl.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Microsoft (Azure)
+affirm.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+sheridanc.on.ca,web,CANADA,,,,
+thewalrus.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+leslibraires.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+citizenlab.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+interac.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Imperva (Incapsula)
+zonerisq.ca,web,CANADA,,,,
+telus.ca,web,CANADA,,,,
+medallia.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+homehardware.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",ecdsa_secp256r1_sha256,Cloudflare
+remax.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+thetyee.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+athabascau.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+pf-d.ca,web,CANADA,,,,
+wightman.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+primus.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Azure Front Door
+rds.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS)
+domainsatcost.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+chl.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+carfax.ca,web,CANADA,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Azure Front Door
+uwinnipeg.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+olg.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+easydns.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+gov.ab.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Self-hosted
+gettyimages.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+cafepress.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+internic.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+zsw.ca,web,CANADA,,,,
+poshmark.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+zolo.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+uquebec.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+spreadshirt.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+d2cmedia.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+canada411.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+votresite.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Self-hosted
+revenuquebec.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+vevor.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+rtss.qc.ca,web,CANADA,,,,
+opentable.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+smartcanucks.ca,web,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+cmha.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+penguinrandomhouse.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+uqac.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+ebgames.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare
+walmartimages.ca,web,CANADA,,,,
+ceo.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+zohocloud.ca,web,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly
+cargurus.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+pagesjaunes.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+webdomaine.ca,web,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,OVH
+petsmart.ca,web,CANADA,,,,
+instacart.ca,web,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+newegg.ca,web,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Microsoft (Azure)
+nrc.ca,web,CANADA,TLSv1.3,"ECDH, secp521r1, 521 bits",rsa_pss_rsae_sha256,Self-hosted
+google.com.au,web,AUSTRALIA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+smh.com.au,web,AUSTRALIA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly
+unimelb.edu.au,web,AUSTRALIA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+nsw.gov.au,web,AUSTRALIA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+ventraip.net.au,web,AUSTRALIA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+hln.be,web,BELGIUM,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+com.be,web,BELGIUM,,,,
+geoedge.be,web,BELGIUM,,,,
+google.be,web,BELGIUM,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+vrt.be,web,BELGIUM,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Fastly
+cnnbrasil.com.br,web,BRAZIL,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Automattic
+acesso.gov.br,web,BRAZIL,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+fazenda.gov.br,web,BRAZIL,,,,
+jusbrasil.com.br,web,BRAZIL,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+alura.com.br,web,BRAZIL,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+miit.gov.cn,web,CHINA,,,,
+beian.gov.cn,web,CHINA,,,,
+eye4.cn,web,CHINA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Alibaba Cloud
+zdnscloud.cn,web,CHINA,,,,
+vivo.com.cn,web,CHINA,TLSv1.2,"X25519, 253 bits",ecdsa_secp256r1_sha256,Self-hosted
+gandi-ns.fr,web,FRANCE,,,,
+ouest-france.fr,web,FRANCE,,,,
+vinted.fr,web,FRANCE,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Cloudflare
+lequipe.fr,web,FRANCE,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly
+leboncoin.fr,web,FRANCE,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+rzone.de,web,GERMANY,,,,
+ddnss.de,web,GERMANY,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+bund.de,web,GERMANY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Self-hosted
+kicker.de,web,GERMANY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+zalando.de,web,GERMANY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+bihar.gov.in,web,INDIA,,,,
+gst.gov.in,web,INDIA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+karnataka.gov.in,web,INDIA,,,,
+uidai.gov.in,web,INDIA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+epfindia.gov.in,web,INDIA,,,,
+iiko.it,web,ITALY,,,,
+kahoot.it,web,ITALY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+gazzetta.it,web,ITALY,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google
+poste.it,web,ITALY,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Azure Front Door
+ebay.it,web,ITALY,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+dmm.co.jp,web,JAPAN,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+tbs.co.jp,web,JAPAN,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+itmedia.co.jp,web,JAPAN,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+hotpepper.jp,web,JAPAN,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+google.co.jp,web,JAPAN,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+inven.co.kr,web,KOREA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+ppomppu.co.kr,web,KOREA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted
+flic.kr,web,KOREA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+gmarket.co.kr,web,KOREA,TLSv1.2,,,
+google.co.kr,web,KOREA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+mercadolibre.com.mx,web,MEXICO,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS)
+caliente.mx,web,MEXICO,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+walmart.com.mx,web,MEXICO,,,,
+www.gob.mx,web,MEXICO,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+google.com.mx,web,MEXICO,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+nu.nl,web,NETHERLANDS,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai
+ad.nl,web,NETHERLANDS,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai
+marktplaats.nl,web,NETHERLANDS,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+deltafibernederland.nl,web,NETHERLANDS,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare
+glasvezelactiveren.nl,web,NETHERLANDS,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+finn.no,web,NORWAY,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google
+vg.no,web,NORWAY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+dagbladet.no,web,NORWAY,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+google.no,web,NORWAY,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+nrk.no,web,NORWAY,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Self-hosted
+olx.pl,web,POLAND,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront
+interia.pl,web,POLAND,TLSv1.2,"ECDH, prime256v1, 256 bits",ecdsa_secp521r1_sha512,Self-hosted
+mediaexpert.pl,web,POLAND,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Cloudflare
+otomoto.pl,web,POLAND,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront
+librus.pl,web,POLAND,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+yccdn.ru,web,RUSSIA,,,,
+telecid.ru,web,RUSSIA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Self-hosted
+mangosip.ru,web,RUSSIA,,,,
+selectel.ru,web,RUSSIA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+netangels.ru,web,RUSSIA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+leroymerlin.es,web,SPAIN,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+eltiempo.es,web,SPAIN,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront
+xvideos.es,web,SPAIN,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+xnxx.es,web,SPAIN,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+agenciatributaria.gob.es,web,SPAIN,,,,
+aftonbladet.se,web,SWEDEN,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon CloudFront
+toyhou.se,web,SWEDEN,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+loopia.se,web,SWEDEN,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+haxx.se,web,SWEDEN,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+curl.se,web,SWEDEN,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+admin.ch,web,SWITZERLAND,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+komikindo.ch,web,SWITZERLAND,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+threema.ch,web,SWITZERLAND,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted
+hostpoint.ch,web,SWITZERLAND,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+cern.ch,web,SWITZERLAND,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted
+turkiye.gov.tr,web,TURKEY,,,,
+sozcu.com.tr,web,TURKEY,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare
+google.com.tr,web,TURKEY,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google
+hurriyet.com.tr,web,TURKEY,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Self-hosted
+amazon.com.tr,web,TURKEY,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront
+nominetdns.uk,web,UK,,,,
+www.gov.uk,web,UK,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+service.gov.uk,web,UK,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly
+nic.uk,web,UK,,,,
+rightmove.co.uk,web,UK,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly

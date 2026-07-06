@@ -1,10 +1,12 @@
 import subprocess
 import csv
 import datetime
+import sys
 
 OPENSSL = "/opt/homebrew/opt/openssl@3.5/bin/openssl"
-IN_FILE = "data/sites.csv"
-OUT_FILE = "data/scan-" + datetime.date.today().isoformat() + ".csv"
+# optional: pass an input file and output file; otherwise scan the whole site list
+IN_FILE = sys.argv[1] if len(sys.argv) > 1 else "data/sites.csv"
+OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "data/scan-" + datetime.date.today().isoformat() + ".csv"
 
 HEADER_RULES = [
     ("cf-ray", "", "Cloudflare"),
@@ -141,7 +143,7 @@ def main():
     total = len(sites)
     out = open(OUT_FILE, "w", newline="")
     writer = csv.writer(out)
-    writer.writerow(["site", "sector", "country", "tls_version", "key_exchange", "cert", "cdn", "scanned_at"])
+    writer.writerow(["site", "sector", "country", "tls_version", "key_exchange", "cert", "cdn"])
 
     count = 0
     for row in sites:
@@ -151,16 +153,15 @@ def main():
         country = row.get("country", "").strip()
 
         tls, kex, cert = get_tls(site)
-        scanned_at = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         if tls == "" or kex == "" or cert == "":
-            writer.writerow([site, sector, country, tls, kex, cert, "", scanned_at])
+            writer.writerow([site, sector, country, tls, kex, cert, ""])
             out.flush()
             print(str(count) + "/" + str(total) + "  " + site + "  no answer, left blank")
             continue
 
         cdn = detect_cdn(site, get_ip(site))
-        writer.writerow([site, sector, country, tls, kex, cert, cdn, scanned_at])
+        writer.writerow([site, sector, country, tls, kex, cert, cdn])
         out.flush()
         print(str(count) + "/" + str(total) + "  " + site + "  " + tls + "  " + cdn)
 
