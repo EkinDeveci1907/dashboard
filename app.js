@@ -187,13 +187,29 @@ function drawCountryChart(countries) {
   });
 }
 
+function pqcColor(pct) {
+  // shade from light blue to indigo based on the percentage
+  let t = pct / 70;
+  if (t > 1) {
+    t = 1;
+  }
+  let light = [219, 228, 255];
+  let dark = [79, 70, 229];
+  let r = Math.round(light[0] + t * (dark[0] - light[0]));
+  let g = Math.round(light[1] + t * (dark[1] - light[1]));
+  let b = Math.round(light[2] + t * (dark[2] - light[2]));
+  return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
 function drawWorldMap(countries) {
-  // build a { code: percent } object for the countries we have data for
-  let values = {};
+  // one object holds the percent for the tooltip, the other holds the colour to fill each country
+  let pcts = {};
+  let fills = {};
   for (let name in countries) {
     let code = COUNTRY_CODE[name];
     if (code) {
-      values[code] = countries[name].pct;
+      pcts[code] = countries[name].pct;
+      fills[code] = pqcColor(countries[name].pct);
     }
   }
 
@@ -210,17 +226,16 @@ function drawWorldMap(countries) {
     worldMap = new jsVectorMap({
       selector: "#worldMap",
       map: "world",
+      zoomOnScroll: false,
       regionStyle: { initial: { fill: "#e5e7eb" } },
       series: {
         regions: [{
           attribute: "fill",
-          values: values,
-          scale: ["#dbe4ff", "#4f46e5"],
-          normalizeFunction: "polynomial"
+          values: fills
         }]
       },
       onRegionTooltipShow: function (event, tooltip, code) {
-        let pct = values[code];
+        let pct = pcts[code];
         let extra = (pct === undefined) ? "no sites scanned" : pct + "% PQC";
         tooltip.text(tooltip.text() + " - " + extra, true);
       }
