@@ -187,29 +187,15 @@ function drawCountryChart(countries) {
   });
 }
 
-function pqcColor(pct) {
-  // shade from light blue to indigo based on the percentage
-  let t = pct / 70;
-  if (t > 1) {
-    t = 1;
-  }
-  let light = [219, 228, 255];
-  let dark = [79, 70, 229];
-  let r = Math.round(light[0] + t * (dark[0] - light[0]));
-  let g = Math.round(light[1] + t * (dark[1] - light[1]));
-  let b = Math.round(light[2] + t * (dark[2] - light[2]));
-  return "rgb(" + r + ", " + g + ", " + b + ")";
-}
-
 function drawWorldMap(countries) {
-  // one object holds the percent for the tooltip, the other holds the colour to fill each country
+  // percent for each country we scanned, shown in the hover tooltip
   let pcts = {};
-  let fills = {};
+  let scanned = [];
   for (let name in countries) {
     let code = COUNTRY_CODE[name];
     if (code) {
       pcts[code] = countries[name].pct;
-      fills[code] = pqcColor(countries[name].pct);
+      scanned.push(code);
     }
   }
 
@@ -227,12 +213,9 @@ function drawWorldMap(countries) {
       selector: "#worldMap",
       map: "world",
       zoomOnScroll: false,
-      regionStyle: { initial: { fill: "#e5e7eb" } },
-      series: {
-        regions: [{
-          attribute: "fill",
-          values: fills
-        }]
+      regionStyle: {
+        initial: { fill: "#e5e7eb" },   // countries we did not scan
+        selected: { fill: "#4f46e5" }   // countries that are in our data
       },
       onRegionTooltipShow: function (event, tooltip, code) {
         let pct = pcts[code];
@@ -242,6 +225,14 @@ function drawWorldMap(countries) {
     });
   } catch (e) {
     box.innerHTML = "<p class='hint'>Map could not load.</p>";
+    return;
+  }
+
+  // shade in the countries we scanned; the hover percentages work either way
+  try {
+    worldMap.setSelectedRegions(scanned);
+  } catch (e) {
+    // older map versions may not support this, that is fine
   }
 }
 
