@@ -1,3 +1,5 @@
+/* Styles for the monitor page. Kept it plain on purpose, no framework.
+   indigo = the PQC/highlight colour, green = "good / TLS 1.3 / has PQC". */
 :root {
   --indigo: #4f46e5;
   --green: #16a34a;
@@ -33,6 +35,7 @@ h1 { font-size: 24px; font-weight: 700; }
   font-size: 14px; background: #fff; color: var(--ink);
 }
 
+/* the four big number cards up top */
 .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
 .box { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
 .box .num { font-size: 30px; font-weight: 700; color: var(--indigo); }
@@ -40,6 +43,14 @@ h1 { font-size: 24px; font-weight: 700; }
 
 .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
 .card h2 { font-size: 16px; font-weight: 600; margin-bottom: 14px; }
+
+/* the little labels that mark whether a panel is Canada-only or all-countries.
+   green tag = Canadian sites, indigo tag = every country we scanned. */
+.section-head { font-size: 18px; font-weight: 700; margin: 30px 0 4px; color: var(--ink); }
+.scope { color: var(--muted); font-size: 13px; margin-bottom: 14px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; vertical-align: middle; margin-left: 8px; }
+.tag-ca { background: #dcfce7; color: #166534; }
+.tag-world { background: #eef2ff; color: #4f46e5; }
 .charts { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .charts .card { margin-bottom: 0; }
 canvas { max-width: 100%; }
@@ -74,6 +85,7 @@ tbody tr:hover { background: #f9fafb; }
 
 #cdnChart { max-height: 340px; }
 
+/* the "by sector" mini bar chart, built by hand instead of Chart.js */
 .sector-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }
 .sector-name { width: 130px; color: var(--ink); text-transform: capitalize; }
 .sector-track { flex: 1; height: 14px; background: #eef0f4; border-radius: 6px; overflow: hidden; }
@@ -87,7 +99,55 @@ tbody tr:hover { background: #f9fafb; }
 .legend-item { display: flex; align-items: center; gap: 6px; }
 .legend .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
-.map { height: 380px; width: 100%; }
+.map { height: 380px; width: 100%; position: relative; }
+
+/* The map library adds "+" and "-" zoom buttons. By default they render as bare
+   characters and can end up sitting on top of the legend. These rules turn them
+   into two small, tidy buttons stacked in the top-left corner of the map. */
+.jvm-zoom-btn {
+  position: absolute;
+  left: 12px;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--indigo);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.2);
+}
+.jvm-zoom-btn:hover { background: #4338ca; }
+.jvm-zoom-btn.jvm-zoomin { top: 12px; }
+.jvm-zoom-btn.jvm-zoomout { top: 44px; }
+
+/* The little box that pops up when you hover a country on the map. We style it
+   here (not just rely on the map library's stylesheet) so the hover text always
+   shows up clearly: dark rounded box, white text. The library still handles
+   positioning it next to the cursor and showing/hiding it. */
+.jvm-tooltip {
+  position: absolute;
+  padding: 6px 9px;
+  background: var(--ink);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.35;
+  white-space: nowrap;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
+  pointer-events: none;
+  z-index: 20;
+}
+
+.map-legend { display: none; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--muted); }
+.map-scale { width: 120px; height: 10px; border-radius: 5px; background: linear-gradient(to right, #c7d2fe, #312e81); }
+.map-none { margin-left: 16px; }
+.kex-pqc { color: var(--green); font-weight: 600; }
 .subhead { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--ink); }
 .hint { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
 #countryChart { max-height: 340px; }

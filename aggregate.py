@@ -1,127 +1,124 @@
+# Turns the raw scan CSVs into the small JSON files the web page reads.
+# For every data/scan-<date>.csv it writes one stats-<date>.json, and it writes
+# scans.json listing all the dates. Doing the counting here means the browser just
+# loads a ready-made summary instead of adding up hundreds of rows every time.
+
 import csv
 import json
 import glob
 import os
 
-CDN_RULES = [
-    ("CLOUDFLARE", "Cloudflare"), ("AKAMAI", "Akamai"), ("FASTLY", "Fastly"),
-    ("INCAPSULA", "Imperva (Incapsula)"), ("SUCURI", "Sucuri"), ("CDN77", "CDN77"),
-    ("CDNVIDEO", "CDNvideo"), ("EPISERVER", "Optimizely"), ("OPTIMIZELY", "Optimizely"),
-    ("DOSARREST", "DOSarrest"), ("LINK11", "Link11"), ("EDGIO", "Edgio"),
-    ("LLNW", "Edgio"), ("LIMELIGHT", "Edgio"), ("GCORE", "Gcore"), ("G-CORE", "Gcore"),
-    ("KEYCDN", "KeyCDN"), ("STACKPATH", "StackPath"), ("BUNNY", "BunnyCDN"),
-    ("ZEN-ECN", "Zenlayer"), ("ZENLAYER", "Zenlayer"), ("RADWARE", "Radware"), ("F5 ", "F5"),
-    ("AMAZON", "Amazon (AWS)"), ("GOOGLE", "Google"), ("MICROSOFT", "Microsoft (Azure)"),
-    ("AZURE", "Microsoft (Azure)"), ("ORACLE", "Oracle Cloud"), ("ALIBABA", "Alibaba Cloud"),
-    ("TENCENT", "Tencent Cloud"), ("HWCLOUDS", "Huawei Cloud"), ("HUAWEI", "Huawei Cloud"),
-    ("SAMSUNGSDS", "Samsung SDS"), ("NHN-", "Naver Cloud"), ("IDCF", "IDC Frontier"),
-    ("OVH", "OVH"), ("HETZNER", "Hetzner"), ("LEASEWEB", "Leaseweb"), ("IWEB", "Leaseweb"),
-    ("AUTOMATTIC", "Automattic"), ("SQUARESPACE", "Squarespace"), ("WIX", "Wix"),
-    ("WEEBLY", "Weebly"), ("GANDI", "Gandi"), ("DHOSTING", "Rackspace"), ("RACKSPACE", "Rackspace"),
-    ("CPANEL", "cPanel hosting"), ("ONECOM", "One.com"), ("NETWORK-SOLUTIONS", "Network Solutions"),
-    ("SINGLEHOP", "Internap"), ("ZOHO", "Zoho"), ("DROPBOX", "Dropbox"), ("OPENTEXT", "OpenText"),
-    ("SEDO", "Sedo (parking)"), ("PROXAD", "Free (hosting)"), ("NUDAY", "Nuday"),
-]
 
-
-def is_pqc(kex):
+def has_pqc_key_exchange(kex):
+    # the post-quantum group we're looking for shows up as X25519MLKEM768
     return "MLKEM" in kex.upper()
 
 
-def is_pqc_sig(cert):
+def has_pqc_signature(cert):
+    # no public CA issues these yet, so in practice this stays False for now
     return "MLDSA" in cert.upper() or "DILITHIUM" in cert.upper()
 
 
-def cdn_name(raw):
+def clean_cdn_name(raw):
+    # the scanner already writes a clean name like "Cloudflare" or "Self-hosted",
+    # so we just trim spaces and label the blank ones (sites that didn't answer).
     raw = raw.strip()
     if raw == "":
         return "Unknown"
-    if " - " not in raw:
-        return raw
-    up = raw.upper()
-    for word, name in CDN_RULES:
-        if word in up:
-            return name
-    return "Self-hosted"
+    return raw
 
 
-def kex_group(kex):
-    up = kex.upper()
-    if "MLKEM" in up:
+def key_exchange_group(kex):
+    # bucket the key exchange into a few families for the chart
+    text = kex.upper()
+    if "MLKEM" in text:
         return "X25519MLKEM768 (PQC)"
-    if "X25519" in up:
+    if "X25519" in text:
         return "X25519 (classical)"
-    if "SECP256" in up or "PRIME256V1" in up:
+    if "SECP256" in text or "PRIME256V1" in text:
         return "secp256r1"
     return "other"
 
 
-def aggregate(csv_path, date):
-    rows = []
-    for r in csv.DictReader(open(csv_path)):
-        if r["site"] and r["tls_version"] and r["key_exchange"] and r["cert"] and r["cdn"]:
-            rows.append(r)
+def summarise_one_scan(csv_path, date):
+    # 1. Read the rows, keeping only the ones where every field is filled in
+    #    (a site that didn't answer is written with blanks, and we skip those).
+    scanned = []
+    for row in csv.DictReader(open(csv_path)):
+        if row["site"] and row["tls_version"] and row["key_exchange"] and row["cert"] and row["cdn"]:
+            scanned.append(row)
 
-    # count every country so we can compare Canada against the rest of the world
+    # 2. Count PQC for every country, so we can compare Canada to the rest of the world.
     countries = {}
-    for r in rows:
-        c = r["country"]
-        if c == "":
-            c = "OTHER"
-        if c not in countries:
-            countries[c] = {"total": 0, "pqc": 0, "pct": 0}
-        countries[c]["total"] = countries[c]["total"] + 1
-        if is_pqc(r["key_exchange"]):
-            countries[c]["pqc"] = countries[c]["pqc"] + 1
-    for c in countries:
-        countries[c]["pct"] = round(100 * countries[c]["pqc"] / countries[c]["total"])
+    for row in scanned:
+        country = row["country"]
+        if country == "":
+            country = "OTHER"
+        if country not in countries:
+            countries[country] = {"total": 0, "pqc": 0, "pct": 0}
+        countries[country]["total"] = countries[country]["total"] + 1
+        if has_pqc_key_exchange(row["key_exchange"]):
+            countries[country]["pqc"] = countries[country]["pqc"] + 1
+    # turn each country's counts into a percentage
+    for country in countries:
+        countries[country]["pct"] = round(100 * countries[country]["pqc"] / countries[country]["total"])
 
-    # the dashboard is about Canada, so the headline numbers only use Canadian sites
-    canada = [r for r in rows if r["country"] == "CANADA"]
+    # 3. The headline numbers are Canada only, so pull out just the Canadian rows.
+    canada = []
+    for row in scanned:
+        if row["country"] == "CANADA":
+            canada.append(row)
 
+    # tallies we build up as we walk the Canadian rows
     tls_counts = {}
     kex_counts = {}
     cdn_counts = {}
     sectors = {}
     pqc_count = 0
-    sig_count = 0
+    signature_count = 0
 
-    for r in canada:
-        tls = r["tls_version"]
+    for row in canada:
+        # count TLS versions (1.2 vs 1.3)
+        tls = row["tls_version"]
         if tls not in tls_counts:
             tls_counts[tls] = 0
         tls_counts[tls] = tls_counts[tls] + 1
 
-        family = kex_group(r["key_exchange"])
+        # count key-exchange families (the PQC one vs the classical ones)
+        family = key_exchange_group(row["key_exchange"])
         if family not in kex_counts:
             kex_counts[family] = 0
         kex_counts[family] = kex_counts[family] + 1
 
-        cdn = cdn_name(r["cdn"])
+        # count which CDN / network serves the site
+        cdn = clean_cdn_name(row["cdn"])
         if cdn not in cdn_counts:
             cdn_counts[cdn] = 0
         cdn_counts[cdn] = cdn_counts[cdn] + 1
 
-        sector = r["sector"]
+        # set up this sector's PQC tally the first time we see it
+        sector = row["sector"]
         if sector == "":
             sector = "other"
         if sector not in sectors:
             sectors[sector] = {"total": 0, "pqc": 0}
         sectors[sector]["total"] = sectors[sector]["total"] + 1
 
-        if is_pqc(r["key_exchange"]):
+        # add to the PQC totals (overall and for this sector)
+        if has_pqc_key_exchange(row["key_exchange"]):
             pqc_count = pqc_count + 1
             sectors[sector]["pqc"] = sectors[sector]["pqc"] + 1
-        if is_pqc_sig(r["cert"]):
-            sig_count = sig_count + 1
+        if has_pqc_signature(row["cert"]):
+            signature_count = signature_count + 1
 
-    # the site table lists every site we scanned, not just Canada, so build it from all rows
+    # 4. The site table lists every site we scanned, not just Canada.
     sites = []
-    for r in rows:
-        sites.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
-                      "tls": r["tls_version"], "kex": r["key_exchange"],
-                      "cert": r["cert"], "cdn": cdn_name(r["cdn"])})
+    for row in scanned:
+        sites.append({"site": row["site"], "sector": row["sector"], "country": row["country"],
+                      "tls": row["tls_version"], "kex": row["key_exchange"],
+                      "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"])})
 
+    # overall Canadian PQC percentage (guard against dividing by zero)
     if len(canada) > 0:
         pqc_pct = round(100 * pqc_count / len(canada))
     else:
@@ -131,10 +128,10 @@ def aggregate(csv_path, date):
         "scan_date": date,
         "country_focus": "CANADA",
         "total": len(canada),
-        "total_all": len(rows),
+        "total_all": len(scanned),
         "tls": tls_counts,
         "pqc_kex_pct": pqc_pct,
-        "pqc_signatures": sig_count,
+        "pqc_signatures": signature_count,
         "kex_families": kex_counts,
         "cdn_families": cdn_counts,
         "sectors": sectors,
@@ -143,10 +140,11 @@ def aggregate(csv_path, date):
     }
 
 
+# Run the summary for every scan CSV we have, oldest date first.
 dates = []
 for path in sorted(glob.glob("data/scan-*.csv")):
     date = os.path.basename(path).replace("scan-", "").replace(".csv", "")
-    stats = aggregate(path, date)
+    stats = summarise_one_scan(path, date)
     json.dump(stats, open("stats-" + date + ".json", "w"), indent=2)
     dates.append(date)
     print("made stats-" + date + ".json")

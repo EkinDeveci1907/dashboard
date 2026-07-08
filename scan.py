@@ -1,13 +1,25 @@
+# The scanner behind the monitor.
+# One TLS connection per site with openssl s_client, then read off the protocol
+# version, the negotiated key-exchange group (this is where X25519MLKEM768 shows up)
+# and the cert signature type. After that work out which CDN/network serves it.
+# Writes one CSV per run into data/; aggregate.py turns those into the dashboard json.
 import subprocess
 import csv
 import datetime
 import sys
 
+# Needs a recent openssl. macOS ships LibreSSL, and even plain openssl 3.0 doesn't
+# know the ML-KEM groups, so I point at the homebrew 3.5 build. Sanity check with
+#   openssl list -tls1_3-kem      (X25519MLKEM768 should show up)
 OPENSSL = "/opt/homebrew/opt/openssl@3.5/bin/openssl"
-# optional: pass an input file and output file; otherwise scan the whole site list
+
+# usage: python3 scan.py [sites.csv] [out.csv]. no args = scan the whole list.
 IN_FILE = sys.argv[1] if len(sys.argv) > 1 else "data/sites.csv"
 OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "data/scan-" + datetime.date.today().isoformat() + ".csv"
 
+# Three lookup tables for figuring out which CDN / network serves a site. We check
+# them in order (headers, then DNS CNAME, then the network owner). Each entry is a
+# hint to look for and the clean provider name to report if we find it.
 HEADER_RULES = [
     ("cf-ray", "", "Cloudflare"),
     ("server", "cloudflare", "Cloudflare"),
@@ -71,6 +83,8 @@ AS_RULES = [
 
 
 def run(cmd, timeout=15):
+    # run a command-line tool (openssl, curl, dig, whois) and hand back whatever it
+    # printed. if it errors out or takes too long, just return an empty string.
     try:
         p = subprocess.run(cmd, input="", capture_output=True, text=True, timeout=timeout)
         return p.stdout + p.stderr
@@ -79,6 +93,7 @@ def run(cmd, timeout=15):
 
 
 def get_tls(site):
+    # -brief keeps the output short. we scrape three lines out of it.
     out = run([OPENSSL, "s_client", "-connect", site + ":443", "-servername", site, "-brief"])
     tls = ""
     kex = ""
@@ -86,8 +101,10 @@ def get_tls(site):
     for line in out.splitlines():
         if "Protocol version:" in line:
             tls = line.split(":", 1)[1].strip()
+        # on TLS 1.3 the group is printed here (e.g. X25519MLKEM768)
         if "Negotiated TLS1.3 group:" in line:
             kex = line.split(":", 1)[1].strip()
+        # on TLS 1.2 there's no "group" line, the temp key line has the curve instead
         if "Peer Temp Key:" in line:
             kex = line.split(":", 1)[1].strip()
         if "Signature type:" in line:
@@ -96,6 +113,7 @@ def get_tls(site):
 
 
 def get_ip(site):
+    # ask DNS for the site's addresses and return the first real IP we see
     for line in run(["dig", "+short", site]).splitlines():
         line = line.strip()
         if line and line[0].isdigit():
@@ -104,6 +122,9 @@ def get_ip(site):
 
 
 def detect_cdn(site, ip):
+    # three signals, most reliable first: response headers, then the CNAME chain,
+    # then the announcing AS as a last resort. AS alone is fuzzy (can't tell a real
+    # CloudFront site from something just parked on AWS) so it only decides ties.
     headers = run(["curl", "-sIL", "https://" + site]).lower()
     for line in headers.splitlines():
         if ":" not in line:
@@ -139,6 +160,7 @@ def detect_cdn(site, ip):
 
 
 def main():
+    # read the list of sites to scan, and open the output CSV for writing
     sites = list(csv.DictReader(open(IN_FILE)))
     total = len(sites)
     out = open(OUT_FILE, "w", newline="")
@@ -152,14 +174,17 @@ def main():
         sector = row.get("sector", "").strip()
         country = row.get("country", "").strip()
 
+        # do the TLS handshake: protocol version, key-exchange group, cert signature
         tls, kex, cert = get_tls(site)
 
+        # if the site didn't answer, still write the row (blank crypto) so the miss is visible
         if tls == "" or kex == "" or cert == "":
             writer.writerow([site, sector, country, tls, kex, cert, ""])
             out.flush()
             print(str(count) + "/" + str(total) + "  " + site + "  no answer, left blank")
             continue
 
+        # otherwise also work out the CDN, then write the full row
         cdn = detect_cdn(site, get_ip(site))
         writer.writerow([site, sector, country, tls, kex, cert, cdn])
         out.flush()

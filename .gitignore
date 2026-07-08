@@ -1,3 +1,13 @@
 .DS_Store
 __pycache__/
 *.pyc
+
+# scratch files: batch site lists I scan then merge, retired scans, benchmark exports.
+# the real scans live in data/scan-<date>.csv and should be committed; these should not.
+data/new-*.csv
+data/_retired_*.csv
+data/*-canada10.csv
+data/canada10-domains.txt
+data/pqcmonitor-canada10.csv
+data/scan_new.csv
+data/sites_new.csv
