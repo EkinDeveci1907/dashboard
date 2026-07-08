@@ -29,7 +29,15 @@ X25519MLKEM768 should show up in that list. Then run:
     python3 scan.py
     python3 aggregate.py
 
-The first line scans every site and writes today's scan file. The second rebuilds the summary files the page reads. To see the dashboard, start a small local server and open the address it prints in your browser:
+The first line scans every site and writes today's scan file. The second rebuilds the summary files the page reads.
+
+You can also check a single domain without touching the list, just pass it in:
+
+    python3 scan.py rbc.com
+
+That scans only that one site and prints its TLS version, key exchange (flagging post-quantum), certificate and CDN, without writing anything. Handy for spot-checking any website, even one that is not in the list. It still needs the recent openssl to see the post-quantum group.
+
+To see the dashboard, start a small local server and open the address it prints in your browser:
 
     python3 -m http.server
 

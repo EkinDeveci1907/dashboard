@@ -7,11 +7,27 @@ import subprocess
 import csv
 import datetime
 import sys
+import os
+import shutil
 
-# Needs a recent openssl. macOS ships LibreSSL, and even plain openssl 3.0 doesn't
-# know the ML-KEM groups, so I point at the homebrew 3.5 build. Sanity check with
-#   openssl list -tls1_3-kem      (X25519MLKEM768 should show up)
-OPENSSL = "/opt/homebrew/opt/openssl@3.5/bin/openssl"
+# We need a recent openssl. macOS ships LibreSSL, and even plain openssl 3.0 doesn't
+# know the ML-KEM groups, so the homebrew openssl@3.5 build is the one that can see
+# X25519MLKEM768. Rather than hard-code my own path, look in a few likely places so
+# this also runs on someone else's machine. To use your own, set the OPENSSL env var.
+# Quick sanity check on whichever it finds:  openssl list -tls1_3-kem
+def find_openssl():
+    candidates = [
+        os.environ.get("OPENSSL"),                     # let the user point at their own
+        "/opt/homebrew/opt/openssl@3.5/bin/openssl",   # homebrew, Apple Silicon
+        "/usr/local/opt/openssl@3.5/bin/openssl",      # homebrew, Intel Macs
+        shutil.which("openssl"),                        # whatever openssl is on the PATH
+    ]
+    for path in candidates:
+        if path and os.path.exists(path):
+            return path
+    return "openssl"   # last resort; if it's too old, scans just won't show PQC
+
+OPENSSL = find_openssl()
 
 # usage: python3 scan.py [sites.csv] [out.csv]. no args = scan the whole list.
 IN_FILE = sys.argv[1] if len(sys.argv) > 1 else "data/sites.csv"
@@ -195,5 +211,26 @@ def main():
     print("now run: python3 aggregate.py")
 
 
+def scan_one(site):
+    # scan a single site and print the result instead of writing a CSV.
+    # handy for checking any domain, even one that isn't in data/sites.csv.
+    tls, kex, cert = get_tls(site)
+    if tls == "" or kex == "" or cert == "":
+        print(site + ": no answer (the server did not finish a TLS handshake we could read)")
+        return
+    cdn = detect_cdn(site, get_ip(site))
+    pqc = "   <- post-quantum" if "MLKEM" in kex else ""
+    print("site:          " + site)
+    print("TLS version:   " + tls)
+    print("key exchange:  " + kex + pqc)
+    print("certificate:   " + cert)
+    print("CDN / network: " + cdn)
+
+
 if __name__ == "__main__":
-    main()
+    # if the first argument is a plain domain (not a .csv file), scan just that
+    # one site and print it. otherwise scan a whole list, like normal.
+    if len(sys.argv) > 1 and not sys.argv[1].endswith(".csv"):
+        scan_one(sys.argv[1].strip())
+    else:
+        main()
