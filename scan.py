@@ -14,7 +14,7 @@ import shutil
 # know the ML-KEM groups, so the homebrew openssl@3.5 build is the one that can see
 # X25519MLKEM768. Rather than hard-code my own path, look in a few likely places so
 # this also runs on someone else's machine. To use your own, set the OPENSSL env var.
-# Quick sanity check on whichever it finds:  openssl list -tls1_3-kem
+# Quick sanity check on whichever it finds:  openssl list -tls-groups
 def find_openssl():
     candidates = [
         os.environ.get("OPENSSL"),                     # let the user point at their own
@@ -227,10 +227,52 @@ def scan_one(site):
     print("CDN / network: " + cdn)
 
 
+def check_tools():
+    # print whether the tools a scan needs are installed, and whether openssl is new
+    # enough to see the post-quantum group. run this first if a scan looks off:
+    #   python3 scan.py --check
+    print("Checking the tools a scan needs:")
+    print("")
+
+    # openssl: find_openssl() already picked one. say which, then test whether it
+    # knows the X25519MLKEM768 group, since that's what proves it can see PQC.
+    groups = run([OPENSSL, "list", "-tls-groups"])
+    openssl_sees_pqc = "MLKEM" in groups.upper()
+    print("  openssl  " + OPENSSL)
+    if openssl_sees_pqc:
+        print("           knows X25519MLKEM768: yes  (post-quantum will show up)")
+    else:
+        print("           knows X25519MLKEM768: no   (too old, scans will miss PQC)")
+
+    # curl, dig and whois: the CDN step uses these. just check they're on the PATH.
+    missing = []
+    for tool in ["curl", "dig", "whois"]:
+        if shutil.which(tool):
+            print("  " + tool.ljust(8) + " found")
+        else:
+            print("  " + tool.ljust(8) + " missing")
+            missing.append(tool)
+
+    # plain-language summary of what will and won't work
+    print("")
+    if openssl_sees_pqc and not missing:
+        print("All good. A full scan will work, post-quantum detection included.")
+    else:
+        if not openssl_sees_pqc:
+            print("- openssl can't see the PQC group. Install a newer one, then re-check:")
+            print("    brew install openssl@3.5      (macOS)")
+        if missing:
+            print("- missing " + ", ".join(missing) + ": scans still run, but CDN")
+            print("  detection will be limited until these are installed.")
+
+
 if __name__ == "__main__":
-    # if the first argument is a plain domain (not a .csv file), scan just that
-    # one site and print it. otherwise scan a whole list, like normal.
-    if len(sys.argv) > 1 and not sys.argv[1].endswith(".csv"):
+    # python3 scan.py --check      check the tools are ready, then stop
+    # python3 scan.py example.com  scan just that one domain and print it
+    # python3 scan.py              scan the whole list (data/sites.csv)
+    if len(sys.argv) > 1 and sys.argv[1] == "--check":
+        check_tools()
+    elif len(sys.argv) > 1 and not sys.argv[1].endswith(".csv"):
         scan_one(sys.argv[1].strip())
     else:
         main()

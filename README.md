@@ -20,11 +20,13 @@ The data folder holds sites.csv (the list of sites, with a sector and country fo
 
 You need python3 and the usual command line tools: openssl, curl, dig, and whois.
 
-The openssl version matters. macOS ships an old one that does not know the ML-KEM groups, so it cannot see X25519MLKEM768 no matter what the server actually uses. I install a recent openssl with Homebrew (openssl@3.5) and point the OPENSSL line at the top of scan.py at it. To check yours is new enough, run:
+The openssl version matters. macOS ships an old one that does not know the ML-KEM groups, so it cannot see X25519MLKEM768 no matter what the server actually uses. The easy fix is a recent openssl from Homebrew (openssl@3.5). The scanner finds openssl on its own: it looks for the Homebrew build first, then falls back to whatever openssl is on your PATH, and you can point it at a specific one with the OPENSSL environment variable.
 
-    openssl list -tls1_3-kem
+Before your first scan, check your machine has what it needs:
 
-X25519MLKEM768 should show up in that list. Then run:
+    python3 scan.py --check
+
+That prints whether openssl is new enough to see the post-quantum group, and whether curl, dig and whois are installed. When it says everything looks good, run:
 
     python3 scan.py
     python3 aggregate.py
