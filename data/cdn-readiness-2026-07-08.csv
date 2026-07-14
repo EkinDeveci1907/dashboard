@@ -1,0 +1,39 @@
+provider,sites_observed,sites_with_pqc,pqc_pct_observed
+Cloudflare,581,467,80.4
+Amazon CloudFront,371,257,69.3
+Akamai,256,9,3.5
+Fastly,223,129,57.8
+Amazon (AWS),170,32,18.8
+Google,120,62,51.7
+Microsoft (Azure),56,2,3.6
+Azure Front Door,55,1,1.8
+Imperva (Incapsula),33,30,90.9
+Automattic,21,6,28.6
+OVH,19,0,0.0
+Alibaba Cloud,14,0,0.0
+Hetzner,13,4,30.8
+F5,8,0,0.0
+Sucuri,6,5,83.3
+Radware,4,0,0.0
+Squarespace,3,3,100.0
+Oracle Cloud,3,0,0.0
+Link11,3,2,66.7
+Leaseweb,3,0,0.0
+Huawei Cloud,3,0,0.0
+Zenlayer,2,0,0.0
+Tencent Cloud,2,0,0.0
+Rackspace,2,0,0.0
+One.com,2,0,0.0
+Naver Cloud,2,1,50.0
+DOSarrest,2,0,0.0
+CDNvideo,2,0,0.0
+CDN77,2,0,0.0
+Wix,1,0,0.0
+Samsung SDS,1,0,0.0
+OpenText,1,0,0.0
+Nuday,1,0,0.0
+Network Solutions,1,0,0.0
+Internap,1,0,0.0
+IDC Frontier,1,0,0.0
+Free (hosting),1,0,0.0
+Dropbox,1,0,0.0
