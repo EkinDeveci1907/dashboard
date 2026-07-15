@@ -141,8 +141,12 @@ def summarise_one_scan(csv_path, date):
 
 
 # Run the summary for every scan CSV we have, oldest date first.
+# The "-enriched" copies (scan.py output plus the two extra columns) are skipped
+# here - they hold the same sites, and we don't want them as separate dates.
 dates = []
 for path in sorted(glob.glob("data/scan-*.csv")):
+    if "-enriched" in path:
+        continue
     date = os.path.basename(path).replace("scan-", "").replace(".csv", "")
     stats = summarise_one_scan(path, date)
     json.dump(stats, open("stats-" + date + ".json", "w"), indent=2)
