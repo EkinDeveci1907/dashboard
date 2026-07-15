@@ -1,0 +1,108 @@
+site,sector,country,tls_version,key_exchange,cert,cdn,pqc_source,readiness_score
+google.com,search,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,75
+google.ca,search,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,75
+bing.com,search,USA,TLSv1.3,"ECDH, secp521r1, 521 bits",rsa_pss_rsae_sha256,Azure Front Door,none,20
+yahoo.com,search,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Self-hosted,none,35
+duckduckgo.com,search,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Microsoft (Azure),provider,75
+ecosia.org,search,GERMANY,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+youtube.com,video,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,75
+netflix.com,video,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Amazon (AWS),none,35
+primevideo.com,video,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,own,75
+disneyplus.com,video,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google,none,35
+twitch.tv,video,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+crave.ca,video,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+vimeo.com,video,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Fastly,provider,75
+dailymotion.com,video,FRANCE,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Amazon CloudFront,none,35
+spotify.com,video,SWEDEN,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly,none,35
+soundcloud.com,video,GERMANY,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+facebook.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+instagram.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+x.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+reddit.com,social,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+tiktok.com,social,CHINA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+linkedin.com,social,USA,TLSv1.3,"ECDH, secp521r1, 521 bits",rsa_pss_rsae_sha256,Azure Front Door,none,20
+pinterest.com,social,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+snapchat.com,social,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google,none,35
+whatsapp.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+threads.com,social,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Self-hosted,own,75
+discord.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+quora.com,social,USA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Cloudflare,none,20
+tumblr.com,social,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Automattic,own,75
+amazon.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront,none,35
+amazon.com,shopping,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront,none,35
+walmart.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+costco.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+canadiantire.ca,shopping,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted,none,20
+bestbuy.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+ebay.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+etsy.com,shopping,USA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Fastly,none,20
+aliexpress.com,shopping,CHINA,TLSv1.2,"X25519, 253 bits",ecdsa_secp256r1_sha256,Alibaba Cloud,none,20
+temu.com,shopping,CHINA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+shein.com,shopping,CHINA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+wayfair.ca,shopping,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Fastly,provider,75
+indigo.ca,shopping,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+ikea.com,shopping,NETHERLANDS,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+homedepot.ca,shopping,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+lululemon.com,shopping,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+kijiji.ca,shopping,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google,none,35
+shopify.com,shopping,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+wikipedia.org,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+microsoft.com,reference,USA,TLSv1.3,"ECDH, prime256v1, 256 bits",rsa_pss_rsae_sha256,Azure Front Door,none,35
+office.com,reference,USA,TLSv1.3,"ECDH, secp521r1, 521 bits",rsa_pss_rsae_sha256,Azure Front Door,none,20
+live.com,reference,USA,TLSv1.3,"ECDH, secp521r1, 521 bits",rsa_pss_rsae_sha256,Azure Front Door,none,20
+apple.com,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+icloud.com,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+github.com,reference,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Self-hosted,none,35
+dropbox.com,reference,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Dropbox,none,35
+zoom.us,reference,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Cloudflare,provider,75
+notion.so,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+canva.com,reference,AUSTRALIA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+grammarly.com,reference,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+chatgpt.com,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+openai.com,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+gmail.com,reference,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,75
+outlook.com,reference,USA,TLSv1.3,"ECDH, secp384r1, 384 bits",rsa_pss_rsae_sha256,Microsoft (Azure),none,20
+cbc.ca,news,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+ctvnews.ca,news,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS),none,20
+globalnews.ca,news,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Automattic,none,35
+theglobeandmail.com,news,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+nationalpost.com,news,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Google,none,35
+thestar.com,news,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Self-hosted,own,75
+cnn.com,news,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp384r1_sha384,Fastly,provider,75
+bbc.com,news,UK,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+nytimes.com,news,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+theweathernetwork.com,news,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront,none,35
+weather.gc.ca,news,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted,none,35
+tsn.ca,news,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Amazon (AWS),none,20
+sportsnet.ca,news,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+nhl.com,news,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+canada.ca,gov,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted,none,20
+cra-arc.gc.ca,gov,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted,none,20
+ircc.canada.ca,gov,CANADA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted,none,20
+canadapost-postescanada.ca,gov,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+ontario.ca,gov,CANADA,TLSv1.2,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon CloudFront,none,20
+quebec.ca,gov,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+rbc.com,bank,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+td.com,bank,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+scotiabank.com,bank,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+bmo.com,bank,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+cibc.com,bank,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+tangerine.ca,bank,CANADA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Fastly,none,35
+wealthsimple.com,bank,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+paypal.com,bank,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Fastly,provider,75
+interac.ca,bank,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Imperva (Incapsula),provider,75
+timhortons.ca,food,CANADA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+mcdonalds.com,food,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS),none,35
+ubereats.com,food,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Cloudflare,provider,75
+doordash.com,food,USA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+skipthedishes.com,food,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+uber.com,food,USA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Cloudflare,none,35
+bell.ca,telco,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+rogers.com,telco,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Microsoft (Azure),none,35
+telus.com,telco,CANADA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75
+expedia.ca,travel,USA,TLSv1.3,"X25519, 253 bits",ecdsa_secp256r1_sha256,Akamai,none,35
+booking.com,travel,NETHERLANDS,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
+airbnb.ca,travel,USA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha512,Amazon (AWS),none,20
+aircanada.com,travel,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+westjet.com,travel,CANADA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Akamai,none,35
+tripadvisor.ca,travel,USA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75
