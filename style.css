@@ -150,7 +150,6 @@ tbody tr:hover { background: #f9fafb; }
 .kex-pqc { color: var(--green); font-weight: 600; }
 .subhead { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--ink); }
 .hint { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
-#countryChart { max-height: 340px; }
 
 /* the two tabs that switch between the Canadian-institutions view (index.html)
    and the most-visited-by-Canadians view (canada-topvisited.html) */

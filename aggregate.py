@@ -8,6 +8,17 @@ import json
 import glob
 import os
 
+from cdn_attribution import attribution_for
+from readiness_score import score_site
+
+# short label for where a site's PQC comes from, used in the site table
+PQC_SOURCE = {
+    "PQC via provider": "provider",
+    "PQC own effort": "own",
+    "No PQC": "none",
+    "unreachable": "",
+}
+
 
 def has_pqc_key_exchange(kex):
     # the post-quantum group we're looking for shows up as X25519MLKEM768
@@ -111,12 +122,17 @@ def summarise_one_scan(csv_path, date):
         if has_pqc_signature(row["cert"]):
             signature_count = signature_count + 1
 
-    # 4. The site table lists every site we scanned, not just Canada.
+    # 4. The site table lists every site we scanned, not just Canada. Each row
+    #    also gets where its PQC comes from and its 0-100 readiness score, worked
+    #    out with the same rules as cdn_attribution.py and readiness_score.py.
     sites = []
     for row in scanned:
+        attribution = attribution_for(row)
         sites.append({"site": row["site"], "sector": row["sector"], "country": row["country"],
                       "tls": row["tls_version"], "kex": row["key_exchange"],
-                      "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"])})
+                      "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"]),
+                      "pqc_source": PQC_SOURCE.get(attribution, ""),
+                      "score": score_site(row)[0]})
 
     # overall Canadian PQC percentage (guard against dividing by zero)
     if len(canada) > 0:

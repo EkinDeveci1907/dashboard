@@ -7,7 +7,6 @@ let allSites = [];
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
-let countryChart = null;
 let worldMap = null;
 
 const INDIGO = "#4f46e5";
@@ -57,7 +56,6 @@ async function showScan(date) {
   drawSectorBars(data.sectors);
 
   document.getElementById("canada-compare").textContent = data.pqc_kex_pct + "%";
-  drawCountryChart(data.countries);
 
   setupFilters(data);
 
@@ -186,42 +184,6 @@ function setupFilters(data) {
   applyFilters();
 }
 
-function drawCountryChart(countries) {
-  // tiny samples swing wildly, so only chart countries with a real number of sites
-  let MIN_SITES = 10;
-  let names = [];
-  for (let name in countries) {
-    if (countries[name].total >= MIN_SITES) {
-      names.push(name);
-    }
-  }
-  names.sort(function (a, b) { return countries[b].pct - countries[a].pct; });
-
-  let labels = [];
-  let values = [];
-  let colors = [];
-  for (let i = 0; i < names.length; i++) {
-    labels.push(names[i]);
-    values.push(countries[names[i]].pct);
-    if (names[i] === "CANADA") {
-      colors.push(GREEN);
-    } else {
-      colors.push(GREY);
-    }
-  }
-
-  if (countryChart) countryChart.destroy();
-  countryChart = new Chart(document.getElementById("countryChart"), {
-    type: "bar",
-    data: { labels: labels, datasets: [{ data: values, backgroundColor: colors }] },
-    options: {
-      indexAxis: "y",
-      plugins: { legend: { display: false } },
-      scales: { x: { max: 100, ticks: { callback: function (v) { return v + "%"; } } } }
-    }
-  });
-}
-
 function drawWorldMap(countries) {
   // Build two lookups keyed by the map's two-letter country code:
   //   shadeByCode - just the PQC percent, which decides how dark a country is drawn
@@ -296,6 +258,8 @@ function drawTable(sites) {
     if (s.kex.indexOf("MLKEM") !== -1) {
       kexCell = "<span class='kex-pqc'>" + s.kex + "</span>";
     }
+    // where the PQC comes from (provider / own / none), shown as a small pill
+    let src = s.pqc_source ? s.pqc_source : "none";
     rows += "<tr>" +
       "<td>" + s.site + "</td>" +
       "<td>" + s.sector + "</td>" +
@@ -304,6 +268,8 @@ function drawTable(sites) {
       "<td>" + kexCell + "</td>" +
       "<td>" + s.cert + "</td>" +
       "<td>" + s.cdn + "</td>" +
+      "<td><span class='pill pill-" + src + "'>" + src + "</span></td>" +
+      "<td>" + s.score + "</td>" +
     "</tr>";
   }
   document.getElementById("tableBody").innerHTML = rows;
