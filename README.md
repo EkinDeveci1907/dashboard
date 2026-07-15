@@ -14,9 +14,11 @@ aggregate.py reads all of those scan files and writes a small summary file for e
 
 merge.py joins two scan files into one. I use it when I only re-scan the sites I added that week and want to fold them into the last full scan.
 
+enrich.py adds two more columns to a scan: pqc_source (for a site that does PQC, did it come from its CDN or from the organization itself) and readiness_score (a 0-100 quantum-readiness number). Both are worked out from columns the scan already has, so it runs on any old scan too without re-scanning. It borrows the actual rules from cdn_attribution.py and readiness_score.py so there is only one definition of each. cdn_attribution.py and readiness_score.py are the deeper analyses behind those two columns - the per-country stacked bar, the CDN readiness table, and the score breakdown.
+
 index.html, style.css and app.js are the dashboard itself: one scrolling page with the summary cards, the charts, the hover world map, and a searchable table. The chart and map libraries load from a CDN, so there is nothing to build or install.
 
-The data folder holds sites.csv (the list of sites, each with a sector and country) and one scan file per date.
+The data folder holds sites.csv (the list of sites, each with a sector and country) and one scan file per date. There is also sites-ca-toplist.csv, a separate list of the sites Canadians visit most (the global names plus the Canadian staples, adult sites left out). It is kept apart from sites.csv on purpose, so those global sites do not get counted twice on the world map.
 
 ## Running it yourself
 
@@ -31,9 +33,15 @@ Before your first scan, let it check the machine for you:
 That tells you whether openssl is new enough to see the post-quantum group, and whether curl, dig and whois are installed. Once it says everything looks good, run:
 
     python3 scan.py
+    python3 enrich.py
     python3 aggregate.py
 
-The first line scans every site in the list and writes today's scan file. The second rebuilds the summary files the page reads.
+The first line scans every site in the list and writes today's scan file. enrich.py adds the pqc_source and readiness_score columns to it. The last line rebuilds the summary files the page reads.
+
+To scan the most-visited-by-Canadians list instead, point the scanner at it and enrich that file by name:
+
+    python3 scan.py data/sites-ca-toplist.csv data/toplist-2026-07-16.csv
+    python3 enrich.py data/toplist-2026-07-16.csv
 
 To check a single site without touching the list, just pass the domain:
 
