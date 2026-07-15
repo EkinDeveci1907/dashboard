@@ -60,65 +60,54 @@ for r in sites:
                   "source": r["pqc_source"], "score": r["readiness_score"]})
 table.sort(key=by_score, reverse=True)
 
-# ---- build the page ----
-style = """
-  body { font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-         color: #1f2937; margin: 0; padding: 32px 40px; background: #ffffff; }
-  h1 { font-size: 26px; margin: 0 0 4px; }
-  .sub { color: #64748b; margin: 0 0 24px; font-size: 14px; }
-  .cards { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
-  .card { border: 1px solid #e5e7eb; border-radius: 10px; padding: 16px 20px; min-width: 150px; }
-  .card .big { font-size: 34px; font-weight: 700; color: #4f46e5; }
-  .card .big.green { color: #16a34a; }
-  .card .lbl { font-size: 12px; color: #64748b; margin-top: 2px; }
-  .note { background: #f1f5f9; border-radius: 8px; padding: 12px 16px; font-size: 13px;
-          color: #334155; margin-bottom: 20px; max-width: 900px; }
-  input { padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 8px; width: 260px;
-          font-size: 14px; margin-bottom: 12px; }
-  table { border-collapse: collapse; width: 100%; font-size: 13px; }
-  th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid #eef2f7; }
-  th { color: #64748b; font-weight: 600; }
-  .pqc { color: #4f46e5; font-weight: 600; }
-  .pill { font-size: 11px; padding: 2px 8px; border-radius: 10px; }
-  .pill.provider { background: #e0e7ff; color: #3730a3; }
-  .pill.own { background: #dcfce7; color: #166534; }
-  .pill.none { background: #f1f5f9; color: #94a3b8; }
-"""
-
+# ---- build the page (reuses the dashboard's style.css so it matches exactly) ----
 cards = ""
-cards += "<div class='card'><div class='big'>" + str(total) + "</div><div class='lbl'>sites Canadians visit most</div></div>"
-cards += "<div class='card'><div class='big green'>" + str(pqc_pct) + "%</div><div class='lbl'>quantum-safe (post-quantum key exchange)</div></div>"
-cards += "<div class='card'><div class='big'>" + str(avg_score) + "</div><div class='lbl'>average readiness score / 100</div></div>"
-cards += "<div class='card'><div class='big'>" + str(via) + " / " + str(own) + "</div><div class='lbl'>PQC via CDN&nbsp;/&nbsp;own effort</div></div>"
+cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
+cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
+cards += "<div class='box'><div class='num'>" + str(avg_score) + "</div><div class='label'>avg readiness score / 100</div></div>"
+cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
-note = ("This is the &ldquo;how Canadians connect to the web&rdquo; view: the sites people in Canada "
-        "actually visit most - the global names plus the Canadian staples, with adult sites left out. "
-        "Of the ones that PQC, most get it from their CDN rather than their own servers.")
+headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
+            " sites Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
 
-html = "<!doctype html>\n<html>\n<head>\n<meta charset='utf-8'>\n"
-html += "<title>Most visited by Canadians - post-quantum readiness</title>\n"
-html += "<style>" + style + "</style>\n</head>\n<body>\n"
-html += "<h1>Most visited by Canadians</h1>\n"
-html += "<p class='sub'>Post-quantum readiness of the sites Canadians connect to most &middot; scanned " + scan_date + "</p>\n"
-html += "<div class='cards'>" + cards + "</div>\n"
-html += "<p class='note'>" + note + "</p>\n"
-html += "<input id='q' placeholder='search a site...' oninput='draw()'>\n"
-html += "<table><thead><tr><th>Site</th><th>Category</th><th>TLS</th><th>Key exchange</th><th>PQC from</th><th>Score</th></tr></thead>\n"
-html += "<tbody id='rows'></tbody></table>\n"
+html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n"
+html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n"
+html += "<title>PQC Monitor - Most visited by Canadians</title>\n"
+html += "<link rel='stylesheet' href='style.css'>\n</head>\n<body>\n"
+html += "<div class='page'>\n"
+html += "<header class='header'><div><h1>PQC Deployment Monitor</h1>"
+html += "<p class='tagline'>Post-quantum readiness of Canadian websites</p></div></header>\n"
+html += "<nav class='nav'>"
+html += "<a href='index.html'>Canadian institutions</a>"
+html += "<a href='canada-topvisited.html' class='active'>Most visited by Canadians</a></nav>\n"
+html += "<p class='headline'>" + headline + "</p>\n"
+html += "<h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>\n"
+html += "<p class='scope'>The sites people in Canada actually connect to most - the global names plus Canadian staples, adult sites left out. Scanned " + scan_date + ".</p>\n"
+html += "<section class='summary'>" + cards + "</section>\n"
+html += "<section class='card'>\n<h2>Site directory</h2>\n"
+html += "<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted.</p>\n"
+html += "<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>\n"
+html += "<div class='table-scroll'><table><thead><tr>"
+html += "<th>Site</th><th>Category</th><th>TLS</th><th>Key exchange</th><th>PQC from</th><th>Score</th>"
+html += "</tr></thead><tbody id='rows'></tbody></table></div>\n</section>\n"
+html += "<section class='card'><h2>About this view</h2>\n"
+html += "<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so because of their CDN, not their own servers - the <strong>PQC from</strong> column shows which.</p>\n"
+html += "</section>\n</div>\n"
 html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
 html += """
 function draw() {
-  const q = document.getElementById('q').value.toLowerCase();
-  let html = '';
-  for (const r of DATA) {
-    if (q && !r.site.toLowerCase().includes(q)) continue;
-    const kex = r.kex.includes('MLKEM') ? "<span class='pqc'>" + r.kex + "</span>" : r.kex;
-    const src = r.source ? r.source : 'none';
-    html += "<tr><td>" + r.site + "</td><td>" + r.category + "</td><td>" + r.tls +
-            "</td><td>" + kex + "</td><td><span class='pill " + src + "'>" + src +
-            "</span></td><td>" + r.score + "</td></tr>";
+  var q = document.getElementById('search').value.toLowerCase();
+  var out = '';
+  for (var i = 0; i < DATA.length; i++) {
+    var r = DATA[i];
+    if (q && r.site.toLowerCase().indexOf(q) === -1) continue;
+    var kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
+    var src = r.source ? r.source : 'none';
+    out += "<tr><td>" + r.site + "</td><td>" + r.category + "</td><td>" + r.tls +
+           "</td><td>" + kex + "</td><td><span class='pill pill-" + src + "'>" + src +
+           "</span></td><td>" + r.score + "</td></tr>";
   }
-  document.getElementById('rows').innerHTML = html;
+  document.getElementById('rows').innerHTML = out;
 }
 draw();
 </script>

@@ -151,3 +151,20 @@ tbody tr:hover { background: #f9fafb; }
 .subhead { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--ink); }
 .hint { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
 #countryChart { max-height: 340px; }
+
+/* the two tabs that switch between the Canadian-institutions view (index.html)
+   and the most-visited-by-Canadians view (canada-topvisited.html) */
+.nav { display: flex; gap: 8px; margin-bottom: 24px; }
+.nav a {
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  padding: 8px 14px; border-radius: 8px;
+  color: var(--muted); background: #fff; border: 1px solid var(--line);
+}
+.nav a.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+.nav a:hover:not(.active) { border-color: var(--indigo); color: var(--indigo); }
+
+/* small pill showing where a site's PQC comes from, on the most-visited page */
+.pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
+.pill-provider { background: #eef2ff; color: #4f46e5; }
+.pill-own { background: #dcfce7; color: #166534; }
+.pill-none { background: #f1f5f9; color: #94a3b8; }
