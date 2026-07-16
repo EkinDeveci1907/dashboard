@@ -16,7 +16,7 @@ merge.py joins two scan files into one. I use it when I only re-scan the sites I
 
 enrich.py adds two more columns to a scan: pqc_source (for a site that does PQC, did it come from its CDN or from the organization itself) and readiness_score (a 0-100 quantum-readiness number). Both are worked out from columns the scan already has, so it runs on any old scan too without re-scanning. It borrows the actual rules from cdn_attribution.py and readiness_score.py so there is only one definition of each. cdn_attribution.py and readiness_score.py are the deeper analyses behind those two columns - the per-country stacked bar, the CDN readiness table, and the score breakdown.
 
-index.html, style.css and app.js are the dashboard itself: one scrolling page with the summary cards, the charts, the hover world map, and a searchable table. The chart and map libraries load from a CDN, so there is nothing to build or install.
+index.html, style.css and app.js are the dashboard itself: one scrolling page with the summary cards, the charts, the hover world map, and a searchable table. The CDN chart is stacked: each provider's bar splits into the sites already negotiating PQC and the ones not, so it also reads as that provider's PQC readiness. The chart and map libraries load from a CDN, so there is nothing to build or install.
 
 The data folder holds sites.csv (the list of sites, each with a sector and country) and one scan file per date. There is also sites-ca-toplist.csv, a separate list of the sites Canadians visit most (the global names plus the Canadian staples, adult sites left out). It is kept apart from sites.csv on purpose, so those global sites do not get counted twice on the world map.
 
