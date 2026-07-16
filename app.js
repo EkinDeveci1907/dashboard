@@ -266,7 +266,6 @@ function drawTable(sites) {
       "<td>" + s.country + "</td>" +
       "<td>" + s.tls + "</td>" +
       "<td>" + kexCell + "</td>" +
-      "<td>" + s.cert + "</td>" +
       "<td>" + s.cdn + "</td>" +
       "<td><span class='pill pill-" + src + "'>" + src + "</span></td>" +
       "<td>" + s.score + "</td>" +

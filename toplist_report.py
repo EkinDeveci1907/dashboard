@@ -52,11 +52,12 @@ def by_score(row):
     return int(row["score"])
 
 
-# the rows for the table, best score first
+# the rows for the table, best score first. Same columns as the main dashboard
+# table, so the two tabs line up.
 table = []
 for r in sites:
-    table.append({"site": r["site"], "category": r["sector"],
-                  "tls": r["tls_version"], "kex": r["key_exchange"],
+    table.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
+                  "tls": r["tls_version"], "kex": r["key_exchange"], "cdn": r["cdn"],
                   "source": r["pqc_source"], "score": r["readiness_score"]})
 table.sort(key=by_score, reverse=True)
 
@@ -88,7 +89,7 @@ html += "<section class='card'>\n<h2>Site directory</h2>\n"
 html += "<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted.</p>\n"
 html += "<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>\n"
 html += "<div class='table-scroll'><table><thead><tr>"
-html += "<th>Site</th><th>Category</th><th>TLS</th><th>Key exchange</th><th>PQC from</th><th>Score</th>"
+html += "<th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Score</th>"
 html += "</tr></thead><tbody id='rows'></tbody></table></div>\n</section>\n"
 html += "<section class='card'><h2>About this view</h2>\n"
 html += "<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so because of their CDN, not their own servers - the <strong>PQC from</strong> column shows which.</p>\n"
@@ -103,9 +104,9 @@ function draw() {
     if (q && r.site.toLowerCase().indexOf(q) === -1) continue;
     var kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
     var src = r.source ? r.source : 'none';
-    out += "<tr><td>" + r.site + "</td><td>" + r.category + "</td><td>" + r.tls +
-           "</td><td>" + kex + "</td><td><span class='pill pill-" + src + "'>" + src +
-           "</span></td><td>" + r.score + "</td></tr>";
+    out += "<tr><td>" + r.site + "</td><td>" + r.sector + "</td><td>" + r.country +
+           "</td><td>" + r.tls + "</td><td>" + kex + "</td><td>" + r.cdn +
+           "</td><td><span class='pill pill-" + src + "'>" + src + "</span></td><td>" + r.score + "</td></tr>";
   }
   document.getElementById('rows').innerHTML = out;
 }
