@@ -87,182 +87,254 @@
     "USA": {
       "total": 424,
       "pqc": 228,
-      "pct": 54
+      "pct": 54,
+      "via": 184,
+      "own": 44
     },
     "CANADA": {
       "total": 709,
       "pqc": 294,
-      "pct": 41
+      "pct": 41,
+      "via": 287,
+      "own": 7
     },
     "INTL": {
       "total": 8,
       "pqc": 5,
-      "pct": 62
+      "pct": 62,
+      "via": 3,
+      "own": 2
     },
     "UK": {
       "total": 92,
       "pqc": 43,
-      "pct": 47
+      "pct": 47,
+      "via": 41,
+      "own": 2
     },
     "AUSTRALIA": {
       "total": 92,
       "pqc": 41,
-      "pct": 45
+      "pct": 45,
+      "via": 39,
+      "own": 2
     },
     "RUSSIA": {
       "total": 78,
       "pqc": 11,
-      "pct": 14
+      "pct": 14,
+      "via": 2,
+      "own": 9
     },
     "FRANCE": {
       "total": 94,
       "pqc": 32,
-      "pct": 34
+      "pct": 34,
+      "via": 30,
+      "own": 2
     },
     "GERMANY": {
       "total": 94,
       "pqc": 32,
-      "pct": 34
+      "pct": 34,
+      "via": 25,
+      "own": 7
     },
     "CHINA": {
       "total": 64,
       "pqc": 7,
-      "pct": 11
+      "pct": 11,
+      "via": 2,
+      "own": 5
     },
     "KOREA": {
       "total": 72,
       "pqc": 17,
-      "pct": 24
+      "pct": 24,
+      "via": 14,
+      "own": 3
     },
     "EU": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "JAPAN": {
       "total": 79,
       "pqc": 26,
-      "pct": 33
+      "pct": 33,
+      "via": 25,
+      "own": 1
     },
     "BRAZIL": {
       "total": 86,
       "pqc": 42,
-      "pct": 49
+      "pct": 49,
+      "via": 41,
+      "own": 1
     },
     "INDIA": {
       "total": 67,
       "pqc": 13,
-      "pct": 19
+      "pct": 19,
+      "via": 12,
+      "own": 1
     },
     "SPAIN": {
       "total": 84,
       "pqc": 36,
-      "pct": 43
+      "pct": 43,
+      "via": 33,
+      "own": 3
     },
     "INDONESIA": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "CZECHIA": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "ITALY": {
       "total": 94,
       "pqc": 30,
-      "pct": 32
+      "pct": 32,
+      "via": 27,
+      "own": 3
     },
     "POLAND": {
       "total": 94,
       "pqc": 35,
-      "pct": 37
+      "pct": 37,
+      "via": 30,
+      "own": 5
     },
     "QATAR": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "SINGAPORE": {
       "total": 3,
       "pqc": 2,
-      "pct": 67
+      "pct": 67,
+      "via": 2,
+      "own": 0
     },
     "TAIWAN": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "SWITZERLAND": {
       "total": 96,
       "pqc": 32,
-      "pct": 33
+      "pct": 33,
+      "via": 26,
+      "own": 6
     },
     "SWEDEN": {
       "total": 93,
       "pqc": 36,
-      "pct": 39
+      "pct": 39,
+      "via": 30,
+      "own": 6
     },
     "NETHERLANDS": {
       "total": 98,
       "pqc": 34,
-      "pct": 35
+      "pct": 35,
+      "via": 28,
+      "own": 6
     },
     "IRELAND": {
       "total": 1,
       "pqc": 1,
-      "pct": 100
+      "pct": 100,
+      "via": 1,
+      "own": 0
     },
     "ARGENTINA": {
       "total": 2,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "TURKEY": {
       "total": 87,
       "pqc": 20,
-      "pct": 23
+      "pct": 23,
+      "via": 19,
+      "own": 1
     },
     "SLOVENIA": {
       "total": 1,
       "pqc": 1,
-      "pct": 100
+      "pct": 100,
+      "via": 1,
+      "own": 0
     },
     "BELGIUM": {
       "total": 6,
       "pqc": 3,
-      "pct": 50
+      "pct": 50,
+      "via": 2,
+      "own": 1
     },
     "MEXICO": {
       "total": 82,
       "pqc": 39,
-      "pct": 48
+      "pct": 48,
+      "via": 37,
+      "own": 2
     },
     "NEW ZEALAND": {
       "total": 1,
       "pqc": 1,
-      "pct": 100
+      "pct": 100,
+      "via": 1,
+      "own": 0
     },
     "KAZAKHSTAN": {
       "total": 1,
       "pqc": 0,
-      "pct": 0
+      "pct": 0,
+      "via": 0,
+      "own": 0
     },
     "ISRAEL": {
       "total": 1,
       "pqc": 1,
-      "pct": 100
+      "pct": 100,
+      "via": 1,
+      "own": 0
     },
     "HONGKONG": {
       "total": 1,
       "pqc": 1,
-      "pct": 100
+      "pct": 100,
+      "via": 1,
+      "own": 0
     },
     "NORWAY": {
       "total": 5,
       "pqc": 3,
-      "pct": 60
+      "pct": 60,
+      "via": 2,
+      "own": 1
     }
   },
   "sites": [

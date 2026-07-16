@@ -84,6 +84,7 @@ tbody tr:hover { background: #f9fafb; }
 }
 
 #cdnChart { max-height: 340px; }
+#stackChart { max-height: 520px; }
 
 /* the "by sector" mini bar chart, built by hand instead of Chart.js */
 .sector-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }

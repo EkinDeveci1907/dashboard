@@ -7,6 +7,7 @@ let allSites = [];
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
+let stackChart = null;
 let worldMap = null;
 
 const INDIGO = "#4f46e5";
@@ -54,6 +55,7 @@ async function showScan(date) {
   drawKexChart(data);
   drawCdnChart(data);
   drawSectorBars(data.sectors);
+  drawStackChart(data.countries);
 
   document.getElementById("canada-compare").textContent = data.pqc_kex_pct + "%";
 
@@ -152,6 +154,49 @@ function drawCdnChart(data) {
     type: "bar",
     data: { labels: cdnLabels, datasets: [{ data: cdnValues, backgroundColor: INDIGO }] },
     options: { indexAxis: "y", plugins: { legend: { display: false } } }
+  });
+}
+
+// The stacked bar the prof sketched: each country's PQC share, split into the part
+// its CDNs/cloud providers switched on and the part organizations did themselves.
+// Small countries (under 20 scanned sites) are skipped - one site would read as 0% or 100%.
+function drawStackChart(countries) {
+  let names = [];
+  for (let name in countries) {
+    if (countries[name].total >= 20) names.push(name);
+  }
+  // biggest total PQC share at the top
+  names.sort(function (a, b) {
+    let ca = countries[a];
+    let cb = countries[b];
+    return (cb.via + cb.own) / cb.total - (ca.via + ca.own) / ca.total;
+  });
+
+  let viaPct = [];
+  let ownPct = [];
+  for (let i = 0; i < names.length; i++) {
+    let c = countries[names[i]];
+    viaPct.push(Math.round(1000 * c.via / c.total) / 10);
+    ownPct.push(Math.round(1000 * c.own / c.total) / 10);
+  }
+
+  if (stackChart) stackChart.destroy();
+  stackChart = new Chart(document.getElementById("stackChart"), {
+    type: "bar",
+    data: {
+      labels: names,
+      datasets: [
+        { label: "via CDN / cloud provider", data: viaPct, backgroundColor: INDIGO },
+        { label: "own effort", data: ownPct, backgroundColor: GREEN }
+      ]
+    },
+    options: {
+      indexAxis: "y",
+      scales: {
+        x: { stacked: true, max: 100, title: { display: true, text: "% of the country's sites with PQC" } },
+        y: { stacked: true, ticks: { autoSkip: false } }   // always name every country, even when the chart is small
+      }
+    }
   });
 }
 

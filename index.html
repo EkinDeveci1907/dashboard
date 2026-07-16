@@ -77,6 +77,16 @@
     </section>
 
     <section class="card">
+      <h2>Who turned the PQC on <span class="tag tag-world">All countries</span></h2>
+      <p>We pay close attention to CDNs because we believe most sites that are quantum-safe today got there
+         through their CDN, not through their own servers. This chart is that claim, measured: each country's
+         PQC share, split into sites whose CDN or cloud provider enabled it at the edge versus sites where the
+         organization did it on infrastructure it runs itself. Countries with fewer than 20 scanned sites are
+         left out.</p>
+      <canvas id="stackChart"></canvas>
+    </section>
+
+    <section class="card">
       <h2>Site directory <span class="tag tag-world">All countries</span></h2>
       <p class="hint">Every site we scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
       <div class="filters">
