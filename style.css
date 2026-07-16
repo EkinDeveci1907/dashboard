@@ -84,7 +84,6 @@ tbody tr:hover { background: #f9fafb; }
 }
 
 #cdnChart { max-height: 340px; }
-#stackChart { max-height: 520px; }
 
 /* the "by sector" mini bar chart, built by hand instead of Chart.js */
 .sector-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }
@@ -129,9 +128,13 @@ tbody tr:hover { background: #f9fafb; }
 
 /* The little box that pops up when you hover a country on the map. We style it
    here (not just rely on the map library's stylesheet) so the hover text always
-   shows up clearly: dark rounded box, white text. The library still handles
-   positioning it next to the cursor and showing/hiding it. */
+   shows up clearly: dark rounded box, white text. The library parks this element
+   at the end of <body> and toggles an "active" class on hover - so it must stay
+   display:none until then, or it sits in the bottom-left corner of the page as a
+   stray dark box (which is exactly what happened when the library's own
+   stylesheet failed to load). Hiding it is our job now, not just the library's. */
 .jvm-tooltip {
+  display: none;
   position: absolute;
   padding: 6px 9px;
   background: var(--ink);
@@ -144,6 +147,7 @@ tbody tr:hover { background: #f9fafb; }
   pointer-events: none;
   z-index: 20;
 }
+.jvm-tooltip.active { display: block; }
 
 .map-legend { display: none; align-items: center; gap: 8px; margin-top: 10px; font-size: 12px; color: var(--muted); }
 .map-scale { width: 120px; height: 10px; border-radius: 5px; background: linear-gradient(to right, #c7d2fe, #312e81); }

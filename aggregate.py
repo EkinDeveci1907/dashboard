@@ -60,23 +60,16 @@ def summarise_one_scan(csv_path, date):
             scanned.append(row)
 
     # 2. Count PQC for every country, so we can compare Canada to the rest of the world.
-    #    Alongside the plain count, split each country's PQC into "the CDN turned it
-    #    on" vs "the organization did it itself" - that feeds the stacked bar chart.
     countries = {}
     for row in scanned:
         country = row["country"]
         if country == "":
             country = "OTHER"
         if country not in countries:
-            countries[country] = {"total": 0, "pqc": 0, "pct": 0, "via": 0, "own": 0}
+            countries[country] = {"total": 0, "pqc": 0, "pct": 0}
         countries[country]["total"] = countries[country]["total"] + 1
         if has_pqc_key_exchange(row["key_exchange"]):
             countries[country]["pqc"] = countries[country]["pqc"] + 1
-        attribution = attribution_for(row)
-        if attribution == "PQC via provider":
-            countries[country]["via"] = countries[country]["via"] + 1
-        if attribution == "PQC own effort":
-            countries[country]["own"] = countries[country]["own"] + 1
     # turn each country's counts into a percentage
     for country in countries:
         countries[country]["pct"] = round(100 * countries[country]["pqc"] / countries[country]["total"])
