@@ -91,6 +91,7 @@ def summarise_one_scan(csv_path, date):
     tls_counts = {}
     kex_counts = {}
     cdn_counts = {}
+    cdn_pqc_counts = {}
     sectors = {}
     pqc_count = 0
     signature_count = 0
@@ -108,11 +109,16 @@ def summarise_one_scan(csv_path, date):
             kex_counts[family] = 0
         kex_counts[family] = kex_counts[family] + 1
 
-        # count which CDN / network serves the site
+        # count which CDN / network serves the site, and how many of that CDN's
+        # sites already negotiate PQC - the CDN chart stacks one on the other,
+        # which is what shows a CDN's PQC readiness (Cloudflare full, Akamai empty)
         cdn = clean_cdn_name(row["cdn"])
         if cdn not in cdn_counts:
             cdn_counts[cdn] = 0
+            cdn_pqc_counts[cdn] = 0
         cdn_counts[cdn] = cdn_counts[cdn] + 1
+        if has_pqc_key_exchange(row["key_exchange"]):
+            cdn_pqc_counts[cdn] = cdn_pqc_counts[cdn] + 1
 
         # set up this sector's PQC tally the first time we see it
         sector = row["sector"]
@@ -157,6 +163,7 @@ def summarise_one_scan(csv_path, date):
         "pqc_signatures": signature_count,
         "kex_families": kex_counts,
         "cdn_families": cdn_counts,
+        "cdn_pqc": cdn_pqc_counts,
         "sectors": sectors,
         "countries": countries,
         "sites": sites,

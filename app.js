@@ -129,31 +129,52 @@ function drawKexChart(data) {
   });
 }
 
-// CDN bar: show the 8 most common, and roll the rest into one "Other" bar
+// CDN bar: show the 8 most common, and roll the rest into one "Other" bar.
+// Each bar is stacked into the sites already negotiating PQC and the sites not,
+// so the same chart also reads as each CDN's PQC readiness - Cloudflare's bar
+// comes out nearly all indigo, Akamai's (all the big banks) nearly all grey.
 function drawCdnChart(data) {
   let names = Object.keys(data.cdn_families);
   names.sort(function (a, b) { return data.cdn_families[b] - data.cdn_families[a]; });
 
+  let pqcByCdn = data.cdn_pqc || {};   // a summary from before this split just shows all-grey bars
+
   let cdnLabels = [];
-  let cdnValues = [];
+  let pqcValues = [];
+  let restValues = [];
   let otherTotal = 0;
+  let otherPqc = 0;
   for (let i = 0; i < names.length; i++) {
+    let total = data.cdn_families[names[i]];
+    let pqc = pqcByCdn[names[i]] || 0;
     if (i < 8) {
       cdnLabels.push(names[i]);
-      cdnValues.push(data.cdn_families[names[i]]);
+      pqcValues.push(pqc);
+      restValues.push(total - pqc);
     } else {
-      otherTotal += data.cdn_families[names[i]];
+      otherTotal += total;
+      otherPqc += pqc;
     }
   }
   if (otherTotal > 0) {
     cdnLabels.push("Other");
-    cdnValues.push(otherTotal);
+    pqcValues.push(otherPqc);
+    restValues.push(otherTotal - otherPqc);
   }
   if (cdnChart) cdnChart.destroy();
   cdnChart = new Chart(document.getElementById("cdnChart"), {
     type: "bar",
-    data: { labels: cdnLabels, datasets: [{ data: cdnValues, backgroundColor: INDIGO }] },
-    options: { indexAxis: "y", plugins: { legend: { display: false } } }
+    data: {
+      labels: cdnLabels,
+      datasets: [
+        { label: "negotiates PQC", data: pqcValues, backgroundColor: INDIGO },
+        { label: "no PQC", data: restValues, backgroundColor: GREY }
+      ]
+    },
+    options: {
+      indexAxis: "y",
+      scales: { x: { stacked: true }, y: { stacked: true, ticks: { autoSkip: false } } }
+    }
   });
 }
 

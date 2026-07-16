@@ -37,6 +37,28 @@
     "Squarespace": 1,
     "OVH": 7
   },
+  "cdn_pqc": {
+    "Akamai": 0,
+    "Google": 3,
+    "Amazon CloudFront": 51,
+    "Cloudflare": 162,
+    "Fastly": 33,
+    "Azure Front Door": 0,
+    "Amazon (AWS)": 19,
+    "Self-hosted": 5,
+    "Sucuri": 5,
+    "Microsoft (Azure)": 0,
+    "Imperva (Incapsula)": 14,
+    "F5": 0,
+    "Radware": 0,
+    "Network Solutions": 0,
+    "DOSarrest": 0,
+    "OpenText": 0,
+    "Nuday": 0,
+    "Automattic": 1,
+    "Squarespace": 1,
+    "OVH": 0
+  },
   "sectors": {
     "gov": {
       "total": 94,

@@ -35,6 +35,26 @@
     "Nuday": 1,
     "Automattic": 2
   },
+  "cdn_pqc": {
+    "Akamai": 0,
+    "Google": 1,
+    "Amazon CloudFront": 16,
+    "Cloudflare": 36,
+    "Fastly": 7,
+    "Azure Front Door": 0,
+    "Amazon (AWS)": 9,
+    "Self-hosted": 1,
+    "Sucuri": 2,
+    "Microsoft (Azure)": 0,
+    "Imperva (Incapsula)": 4,
+    "F5": 0,
+    "Radware": 0,
+    "Network Solutions": 0,
+    "DOSarrest": 0,
+    "OpenText": 0,
+    "Nuday": 0,
+    "Automattic": 0
+  },
   "sectors": {
     "gov": {
       "total": 57,
