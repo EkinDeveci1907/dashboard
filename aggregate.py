@@ -9,7 +9,7 @@ import glob
 import os
 
 from cdn_attribution import attribution_for
-from readiness_score import score_site
+from readiness_score import score_site, stars_site
 
 # short label for where a site's PQC comes from, used in the site table
 PQC_SOURCE = {
@@ -129,7 +129,8 @@ def summarise_one_scan(csv_path, date):
             signature_count = signature_count + 1
 
     # 4. The site table lists every site we scanned, not just Canada. Each row
-    #    also gets where its PQC comes from and its 0-100 readiness score, worked
+    #    also gets where its PQC comes from, its 0-100 readiness score, and the
+    #    star rating (0-3) the page shows instead of raw points - all worked
     #    out with the same rules as cdn_attribution.py and readiness_score.py.
     sites = []
     for row in scanned:
@@ -138,7 +139,8 @@ def summarise_one_scan(csv_path, date):
                       "tls": row["tls_version"], "kex": row["key_exchange"],
                       "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"]),
                       "pqc_source": PQC_SOURCE.get(attribution, ""),
-                      "score": score_site(row)[0]})
+                      "score": score_site(row)[0],
+                      "stars": stars_site(row)})
 
     # overall Canadian PQC percentage (guard against dividing by zero)
     if len(canada) > 0:

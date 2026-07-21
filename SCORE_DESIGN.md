@@ -1,4 +1,52 @@
-# Readiness score — design note (v1, for the prof's sign-off)
+# Readiness score — design note
+
+## v2 (Jul 20) — stars on top, after the Jul 16 meeting
+
+The Jul 16 discussion landed on presentation, not substance: the three parts of
+the score are each pass/fail at the depth we measure, so showing points invites
+the wrong question ("can I score 18?"). His words: *"if it's 0 or 20, then it's
+a star."* So:
+
+- **The site tables now show a star rating, 0–3:** one star per migration step
+  fully done — ★ TLS 1.3, ★★ + post-quantum key exchange, ★★★ + post-quantum
+  certificate signature. Today's best possible is ★★ (no public CA issues PQC
+  certs), which makes the open third star the "room to grow" story at a glance.
+- **The 0–100 stays underneath** (sorting, country averages, tracking over
+  time, and the partial credits: TLS 1.2 = 5, modern classical curve = 15).
+  Those partial points are real but they answer "how far from the next star,"
+  not "which star" — the hover tooltip shows the full breakdown.
+
+### What pqc-monitor's score actually is (he asked twice — checked Jul 20)
+
+Read `scanner/crypto_assessor.py` in their repo. Their 0–100 is the **average
+of many graded checks**, most of which are *classical* TLS hygiene, not PQC:
+
+- per-guideline scores for the TLS version, the negotiated cipher suite, and
+  the certificate (RSA/ECDSA key size, hash algorithm) — graded against three
+  guideline files (NIST SP 800-131A, BSI TR-02102, CCN-STIC-221);
+- a certificate-chain score (starts at 80, minus penalties for incomplete
+  chain, weak intermediates, missing HSTS/CAA);
+- a cipher-enumeration score (starts at 80, minus penalties for RC4/3DES/
+  export/NULL ciphers, no forward secrecy, no TLS 1.3);
+- and **PQC as just one more term in the average: 95 if any PQC was detected,
+  30 if not.**
+
+So their number is really "general crypto hygiene with a PQC nudge" — that's
+why Cloudflare came out 78, not ~100, in their scale. And since their PQC
+detection never fires (the benchmark showed they regex the cipher-suite name,
+where the PQC group can't appear), the PQC term is a constant 30 for everyone
+in practice; the score differences we saw were entirely the hygiene checks.
+
+**Takeaway for ours:** their sub-granularity comes from measuring *more things*
+(cipher lists, chains, HSTS), not from splitting the PQC facts finer. Our score
+is deliberately a *PQC-migration* score built from the three facts that matter
+for it — so at our measurement depth, stars are the honest display. If we ever
+want a hygiene dimension too, that's a new probe (cipher enumeration / chain
+walk), not a re-weighting — noted as possible future work.
+
+---
+
+# v1 below — the 0–100 (still what runs underneath)
 
 This is the first cut at the "let's build a score" idea from the Jul 9 meeting.
 The point is to turn the measurements we already take into one 0–100 number per

@@ -17,7 +17,7 @@ import sys
 import glob
 
 from cdn_attribution import attribution_for
-from readiness_score import score_site
+from readiness_score import score_site, stars_for
 
 # turn the attribution label into the short value that goes in the column
 SOURCE = {
@@ -31,7 +31,7 @@ SOURCE = {
 def enrich_one(scan_path):
     rows = list(csv.DictReader(open(scan_path)))
     columns = ["site", "sector", "country", "tls_version", "key_exchange",
-               "cert", "cdn", "pqc_source", "readiness_score"]
+               "cert", "cdn", "pqc_source", "readiness_score", "stars"]
 
     out_path = scan_path.replace(".csv", "-enriched.csv")
     out = open(out_path, "w", newline="")
@@ -44,9 +44,11 @@ def enrich_one(scan_path):
         # a site that never answered gets blank columns, not a fake score of 0
         if attribution == "unreachable":
             row["readiness_score"] = ""
+            row["stars"] = ""
         else:
             score, band, tls, kex, sig = score_site(row)
             row["readiness_score"] = score
+            row["stars"] = stars_for(tls, kex, sig)
         writer.writerow(row)
 
     out.close()

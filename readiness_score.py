@@ -76,6 +76,24 @@ def band_for(score):
     return "Legacy"
 
 
+def stars_for(tls, kex, sig):
+    # The Jul 16 meeting call: each of the three parts is pass/fail at the
+    # depth we measure, so present them as stars instead of points ("if it's
+    # 0 or 20, then it's a star"). One star per part fully earned:
+    #   TLS 1.3 - PQC key exchange - PQC signature.
+    # Partial points (TLS 1.2 = 5, modern curve = 15) don't earn the star -
+    # a star means done, not almost. The 0-100 stays underneath for sorting
+    # and for when signatures arrive; the stars are what people read.
+    stars = 0
+    if tls == TLS_1_3_POINTS:
+        stars = stars + 1
+    if kex == PQC_KEX_POINTS:
+        stars = stars + 1
+    if sig == PQC_SIG_POINTS:
+        stars = stars + 1
+    return stars
+
+
 def score_site(row):
     # add up the three parts and return the total, the band, and the breakdown
     tls = tls_points(row["tls_version"])
@@ -83,6 +101,12 @@ def score_site(row):
     sig = sig_points(row["cert"])
     total = tls + kex + sig
     return total, band_for(total), tls, kex, sig
+
+
+def stars_site(row):
+    # the star rating for one scan row, 0 to 3
+    total, band, tls, kex, sig = score_site(row)
+    return stars_for(tls, kex, sig)
 
 
 def main():
@@ -101,14 +125,16 @@ def main():
                        "tls_version": row["tls_version"], "key_exchange": row["key_exchange"],
                        "cert": row["cert"], "cdn": row.get("cdn", ""),
                        "tls_pts": tls, "kex_pts": kex, "sig_pts": sig,
-                       "score": total, "band": band})
+                       "score": total, "band": band,
+                       "stars": stars_for(tls, kex, sig)})
 
     # write the per-site scores
     out1 = "data/readiness-" + date + ".csv"
     out = open(out1, "w", newline="")
     writer = csv.DictWriter(out, fieldnames=["site", "sector", "country", "tls_version",
                                              "key_exchange", "cert", "cdn",
-                                             "tls_pts", "kex_pts", "sig_pts", "score", "band"])
+                                             "tls_pts", "kex_pts", "sig_pts", "score", "band",
+                                             "stars"])
     writer.writeheader()
     for r in scored:
         writer.writerow(r)
@@ -167,8 +193,8 @@ def main():
     for want in ["cloudflare.com", "rbc.com", "canada.ca", "google.com"]:
         for r in scored:
             if r["site"] == want:
-                print("  " + r["site"].ljust(16) + " score " + str(r["score"]) +
-                      " (" + r["band"] + ")  = tls " + str(r["tls_pts"]) +
+                print("  " + r["site"].ljust(16) + " " + str(r["stars"]) + "/3 stars, score " +
+                      str(r["score"]) + " (" + r["band"] + ")  = tls " + str(r["tls_pts"]) +
                       " + kex " + str(r["kex_pts"]) + " + sig " + str(r["sig_pts"]))
                 break
 

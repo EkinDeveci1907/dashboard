@@ -82,6 +82,10 @@
     <section class="card">
       <h2>Site directory <span class="tag tag-world">All countries</span></h2>
       <p class="hint">Every site we scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
+      <p class="hint">Readiness is one star per migration step done: <span class="stars">★</span> TLS 1.3
+         &nbsp;·&nbsp; <span class="stars">★★</span> + post-quantum key exchange
+         &nbsp;·&nbsp; <span class="stars">★★★</span> + post-quantum certificate signature (no public CA issues
+         these yet, so today's best is two). Hover the stars for the breakdown.</p>
       <div class="filters">
         <input id="search" placeholder="Search a site, e.g. rbc.com">
         <select id="countryFilter"></select>
@@ -93,7 +97,7 @@
       <div class="table-scroll">
         <table>
           <thead>
-            <tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Score</th></tr>
+            <tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th></tr>
           </thead>
           <tbody id="tableBody"></tbody>
         </table>

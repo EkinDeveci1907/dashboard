@@ -274,7 +274,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "www.canada.ca",
@@ -285,7 +286,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "netflix.com",
@@ -296,7 +298,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "edmonton.ca",
@@ -307,7 +310,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cloudflare.com",
@@ -318,7 +322,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ontario.ca",
@@ -329,7 +334,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "alberta.ca",
@@ -340,7 +346,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "rbc.com",
@@ -351,7 +358,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "td.com",
@@ -362,7 +370,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "scotiabank.com",
@@ -373,7 +382,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cibc.com",
@@ -384,7 +394,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "utoronto.ca",
@@ -395,7 +406,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mcgill.ca",
@@ -406,7 +418,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nshealth.ca",
@@ -417,7 +430,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "dal.ca",
@@ -428,7 +442,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "smu.ca",
@@ -439,7 +454,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "www.linkedin.com",
@@ -450,7 +466,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bankofcanada.ca",
@@ -461,7 +478,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "quebec.ca",
@@ -472,7 +490,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "aircanada.com",
@@ -483,7 +502,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "uwaterloo.ca",
@@ -494,7 +514,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ubc.ca",
@@ -505,7 +526,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sickkids.ca",
@@ -516,7 +538,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "uhn.ca",
@@ -527,7 +550,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sunnybrook.ca",
@@ -538,7 +562,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Sucuri",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "camh.ca",
@@ -549,7 +574,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ottawahospital.on.ca",
@@ -560,7 +586,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "albertahealthservices.ca",
@@ -571,7 +598,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "fraserhealth.ca",
@@ -582,7 +610,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "muhc.ca",
@@ -593,7 +622,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cheo.on.ca",
@@ -604,7 +634,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "unityhealth.to",
@@ -615,7 +646,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "trilliumhealthpartners.ca",
@@ -626,7 +658,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bmo.com",
@@ -637,7 +670,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nbc.ca",
@@ -648,7 +682,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "desjardins.com",
@@ -659,7 +694,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "atb.com",
@@ -670,7 +706,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "tangerine.ca",
@@ -681,7 +718,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wealthsimple.com",
@@ -692,7 +730,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ualberta.ca",
@@ -703,7 +742,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ucalgary.ca",
@@ -714,7 +754,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "queensu.ca",
@@ -725,7 +766,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "yorku.ca",
@@ -736,7 +778,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mcmaster.ca",
@@ -747,7 +790,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "uottawa.ca",
@@ -758,7 +802,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ulaval.ca",
@@ -769,7 +814,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "calgary.ca",
@@ -780,7 +826,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ottawa.ca",
@@ -791,7 +838,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "halifax.ca",
@@ -802,7 +850,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "statcan.gc.ca",
@@ -813,7 +862,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "icloud.com",
@@ -824,7 +874,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cra-arc.gc.ca",
@@ -835,7 +886,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "justice.gc.ca",
@@ -846,7 +898,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ic.gc.ca",
@@ -857,7 +910,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "pm.gc.ca",
@@ -868,7 +922,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "forces.gc.ca",
@@ -879,7 +934,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "gov.bc.ca",
@@ -890,7 +946,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "saskatchewan.ca",
@@ -901,7 +958,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "manitoba.ca",
@@ -912,7 +970,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "novascotia.ca",
@@ -923,7 +982,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "gnb.ca",
@@ -934,7 +994,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vancouver.ca",
@@ -945,7 +1006,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "montreal.ca",
@@ -956,7 +1018,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "winnipeg.ca",
@@ -967,7 +1030,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "F5",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bell.ca",
@@ -978,7 +1042,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "rogers.com",
@@ -989,7 +1054,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "telus.com",
@@ -1000,7 +1066,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "canadiantire.ca",
@@ -1011,7 +1078,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "loblaws.ca",
@@ -1022,7 +1090,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "walmart.ca",
@@ -1033,7 +1102,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shopify.com",
@@ -1044,7 +1114,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cbc.ca",
@@ -1055,7 +1126,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ctvnews.ca",
@@ -1066,7 +1138,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "theglobeandmail.com",
@@ -1077,7 +1150,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "canadapost.ca",
@@ -1088,7 +1162,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "viarail.ca",
@@ -1099,7 +1174,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Leaseweb",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "westjet.com",
@@ -1110,7 +1186,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "facebook.com",
@@ -1121,7 +1198,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "microsoft.com",
@@ -1132,7 +1210,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "apple.com",
@@ -1143,7 +1222,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "equitablebank.ca",
@@ -1154,7 +1234,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "meridiancu.ca",
@@ -1165,7 +1246,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vancity.com",
@@ -1176,7 +1258,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "coastcapitalsavings.com",
@@ -1187,7 +1270,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cwbank.com",
@@ -1198,7 +1282,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "laurentianbank.ca",
@@ -1209,7 +1294,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "manulife.ca",
@@ -1220,7 +1306,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sunlife.ca",
@@ -1231,7 +1318,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "carleton.ca",
@@ -1242,7 +1330,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "torontomu.ca",
@@ -1253,7 +1342,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "uvic.ca",
@@ -1264,7 +1354,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "umanitoba.ca",
@@ -1275,7 +1366,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "usask.ca",
@@ -1286,7 +1378,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "concordia.ca",
@@ -1297,7 +1390,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mun.ca",
@@ -1308,7 +1402,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mountsinai.on.ca",
@@ -1319,7 +1414,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "hsnsudbury.ca",
@@ -1330,7 +1426,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "niagarahealth.on.ca",
@@ -1341,7 +1438,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mackenziehealth.ca",
@@ -1352,7 +1450,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "vch.ca",
@@ -1363,7 +1462,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "providencehealth.bc.ca",
@@ -1374,7 +1474,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "service.canada.ca",
@@ -1385,7 +1486,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "esdc.gc.ca",
@@ -1396,7 +1498,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "nrcan.gc.ca",
@@ -1407,7 +1510,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "ec.gc.ca",
@@ -1418,7 +1522,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tc.gc.ca",
@@ -1429,7 +1534,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "veterans.gc.ca",
@@ -1440,7 +1546,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "princeedwardisland.ca",
@@ -1451,7 +1558,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gov.nl.ca",
@@ -1462,7 +1570,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "yukon.ca",
@@ -1473,7 +1582,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gov.nu.ca",
@@ -1484,7 +1594,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "saskatoon.ca",
@@ -1495,7 +1606,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "london.ca",
@@ -1506,7 +1618,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mississauga.ca",
@@ -1517,7 +1630,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "brampton.ca",
@@ -1528,7 +1642,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "regina.ca",
@@ -1539,7 +1654,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "victoria.ca",
@@ -1550,7 +1666,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shaw.ca",
@@ -1561,7 +1678,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "videotron.com",
@@ -1572,7 +1690,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "freedommobile.ca",
@@ -1583,7 +1702,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "sobeys.com",
@@ -1594,7 +1714,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "indigo.ca",
@@ -1605,7 +1726,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "lululemon.com",
@@ -1616,7 +1738,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "thebay.com",
@@ -1627,7 +1750,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "shoppersdrugmart.ca",
@@ -1638,7 +1762,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "metro.ca",
@@ -1649,7 +1774,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nationalpost.com",
@@ -1660,7 +1786,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "thestar.com",
@@ -1671,7 +1798,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "lapresse.ca",
@@ -1682,7 +1810,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ttc.ca",
@@ -1693,7 +1822,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "yvr.ca",
@@ -1704,7 +1834,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "torontopearson.com",
@@ -1715,7 +1846,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Radware",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.com",
@@ -1726,7 +1858,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "github.com",
@@ -1737,7 +1870,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wikipedia.org",
@@ -1748,7 +1882,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "youtube.com",
@@ -1759,7 +1894,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nytimes.com",
@@ -1770,7 +1906,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "chase.com",
@@ -1781,7 +1918,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wellsfargo.com",
@@ -1792,7 +1930,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "intact.ca",
@@ -1803,7 +1942,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "aviva.ca",
@@ -1814,7 +1954,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "cooperators.com",
@@ -1825,7 +1966,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "paypal.com",
@@ -1836,7 +1978,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "stripe.com",
@@ -1847,7 +1990,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mastercard.ca",
@@ -1858,7 +2002,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "visa.ca",
@@ -1869,7 +2014,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "senecacollege.ca",
@@ -1880,7 +2026,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "humber.ca",
@@ -1891,7 +2038,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "algonquincollege.com",
@@ -1902,7 +2050,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nait.ca",
@@ -1913,7 +2062,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "bcit.ca",
@@ -1924,7 +2074,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bestbuy.ca",
@@ -1935,7 +2086,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "homedepot.ca",
@@ -1946,7 +2098,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "costco.ca",
@@ -1957,7 +2110,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ikea.com",
@@ -1968,7 +2122,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "staples.ca",
@@ -1979,7 +2134,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "timhortons.com",
@@ -1990,7 +2146,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mcdonalds.com",
@@ -2001,7 +2158,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "starbucks.com",
@@ -2012,7 +2170,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "subway.com",
@@ -2023,7 +2182,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "pizzapizza.ca",
@@ -2034,7 +2194,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "edc.ca",
@@ -2045,7 +2206,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bdc.ca",
@@ -2056,7 +2218,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nserc-crsng.gc.ca",
@@ -2067,7 +2230,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "cihr-irsc.gc.ca",
@@ -2078,7 +2242,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "yyc.com",
@@ -2089,7 +2254,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yow.ca",
@@ -2100,7 +2266,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yul.com",
@@ -2111,7 +2278,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Network Solutions",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "gatineau.ca",
@@ -2122,7 +2290,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "markham.ca",
@@ -2133,7 +2302,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "DOSarrest",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "burnaby.ca",
@@ -2144,7 +2314,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "richmond.ca",
@@ -2155,7 +2326,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bbc.co.uk",
@@ -2166,7 +2338,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gov.uk",
@@ -2177,7 +2350,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nhs.uk",
@@ -2188,7 +2362,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "barclays.co.uk",
@@ -2199,7 +2374,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "hsbc.co.uk",
@@ -2210,7 +2386,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "spotify.com",
@@ -2221,7 +2398,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "airbnb.com",
@@ -2232,7 +2410,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "reddit.com",
@@ -2243,7 +2422,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "opentext.com",
@@ -2254,7 +2434,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "OpenText",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "blackberry.com",
@@ -2265,7 +2446,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hootsuite.com",
@@ -2276,7 +2458,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "lightspeedhq.com",
@@ -2287,7 +2470,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "1password.com",
@@ -2298,7 +2482,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ebay.com",
@@ -2309,7 +2494,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "instagram.com",
@@ -2320,7 +2506,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "servus.ca",
@@ -2331,7 +2518,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "alterna.ca",
@@ -2342,7 +2530,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "canlife.com",
@@ -2353,7 +2542,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tdinsurance.com",
@@ -2364,7 +2554,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "belairdirect.com",
@@ -2375,7 +2566,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "allstate.ca",
@@ -2386,7 +2578,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "empire.ca",
@@ -2397,7 +2590,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "uqam.ca",
@@ -2408,7 +2602,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "usherbrooke.ca",
@@ -2419,7 +2614,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ubishops.ca",
@@ -2430,7 +2626,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "georgebrown.ca",
@@ -2441,7 +2638,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "centennialcollege.ca",
@@ -2452,7 +2650,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mohawkcollege.ca",
@@ -2463,7 +2662,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "conestogac.on.ca",
@@ -2474,7 +2674,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "sait.ca",
@@ -2485,7 +2686,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "hamiltonhealthsciences.ca",
@@ -2496,7 +2698,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Sucuri",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "humberriverhealth.ca",
@@ -2507,7 +2710,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Nuday",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bcchildrens.ca",
@@ -2518,7 +2722,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "chu-sainte-justine.org",
@@ -2529,7 +2734,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bchydro.com",
@@ -2540,7 +2746,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "enmax.com",
@@ -2551,7 +2758,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "epcor.com",
@@ -2562,7 +2770,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Unknown",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "enbridge.com",
@@ -2573,7 +2782,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tcenergy.com",
@@ -2584,7 +2794,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "suncor.com",
@@ -2595,7 +2806,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "atco.com",
@@ -2606,7 +2818,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "gotransit.com",
@@ -2617,7 +2830,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "octranspo.com",
@@ -2628,7 +2842,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "translink.ca",
@@ -2639,7 +2854,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "stm.info",
@@ -2650,7 +2866,8 @@
       "cert": "rsa_pss_rsae_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "cmhc-schl.gc.ca",
@@ -2661,7 +2878,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bac-lac.gc.ca",
@@ -2672,7 +2890,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mint.ca",
@@ -2683,7 +2902,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "elections.ca",
@@ -2694,7 +2914,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "x.com",
@@ -2705,7 +2926,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "tiktok.com",
@@ -2716,7 +2938,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "whatsapp.com",
@@ -2727,7 +2950,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "discord.com",
@@ -2738,7 +2962,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "slack.com",
@@ -2749,7 +2974,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zoom.us",
@@ -2760,7 +2986,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "dropbox.com",
@@ -2771,7 +2998,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Dropbox",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "twitch.tv",
@@ -2782,7 +3010,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pinterest.com",
@@ -2793,7 +3022,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "snapchat.com",
@@ -2804,7 +3034,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bankofamerica.com",
@@ -2815,7 +3046,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "citibank.com",
@@ -2826,7 +3058,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "usa.gov",
@@ -2837,7 +3070,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "raymondjames.ca",
@@ -2848,7 +3082,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ig.ca",
@@ -2859,7 +3094,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "questrade.com",
@@ -2870,7 +3106,8 @@
       "cert": "rsa_pss_rsae_sha512",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "duca.com",
@@ -2881,7 +3118,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "libro.ca",
@@ -2892,7 +3130,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "usaa.com",
@@ -2903,7 +3142,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vanguard.com",
@@ -2914,7 +3154,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fidelity.com",
@@ -2925,7 +3166,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ocadu.ca",
@@ -2936,7 +3178,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ufv.ca",
@@ -2947,7 +3190,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "tru.ca",
@@ -2958,7 +3202,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "royalroads.ca",
@@ -2969,7 +3214,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "westernu.ca",
@@ -2980,7 +3226,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "horizonnb.ca",
@@ -2991,7 +3238,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "saskhealthauthority.ca",
@@ -3002,7 +3250,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "intuit.com",
@@ -3013,7 +3262,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "adobe.com",
@@ -3024,7 +3274,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "salesforce.com",
@@ -3035,7 +3286,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "oracle.com",
@@ -3046,7 +3298,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Oracle Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ibm.com",
@@ -3057,7 +3310,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "globalnews.ca",
@@ -3068,7 +3322,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ledevoir.com",
@@ -3079,7 +3334,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "montrealgazette.com",
@@ -3090,7 +3346,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "flyporter.com",
@@ -3101,7 +3358,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "airtransat.com",
@@ -3112,7 +3370,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "expedia.ca",
@@ -3123,7 +3382,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "booking.com",
@@ -3134,7 +3394,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "tripadvisor.com",
@@ -3145,7 +3406,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "royal.uk",
@@ -3156,7 +3418,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "parliament.uk",
@@ -3167,7 +3430,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "abc.net.au",
@@ -3178,7 +3442,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "commbank.com.au",
@@ -3189,7 +3454,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "anz.com.au",
@@ -3200,7 +3466,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "westpac.com.au",
@@ -3211,7 +3478,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nab.com.au",
@@ -3222,7 +3490,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "gstatic.com",
@@ -3233,7 +3502,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "googleapis.com",
@@ -3244,7 +3514,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazonaws.com",
@@ -3255,7 +3526,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mail.ru",
@@ -3266,7 +3538,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "fbcdn.net",
@@ -3277,7 +3550,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "twitter.com",
@@ -3288,7 +3562,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "dzen.ru",
@@ -3299,7 +3574,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "googletagmanager.com",
@@ -3310,7 +3586,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "googlevideo.com",
@@ -3321,7 +3598,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "live.com",
@@ -3332,7 +3610,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "office.com",
@@ -3343,7 +3622,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "azure.com",
@@ -3354,7 +3634,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "googleusercontent.com",
@@ -3365,7 +3646,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "doubleclick.net",
@@ -3376,7 +3658,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bing.com",
@@ -3387,7 +3670,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "appsflyersdk.com",
@@ -3398,7 +3682,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fastly.net",
@@ -3409,7 +3694,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "whatsapp.net",
@@ -3420,7 +3706,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "digicert.com",
@@ -3431,7 +3718,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wordpress.org",
@@ -3442,7 +3730,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "skype.com",
@@ -3453,7 +3742,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sharepoint.com",
@@ -3464,7 +3754,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "youtu.be",
@@ -3475,7 +3766,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gandi.net",
@@ -3486,7 +3778,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Gandi",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "goo.gl",
@@ -3497,7 +3790,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "googlesyndication.com",
@@ -3508,7 +3802,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yahoo.com",
@@ -3519,7 +3814,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cloud.microsoft",
@@ -3530,7 +3826,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "msn.com",
@@ -3541,7 +3838,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "ntp.org",
@@ -3552,7 +3850,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "cloudflare.net",
@@ -3563,7 +3862,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vimeo.com",
@@ -3574,7 +3874,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "googledomains.com",
@@ -3585,7 +3886,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "chatgpt.com",
@@ -3596,7 +3898,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "windows.net",
@@ -3607,7 +3910,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wa.me",
@@ -3618,7 +3922,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "telekom.de",
@@ -3629,7 +3934,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "myfritz.net",
@@ -3640,7 +3946,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Rackspace",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "roblox.com",
@@ -3651,7 +3958,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tiktokv.com",
@@ -3662,7 +3970,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "qq.com",
@@ -3673,7 +3982,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Tencent Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "cloudflare-dns.com",
@@ -3684,7 +3994,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yandex.net",
@@ -3695,7 +4006,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "baidu.com",
@@ -3706,7 +4018,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "nginx.org",
@@ -3717,7 +4030,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "workers.dev",
@@ -3728,7 +4042,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mozilla.org",
@@ -3739,7 +4054,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "opera.com",
@@ -3750,7 +4066,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nic.ru",
@@ -3761,7 +4078,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "windows.com",
@@ -3772,7 +4090,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "yandex.ru",
@@ -3783,7 +4102,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "samsung.com",
@@ -3794,7 +4114,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Samsung SDS",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "sentry.io",
@@ -3805,7 +4126,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google-analytics.com",
@@ -3816,7 +4138,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nginx.com",
@@ -3827,7 +4150,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "F5",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wordpress.com",
@@ -3838,7 +4162,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ui.com",
@@ -3849,7 +4174,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "office365.com",
@@ -3860,7 +4186,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "bit.ly",
@@ -3871,7 +4198,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "okcdn.ru",
@@ -3882,7 +4210,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "discord.gg",
@@ -3893,7 +4222,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "criteo.com",
@@ -3904,7 +4234,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "t.me",
@@ -3915,7 +4246,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "googleadservices.com",
@@ -3926,7 +4258,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "trbcdn.net",
@@ -3937,7 +4270,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "CDNvideo",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "blogspot.com",
@@ -3948,7 +4282,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "europa.eu",
@@ -3959,7 +4294,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "vk.com",
@@ -3970,7 +4306,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "f5.com",
@@ -3981,7 +4318,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "F5",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "epicgames.com",
@@ -3992,7 +4330,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "b-cdn.net",
@@ -4003,7 +4342,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "CDN77",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "unity3d.com",
@@ -4014,7 +4354,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mailinabox.email",
@@ -4025,7 +4366,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon-adsystem.com",
@@ -4036,7 +4378,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "app-measurement.com",
@@ -4047,7 +4390,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "github.io",
@@ -4058,7 +4402,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazonvideo.com",
@@ -4069,7 +4414,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "apache.org",
@@ -4080,7 +4426,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "prodregistryv2.org",
@@ -4091,7 +4438,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nih.gov",
@@ -4102,7 +4450,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "kaspersky.com",
@@ -4113,7 +4462,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "dns.google",
@@ -4124,7 +4474,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gravatar.com",
@@ -4135,7 +4486,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "outlook.com",
@@ -4146,7 +4498,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "app-analytics-services.com",
@@ -4157,7 +4510,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "xiaomi.com",
@@ -4168,7 +4522,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "forms.gle",
@@ -4179,7 +4534,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "reg.ru",
@@ -4190,7 +4546,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "archive.org",
@@ -4201,7 +4558,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "godaddy.com",
@@ -4212,7 +4570,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vkuserphoto.ru",
@@ -4223,7 +4582,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tumblr.com",
@@ -4234,7 +4594,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "one.one",
@@ -4245,7 +4606,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "One.com",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "applovin.com",
@@ -4256,7 +4618,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "aliyuncs.com",
@@ -4267,7 +4630,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "webex.com",
@@ -4278,7 +4642,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "adobe.io",
@@ -4289,7 +4654,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "flickr.com",
@@ -4300,7 +4666,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "userapi.com",
@@ -4311,7 +4678,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "example.com",
@@ -4322,7 +4690,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "soundcloud.com",
@@ -4333,7 +4702,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "adtrafficquality.google",
@@ -4344,7 +4714,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "medium.com",
@@ -4355,7 +4726,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "w3.org",
@@ -4366,7 +4738,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "rubiconproject.com",
@@ -4377,7 +4750,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "taboola.com",
@@ -4388,7 +4762,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cnn.com",
@@ -4399,7 +4774,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vungle.com",
@@ -4410,7 +4786,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "theguardian.com",
@@ -4421,7 +4798,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "avast.com",
@@ -4432,7 +4810,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "creativecommons.org",
@@ -4443,7 +4822,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "forbes.com",
@@ -4454,7 +4834,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ozon.ru",
@@ -4465,7 +4846,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pubmatic.com",
@@ -4476,7 +4858,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bbc.com",
@@ -4487,7 +4870,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cpanel.net",
@@ -4498,7 +4882,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "weather.com",
@@ -4509,7 +4894,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "t.co",
@@ -4520,7 +4906,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "adnxs.com",
@@ -4531,7 +4918,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "sciencedirect.com",
@@ -4542,7 +4930,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "researchgate.net",
@@ -4553,7 +4942,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "oxylabs.io",
@@ -4564,7 +4954,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gmail.com",
@@ -4575,7 +4966,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "youtube-nocookie.com",
@@ -4586,7 +4978,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pki.goog",
@@ -4597,7 +4990,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mit.edu",
@@ -4608,7 +5002,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "roku.com",
@@ -4619,7 +5014,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sourceforge.net",
@@ -4630,7 +5026,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "adsafeprotected.com",
@@ -4641,7 +5038,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "android.com",
@@ -4652,7 +5050,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "canva.com",
@@ -4663,7 +5062,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ubuntu.com",
@@ -4674,7 +5074,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "doi.org",
@@ -4685,7 +5086,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "t-online.de",
@@ -4696,7 +5098,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "meraki.com",
@@ -4707,7 +5110,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nic.direct",
@@ -4718,7 +5122,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nist.gov",
@@ -4729,7 +5134,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "scorecardresearch.com",
@@ -4740,7 +5146,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "miui.com",
@@ -4751,7 +5158,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "imdb.com",
@@ -4762,7 +5170,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "casalemedia.com",
@@ -4773,7 +5182,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "doubleverify.com",
@@ -4784,7 +5194,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "telegram.org",
@@ -4795,7 +5206,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "who.int",
@@ -4806,7 +5218,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cisco.com",
@@ -4817,7 +5230,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hubspot.com",
@@ -4828,7 +5242,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "adsrvr.org",
@@ -4839,7 +5254,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "triplinkintl.com",
@@ -4850,7 +5266,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "linktr.ee",
@@ -4861,7 +5278,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "openai.com",
@@ -4872,7 +5290,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "launchpad.net",
@@ -4883,7 +5302,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wikimedia.org",
@@ -4894,7 +5314,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mts.ru",
@@ -4905,7 +5326,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "lencr.org",
@@ -4916,7 +5338,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "hp.com",
@@ -4927,7 +5350,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "springer.com",
@@ -4938,7 +5362,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "autodesk.com",
@@ -4949,7 +5374,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tinyurl.com",
@@ -4960,7 +5386,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "reuters.com",
@@ -4971,7 +5398,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mozilla.com",
@@ -4982,7 +5410,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "etsy.com",
@@ -4993,7 +5422,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "drom.ru",
@@ -5004,7 +5434,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "alibaba.com",
@@ -5015,7 +5446,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ok.ru",
@@ -5026,7 +5458,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nature.com",
@@ -5037,7 +5470,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "harvard.edu",
@@ -5048,7 +5482,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "steampowered.com",
@@ -5059,7 +5494,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "debian.org",
@@ -5070,7 +5506,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "php.net",
@@ -5081,7 +5518,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.co.uk",
@@ -5092,7 +5530,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "vk.ru",
@@ -5103,7 +5542,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "weibo.com",
@@ -5114,7 +5554,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "aol.com",
@@ -5125,7 +5566,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ea.com",
@@ -5136,7 +5578,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "issuu.com",
@@ -5147,7 +5590,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "gnu.org",
@@ -5158,7 +5602,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "checkpoint.com",
@@ -5169,7 +5614,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "weebly.com",
@@ -5180,7 +5626,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cdc.gov",
@@ -5191,7 +5638,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wildberries.ru",
@@ -5202,7 +5650,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "opendns.com",
@@ -5213,7 +5662,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "tradingview.com",
@@ -5224,7 +5674,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mi.com",
@@ -5235,7 +5686,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "trustpilot.com",
@@ -5246,7 +5698,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ivi.ru",
@@ -5257,7 +5710,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "naver.com",
@@ -5268,7 +5722,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Naver Cloud",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wsj.com",
@@ -5279,7 +5734,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "washingtonpost.com",
@@ -5290,7 +5746,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "aliyun.com",
@@ -5301,7 +5758,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bilibili.com",
@@ -5312,7 +5770,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Huawei Cloud",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "dell.com",
@@ -5323,7 +5782,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "google.cn",
@@ -5334,7 +5794,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cnbc.com",
@@ -5345,7 +5806,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "dailymail.co.uk",
@@ -5356,7 +5818,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "dailymotion.com",
@@ -5367,7 +5830,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bloomberg.com",
@@ -5378,7 +5842,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nvidia.com",
@@ -5389,7 +5854,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "nasa.gov",
@@ -5400,7 +5866,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "temu.com",
@@ -5411,7 +5878,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yahoo.co.jp",
@@ -5422,7 +5890,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tp-link.com",
@@ -5433,7 +5902,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "vivoglobal.com",
@@ -5444,7 +5914,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Zenlayer",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "yandex.com",
@@ -5455,7 +5926,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "unsplash.com",
@@ -5466,7 +5938,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "indeed.com",
@@ -5477,7 +5950,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "calendly.com",
@@ -5488,7 +5962,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazon.de",
@@ -5499,7 +5974,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "globo.com",
@@ -5510,7 +5986,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "arubanetworks.com",
@@ -5521,7 +5998,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "gitlab.com",
@@ -5532,7 +6010,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "duckduckgo.com",
@@ -5543,7 +6022,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "zendesk.com",
@@ -5554,7 +6034,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "espn.com",
@@ -5565,7 +6046,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "businessinsider.com",
@@ -5576,7 +6058,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "supercell.com",
@@ -5587,7 +6070,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pixabay.com",
@@ -5598,7 +6082,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "163.com",
@@ -5609,7 +6094,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "line.me",
@@ -5620,7 +6106,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "brave.com",
@@ -5631,7 +6118,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "steamcommunity.com",
@@ -5642,7 +6130,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "intel.com",
@@ -5653,7 +6142,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "taobao.com",
@@ -5664,7 +6154,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "go.com",
@@ -5675,7 +6166,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "statista.com",
@@ -5686,7 +6178,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "netease.com",
@@ -5697,7 +6190,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "aliexpress.com",
@@ -5708,7 +6202,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "speedtest.net",
@@ -5719,7 +6214,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "duolingo.com",
@@ -5730,7 +6226,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mcafee.com",
@@ -5741,7 +6238,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "t-mobile.com",
@@ -5752,7 +6250,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mikrotik.com",
@@ -5763,7 +6262,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "quora.com",
@@ -5774,7 +6274,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "eventbrite.com",
@@ -5785,7 +6286,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bsky.app",
@@ -5796,7 +6298,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hostgator.com",
@@ -5807,7 +6310,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ietf.org",
@@ -5818,7 +6322,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sohu.com",
@@ -5829,7 +6334,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "goodreads.com",
@@ -5840,7 +6346,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "scribd.com",
@@ -5851,7 +6358,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mysql.com",
@@ -5862,7 +6370,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Oracle Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "gosuslugi.ru",
@@ -5873,7 +6382,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "npr.org",
@@ -5884,7 +6394,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "name.com",
@@ -5895,7 +6406,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mediatek.com",
@@ -5906,7 +6418,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "walmart.com",
@@ -5917,7 +6430,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sberbank.ru",
@@ -5928,7 +6442,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "paloaltonetworks.com",
@@ -5939,7 +6454,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "foxnews.com",
@@ -5950,7 +6466,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shein.com",
@@ -5961,7 +6478,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "giphy.com",
@@ -5972,7 +6490,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sina.com.cn",
@@ -5983,7 +6502,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "slideshare.net",
@@ -5994,7 +6514,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "stackoverflow.com",
@@ -6005,7 +6526,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "indiatimes.com",
@@ -6016,7 +6538,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.co.jp",
@@ -6027,7 +6550,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google.de",
@@ -6038,7 +6562,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "substack.com",
@@ -6049,7 +6574,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "behance.net",
@@ -6060,7 +6586,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fandom.com",
@@ -6071,7 +6598,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nbcnews.com",
@@ -6082,7 +6610,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "docker.com",
@@ -6093,7 +6622,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "okta.com",
@@ -6104,7 +6634,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wired.com",
@@ -6115,7 +6646,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "firefox.com",
@@ -6126,7 +6658,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "blogger.com",
@@ -6137,7 +6670,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ft.com",
@@ -6148,7 +6682,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "jquery.com",
@@ -6159,7 +6694,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "uol.com.br",
@@ -6170,7 +6706,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "time.com",
@@ -6181,7 +6718,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "360.cn",
@@ -6192,7 +6730,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "trendmicro.com",
@@ -6203,7 +6742,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "arxiv.org",
@@ -6214,7 +6754,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "capcut.com",
@@ -6225,7 +6766,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "patreon.com",
@@ -6236,7 +6778,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "usatoday.com",
@@ -6247,7 +6790,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "deviantart.com",
@@ -6258,7 +6802,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "visualstudio.com",
@@ -6269,7 +6814,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 1
     },
     {
       "site": "2gis.com",
@@ -6280,7 +6826,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "google.com.hk",
@@ -6291,7 +6838,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "eset.com",
@@ -6302,7 +6850,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "grammarly.com",
@@ -6313,7 +6862,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wix.com",
@@ -6324,7 +6874,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Wix",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "teamviewer.com",
@@ -6335,7 +6886,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "fast.com",
@@ -6346,7 +6898,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "tandfonline.com",
@@ -6357,7 +6910,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "atlassian.com",
@@ -6368,7 +6922,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "deere.com",
@@ -6379,7 +6934,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "oup.com",
@@ -6390,7 +6946,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ca.gov",
@@ -6401,7 +6958,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "telegraph.co.uk",
@@ -6412,7 +6970,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "deepl.com",
@@ -6423,7 +6982,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cornell.edu",
@@ -6434,7 +6994,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "surveymonkey.com",
@@ -6445,7 +7006,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "rakuten.co.jp",
@@ -6456,7 +7018,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "avito.ru",
@@ -6467,7 +7030,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "target.com",
@@ -6478,7 +7042,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "berkeley.edu",
@@ -6489,7 +7054,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "playstation.com",
@@ -6500,7 +7066,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ieee.org",
@@ -6511,7 +7078,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "apnews.com",
@@ -6522,7 +7090,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "free.fr",
@@ -6533,7 +7102,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Free (hosting)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "digitalocean.com",
@@ -6544,7 +7114,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mdpi.com",
@@ -6555,7 +7126,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "verisign.com",
@@ -6566,7 +7138,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "jotform.com",
@@ -6577,7 +7150,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "accuweather.com",
@@ -6588,7 +7162,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "britannica.com",
@@ -6599,7 +7174,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "claude.ai",
@@ -6610,7 +7186,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "loc.gov",
@@ -6621,7 +7198,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "squarespace.com",
@@ -6632,7 +7210,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Squarespace",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "redhat.com",
@@ -6643,7 +7222,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nintendo.com",
@@ -6654,7 +7234,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "threads.com",
@@ -6665,7 +7246,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazon.fr",
@@ -6676,7 +7258,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "independent.co.uk",
@@ -6687,7 +7270,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "cbsnews.com",
@@ -6698,7 +7282,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "cnet.com",
@@ -6709,7 +7294,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "viber.com",
@@ -6720,7 +7306,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nike.com",
@@ -6731,7 +7318,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "elpais.com",
@@ -6742,7 +7330,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sagepub.com",
@@ -6753,7 +7342,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "yelp.com",
@@ -6764,7 +7354,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "imgur.com",
@@ -6775,7 +7366,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "unesco.org",
@@ -6786,7 +7378,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "dreamhost.com",
@@ -6797,7 +7390,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "techcrunch.com",
@@ -6808,7 +7402,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.ca",
@@ -6819,7 +7414,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "noaa.gov",
@@ -6830,7 +7426,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "ups.com",
@@ -6841,7 +7438,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cambridge.org",
@@ -6852,7 +7450,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bluehost.com",
@@ -6863,7 +7462,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mailchimp.com",
@@ -6874,7 +7474,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ted.com",
@@ -6885,7 +7486,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "tencent.com",
@@ -6896,7 +7498,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Tencent Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "lemonde.fr",
@@ -6907,7 +7510,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "spiegel.de",
@@ -6918,7 +7522,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Link11",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "anydesk.com",
@@ -6929,7 +7534,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "att.net",
@@ -6940,7 +7546,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "rt.ru",
@@ -6951,7 +7558,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "wps.com",
@@ -6962,7 +7570,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "google.co.uk",
@@ -6973,7 +7582,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazon.in",
@@ -6984,7 +7594,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shopee.com.br",
@@ -6995,7 +7606,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mediafire.com",
@@ -7006,7 +7618,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "asus.com",
@@ -7017,7 +7630,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cursor.sh",
@@ -7028,7 +7642,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wattpad.com",
@@ -7039,7 +7654,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sophos.com",
@@ -7050,7 +7666,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "box.com",
@@ -7061,7 +7678,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shopee.co.id",
@@ -7072,7 +7690,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bitrix24.ru",
@@ -7083,7 +7702,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.es",
@@ -7094,7 +7714,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "homedepot.com",
@@ -7105,7 +7726,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "marriott.com",
@@ -7116,7 +7738,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "seznam.cz",
@@ -7127,7 +7750,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "amazon.it",
@@ -7138,7 +7762,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google.com.br",
@@ -7149,7 +7774,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "jetbrains.com",
@@ -7160,7 +7786,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "myspace.com",
@@ -7171,7 +7798,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "iso.org",
@@ -7182,7 +7810,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ring.com",
@@ -7193,7 +7822,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mckinsey.com",
@@ -7204,7 +7834,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "bandcamp.com",
@@ -7215,7 +7846,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "anthropic.com",
@@ -7226,7 +7858,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fda.gov",
@@ -7237,7 +7870,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zillow.com",
@@ -7248,7 +7882,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "python.org",
@@ -7259,7 +7894,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "freepik.com",
@@ -7270,7 +7906,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "primevideo.com",
@@ -7281,7 +7918,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mercadolivre.com.br",
@@ -7292,7 +7930,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "prnewswire.com",
@@ -7303,7 +7942,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mlb.com",
@@ -7314,7 +7954,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nikkei.com",
@@ -7325,7 +7966,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wp.pl",
@@ -7336,7 +7978,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "fiverr.com",
@@ -7347,7 +7990,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "theverge.com",
@@ -7358,7 +8002,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ameblo.jp",
@@ -7369,7 +8014,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hbr.org",
@@ -7380,7 +8026,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "people.com",
@@ -7391,7 +8038,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "uber.com",
@@ -7402,7 +8050,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "washington.edu",
@@ -7413,7 +8062,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "hostgator.com.br",
@@ -7424,7 +8074,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "globalsign.com",
@@ -7435,7 +8086,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "welt.de",
@@ -7446,7 +8098,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "allegro.pl",
@@ -7457,7 +8110,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "disneyplus.com",
@@ -7468,7 +8122,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "rakuten.com",
@@ -7479,7 +8134,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "disqus.com",
@@ -7490,7 +8146,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bild.de",
@@ -7501,7 +8158,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "openstreetmap.org",
@@ -7512,7 +8170,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "mayoclinic.org",
@@ -7523,7 +8182,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "lenovo.com",
@@ -7534,7 +8194,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zhihu.com",
@@ -7545,7 +8206,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Tencent Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "usps.com",
@@ -7556,7 +8218,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "lefigaro.fr",
@@ -7567,7 +8230,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "academia.edu",
@@ -7578,7 +8242,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "latimes.com",
@@ -7589,7 +8254,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "aljazeera.com",
@@ -7600,7 +8266,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "pexels.com",
@@ -7611,7 +8278,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "onlyfans.com",
@@ -7622,7 +8290,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "investopedia.com",
@@ -7633,7 +8302,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "figma.com",
@@ -7644,7 +8314,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "discogs.com",
@@ -7655,7 +8326,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "kick.com",
@@ -7666,7 +8338,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "news.com.au",
@@ -7677,7 +8350,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ebay.co.uk",
@@ -7688,7 +8362,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "merriam-webster.com",
@@ -7699,7 +8374,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "focus.de",
@@ -7710,7 +8386,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zoho.com",
@@ -7721,7 +8398,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Zoho",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "princeton.edu",
@@ -7732,7 +8410,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "agoda.com",
@@ -7743,7 +8422,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "chess.com",
@@ -7754,7 +8434,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "change.org",
@@ -7765,7 +8446,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "synology.com",
@@ -7776,7 +8458,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "biblegateway.com",
@@ -7787,7 +8470,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ndtv.com",
@@ -7798,7 +8482,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "irs.gov",
@@ -7809,7 +8494,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5
+      "score": 5,
+      "stars": 0
     },
     {
       "site": "life360.com",
@@ -7820,7 +8506,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "themeforest.net",
@@ -7831,7 +8518,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "smartthings.com",
@@ -7842,7 +8530,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ebay.de",
@@ -7853,7 +8542,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "qualtrics.com",
@@ -7864,7 +8554,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "usda.gov",
@@ -7875,7 +8566,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "kontur.ru",
@@ -7886,7 +8578,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "healthline.com",
@@ -7897,7 +8590,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazon.com.br",
@@ -7908,7 +8602,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "arcgis.com",
@@ -7919,7 +8614,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "worldbank.org",
@@ -7930,7 +8626,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "starlink.com",
@@ -7941,7 +8638,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "otto.de",
@@ -7952,7 +8650,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "deloitte.com",
@@ -7963,7 +8662,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "frontiersin.org",
@@ -7974,7 +8674,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "deepseek.com",
@@ -7985,7 +8686,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "daum.net",
@@ -7996,7 +8698,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "genius.com",
@@ -8007,7 +8710,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hm.com",
@@ -8018,7 +8722,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "rutube.ru",
@@ -8029,7 +8734,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pixiv.net",
@@ -8040,7 +8746,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "playrix.com",
@@ -8051,7 +8758,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "clever.com",
@@ -8062,7 +8770,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "perplexity.ai",
@@ -8073,7 +8782,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "jimdo.com",
@@ -8084,7 +8794,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "state.gov",
@@ -8095,7 +8806,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "classlink.com",
@@ -8106,7 +8818,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "poki.com",
@@ -8117,7 +8830,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "typeform.com",
@@ -8128,7 +8842,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "linode.com",
@@ -8139,7 +8854,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "epa.gov",
@@ -8150,7 +8866,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "coupang.com",
@@ -8161,7 +8878,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "character.ai",
@@ -8172,7 +8890,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ryanair.com",
@@ -8183,7 +8902,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nationalgeographic.com",
@@ -8194,7 +8914,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "youku.com",
@@ -8205,7 +8926,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "repubblica.it",
@@ -8216,7 +8938,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "rackspace.com",
@@ -8227,7 +8950,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "amazon.com.au",
@@ -8238,7 +8962,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wyzecam.com",
@@ -8249,7 +8974,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "xerox.com",
@@ -8260,7 +8986,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "mercadolibre.com.ar",
@@ -8271,7 +8998,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "lowes.com",
@@ -8282,7 +9010,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "kleinanzeigen.de",
@@ -8293,7 +9022,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "corriere.it",
@@ -8304,7 +9034,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "kickstarter.com",
@@ -8315,7 +9046,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "weforum.org",
@@ -8326,7 +9058,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "theatlantic.com",
@@ -8337,7 +9070,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "readthedocs.io",
@@ -8348,7 +9082,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "rambler.ru",
@@ -8359,7 +9094,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "pbs.org",
@@ -8370,7 +9106,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "umich.edu",
@@ -8381,7 +9118,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "kwai.com",
@@ -8392,7 +9130,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "yandex.com.tr",
@@ -8403,7 +9142,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "note.com",
@@ -8414,7 +9154,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "whitehouse.gov",
@@ -8425,7 +9166,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "jd.com",
@@ -8436,7 +9178,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "caixa.gov.br",
@@ -8447,7 +9190,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "elmundo.es",
@@ -8458,7 +9202,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "theconversation.com",
@@ -8469,7 +9214,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "netgear.com",
@@ -8480,7 +9226,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "onet.pl",
@@ -8491,7 +9238,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nexusmods.com",
@@ -8502,7 +9250,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "utorrent.com",
@@ -8513,7 +9262,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "hotstar.com",
@@ -8524,7 +9274,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sofascore.com",
@@ -8535,7 +9286,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "costco.com",
@@ -8546,7 +9298,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "binance.com",
@@ -8557,7 +9310,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "nypost.com",
@@ -8568,7 +9322,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "columbia.edu",
@@ -8579,7 +9334,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bol.com",
@@ -8590,7 +9346,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "quizlet.com",
@@ -8601,7 +9358,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "tagesschau.de",
@@ -8612,7 +9370,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ecosia.org",
@@ -8623,7 +9382,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ancestry.com",
@@ -8634,7 +9394,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "tesla.com",
@@ -8645,7 +9406,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "odoo.com",
@@ -8656,7 +9418,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "OVH",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "infobae.com",
@@ -8667,7 +9430,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "spamhaus.org",
@@ -8678,7 +9442,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "huffpost.com",
@@ -8689,7 +9454,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "docomo.ne.jp",
@@ -8700,7 +9466,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "flipkart.com",
@@ -8711,7 +9478,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ubi.com",
@@ -8722,7 +9490,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nextcloud.com",
@@ -8733,7 +9502,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Hetzner",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "rbc.ru",
@@ -8744,7 +9514,8 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "leparisien.fr",
@@ -8755,7 +9526,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "redfin.com",
@@ -8766,7 +9538,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "amazon.com.mx",
@@ -8777,7 +9550,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "moneycontrol.com",
@@ -8788,7 +9562,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "marca.com",
@@ -8799,7 +9574,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google.ca",
@@ -8810,7 +9586,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Google",
       "pqc_source": "own",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "terra.com.br",
@@ -8821,7 +9598,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "coursera.org",
@@ -8832,7 +9610,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "hilton.com",
@@ -8843,7 +9622,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "as.com",
@@ -8854,7 +9634,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ameba.jp",
@@ -8865,7 +9646,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ox.ac.uk",
@@ -8876,7 +9658,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "instructure.com",
@@ -8887,7 +9670,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "adblockplus.org",
@@ -8898,7 +9682,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "garmin.com",
@@ -8909,7 +9694,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "notion.so",
@@ -8920,7 +9706,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "letterboxd.com",
@@ -8931,7 +9718,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "trendyol.com",
@@ -8942,7 +9730,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "olx.com.br",
@@ -8953,7 +9742,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "xing.com",
@@ -8964,7 +9754,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "crazygames.com",
@@ -8975,7 +9766,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bfmtv.com",
@@ -8986,7 +9778,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "oecd.org",
@@ -8997,7 +9790,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "archiveofourown.org",
@@ -9008,7 +9802,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "n-tv.de",
@@ -9019,7 +9814,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "yandex.kz",
@@ -9030,7 +9826,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ilovepdf.com",
@@ -9041,7 +9838,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "goal.com",
@@ -9052,7 +9850,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "dribbble.com",
@@ -9063,7 +9862,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "servicecanada.gc.ca",
@@ -9074,7 +9874,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "hamilton.ca",
@@ -9085,7 +9886,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "surrey.ca",
@@ -9096,7 +9898,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "canadalife.com",
@@ -9107,7 +9910,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ia.ca",
@@ -9118,7 +9922,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "eqbank.ca",
@@ -9129,7 +9934,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "simplii.com",
@@ -9140,7 +9946,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "unb.ca",
@@ -9151,7 +9958,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "upei.ca",
@@ -9162,7 +9970,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "acadiau.ca",
@@ -9173,7 +9982,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "stfx.ca",
@@ -9184,7 +9994,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ontariotechu.ca",
@@ -9195,7 +10006,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "thp.ca",
@@ -9206,7 +10018,8 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "kingstonhsc.ca",
@@ -9217,7 +10030,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "theroyal.ca",
@@ -9228,7 +10042,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "baycrest.org",
@@ -9239,7 +10054,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "islandhealth.ca",
@@ -9250,7 +10066,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "iwk.nshealth.ca",
@@ -9261,7 +10078,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "lhsc.on.ca",
@@ -9272,7 +10090,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sasktel.com",
@@ -9283,7 +10102,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "eastlink.ca",
@@ -9294,7 +10114,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fido.ca",
@@ -9305,7 +10126,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "koodomobile.com",
@@ -9316,7 +10138,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "teksavvy.com",
@@ -9327,7 +10150,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "rona.ca",
@@ -9338,7 +10162,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "sportchek.ca",
@@ -9349,7 +10174,8 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "simons.ca",
@@ -9360,7 +10186,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ssense.com",
@@ -9371,7 +10198,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "aritzia.com",
@@ -9382,7 +10210,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "roots.com",
@@ -9393,7 +10222,8 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
-      "score": 75
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "bcferries.com",
@@ -9404,7 +10234,8 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35
+      "score": 35,
+      "stars": 1
     }
   ]
 }

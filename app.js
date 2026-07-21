@@ -270,6 +270,29 @@ function drawWorldMap(countries) {
   document.getElementById("mapLegend").style.display = "flex";
 }
 
+// The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
+// exchange, PQC signature). Filled stars first, empty ones after, and the hover
+// title spells out which is which plus the 0-100 score underneath. A typical
+// quantum-safe site today shows 2 of 3 - the signature star is still open for
+// everyone, because no public CA issues PQC certificates yet.
+function starCell(s) {
+  let stars = s.stars || 0;
+  let shown = "";
+  for (let i = 0; i < 3; i++) {
+    if (i < stars) {
+      shown += "★";
+    } else {
+      shown += "<span class='star-off'>★</span>";
+    }
+  }
+  let parts = [];
+  parts.push((s.tls.indexOf("1.3") !== -1 ? "✓" : "✗") + " TLS 1.3");
+  parts.push((s.kex.indexOf("MLKEM") !== -1 ? "✓" : "✗") + " PQC key exchange");
+  parts.push((stars === 3 ? "✓" : "✗") + " PQC signature");
+  let title = parts.join("  ·  ") + "  (score " + s.score + "/100)";
+  return "<span class='stars' title='" + title + "'>" + shown + "</span>";
+}
+
 function drawTable(sites) {
   let rows = "";
   for (let i = 0; i < sites.length; i++) {
@@ -289,7 +312,7 @@ function drawTable(sites) {
       "<td>" + kexCell + "</td>" +
       "<td>" + s.cdn + "</td>" +
       "<td><span class='pill pill-" + src + "'>" + src + "</span></td>" +
-      "<td>" + s.score + "</td>" +
+      "<td>" + starCell(s) + "</td>" +
     "</tr>";
   }
   document.getElementById("tableBody").innerHTML = rows;
