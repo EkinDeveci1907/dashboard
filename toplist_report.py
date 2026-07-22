@@ -30,21 +30,21 @@ for row in csv.DictReader(open(in_file)):
 
 # the headline counts
 total = len(sites)
+tls13 = 0
 pqc = 0
 via = 0
 own = 0
-stars_sum = 0
 for r in sites:
+    if "1.3" in r["tls_version"]:
+        tls13 = tls13 + 1
     if "MLKEM" in r["key_exchange"].upper():
         pqc = pqc + 1
     if r["pqc_source"] == "provider":
         via = via + 1
     if r["pqc_source"] == "own":
         own = own + 1
-    stars_sum = stars_sum + stars_site(r)
 
 pqc_pct = round(100 * pqc / total)
-avg_stars = round(stars_sum / total, 1)
 
 
 def by_score(row):
@@ -67,8 +67,8 @@ table.sort(key=by_score, reverse=True)
 # ---- build the page (reuses the dashboard's style.css so it matches exactly) ----
 cards = ""
 cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
+cards += "<div class='box'><div class='num'>" + str(tls13) + "</div><div class='label'>on TLS 1.3</div></div>"
 cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
-cards += "<div class='box'><div class='num'>" + str(avg_stars) + "</div><div class='label'>average stars (of 3)</div></div>"
 cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
@@ -90,7 +90,8 @@ html += "<p class='scope'>The sites Canadians actually connect to most, from Sem
 html += "<section class='summary'>" + cards + "</section>\n"
 html += "<section class='card'>\n<h2>Site directory</h2>\n"
 html += "<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. "
-html += "Stars work like on the main page: one per migration step done, best today is <span class='stars'>★★</span>. Hover for the breakdown.</p>\n"
+html += "Stars work like on the main page: one per migration step done, best today is <span class='stars'>★★</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>\n"
+html += "<div id='siteDetail' class='site-detail' style='display:none'></div>\n"
 html += "<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>\n"
 html += "<div class='table-scroll'><table><thead><tr>"
 html += "<th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th>"
@@ -103,6 +104,7 @@ html += "pirate-stream sites dropped. Nothing hand-picked, so the sample means t
 html += "every month.</p>\n"
 html += "</section>\n</div>\n"
 html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
+html += "const SCAN_DATE = " + json.dumps(scan_date) + ";\n"
 html += """
 // same star cell as the main page: filled stars for the steps done, pale ones
 // for the rest, breakdown in the hover title
@@ -120,6 +122,87 @@ function starCell(r) {
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
+// how much of each big provider's fleet already does PQC, from our own scan (the
+// same numbers the main page uses). Lets the next-step line tell "your CDN is
+// ready, flip it on" apart from "your CDN is the blocker".
+var CDN_PQC_RATE = {
+  "Imperva (Incapsula)": 91, "Cloudflare": 80, "Amazon CloudFront": 69,
+  "Fastly": 58, "Google": 52, "Akamai": 4, "Azure Front Door": 4,
+  "Microsoft (Azure)": 2, "OVH": 0, "Alibaba Cloud": 0
+};
+
+// one plain sentence on what this site's next step is, from the same columns the
+// row already shows
+function adviceFor(r) {
+  if (r.stars >= 2) {
+    var note = "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
+               "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
+    if (r.source === 'provider') {
+      note += " Worth knowing: the PQC comes from its provider (" + r.cdn + "), not its own servers.";
+    }
+    return note;
+  }
+  if (r.stars === 1) {
+    var rate = CDN_PQC_RATE[r.cdn];
+    if (rate !== undefined && rate >= 50) {
+      return "TLS 1.3 is done, and its provider (" + r.cdn + ") already negotiates PQC on about " + rate +
+             "% of the sites we scan - this site is likely one configuration change away from its second star.";
+    }
+    if (rate !== undefined) {
+      return "TLS 1.3 is done, but its provider (" + r.cdn + ") has PQC on only about " + rate +
+             "% of the sites we scan - this site is mostly waiting on " + r.cdn + " to move.";
+    }
+    return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
+           "on its own servers (OpenSSL 3.5+ or equivalent).";
+  }
+  return "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
+         "so this site is two steps behind.";
+}
+
+// one line of the report card checklist: a tick or a cross, the step name, and
+// the value we actually saw (the TLS version, the key-exchange group, etc.)
+function checkRow(done, label, detail) {
+  var mark = done ? "<span class='rc-yes'>✓</span>" : "<span class='rc-no'>✗</span>";
+  return "<div class='rc-check'>" + mark + "<span class='rc-step'>" + label + "</span>" +
+         "<span class='rc-detail'>" + detail + "</span></div>";
+}
+
+// open the report card for one site: its stars up top, the three-step checklist,
+// and the next step. Same card as the main page, readable on its own so you can
+// screenshot it.
+function showSite(i) {
+  var r = DATA[i];
+  if (!r) return;
+
+  var hasTls13 = r.tls.indexOf('1.3') !== -1;
+  var hasPqcKex = r.kex.indexOf('MLKEM') !== -1;
+  var hasPqcSig = r.stars === 3;   // no site has this yet, but keep it honest
+
+  var card = "";
+  card += "<div class='rc-head'>";
+  card += "<div><div class='rc-site'>" + r.site + "</div>";
+  card += "<div class='rc-sub'>" + r.sector + " · " + r.country + " · scanned " + SCAN_DATE + "</div></div>";
+  card += "<div class='rc-scorebox'>" + starCell(r) + "</div>";
+  card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
+  card += "</div>";
+
+  card += "<div class='rc-checks'>";
+  card += checkRow(hasTls13, 'TLS 1.3', r.tls);
+  card += checkRow(hasPqcKex, 'Post-quantum key exchange', r.kex);
+  card += checkRow(hasPqcSig, 'Post-quantum certificate signature', 'no public CA issues these yet');
+  card += "</div>";
+
+  card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(r) + "</p>";
+
+  var box = document.getElementById('siteDetail');
+  box.style.display = 'block';
+  box.innerHTML = card;
+}
+
+function hideSite() {
+  document.getElementById('siteDetail').style.display = 'none';
+}
+
 function draw() {
   var q = document.getElementById('search').value.toLowerCase();
   var out = '';
@@ -128,7 +211,7 @@ function draw() {
     if (q && r.site.toLowerCase().indexOf(q) === -1) continue;
     var kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
     var src = r.source ? r.source : 'none';
-    out += "<tr><td>" + r.site + "</td><td>" + r.sector + "</td><td>" + r.country +
+    out += "<tr onclick='showSite(" + i + ")'><td>" + r.site + "</td><td>" + r.sector + "</td><td>" + r.country +
            "</td><td>" + r.tls + "</td><td>" + kex + "</td><td>" + r.cdn +
            "</td><td><span class='pill pill-" + src + "'>" + src + "</span></td><td>" + starCell(r) + "</td></tr>";
   }
@@ -141,4 +224,4 @@ draw();
 
 open("canada-topvisited.html", "w").write(html)
 print("wrote canada-topvisited.html")
-print("  " + str(total) + " sites, " + str(pqc_pct) + "% quantum-safe, avg stars " + str(avg_stars))
+print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% quantum-safe")

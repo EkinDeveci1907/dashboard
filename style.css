@@ -205,8 +205,9 @@ tbody tr:hover { background: #f9fafb; }
 .rc-detail { color: var(--muted); font-size: 13px; }
 .rc-next { font-size: 13px; color: var(--ink); margin: 12px 0 0; }
 
-/* table rows open the detail panel (main page only - #tableBody is only there) */
-#tableBody tr { cursor: pointer; }
+/* table rows open the report card - both tabs now, so both id's get the pointer
+   (#tableBody is the main page, #rows is the most-visited page) */
+#tableBody tr, #rows tr { cursor: pointer; }
 
 /* small pill showing where a site's PQC comes from, on the most-visited page */
 .pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
