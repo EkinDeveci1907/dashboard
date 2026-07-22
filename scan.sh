@@ -12,7 +12,7 @@
 #   1. scan the main site list (~2760 sites)
 #   2. scan the most-visited-by-Canadians list
 #   3. add the pqc_source and readiness_score columns to both scans
-#   4. rebuild the summary files the dashboard reads
+#   4. rebuild the summary files and the most-visited page
 
 set -e
 cd "$(dirname "$0")"
@@ -28,8 +28,9 @@ echo "3/4  Adding the pqc_source and readiness_score columns..."
 python3 enrich.py
 python3 enrich.py "data/toplist-$today.csv"
 
-echo "4/4  Rebuilding the dashboard summary..."
+echo "4/4  Rebuilding the dashboard summary and the most-visited page..."
 python3 aggregate.py
+python3 toplist_report.py
 
 echo ""
 echo "All done. Run  ./run.sh  to open the dashboard in your browser."
