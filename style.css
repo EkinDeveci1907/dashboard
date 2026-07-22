@@ -172,19 +172,36 @@ tbody tr:hover { background: #f9fafb; }
 .stars { color: #f59e0b; font-size: 14px; letter-spacing: 1px; cursor: default; }
 .stars .star-off, .star-off { color: var(--slate); }
 
-/* the panel that opens above the site table when you click a row: the site's
-   stars plus one plain sentence on its next step */
+/* the report card that opens above the site table when you click a row: the
+   site's stars and score, a checklist of what we actually measured, who's
+   responsible for it, and the next step. Meant to be readable on its own so
+   you can screenshot it. */
 .site-detail {
-  background: #eef2ff; border: 1px solid #e0e7ff; border-radius: 10px;
-  padding: 12px 16px; margin-bottom: 14px;
+  background: #fff; border: 1px solid var(--line); border-radius: 12px;
+  padding: 18px 20px; margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
 }
-.site-detail p { margin: 6px 0 0; font-size: 13px; }
-.site-detail-head { display: flex; align-items: center; gap: 10px; font-size: 14px; }
 .site-detail-close {
-  margin-left: auto; cursor: pointer; color: var(--muted);
-  font-size: 18px; line-height: 1; padding: 0 4px;
+  cursor: pointer; color: var(--muted);
+  font-size: 20px; line-height: 1; padding: 0 4px;
 }
 .site-detail-close:hover { color: var(--ink); }
+
+.rc-head { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+.rc-site { font-size: 18px; font-weight: 700; color: var(--ink); }
+.rc-sub { font-size: 12px; color: var(--muted); margin-top: 2px; text-transform: capitalize; }
+.rc-scorebox { margin-left: auto; text-align: right; }
+.rc-scorebox .stars { font-size: 16px; }
+.rc-score { font-size: 22px; font-weight: 700; color: var(--indigo); line-height: 1.1; }
+.rc-out { font-size: 12px; font-weight: 600; color: var(--muted); }
+
+.rc-checks { margin: 14px 0 4px; }
+.rc-check { display: flex; align-items: baseline; gap: 10px; padding: 5px 0; font-size: 14px; }
+.rc-yes { color: var(--green); font-weight: 700; }
+.rc-no { color: #dc2626; font-weight: 700; }
+.rc-step { font-weight: 600; color: var(--ink); width: 250px; }
+.rc-detail { color: var(--muted); font-size: 13px; }
+.rc-next { font-size: 13px; color: var(--ink); margin: 12px 0 0; }
 
 /* table rows open the detail panel (main page only - #tableBody is only there) */
 #tableBody tr { cursor: pointer; }

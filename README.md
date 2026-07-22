@@ -6,6 +6,14 @@ As of now a bit over 40 percent of the Canadian sites I track already negotiate 
 
 NSERC summer 2026 research project, by Ekin Deveci, supervised by Prof. Samer Lahoud, Dalhousie University.
 
+## How a scan works
+
+Each scan is one TLS handshake per site, the same one your browser makes. The command behind it is:
+
+    openssl s_client -connect example.com:443 -servername example.com -brief
+
+Off that I read three lines: the protocol version, the negotiated key-exchange group (on TLS 1.3 it is printed on the `Negotiated TLS1.3 group:` line; on TLS 1.2 there is no group line so I read the curve off `Peer Temp Key:` instead), and the certificate's `Signature type:`. A site counts as post-quantum when the group it negotiates is the hybrid `X25519MLKEM768` — classical X25519 run together with ML-KEM, the key exchange NIST standardised as FIPS 203. If a site does not answer, its row is still written with those fields blank so the miss stays visible. Then the CDN is worked out (see below), and that is the whole scan — no login, no crawling.
+
 ## What's in here
 
 scan.py is the scanner. For every site in data/sites.csv it makes one openssl handshake, works out the CDN, and writes a dated scan file into the data folder. You can also hand it a single domain to check just that one site.
@@ -83,3 +91,7 @@ site, sector, country, tls_version, key_exchange, cert, cdn. When a site does no
 ## About the "PQC signatures" number
 
 I track post-quantum certificate signatures too, but for now that count sits at zero. No public certificate authority issues them yet, so watching it climb above zero is one of the things this monitor is waiting for. Post-quantum key exchange, the X25519MLKEM768 share, is the part already rolling out, and that is what the headline percentage follows.
+
+## What one scan does not catch
+
+It is one handshake to one hostname at one moment. A site can look different at its apex than at its www host, and a big site served from many edges can answer differently on another day, so a single row is a snapshot and not a verdict. The CDN guess can miss on unusual setups, since the weakest of its three signals is the owning network. And the sample is a defined list of sites, not the whole Canadian web. I would rather state these limits plainly than pretend one handshake settles everything.

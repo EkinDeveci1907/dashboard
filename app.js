@@ -5,6 +5,7 @@
 
 let allSites = [];
 let shownSites = [];
+let currentScanDate = "";
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
@@ -50,6 +51,7 @@ async function showScan(date) {
   let response = await fetch("stats-" + date + ".json");
   let data = await response.json();
 
+  currentScanDate = date;
   updateSummaryCards(data);
   drawTlsChart(data);
   drawKexChart(data);
@@ -333,16 +335,44 @@ function adviceFor(s) {
          "so this site is two steps behind.";
 }
 
-// fill the little panel above the table with one site's story
+// one line of the report card's checklist: a tick or a cross, the step name,
+// and the detail we actually saw (the TLS version, the key-exchange group, etc.)
+function checkRow(done, label, detail) {
+  let mark = done ? "<span class='rc-yes'>✓</span>" : "<span class='rc-no'>✗</span>";
+  return "<div class='rc-check'>" + mark + "<span class='rc-step'>" + label + "</span>" +
+         "<span class='rc-detail'>" + detail + "</span></div>";
+}
+
+// open the report card for one site: its stars and score up top, a three-line
+// checklist of what we actually measured, and the next step. Meant to be
+// readable on its own - you can screenshot it and hand it to someone.
 function showSite(i) {
   let s = shownSites[i];
   if (!s) return;
+
+  let hasTls13 = s.tls.indexOf("1.3") !== -1;
+  let hasPqcKex = s.kex.indexOf("MLKEM") !== -1;
+  let hasPqcSig = s.stars === 3;   // no site has this yet, but keep it honest
+
+  let card = "";
+  card += "<div class='rc-head'>";
+  card += "<div><div class='rc-site'>" + s.site + "</div>";
+  card += "<div class='rc-sub'>" + s.sector + " · " + s.country + " · scanned " + currentScanDate + "</div></div>";
+  card += "<div class='rc-scorebox'>" + starCell(s) + "<div class='rc-score'>" + s.score + "<span class='rc-out'>/100</span></div></div>";
+  card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
+  card += "</div>";
+
+  card += "<div class='rc-checks'>";
+  card += checkRow(hasTls13, "TLS 1.3", s.tls);
+  card += checkRow(hasPqcKex, "Post-quantum key exchange", s.kex);
+  card += checkRow(hasPqcSig, "Post-quantum certificate signature", "no public CA issues these yet");
+  card += "</div>";
+
+  card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(s) + "</p>";
+
   let box = document.getElementById("siteDetail");
   box.style.display = "block";
-  box.innerHTML =
-    "<div class='site-detail-head'><strong>" + s.site + "</strong> " + starCell(s) +
-    "<span class='site-detail-close' onclick='hideSite()'>&times;</span></div>" +
-    "<p>" + adviceFor(s) + "</p>";
+  box.innerHTML = card;
 }
 
 function hideSite() {
