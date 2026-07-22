@@ -189,8 +189,6 @@ tbody tr:hover { background: #f9fafb; }
 /* table rows open the detail panel (main page only - #tableBody is only there) */
 #tableBody tr { cursor: pointer; }
 
-#trendChart { max-height: 300px; }
-
 /* small pill showing where a site's PQC comes from, on the most-visited page */
 .pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
 .pill-provider { background: #eef2ff; color: #4f46e5; }

@@ -8,7 +8,6 @@ let shownSites = [];
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
-let trendChart = null;
 let worldMap = null;
 
 const INDIGO = "#4f46e5";
@@ -38,45 +37,12 @@ async function loadScanDates() {
   picker.value = dates[dates.length - 1];   // the newest scan is last in the list
   showScan(picker.value);
 
-  // the over-time chart reads every scan once, so it only needs drawing once
-  drawTrend(dates);
-
   // when you pick a different date, redraw everything for that scan
   picker.onchange = function () {
     showScan(picker.value);
   };
 }
 loadScanDates();
-
-// The adoption-over-time line: one point per scan on file. Keeping dated scan
-// files is the whole point of the monitor - this chart is where that pays off.
-// Two lines: the share of Canadian sites on TLS 1.3, and the share already
-// negotiating the post-quantum key exchange.
-async function drawTrend(dates) {
-  let pqcLine = [];
-  let tlsLine = [];
-  for (let i = 0; i < dates.length; i++) {
-    let response = await fetch("stats-" + dates[i] + ".json");
-    let data = await response.json();
-    let tls13 = data.tls["TLSv1.3"] || 0;
-    pqcLine.push(data.pqc_kex_pct);
-    tlsLine.push(Math.round(100 * tls13 / data.total));
-  }
-  if (trendChart) trendChart.destroy();
-  trendChart = new Chart(document.getElementById("trendChart"), {
-    type: "line",
-    data: {
-      labels: dates,
-      datasets: [
-        { label: "TLS 1.3", data: tlsLine, borderColor: GREEN, backgroundColor: GREEN, tension: 0.2 },
-        { label: "PQC key exchange", data: pqcLine, borderColor: INDIGO, backgroundColor: INDIGO, tension: 0.2 }
-      ]
-    },
-    options: {
-      scales: { y: { min: 0, max: 100, ticks: { callback: function (v) { return v + "%"; } } } }
-    }
-  });
-}
 
 // Load one scan's summary json and redraw the whole page from it. Each step below
 // is its own small function, so you can read this like a table of contents.
