@@ -33,7 +33,7 @@ total = len(sites)
 pqc = 0
 via = 0
 own = 0
-score_sum = 0
+stars_sum = 0
 for r in sites:
     if "MLKEM" in r["key_exchange"].upper():
         pqc = pqc + 1
@@ -41,11 +41,10 @@ for r in sites:
         via = via + 1
     if r["pqc_source"] == "own":
         own = own + 1
-    if r["readiness_score"] != "":
-        score_sum = score_sum + int(r["readiness_score"])
+    stars_sum = stars_sum + stars_site(r)
 
 pqc_pct = round(100 * pqc / total)
-avg_score = round(score_sum / total)
+avg_stars = round(stars_sum / total, 1)
 
 
 def by_score(row):
@@ -69,7 +68,7 @@ table.sort(key=by_score, reverse=True)
 cards = ""
 cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
 cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
-cards += "<div class='box'><div class='num'>" + str(avg_score) + "</div><div class='label'>avg readiness score / 100</div></div>"
+cards += "<div class='box'><div class='num'>" + str(avg_stars) + "</div><div class='label'>average stars (of 3)</div></div>"
 cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
@@ -117,7 +116,7 @@ function starCell(r) {
   parts.push((r.tls.indexOf('1.3') !== -1 ? '✓' : '✗') + ' TLS 1.3');
   parts.push((r.kex.indexOf('MLKEM') !== -1 ? '✓' : '✗') + ' PQC key exchange');
   parts.push((stars === 3 ? '✓' : '✗') + ' PQC signature');
-  var title = parts.join('  ·  ') + '  (score ' + r.score + '/100)';
+  var title = parts.join('  ·  ');
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
@@ -142,4 +141,4 @@ draw();
 
 open("canada-topvisited.html", "w").write(html)
 print("wrote canada-topvisited.html")
-print("  " + str(total) + " sites, " + str(pqc_pct) + "% quantum-safe, avg score " + str(avg_score))
+print("  " + str(total) + " sites, " + str(pqc_pct) + "% quantum-safe, avg stars " + str(avg_stars))

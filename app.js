@@ -97,7 +97,9 @@ function drawTlsChart(data) {
       labels: tlsLabels,
       datasets: [{ data: Object.values(data.tls), backgroundColor: tlsColors }]
     },
-    options: { events: [], plugins: { legend: { display: false } } }   // static chart, plain legend shown below
+    // maintainAspectRatio off so the doughnut fills its fixed-height box
+    // instead of growing to a giant square. static chart, plain legend below.
+    options: { events: [], maintainAspectRatio: false, plugins: { legend: { display: false } } }
   });
 
   // plain caption under the chart, so the labels don't look like clickable buttons
@@ -126,7 +128,8 @@ function drawKexChart(data) {
       labels: kexLabels,
       datasets: [{ data: Object.values(data.kex_families), backgroundColor: kexColors }]
     },
-    options: { plugins: { legend: { display: false } } }
+    // fill the fixed-height box so it lines up with the TLS chart beside it
+    options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
   });
 }
 
@@ -292,7 +295,7 @@ function starCell(s) {
   parts.push((s.tls.indexOf("1.3") !== -1 ? "✓" : "✗") + " TLS 1.3");
   parts.push((s.kex.indexOf("MLKEM") !== -1 ? "✓" : "✗") + " PQC key exchange");
   parts.push((stars === 3 ? "✓" : "✗") + " PQC signature");
-  let title = parts.join("  ·  ") + "  (score " + s.score + "/100)";
+  let title = parts.join("  ·  ");
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
@@ -358,7 +361,7 @@ function showSite(i) {
   card += "<div class='rc-head'>";
   card += "<div><div class='rc-site'>" + s.site + "</div>";
   card += "<div class='rc-sub'>" + s.sector + " · " + s.country + " · scanned " + currentScanDate + "</div></div>";
-  card += "<div class='rc-scorebox'>" + starCell(s) + "<div class='rc-score'>" + s.score + "<span class='rc-out'>/100</span></div></div>";
+  card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
   card += "</div>";
 
