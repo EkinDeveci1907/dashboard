@@ -30,8 +30,12 @@ def find_openssl():
 OPENSSL = find_openssl()
 
 # usage: python3 scan.py [sites.csv] [out.csv]. no args = scan the whole list.
-IN_FILE = sys.argv[1] if len(sys.argv) > 1 else "data/sites.csv"
-OUT_FILE = sys.argv[2] if len(sys.argv) > 2 else "data/scan-" + datetime.date.today().isoformat() + ".csv"
+IN_FILE = "data/sites.csv"
+if len(sys.argv) > 1:
+    IN_FILE = sys.argv[1]
+OUT_FILE = "data/scan-" + datetime.date.today().isoformat() + ".csv"
+if len(sys.argv) > 2:
+    OUT_FILE = sys.argv[2]
 
 # Three lookup tables for figuring out which CDN / network serves a site. We check
 # them in order (headers, then DNS CNAME, then the network owner). Each entry is a
@@ -219,7 +223,9 @@ def scan_one(site):
         print(site + ": no answer (the server did not finish a TLS handshake we could read)")
         return
     cdn = detect_cdn(site, get_ip(site))
-    pqc = "   <- post-quantum" if "MLKEM" in kex else ""
+    pqc = ""
+    if "MLKEM" in kex:
+        pqc = "   <- post-quantum"
     print("site:          " + site)
     print("TLS version:   " + tls)
     print("key exchange:  " + kex + pqc)
