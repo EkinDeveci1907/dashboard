@@ -278,9 +278,9 @@ function drawWorldMap(countries) {
 
 // The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
 // exchange, PQC signature). Filled stars first, empty ones after, and the hover
-// title spells out which is which plus the 0-100 score underneath. A typical
-// quantum-safe site today shows 2 of 3 - the signature star is still open for
-// everyone, because no public CA issues PQC certificates yet.
+// title spells out which step is done and which is not. A typical quantum-safe
+// site today shows 2 of 3 - the signature star is still open for everyone,
+// because no public CA issues PQC certificates yet.
 function starCell(s) {
   let stars = s.stars || 0;
   let shown = "";
@@ -346,7 +346,7 @@ function checkRow(done, label, detail) {
          "<span class='rc-detail'>" + detail + "</span></div>";
 }
 
-// open the report card for one site: its stars and score up top, a three-line
+// open the report card for one site: its stars up top, a three-line
 // checklist of what we actually measured, and the next step. Meant to be
 // readable on its own - you can screenshot it and hand it to someone.
 function showSite(i) {
