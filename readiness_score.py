@@ -1,10 +1,9 @@
 # A 0-100 "quantum readiness" score for each site we scan.
 #
-# The prof's idea from the Jul 9 meeting was: since we already take good
-# measurements, turn them into a single score so sites can be ranked and
-# compared over time. This is a first version of that, built only from what
-# the scan already records - TLS version, key-exchange group, cert signature.
-# No new data, and nothing fancy: three parts that add up to 100.
+# The idea: we already take good measurements, so turn them into a single
+# score that lets sites be ranked and compared over time. Built only from
+# what the scan already records - TLS version, key-exchange group, cert
+# signature. No new data, and nothing fancy: three parts that add up to 100.
 #
 # How the points are reasoned:
 #   - You cannot do post-quantum key exchange without TLS 1.3, so TLS 1.3 is
@@ -33,7 +32,7 @@ if len(sys.argv) > 1:
 date = os.path.basename(IN_FILE).replace("scan-", "").replace(".csv", "")
 
 # The 100 points, split out as plain numbers so they're easy to argue about
-# with the prof and easy to change in one place.
+# and easy to change in one place.
 TLS_1_3_POINTS   = 20   # TLS 1.3 present - the floor you need before any PQC
 TLS_1_2_POINTS   = 5    # still on TLS 1.2 - safe today, but a dead end for PQC
 PQC_KEX_POINTS   = 55   # post-quantum key exchange (ML-KEM) - the urgent part
@@ -77,10 +76,9 @@ def band_for(score):
 
 
 def stars_for(tls, kex, sig):
-    # The Jul 16 meeting call: each of the three parts is pass/fail at the
-    # depth we measure, so present them as stars instead of points ("if it's
-    # 0 or 20, then it's a star"). One star per part fully earned:
-    #   TLS 1.3 - PQC key exchange - PQC signature.
+    # Each of the three parts is pass/fail at the depth we measure, so the
+    # tables show them as stars instead of points. One star per part fully
+    # earned: TLS 1.3 - PQC key exchange - PQC signature.
     # Partial points (TLS 1.2 = 5, modern curve = 15) don't earn the star -
     # a star means done, not almost. The 0-100 stays underneath for sorting
     # and for when signatures arrive; the stars are what people read.
