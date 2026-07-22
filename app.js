@@ -4,9 +4,11 @@
 // just plain JS loaded with defer.
 
 let allSites = [];
+let shownSites = [];
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
+let trendChart = null;
 let worldMap = null;
 
 const INDIGO = "#4f46e5";
@@ -36,12 +38,45 @@ async function loadScanDates() {
   picker.value = dates[dates.length - 1];   // the newest scan is last in the list
   showScan(picker.value);
 
+  // the over-time chart reads every scan once, so it only needs drawing once
+  drawTrend(dates);
+
   // when you pick a different date, redraw everything for that scan
   picker.onchange = function () {
     showScan(picker.value);
   };
 }
 loadScanDates();
+
+// The adoption-over-time line: one point per scan on file. Keeping dated scan
+// files is the whole point of the monitor - this chart is where that pays off.
+// Two lines: the share of Canadian sites on TLS 1.3, and the share already
+// negotiating the post-quantum key exchange.
+async function drawTrend(dates) {
+  let pqcLine = [];
+  let tlsLine = [];
+  for (let i = 0; i < dates.length; i++) {
+    let response = await fetch("stats-" + dates[i] + ".json");
+    let data = await response.json();
+    let tls13 = data.tls["TLSv1.3"] || 0;
+    pqcLine.push(data.pqc_kex_pct);
+    tlsLine.push(Math.round(100 * tls13 / data.total));
+  }
+  if (trendChart) trendChart.destroy();
+  trendChart = new Chart(document.getElementById("trendChart"), {
+    type: "line",
+    data: {
+      labels: dates,
+      datasets: [
+        { label: "TLS 1.3", data: tlsLine, borderColor: GREEN, backgroundColor: GREEN, tension: 0.2 },
+        { label: "PQC key exchange", data: pqcLine, borderColor: INDIGO, backgroundColor: INDIGO, tension: 0.2 }
+      ]
+    },
+    options: {
+      scales: { y: { min: 0, max: 100, ticks: { callback: function (v) { return v + "%"; } } } }
+    }
+  });
+}
 
 // Load one scan's summary json and redraw the whole page from it. Each step below
 // is its own small function, so you can read this like a table of contents.
@@ -293,7 +328,63 @@ function starCell(s) {
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
+// How much of each big provider's fleet already negotiates PQC, from our own
+// scan (the numbers in data/cdn-readiness-2026-07-08.csv, rounded). This is
+// what lets the advice line tell "your CDN is ready, flip it on" apart from
+// "your CDN is the blocker".
+const CDN_PQC_RATE = {
+  "Imperva (Incapsula)": 91, "Cloudflare": 80, "Amazon CloudFront": 69,
+  "Fastly": 58, "Google": 52, "Akamai": 4, "Azure Front Door": 4,
+  "Microsoft (Azure)": 2, "OVH": 0, "Alibaba Cloud": 0
+};
+
+// One plain sentence on what a site's next step is, worked out from the same
+// measurements the row already shows. The idea comes from pqc-monitor, which
+// attaches a recommendation to every finding - ours is per site instead.
+function adviceFor(s) {
+  if (s.stars >= 2) {
+    let note = "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
+               "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
+    if (s.pqc_source === "provider") {
+      note += " Worth knowing: the PQC comes from its provider (" + s.cdn + "), not its own servers.";
+    }
+    return note;
+  }
+  if (s.stars === 1) {
+    let rate = CDN_PQC_RATE[s.cdn];
+    if (rate !== undefined && rate >= 50) {
+      return "TLS 1.3 is done, and its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
+             "% of the sites we scan - this site is likely one configuration change away from its second star.";
+    }
+    if (rate !== undefined) {
+      return "TLS 1.3 is done, but its provider (" + s.cdn + ") has PQC on only about " + rate +
+             "% of the sites we scan - this site is mostly waiting on " + s.cdn + " to move.";
+    }
+    return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
+           "on its own servers (OpenSSL 3.5+ or equivalent).";
+  }
+  return "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
+         "so this site is two steps behind.";
+}
+
+// fill the little panel above the table with one site's story
+function showSite(i) {
+  let s = shownSites[i];
+  if (!s) return;
+  let box = document.getElementById("siteDetail");
+  box.style.display = "block";
+  box.innerHTML =
+    "<div class='site-detail-head'><strong>" + s.site + "</strong> " + starCell(s) +
+    "<span class='site-detail-close' onclick='hideSite()'>&times;</span></div>" +
+    "<p>" + adviceFor(s) + "</p>";
+}
+
+function hideSite() {
+  document.getElementById("siteDetail").style.display = "none";
+}
+
 function drawTable(sites) {
+  shownSites = sites;
   let rows = "";
   for (let i = 0; i < sites.length; i++) {
     let s = sites[i];
@@ -304,7 +395,7 @@ function drawTable(sites) {
     }
     // where the PQC comes from (provider / own / none), shown as a small pill
     let src = s.pqc_source ? s.pqc_source : "none";
-    rows += "<tr>" +
+    rows += "<tr onclick='showSite(" + i + ")'>" +
       "<td>" + s.site + "</td>" +
       "<td>" + s.sector + "</td>" +
       "<td>" + s.country + "</td>" +
@@ -375,3 +466,9 @@ function fillFilter(id, values, allLabel) {
     menu.innerHTML += "<option>" + values[i] + "</option>";
   }
 }
+
+// the countdown numbers on the roadmap card, worked out from today's date so
+// the card never goes stale (deadlines from the GC PQC migration roadmap)
+let thisYear = new Date().getFullYear();
+document.getElementById("y2031").textContent = (2031 - thisYear) + " years away";
+document.getElementById("y2035").textContent = (2035 - thisYear) + " years away";

@@ -63,6 +63,15 @@
       <div id="sectorBars" class="sector-list"></div>
     </section>
 
+    <section class="card">
+      <h2>Adoption over time <span class="tag tag-ca">Canadian sites</span></h2>
+      <p>One point per scan on file: the share of Canadian sites on TLS 1.3, and the share already
+         negotiating the post-quantum key exchange. This is the line the monitor exists to watch climb.
+         (The tracked population also grew between scans — from a few hundred sites to 709 — so early
+         points are a smaller sample.)</p>
+      <canvas id="trendChart"></canvas>
+    </section>
+
     <h2 class="section-head">Canada vs the world <span class="tag tag-world">All countries</span></h2>
     <p class="scope">These two panels compare every country we scanned, not just Canada.</p>
 
@@ -85,7 +94,9 @@
       <p class="hint">Readiness is one star per migration step done: <span class="stars">★</span> TLS 1.3
          &nbsp;·&nbsp; <span class="stars">★★</span> + post-quantum key exchange
          &nbsp;·&nbsp; <span class="stars">★★★</span> + post-quantum certificate signature (no public CA issues
-         these yet, so today's best is two). Hover the stars for the breakdown.</p>
+         these yet, so today's best is two). Hover the stars for the breakdown, and click any row for
+         that site's next step.</p>
+      <div id="siteDetail" class="site-detail" style="display:none"></div>
       <div class="filters">
         <input id="search" placeholder="Search a site, e.g. rbc.com">
         <select id="countryFilter"></select>
@@ -102,6 +113,16 @@
           <tbody id="tableBody"></tbody>
         </table>
       </div>
+    </section>
+
+    <section class="card">
+      <h2>The clock Canada is on</h2>
+      <p>Canada's federal PQC migration roadmap (in effect since June 2025, standards per the Cyber
+         Centre's ITSP.40.111) sets two deadlines for government systems: <strong>high-priority systems
+         migrated by the end of 2031</strong> (<span id="y2031"></span>) and <strong>everything else by
+         2035</strong> (<span id="y2035"></span>). Banks, hospitals and universities are only guided, not
+         bound — which is exactly why watching them matters. This monitor shows which half of the Canadian
+         web is beating the government's clock, and canada.ca itself still sits at zero stars.</p>
     </section>
 
     <section class="card">
