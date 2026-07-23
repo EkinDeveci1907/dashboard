@@ -61,9 +61,6 @@ function adviceFor(r) {
   if (r.stars >= 2) {
     var note = "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
                "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
-    if (r.source === 'provider') {
-      note += " Worth knowing: the PQC comes from its provider (" + r.cdn + "), not its own servers.";
-    }
     return note;
   }
   if (r.stars === 1) {
