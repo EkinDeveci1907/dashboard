@@ -55,10 +55,6 @@ h1 { font-size: 24px; font-weight: 700; }
 .charts .card { margin-bottom: 0; }
 canvas { max-width: 100%; }
 
-/* both top charts sit in a box of the same height, so the doughnut stops
-   ballooning and the bar chart stops leaving a gap underneath */
-.chartbox { height: 240px; position: relative; }
-
 .card p { margin-bottom: 12px; font-size: 14px; max-width: 70ch; }
 code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
 

@@ -97,9 +97,11 @@ function drawTlsChart(data) {
       labels: tlsLabels,
       datasets: [{ data: Object.values(data.tls), backgroundColor: tlsColors }]
     },
-    // maintainAspectRatio off so the doughnut fills its fixed-height box
-    // instead of growing to a giant square. static chart, plain legend below.
-    options: { events: [], maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    // a 2:1 shape, worked out from the chart's own width. a doughnut left alone
+    // draws itself square and enormous, and taking the height from the box around
+    // it broke the day a browser had an older index.html cached. static chart,
+    // plain legend below.
+    options: { events: [], aspectRatio: 2, plugins: { legend: { display: false } } }
   });
 
   // plain caption under the chart, so the labels don't look like clickable buttons
@@ -128,8 +130,8 @@ function drawKexChart(data) {
       labels: kexLabels,
       datasets: [{ data: Object.values(data.kex_families), backgroundColor: kexColors }]
     },
-    // fill the fixed-height box so it lines up with the TLS chart beside it
-    options: { maintainAspectRatio: false, plugins: { legend: { display: false } } }
+    // same 2:1 shape as the TLS chart, so the two line up side by side
+    options: { aspectRatio: 2, plugins: { legend: { display: false } } }
   });
 }
 
