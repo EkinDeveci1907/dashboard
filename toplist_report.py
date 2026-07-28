@@ -56,8 +56,9 @@ for r in sites:
 
 pqc_pct = round(100 * pqc / total)
 
-# how many sites were on the list to begin with, so the page can say "91 of 93
-# answered" instead of quietly reporting only the ones that did
+# how many sites were on the list to begin with. The cards count the sites that
+# answered, so the line under the heading says how many were asked - otherwise
+# the two that never replied just disappear.
 listed = len(list(csv.DictReader(open("data/sites-ca-toplist.csv"))))
 
 # The provider PQC rates the report card quotes come from the main scan, not
@@ -90,14 +91,13 @@ table.sort(key=by_score, reverse=True)
 # Build the page. It reuses the dashboard's style.css and report-card.js, so it
 # matches the main tab without any of that code being written out twice.
 cards = ""
-cards += "<div class='box'><div class='num'>" + str(total) + " / " + str(listed) + "</div><div class='label'>sites answered, of the list</div></div>"
+cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
 cards += "<div class='box'><div class='num'>" + str(tls13) + "</div><div class='label'>on TLS 1.3</div></div>"
 cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
 cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
-            " sites Canadians visit most that answered our handshake negotiate post-quantum "
-            "key exchange (X25519MLKEM768).")
+            " sites Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
 
 html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n"
 html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n"
