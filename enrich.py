@@ -1,8 +1,9 @@
-# Adds the two derived columns to a scan, so the scan file itself carries them:
+# Adds the three derived columns to a scan, so the scan file itself carries them:
 #   pqc_source      - for a site that does PQC, did it come from the CDN in front
 #                     of it ("provider") or from the organization itself ("own")?
 #                     "none" if the site has no PQC; blank if it never answered.
 #   readiness_score - the 0-100 quantum-readiness score.
+#   stars           - the 0-3 rating the tables show, one per migration step done.
 #
 # Both are worked out from columns the scan already has (tls_version, key_exchange,
 # cert, cdn), so this runs on ANY scan we've ever taken - no re-scanning needed.
@@ -16,16 +17,8 @@ import csv
 import sys
 import glob
 
-from cdn_attribution import attribution_for
+from cdn_attribution import attribution_for, PQC_SOURCE
 from readiness_score import score_site, stars_for
-
-# turn the attribution label into the short value that goes in the column
-SOURCE = {
-    "PQC via provider": "provider",
-    "PQC own effort": "own",
-    "No PQC": "none",
-    "unreachable": "",
-}
 
 
 def enrich_one(scan_path):
@@ -40,7 +33,7 @@ def enrich_one(scan_path):
 
     for row in rows:
         attribution = attribution_for(row)
-        row["pqc_source"] = SOURCE.get(attribution, "")
+        row["pqc_source"] = PQC_SOURCE.get(attribution, "")
         # a site that never answered gets blank columns, not a fake score of 0
         if attribution == "unreachable":
             row["readiness_score"] = ""

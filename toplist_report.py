@@ -17,7 +17,6 @@ import json
 import os
 
 from cdn_attribution import provider_pqc_rates
-from readiness_score import stars_site
 
 if len(sys.argv) > 1:
     in_file = sys.argv[1]
@@ -32,10 +31,12 @@ else:
 
 scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched.csv", "")
 
-# keep the sites that actually answered
+# keep the sites that actually answered - same test aggregate.py uses, so this
+# tab and the main one agree on what counts as a scanned site
 sites = []
 for row in csv.DictReader(open(in_file)):
-    if row["tls_version"].strip() != "":
+    if (row["tls_version"].strip() and row["key_exchange"].strip()
+            and row["cert"].strip() and row["cdn"].strip()):
         sites.append(row)
 
 # the headline counts
@@ -54,16 +55,19 @@ for r in sites:
     if r["pqc_source"] == "own":
         own = own + 1
 
+if total == 0:
+    print("nothing in " + in_file + " answered, so there is no page to build")
+    sys.exit(1)
+
 pqc_pct = round(100 * pqc / total)
 
-# how many sites were on the list to begin with. The cards count the sites that
-# answered, so the line under the heading says how many were asked - otherwise
-# the two that never replied just disappear.
+# how many sites were on the list to begin with, so the line under the heading
+# can say how many we asked - otherwise the ones that never replied vanish
 listed = len(list(csv.DictReader(open("data/sites-ca-toplist.csv"))))
 
-# The provider PQC rates the report card quotes come from the main scan, not
-# from this list - 91 sites is far too few to say what Akamai is doing. Same
-# numbers the main dashboard uses.
+# the rates the report card quotes come off the main scan, not this list - 91
+# sites is nowhere near enough to say what Akamai is doing
+
 main_scans = []
 for path in sorted(glob.glob("data/scan-*.csv")):
     if "-enriched" not in path:
@@ -72,28 +76,30 @@ cdn_rates = provider_pqc_rates(list(csv.DictReader(open(main_scans[-1]))))
 
 
 def by_score(row):
-    if row["score"] == "":
-        return 0
-    return int(row["score"])
+    return row["score"]
 
 
 # the rows for the table, best score first. Same columns as the main dashboard
-# table, so the two tabs line up. Stars are worked out fresh from the scan
-# columns with the same rule the main page uses.
+# table so the two tabs line up. The score and stars come straight out of the
+# enriched csv - enrich.py already worked them out, no reason to redo it here.
+# Both have to be numbers, not the strings csv hands back, or the star cell's
+# stars === 3 test never fires.
 table = []
 for r in sites:
     table.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
                   "tls": r["tls_version"], "kex": r["key_exchange"], "cdn": r["cdn"],
-                  "source": r["pqc_source"], "score": r["readiness_score"],
-                  "stars": stars_site(r)})
+                  "source": r["pqc_source"], "score": int(r["readiness_score"]),
+                  "stars": int(r["stars"])})
 table.sort(key=by_score, reverse=True)
 
 # Build the page. It reuses the dashboard's style.css and report-card.js, so it
 # matches the main tab without any of that code being written out twice.
+# the headline right above already gives the percentage and how many sites
+# answered, so the cards give the four numbers behind it instead of repeating it
 cards = ""
-cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
+cards += "<div class='box'><div class='num'>" + str(listed) + "</div><div class='label'>sites on the list</div></div>"
 cards += "<div class='box'><div class='num'>" + str(tls13) + "</div><div class='label'>on TLS 1.3</div></div>"
-cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
+cards += "<div class='box'><div class='num'>" + str(pqc) + "</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
 cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +

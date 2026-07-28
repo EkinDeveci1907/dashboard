@@ -50,12 +50,12 @@
     </section>
 
     <section class="charts">
-      <div class="card"><h2>TLS version <span class="tag tag-ca">Canadian sites</span></h2><canvas id="tlsChart"></canvas><div id="tlsLegend" class="legend"></div></div>
-      <div class="card"><h2>Key exchange <span class="tag tag-ca">Canadian sites</span></h2><canvas id="kexChart"></canvas></div>
+      <div class="card"><h2>TLS version</h2><canvas id="tlsChart"></canvas><div id="tlsLegend" class="legend"></div></div>
+      <div class="card"><h2>Key exchange</h2><canvas id="kexChart"></canvas></div>
     </section>
 
     <section class="card">
-      <h2>CDN <span class="tag tag-ca">Canadian sites</span></h2>
+      <h2>CDN</h2>
       <p>Which CDN or network serves each Canadian site, with every bar split into the sites that already
          negotiate PQC and the ones that don't. Read it as each CDN's PQC readiness: Cloudflare has turned it
          on almost everywhere, while Akamai - which fronts all of the big banks - has not.</p>
@@ -63,7 +63,7 @@
     </section>
 
     <section class="card">
-      <h2>PQC readiness by sector <span class="tag tag-ca">Canadian sites</span></h2>
+      <h2>PQC readiness by sector</h2>
       <div id="sectorBars" class="sector-list"></div>
     </section>
 
@@ -71,7 +71,7 @@
     <p class="scope">These two panels compare every country we scanned, not just Canada.</p>
 
     <section class="card">
-      <h2>How Canada compares to the world <span class="tag tag-world">All countries</span></h2>
+      <h2>Adoption by country</h2>
       <p>PQC key exchange adoption by country. Darker means a larger share of that country's sites negotiate
          post-quantum. Hover a country for its exact number. Canada is at <strong id="canada-compare">...</strong>.</p>
       <div id="worldMap" class="map"></div>
@@ -84,7 +84,7 @@
     </section>
 
     <section class="card">
-      <h2>Site directory <span class="tag tag-world">All countries</span></h2>
+      <h2>Site directory</h2>
       <p class="hint">Every site we scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
       <p class="hint">Readiness is one star per migration step done: <span class="stars">★</span> TLS 1.3
          &nbsp;·&nbsp; <span class="stars">★★</span> + post-quantum key exchange
@@ -117,7 +117,7 @@
          migrated by the end of 2031</strong> (<span id="y2031"></span>) and <strong>everything else by
          2035</strong> (<span id="y2035"></span>). Banks, hospitals and universities are only guided, not
          bound - which is exactly why watching them matters. This monitor shows which half of the Canadian
-         web is beating the government's clock, and canada.ca itself still sits at zero stars.</p>
+         web is beating the government's clock<span id="canada-ca-note"></span>.</p>
     </section>
 
     <section class="card">

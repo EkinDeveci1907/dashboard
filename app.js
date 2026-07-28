@@ -65,23 +65,24 @@ async function showScan(date) {
   updateSummaryCards(data);
   drawSectorBars(data.sectors);
   document.getElementById("canada-compare").textContent = data.pqc_kex_pct + "%";
+  showCanadaCaNote(data.sites);
   setupFilters(data);
 
   drawCharts(data);
   drawWorldMap(data.countries);
 }
 
-// The three charts, all of them Chart.js. If the library didn't load we say so
-// once, in the space the charts would have taken, rather than throwing and
-// leaving the rest of the page half-drawn.
+// The three charts, all of them Chart.js. If it didn't download, swap each
+// canvas for a line saying so and carry on - the rest of the page is ours and
+// doesn't need it. Picking another date runs this again, so check the canvas is
+// still there before touching it.
 function drawCharts(data) {
   if (typeof Chart === "undefined") {
-    let note = "<p class='hint'>Charts could not load - the chart library did not download. " +
-               "Everything else on this page still shows the same scan.</p>";
     let ids = ["tlsChart", "kexChart", "cdnChart"];
     for (let i = 0; i < ids.length; i++) {
       let canvas = document.getElementById(ids[i]);
-      canvas.insertAdjacentHTML("afterend", note);
+      if (!canvas) continue;
+      canvas.insertAdjacentHTML("afterend", "<p class='hint'>Chart could not load.</p>");
       canvas.remove();
     }
     return;
@@ -89,6 +90,24 @@ function drawCharts(data) {
   drawTlsChart(data);
   drawKexChart(data);
   drawCdnChart(data);
+}
+
+// canada.ca on the government's own deadline card. It sat at zero stars when I
+// wrote that paragraph, but hard-coding that means the page starts lying the day
+// they turn TLS 1.3 on, so read it off the scan instead.
+function showCanadaCaNote(sites) {
+  let note = "";
+  for (let i = 0; i < sites.length; i++) {
+    if (sites[i].site === "canada.ca") {
+      if (sites[i].stars === 0) {
+        note = ", and canada.ca itself still has no stars at all";
+      } else {
+        note = ", and canada.ca itself is at " + sites[i].stars + " of 3 stars";
+      }
+      break;
+    }
+  }
+  document.getElementById("canada-ca-note").textContent = note;
 }
 
 // the four big numbers at the top, plus the one-line headline
@@ -390,8 +409,15 @@ function fillFilter(id, values, allLabel) {
   document.getElementById(id).innerHTML = options;
 }
 
-// the countdown numbers on the roadmap card, worked out from today's date so
-// the card never goes stale (deadlines from the GC PQC migration roadmap)
-let thisYear = new Date().getFullYear();
-document.getElementById("y2031").textContent = (2031 - thisYear) + " years away";
-document.getElementById("y2035").textContent = (2035 - thisYear) + " years away";
+// the countdown on the roadmap card, worked out from today's date so it doesn't
+// go stale (deadlines from the GC PQC migration roadmap). once a deadline is
+// here it says so rather than counting down past zero.
+function yearsAway(deadline) {
+  let left = deadline - new Date().getFullYear();
+  if (left > 1) return left + " years away";
+  if (left === 1) return "next year";
+  if (left === 0) return "this year";
+  return "already passed";
+}
+document.getElementById("y2031").textContent = yearsAway(2031);
+document.getElementById("y2035").textContent = yearsAway(2035);

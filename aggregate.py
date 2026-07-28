@@ -8,26 +8,13 @@ import json
 import glob
 import os
 
-from cdn_attribution import attribution_for, provider_pqc_rates
-from readiness_score import score_site, stars_site
-
-# short label for where a site's PQC comes from, used in the site table
-PQC_SOURCE = {
-    "PQC via provider": "provider",
-    "PQC own effort": "own",
-    "No PQC": "none",
-    "unreachable": "",
-}
+from cdn_attribution import attribution_for, provider_pqc_rates, PQC_SOURCE
+from readiness_score import score_site, stars_for, has_pqc_signature
 
 
 def has_pqc_key_exchange(kex):
     # the post-quantum group we're looking for shows up as X25519MLKEM768
     return "MLKEM" in kex.upper()
-
-
-def has_pqc_signature(cert):
-    # no public CA issues these yet, so in practice this stays False for now
-    return "MLDSA" in cert.upper() or "DILITHIUM" in cert.upper()
 
 
 def clean_cdn_name(raw):
@@ -135,12 +122,13 @@ def summarise_one_scan(csv_path, date):
     sites = []
     for row in scanned:
         attribution = attribution_for(row)
+        score, band, tls_pts, kex_pts, sig_pts = score_site(row)
         sites.append({"site": row["site"], "sector": row["sector"], "country": row["country"],
                       "tls": row["tls_version"], "kex": row["key_exchange"],
                       "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"]),
                       "pqc_source": PQC_SOURCE.get(attribution, ""),
-                      "score": score_site(row)[0],
-                      "stars": stars_site(row)})
+                      "score": score,
+                      "stars": stars_for(tls_pts, kex_pts, sig_pts)})
 
     # overall Canadian PQC percentage (guard against dividing by zero)
     if len(canada) > 0:
@@ -148,10 +136,9 @@ def summarise_one_scan(csv_path, date):
     else:
         pqc_pct = 0
 
-    # 5. How ready each provider looks across everything we scanned. The report
-    #    card quotes these ("your CDN already does PQC on 80% of the sites we
-    #    see"), so working them out here keeps them in step with the scan
-    #    instead of being a list somebody has to retype after every run.
+    # 5. How much of each provider's fleet already does PQC. The report card
+    #    quotes this back at you, and it used to be a list typed in by hand that
+    #    went stale every scan, so work it out here instead.
     cdn_rates = provider_pqc_rates(scanned)
 
     return {
@@ -173,7 +160,7 @@ def summarise_one_scan(csv_path, date):
 
 
 # Run the summary for every scan CSV we have, oldest date first.
-# The "-enriched" copies (scan.py output plus the two extra columns) are skipped
+# The "-enriched" copies (scan.py output plus the three extra columns) are skipped
 # here - they hold the same sites, and we don't want them as separate dates.
 dates = []
 for path in sorted(glob.glob("data/scan-*.csv")):

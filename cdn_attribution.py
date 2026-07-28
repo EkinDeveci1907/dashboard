@@ -44,10 +44,27 @@ OWN_BRANDS = {
 }
 
 
+# the short value that goes in the pqc_source column and the site table.
+# aggregate.py and enrich.py both read it from here so there's one copy.
+PQC_SOURCE = {
+    "PQC via provider": "provider",
+    "PQC own effort": "own",
+    "No PQC": "none",
+    "unreachable": "",
+}
+
+
 def attribution_for(row):
     # returns one of: "PQC via provider", "PQC own effort", "No PQC", "unreachable"
-    if row.get("tls_version", "").strip() == "":
-        return "unreachable"
+    #
+    # A row only counts if the scan filled in everything. scan.py leaves the cdn
+    # blank whenever any of the crypto fields came back empty - it skips the CDN
+    # step entirely for those - so a half-filled row would look self-hosted here
+    # and get called "own effort" when nobody ever checked who serves it. Same
+    # test aggregate.py uses.
+    for field in ["tls_version", "key_exchange", "cert", "cdn"]:
+        if row.get(field, "").strip() == "":
+            return "unreachable"
 
     site = row["site"].strip().lower()
     cdn = row.get("cdn", "").strip()
@@ -56,7 +73,7 @@ def attribution_for(row):
 
     # self-hosted means the org runs its own TLS. and if the site belongs to the
     # CDN company itself, that also counts as their own infra.
-    own_infra = (cdn == "Self-hosted" or cdn == "")
+    own_infra = (cdn == "Self-hosted")
     for word in OWN_BRANDS.get(cdn, []):
         if word in site:
             own_infra = True
@@ -69,29 +86,33 @@ def attribution_for(row):
     return "PQC via provider"
 
 
-# A provider needs at least this many sites in the scan before we quote a
-# percentage for it. Three sites out of three doing PQC is not "100% ready",
-# it's too small a sample to say anything with.
+# how many sites we need to see on a provider before quoting a percentage for it.
+# three out of three is not "100% ready", it's three sites.
 MIN_SITES_FOR_RATE = 5
 
 
-def provider_pqc_rates(rows):
-    # provider name -> percent of that provider's sites already negotiating PQC,
-    # measured from the scan itself. The report card uses this to tell "your CDN
-    # is ready, flip it on" apart from "your CDN is the blocker". Self-hosted is
-    # left out on purpose: those sites get the generic advice.
+def provider_counts(rows):
+    # provider name -> {n, pqc} over the sites we actually reached. Self-hosted
+    # is not a provider so it stays out. main() and provider_pqc_rates() below
+    # both count off this, so the csv and the dashboard can't disagree.
     counts = {}
     for row in rows:
         attribution = attribution_for(row)
         cdn = row.get("cdn", "").strip()
-        if cdn == "" or cdn == "Self-hosted" or attribution == "unreachable":
+        if attribution == "unreachable" or cdn == "" or cdn == "Self-hosted":
             continue
         if cdn not in counts:
             counts[cdn] = {"n": 0, "pqc": 0}
         counts[cdn]["n"] = counts[cdn]["n"] + 1
         if attribution != "No PQC":
             counts[cdn]["pqc"] = counts[cdn]["pqc"] + 1
+    return counts
 
+
+def provider_pqc_rates(rows):
+    # the rates the report card quotes back at you. Same counts as the csv, but
+    # only for providers we've seen enough of to be worth a number.
+    counts = provider_counts(rows)
     rates = {}
     for cdn in counts:
         if counts[cdn]["n"] >= MIN_SITES_FOR_RATE:
@@ -171,17 +192,10 @@ def main():
                          c["via"], c["own"], c["no"]])
     out.close()
 
-    # how ready each CDN/provider looks across the sites we saw
-    providers = {}
-    for r in results:
-        if r["cdn"] == "" or r["cdn"] == "Self-hosted" or r["attribution"] == "unreachable":
-            continue
-        name = r["cdn"]
-        if name not in providers:
-            providers[name] = {"n": 0, "pqc": 0}
-        providers[name]["n"] = providers[name]["n"] + 1
-        if r["attribution"] == "PQC via provider" or r["attribution"] == "PQC own effort":
-            providers[name]["pqc"] = providers[name]["pqc"] + 1
+    # how ready each CDN/provider looks across the sites we saw. the csv keeps
+    # every provider, however few sites we saw it on - sites_observed is right
+    # there to judge it by. the dashboard is the one that needs a cutoff.
+    providers = provider_counts(rows)
 
     # biggest providers first
     provider_order = []
@@ -213,6 +227,10 @@ def main():
         if r["attribution"] == "PQC own effort":
             n_pqc = n_pqc + 1
             n_own = n_own + 1
+
+    if reachable == 0:
+        print("nothing in " + IN_FILE + " answered, so there is nothing to attribute")
+        return
 
     print("reachable: " + str(reachable) + " | PQC: " + str(n_pqc) +
           " (" + str(round(100 * n_pqc / reachable, 1)) + "%)")

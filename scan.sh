@@ -11,7 +11,7 @@
 # The four steps:
 #   1. scan the main site list (~2760 sites)
 #   2. scan the most-visited-by-Canadians list
-#   3. add the pqc_source and readiness_score columns to both scans
+#   3. add the pqc_source, readiness_score and stars columns to both scans
 #   4. rebuild the summary files and the most-visited page
 
 set -e
@@ -24,7 +24,7 @@ python3 scan.py
 echo "2/4  Scanning the most-visited-by-Canadians list..."
 python3 scan.py data/sites-ca-toplist.csv "data/toplist-$today.csv"
 
-echo "3/4  Adding the pqc_source and readiness_score columns..."
+echo "3/4  Adding the pqc_source, readiness_score and stars columns..."
 python3 enrich.py
 python3 enrich.py "data/toplist-$today.csv"
 

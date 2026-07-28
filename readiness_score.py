@@ -61,9 +61,17 @@ def kex_points(key_exchange):
     return 0
 
 
-def sig_points(cert):
+def has_pqc_signature(cert):
+    # the four names a post-quantum certificate signature can show up under.
+    # aggregate.py counts the signatures card off this too, so the card and the
+    # third star can't end up disagreeing the day a CA finally issues one.
     text = cert.upper()
-    if "MLDSA" in text or "DILITHIUM" in text or "SLHDSA" in text or "SPHINCS" in text:
+    return ("MLDSA" in text or "DILITHIUM" in text
+            or "SLHDSA" in text or "SPHINCS" in text)
+
+
+def sig_points(cert):
+    if has_pqc_signature(cert):
         return PQC_SIG_POINTS
     return 0
 
@@ -135,6 +143,10 @@ def main():
                        "tls_pts": tls, "kex_pts": kex, "sig_pts": sig,
                        "score": total, "band": band,
                        "stars": stars_for(tls, kex, sig)})
+
+    if len(scored) == 0:
+        print("no site in " + IN_FILE + " answered, nothing to score")
+        return
 
     # write the per-site scores
     out1 = "data/readiness-" + date + ".csv"

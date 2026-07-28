@@ -1105,7 +1105,7 @@ google.co.jp,web,JAPAN,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,
 inven.co.kr,web,KOREA,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Self-hosted,none,35,1
 ppomppu.co.kr,web,KOREA,TLSv1.2,"ECDH, prime256v1, 256 bits",rsa_pkcs1_sha256,Self-hosted,none,20,0
 flic.kr,web,KOREA,TLSv1.3,X25519MLKEM768,rsa_pss_rsae_sha256,Amazon CloudFront,provider,75,2
-gmarket.co.kr,web,KOREA,TLSv1.2,,,,none,5,0
+gmarket.co.kr,web,KOREA,TLSv1.2,,,,,,
 google.co.kr,web,KOREA,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Google,own,75,2
 mercadolibre.com.mx,web,MEXICO,TLSv1.3,"X25519, 253 bits",rsa_pss_rsae_sha256,Amazon (AWS),none,35,1
 caliente.mx,web,MEXICO,TLSv1.3,X25519MLKEM768,ecdsa_secp256r1_sha256,Cloudflare,provider,75,2
