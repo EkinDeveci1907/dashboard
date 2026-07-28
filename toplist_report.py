@@ -4,6 +4,9 @@
 # bakes the numbers straight into canada-topvisited.html, so you open it by just
 # double-clicking - no server, nothing else to run.
 #
+# The page shares style.css and report-card.js with the main dashboard, so the
+# table and the click-through report card look and behave the same on both tabs.
+#
 # usage: python3 toplist_report.py [data/toplist-YYYY-MM-DD-enriched.csv]
 #        no argument = the newest toplist-*-enriched.csv in data/
 
@@ -13,12 +16,19 @@ import glob
 import json
 import os
 
+from cdn_attribution import provider_pqc_rates
 from readiness_score import stars_site
 
 if len(sys.argv) > 1:
     in_file = sys.argv[1]
 else:
-    in_file = sorted(glob.glob("data/toplist-*-enriched.csv"))[-1]
+    toplist_scans = sorted(glob.glob("data/toplist-*-enriched.csv"))
+    if not toplist_scans:
+        print("No data/toplist-*-enriched.csv found.")
+        print("Scan the list first:  python3 scan.py data/sites-ca-toplist.csv data/toplist-<date>.csv")
+        print("then:                 python3 enrich.py data/toplist-<date>.csv")
+        sys.exit(1)
+    in_file = toplist_scans[-1]
 
 scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched.csv", "")
 
@@ -46,6 +56,19 @@ for r in sites:
 
 pqc_pct = round(100 * pqc / total)
 
+# how many sites were on the list to begin with, so the page can say "91 of 93
+# answered" instead of quietly reporting only the ones that did
+listed = len(list(csv.DictReader(open("data/sites-ca-toplist.csv"))))
+
+# The provider PQC rates the report card quotes come from the main scan, not
+# from this list - 91 sites is far too few to say what Akamai is doing. Same
+# numbers the main dashboard uses.
+main_scans = []
+for path in sorted(glob.glob("data/scan-*.csv")):
+    if "-enriched" not in path:
+        main_scans.append(path)
+cdn_rates = provider_pqc_rates(list(csv.DictReader(open(main_scans[-1]))))
+
 
 def by_score(row):
     if row["score"] == "":
@@ -64,15 +87,17 @@ for r in sites:
                   "stars": stars_site(r)})
 table.sort(key=by_score, reverse=True)
 
-# ---- build the page (reuses the dashboard's style.css so it matches exactly) ----
+# Build the page. It reuses the dashboard's style.css and report-card.js, so it
+# matches the main tab without any of that code being written out twice.
 cards = ""
-cards += "<div class='box'><div class='num'>" + str(total) + "</div><div class='label'>sites Canadians visit most</div></div>"
+cards += "<div class='box'><div class='num'>" + str(total) + " / " + str(listed) + "</div><div class='label'>sites answered, of the list</div></div>"
 cards += "<div class='box'><div class='num'>" + str(tls13) + "</div><div class='label'>on TLS 1.3</div></div>"
 cards += "<div class='box'><div class='num'>" + str(pqc_pct) + "%</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
 cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
-            " sites Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
+            " sites Canadians visit most that answered our handshake negotiate post-quantum "
+            "key exchange (X25519MLKEM768).")
 
 html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n"
 html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n"
@@ -86,7 +111,8 @@ html += "<a href='index.html'>Canada &amp; the world</a>"
 html += "<a href='canada-topvisited.html' class='active'>Most visited by Canadians</a></nav>\n"
 html += "<p class='headline'>" + headline + "</p>\n"
 html += "<h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>\n"
-html += "<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). Scanned " + scan_date + ".</p>\n"
+html += "<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). "
+html += str(listed) + " sites on the list, " + str(total) + " answered a TLS handshake when we scanned on " + scan_date + ".</p>\n"
 html += "<section class='summary'>" + cards + "</section>\n"
 html += "<section class='card'>\n<h2>Site directory</h2>\n"
 html += "<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. "
@@ -103,104 +129,17 @@ html += "Most Visited Websites in Canada</a> ranking, in rank order, with the ad
 html += "pirate-stream sites dropped. Nothing hand-picked, so the sample means the same thing "
 html += "every month.</p>\n"
 html += "</section>\n</div>\n"
+# report-card.js has to be loaded before the inline script below runs, so it goes
+# here at the end of the body rather than in the head with a defer.
+html += "<script src='report-card.js'></script>\n"
 html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
 html += "const SCAN_DATE = " + json.dumps(scan_date) + ";\n"
+html += "const CDN_RATES = " + json.dumps(cdn_rates) + ";\n"
 html += """
-// same star cell as the main page: filled stars for the steps done, pale ones
-// for the rest, breakdown in the hover title
-function starCell(r) {
-  var stars = r.stars || 0;
-  var shown = '';
-  for (var i = 0; i < 3; i++) {
-    shown += i < stars ? '★' : "<span class='star-off'>★</span>";
-  }
-  var parts = [];
-  parts.push((r.tls.indexOf('1.3') !== -1 ? '✓' : '✗') + ' TLS 1.3');
-  parts.push((r.kex.indexOf('MLKEM') !== -1 ? '✓' : '✗') + ' PQC key exchange');
-  parts.push((stars === 3 ? '✓' : '✗') + ' PQC signature');
-  var title = parts.join('  ·  ');
-  return "<span class='stars' title='" + title + "'>" + shown + "</span>";
-}
-
-// how much of each big provider's fleet already does PQC, from our own scan (the
-// same numbers the main page uses, out of data/cdn-readiness-2026-07-22.csv).
-// Lets the next-step line tell "your CDN is ready, flip it on" apart from "your
-// CDN is the blocker".
-var CDN_PQC_RATE = {
-  "Cloudflare": 80, "Amazon CloudFront": 70, "Akamai": 4, "Fastly": 60,
-  "Amazon (AWS)": 20, "Google": 52, "Microsoft (Azure)": 3,
-  "Azure Front Door": 2, "Imperva (Incapsula)": 91, "Automattic": 29,
-  "OVH": 0, "Alibaba Cloud": 0
-};
-
-// one plain sentence on what this site's next step is, from the same columns the
-// row already shows
-function adviceFor(r) {
-  if (r.stars >= 2) {
-    var note = "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
-               "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
-    return note;
-  }
-  if (r.stars === 1) {
-    var rate = CDN_PQC_RATE[r.cdn];
-    if (rate !== undefined && rate >= 50) {
-      return "TLS 1.3 is done, and its provider (" + r.cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites we scan - this site is likely one configuration change away from its second star.";
-    }
-    if (rate !== undefined) {
-      return "TLS 1.3 is done, but its provider (" + r.cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan - this site is mostly waiting on " + r.cdn + " to move.";
-    }
-    return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
-           "on its own servers (OpenSSL 3.5+ or equivalent).";
-  }
-  return "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
-         "so this site is two steps behind.";
-}
-
-// one line of the report card checklist: a tick or a cross, the step name, and
-// the value we actually saw (the TLS version, the key-exchange group, etc.)
-function checkRow(done, label, detail) {
-  var mark = done ? "<span class='rc-yes'>✓</span>" : "<span class='rc-no'>✗</span>";
-  return "<div class='rc-check'>" + mark + "<span class='rc-step'>" + label + "</span>" +
-         "<span class='rc-detail'>" + detail + "</span></div>";
-}
-
-// open the report card for one site: its stars up top, the three-step checklist,
-// and the next step. Same card as the main page, readable on its own so you can
-// screenshot it.
-function showSite(i) {
-  var r = DATA[i];
-  if (!r) return;
-
-  var hasTls13 = r.tls.indexOf('1.3') !== -1;
-  var hasPqcKex = r.kex.indexOf('MLKEM') !== -1;
-  var hasPqcSig = r.stars === 3;   // no site has this yet, but keep it honest
-
-  var card = "";
-  card += "<div class='rc-head'>";
-  card += "<div><div class='rc-site'>" + r.site + "</div>";
-  card += "<div class='rc-sub'>" + r.sector + " · " + r.country + " · scanned " + SCAN_DATE + "</div></div>";
-  card += "<div class='rc-scorebox'>" + starCell(r) + "</div>";
-  card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
-  card += "</div>";
-
-  card += "<div class='rc-checks'>";
-  card += checkRow(hasTls13, 'TLS 1.3', r.tls);
-  card += checkRow(hasPqcKex, 'Post-quantum key exchange', r.kex);
-  card += checkRow(hasPqcSig, 'Post-quantum certificate signature', 'no public CA issues these yet');
-  card += "</div>";
-
-  card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(r) + "</p>";
-
-  var box = document.getElementById('siteDetail');
-  box.style.display = 'block';
-  box.innerHTML = card;
-}
-
-function hideSite() {
-  document.getElementById('siteDetail').style.display = 'none';
-}
+// report-card.js holds starCell(), showSite() and the rest - the same code the
+// main dashboard uses. All this page has to do is hand it the rows and draw
+// the table.
+setReportCard(DATA, SCAN_DATE, CDN_RATES);
 
 function draw() {
   var q = document.getElementById('search').value.toLowerCase();
@@ -220,7 +159,6 @@ draw();
 </script>
 </body>
 </html>"""
-
 open("canada-topvisited.html", "w").write(html)
 print("wrote canada-topvisited.html")
 print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% quantum-safe")

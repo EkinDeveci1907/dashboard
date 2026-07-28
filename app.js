@@ -1,11 +1,12 @@
 // Front-end for the monitor. Loads the precomputed stats-<date>.json for the chosen
 // scan, fills the summary cards, draws the charts (Chart.js) and the world map
 // (jsvectormap), and wires up the search/filter on the site table. No build step,
-// just plain JS loaded with defer.
+// just plain JS loaded with defer. The per-site report card lives in
+// report-card.js, which the most-visited page uses too.
 
 let allSites = [];
-let shownSites = [];
 let currentScanDate = "";
+let cdnRates = {};
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
@@ -32,9 +33,11 @@ async function loadScanDates() {
   let dates = await response.json();
 
   let picker = document.getElementById("datePicker");
+  let options = "";
   for (let i = 0; i < dates.length; i++) {
-    picker.innerHTML += "<option>" + dates[i] + "</option>";
+    options += "<option>" + dates[i] + "</option>";
   }
+  picker.innerHTML = options;
   picker.value = dates[dates.length - 1];   // the newest scan is last in the list
   showScan(picker.value);
 
@@ -47,23 +50,45 @@ loadScanDates();
 
 // Load one scan's summary json and redraw the whole page from it. Each step below
 // is its own small function, so you can read this like a table of contents.
+//
+// Order matters. Everything we can draw ourselves goes first - the cards, the
+// sector bars, the table - then the three Chart.js charts and the map, which
+// need libraries fetched from a CDN. If that CDN is blocked or slow, the charts
+// are the only thing missing instead of the whole page below the cards.
 async function showScan(date) {
   let response = await fetch("stats-" + date + ".json");
   let data = await response.json();
 
   currentScanDate = date;
+  cdnRates = data.cdn_rates || {};
+
   updateSummaryCards(data);
+  drawSectorBars(data.sectors);
+  document.getElementById("canada-compare").textContent = data.pqc_kex_pct + "%";
+  setupFilters(data);
+
+  drawCharts(data);
+  drawWorldMap(data.countries);
+}
+
+// The three charts, all of them Chart.js. If the library didn't load we say so
+// once, in the space the charts would have taken, rather than throwing and
+// leaving the rest of the page half-drawn.
+function drawCharts(data) {
+  if (typeof Chart === "undefined") {
+    let note = "<p class='hint'>Charts could not load - the chart library did not download. " +
+               "Everything else on this page still shows the same scan.</p>";
+    let ids = ["tlsChart", "kexChart", "cdnChart"];
+    for (let i = 0; i < ids.length; i++) {
+      let canvas = document.getElementById(ids[i]);
+      canvas.insertAdjacentHTML("afterend", note);
+      canvas.remove();
+    }
+    return;
+  }
   drawTlsChart(data);
   drawKexChart(data);
   drawCdnChart(data);
-  drawSectorBars(data.sectors);
-
-  document.getElementById("canada-compare").textContent = data.pqc_kex_pct + "%";
-
-  setupFilters(data);
-
-  // draw the map last so a map hiccup never blocks the table or the charts above
-  drawWorldMap(data.countries);
 }
 
 // the four big numbers at the top, plus the one-line headline
@@ -278,113 +303,9 @@ function drawWorldMap(countries) {
   document.getElementById("mapLegend").style.display = "flex";
 }
 
-// The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
-// exchange, PQC signature). Filled stars first, empty ones after, and the hover
-// title spells out which step is done and which is not. A typical quantum-safe
-// site today shows 2 of 3 - the signature star is still open for everyone,
-// because no public CA issues PQC certificates yet.
-function starCell(s) {
-  let stars = s.stars || 0;
-  let shown = "";
-  for (let i = 0; i < 3; i++) {
-    if (i < stars) {
-      shown += "★";
-    } else {
-      shown += "<span class='star-off'>★</span>";
-    }
-  }
-  let parts = [];
-  parts.push((s.tls.indexOf("1.3") !== -1 ? "✓" : "✗") + " TLS 1.3");
-  parts.push((s.kex.indexOf("MLKEM") !== -1 ? "✓" : "✗") + " PQC key exchange");
-  parts.push((stars === 3 ? "✓" : "✗") + " PQC signature");
-  let title = parts.join("  ·  ");
-  return "<span class='stars' title='" + title + "'>" + shown + "</span>";
-}
-
-// How much of each big provider's fleet already negotiates PQC, from our own
-// scan - the numbers in data/cdn-readiness-2026-07-22.csv, rounded, biggest
-// fleet first. This is what lets the advice line tell "your CDN is ready, flip
-// it on" apart from "your CDN is the blocker". Self-hosted is deliberately not
-// in here: a site on its own servers gets the generic advice instead.
-const CDN_PQC_RATE = {
-  "Cloudflare": 80, "Amazon CloudFront": 70, "Akamai": 4, "Fastly": 60,
-  "Amazon (AWS)": 20, "Google": 52, "Microsoft (Azure)": 3,
-  "Azure Front Door": 2, "Imperva (Incapsula)": 91, "Automattic": 29,
-  "OVH": 0, "Alibaba Cloud": 0
-};
-
-// One plain sentence on what a site's next step is, worked out from the same
-// measurements the row already shows. The idea comes from pqc-monitor, which
-// attaches a recommendation to every finding - ours is per site instead.
-function adviceFor(s) {
-  if (s.stars >= 2) {
-    let note = "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
-               "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
-    return note;
-  }
-  if (s.stars === 1) {
-    let rate = CDN_PQC_RATE[s.cdn];
-    if (rate !== undefined && rate >= 50) {
-      return "TLS 1.3 is done, and its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites we scan - this site is likely one configuration change away from its second star.";
-    }
-    if (rate !== undefined) {
-      return "TLS 1.3 is done, but its provider (" + s.cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan - this site is mostly waiting on " + s.cdn + " to move.";
-    }
-    return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
-           "on its own servers (OpenSSL 3.5+ or equivalent).";
-  }
-  return "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
-         "so this site is two steps behind.";
-}
-
-// one line of the report card's checklist: a tick or a cross, the step name,
-// and the detail we actually saw (the TLS version, the key-exchange group, etc.)
-function checkRow(done, label, detail) {
-  let mark = done ? "<span class='rc-yes'>✓</span>" : "<span class='rc-no'>✗</span>";
-  return "<div class='rc-check'>" + mark + "<span class='rc-step'>" + label + "</span>" +
-         "<span class='rc-detail'>" + detail + "</span></div>";
-}
-
-// open the report card for one site: its stars up top, a three-line
-// checklist of what we actually measured, and the next step. Meant to be
-// readable on its own - you can screenshot it and hand it to someone.
-function showSite(i) {
-  let s = shownSites[i];
-  if (!s) return;
-
-  let hasTls13 = s.tls.indexOf("1.3") !== -1;
-  let hasPqcKex = s.kex.indexOf("MLKEM") !== -1;
-  let hasPqcSig = s.stars === 3;   // no site has this yet, but keep it honest
-
-  let card = "";
-  card += "<div class='rc-head'>";
-  card += "<div><div class='rc-site'>" + s.site + "</div>";
-  card += "<div class='rc-sub'>" + s.sector + " · " + s.country + " · scanned " + currentScanDate + "</div></div>";
-  card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
-  card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
-  card += "</div>";
-
-  card += "<div class='rc-checks'>";
-  card += checkRow(hasTls13, "TLS 1.3", s.tls);
-  card += checkRow(hasPqcKex, "Post-quantum key exchange", s.kex);
-  card += checkRow(hasPqcSig, "Post-quantum certificate signature", "no public CA issues these yet");
-  card += "</div>";
-
-  card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(s) + "</p>";
-
-  let box = document.getElementById("siteDetail");
-  box.style.display = "block";
-  box.innerHTML = card;
-}
-
-function hideSite() {
-  document.getElementById("siteDetail").style.display = "none";
-}
-
 function drawTable(sites) {
-  shownSites = sites;
+  // hand the rows to report-card.js so a click can find the site again
+  setReportCard(sites, currentScanDate, cdnRates);
   let rows = "";
   for (let i = 0; i < sites.length; i++) {
     let s = sites[i];
@@ -460,11 +381,13 @@ document.getElementById("tls13").onchange = applyFilters;
 
 function fillFilter(id, values, allLabel) {
   values.sort();
-  let menu = document.getElementById(id);
-  menu.innerHTML = "<option value=''>" + allLabel + "</option>";
+  let options = "<option value=''>" + allLabel + "</option>";
   for (let i = 0; i < values.length; i++) {
-    menu.innerHTML += "<option>" + values[i] + "</option>";
+    options += "<option>" + values[i] + "</option>";
   }
+  // build the whole list first and set it once, rather than appending to
+  // innerHTML in the loop, which makes the browser re-parse the menu each time
+  document.getElementById(id).innerHTML = options;
 }
 
 // the countdown numbers on the roadmap card, worked out from today's date so

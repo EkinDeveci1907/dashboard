@@ -6,7 +6,10 @@
   <title>PQC Monitor</title>
   <!-- charts from Chart.js, the hover map from jsvectormap. both pulled from a CDN
        so there's nothing to build or install, just open the page. world.js is the
-       map's country shapes. app.js has to load last since it uses all three.
+       map's country shapes. If either library fails to download the page still
+       works - app.js checks before it draws, and only the charts and the map go
+       missing. report-card.js is the per-site card, shared with the most-visited
+       page; app.js has to load last since it uses everything above it.
        note: we load our own style.css AFTER the map's stylesheet, so our tweaks
        (like the zoom buttons) override the library's defaults. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css">
@@ -14,6 +17,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js" defer></script>
+  <script src="report-card.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>

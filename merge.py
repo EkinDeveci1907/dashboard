@@ -9,6 +9,11 @@ import datetime
 COLUMNS = ["site", "sector", "country", "tls_version", "key_exchange", "cert", "cdn"]
 
 # read the two input file names (and an optional output name) from the command line
+if len(sys.argv) < 3:
+    print("usage: python3 merge.py <old-scan.csv> <new-scan.csv> [out.csv]")
+    print("  joins two scan files into one; if a site is in both, the old file wins")
+    sys.exit(1)
+
 old_file = sys.argv[1]
 new_file = sys.argv[2]
 if len(sys.argv) > 3:

@@ -25,12 +25,6 @@ import csv
 import sys
 import os
 
-IN_FILE = "data/scan-2026-07-08.csv"
-if len(sys.argv) > 1:
-    IN_FILE = sys.argv[1]
-
-date = os.path.basename(IN_FILE).replace("scan-", "").replace(".csv", "")
-
 # The 100 points, split out as plain numbers so they're easy to argue about
 # and easy to change in one place.
 TLS_1_3_POINTS   = 20   # TLS 1.3 present - the floor you need before any PQC
@@ -53,8 +47,16 @@ def kex_points(key_exchange):
     if "MLKEM" in text:
         return PQC_KEX_POINTS
     # a modern classical curve isn't post-quantum, but the site is one config
-    # change away from it, so give partial credit
-    if "X25519" in text or "SECP256" in text or "PRIME256" in text:
+    # change away from it, so give partial credit. secp384r1 and secp521r1
+    # belong here too - they are stronger than P-256, not weaker, and leaving
+    # them out scored bing.com (TLS 1.3, 521-bit curve) the same as a site
+    # still on TLS 1.2. Plain finite-field DH stays at zero: that is old
+    # machinery, not a curve a server flips to ML-KEM from.
+    if "X25519" in text:
+        return MODERN_KEX_POINTS
+    if "SECP256" in text or "PRIME256" in text:
+        return MODERN_KEX_POINTS
+    if "SECP384" in text or "SECP521" in text:
         return MODERN_KEX_POINTS
     return 0
 
@@ -108,6 +110,14 @@ def stars_site(row):
 
 
 def main():
+    # aggregate.py, enrich.py and toplist_report.py import the scoring functions
+    # above, so the command-line handling stays in here where it only runs when
+    # this file is the one being executed.
+    IN_FILE = "data/scan-2026-07-08.csv"
+    if len(sys.argv) > 1:
+        IN_FILE = sys.argv[1]
+    date = os.path.basename(IN_FILE).replace("scan-", "").replace(".csv", "")
+
     rows = list(csv.DictReader(open(IN_FILE)))
     print("input: " + IN_FILE + " (" + str(len(rows)) + " rows)")
     print("")

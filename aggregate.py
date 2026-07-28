@@ -8,7 +8,7 @@ import json
 import glob
 import os
 
-from cdn_attribution import attribution_for
+from cdn_attribution import attribution_for, provider_pqc_rates
 from readiness_score import score_site, stars_site
 
 # short label for where a site's PQC comes from, used in the site table
@@ -148,6 +148,12 @@ def summarise_one_scan(csv_path, date):
     else:
         pqc_pct = 0
 
+    # 5. How ready each provider looks across everything we scanned. The report
+    #    card quotes these ("your CDN already does PQC on 80% of the sites we
+    #    see"), so working them out here keeps them in step with the scan
+    #    instead of being a list somebody has to retype after every run.
+    cdn_rates = provider_pqc_rates(scanned)
+
     return {
         "scan_date": date,
         "country_focus": "CANADA",
@@ -159,6 +165,7 @@ def summarise_one_scan(csv_path, date):
         "kex_families": kex_counts,
         "cdn_families": cdn_counts,
         "cdn_pqc": cdn_pqc_counts,
+        "cdn_rates": cdn_rates,
         "sectors": sectors,
         "countries": countries,
         "sites": sites,

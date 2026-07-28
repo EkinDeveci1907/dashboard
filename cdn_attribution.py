@@ -69,6 +69,36 @@ def attribution_for(row):
     return "PQC via provider"
 
 
+# A provider needs at least this many sites in the scan before we quote a
+# percentage for it. Three sites out of three doing PQC is not "100% ready",
+# it's too small a sample to say anything with.
+MIN_SITES_FOR_RATE = 5
+
+
+def provider_pqc_rates(rows):
+    # provider name -> percent of that provider's sites already negotiating PQC,
+    # measured from the scan itself. The report card uses this to tell "your CDN
+    # is ready, flip it on" apart from "your CDN is the blocker". Self-hosted is
+    # left out on purpose: those sites get the generic advice.
+    counts = {}
+    for row in rows:
+        attribution = attribution_for(row)
+        cdn = row.get("cdn", "").strip()
+        if cdn == "" or cdn == "Self-hosted" or attribution == "unreachable":
+            continue
+        if cdn not in counts:
+            counts[cdn] = {"n": 0, "pqc": 0}
+        counts[cdn]["n"] = counts[cdn]["n"] + 1
+        if attribution != "No PQC":
+            counts[cdn]["pqc"] = counts[cdn]["pqc"] + 1
+
+    rates = {}
+    for cdn in counts:
+        if counts[cdn]["n"] >= MIN_SITES_FOR_RATE:
+            rates[cdn] = round(100 * counts[cdn]["pqc"] / counts[cdn]["n"])
+    return rates
+
+
 def main():
     IN_FILE = "data/scan-2026-07-08.csv"
     if len(sys.argv) > 1:

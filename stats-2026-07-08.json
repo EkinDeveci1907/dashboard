@@ -59,6 +59,23 @@
     "Squarespace": 1,
     "OVH": 0
   },
+  "cdn_rates": {
+    "Google": 52,
+    "Akamai": 4,
+    "Amazon (AWS)": 19,
+    "Cloudflare": 80,
+    "Amazon CloudFront": 69,
+    "Fastly": 58,
+    "Azure Front Door": 2,
+    "Sucuri": 83,
+    "Microsoft (Azure)": 4,
+    "Imperva (Incapsula)": 91,
+    "F5": 0,
+    "Automattic": 29,
+    "Alibaba Cloud": 0,
+    "OVH": 0,
+    "Hetzner": 31
+  },
   "sectors": {
     "gov": {
       "total": 94,
@@ -657,7 +674,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -885,7 +902,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -957,7 +974,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -1497,7 +1514,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -1533,7 +1550,7 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -1629,7 +1646,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -1857,7 +1874,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -2085,7 +2102,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -2301,7 +2318,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Network Solutions",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -2313,7 +2330,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -2685,7 +2702,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -2841,7 +2858,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -2877,7 +2894,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -3213,7 +3230,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -3273,7 +3290,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -3633,7 +3650,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -3645,7 +3662,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -3693,7 +3710,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -3777,7 +3794,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -3861,7 +3878,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -4209,7 +4226,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -4293,7 +4310,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "CDNvideo",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -4521,7 +4538,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -6765,7 +6782,7 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -6837,7 +6854,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -8505,7 +8522,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -10977,7 +10994,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -12021,7 +12038,7 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -12081,7 +12098,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -12789,7 +12806,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -14529,7 +14546,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -14709,7 +14726,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -14733,7 +14750,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -14901,7 +14918,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -14949,7 +14966,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -15081,7 +15098,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -15549,7 +15566,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -16173,7 +16190,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -16965,7 +16982,7 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -17097,7 +17114,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Google",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -18153,7 +18170,7 @@
       "cert": "ecdsa_secp384r1_sha384",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -18513,7 +18530,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Fastly",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -18657,7 +18674,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -18861,7 +18878,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -20517,7 +20534,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -20757,7 +20774,7 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -22065,7 +22082,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -22677,7 +22694,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -22773,7 +22790,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -22977,7 +22994,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -23589,7 +23606,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -23661,7 +23678,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -23841,7 +23858,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -24009,7 +24026,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -24225,7 +24242,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -24381,7 +24398,7 @@
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -24873,7 +24890,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -25761,7 +25778,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Azure Front Door",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -25785,7 +25802,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -26265,7 +26282,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "CDNvideo",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -26301,7 +26318,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -27225,7 +27242,7 @@
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 20,
+      "score": 35,
       "stars": 1
     },
     {
@@ -27729,7 +27746,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Naver Cloud",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -28293,7 +28310,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -28545,7 +28562,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -29649,7 +29666,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -31761,7 +31778,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -31809,7 +31826,7 @@
       "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -32337,7 +32354,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {
@@ -32505,7 +32522,7 @@
       "cert": "rsa_pkcs1_sha256",
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
-      "score": 5,
+      "score": 20,
       "stars": 0
     },
     {

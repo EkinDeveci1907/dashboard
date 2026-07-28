@@ -12,10 +12,18 @@ that `scan.py` already records.
 | TLS 1.3 present | 20 | You can't negotiate a post-quantum group without TLS 1.3, so this is the floor. |
 | (or TLS 1.2 only) | 5 | Safe today, but a dead end for PQC. |
 | Post-quantum key exchange (ML-KEM) | 55 | The part that matters *now* — it's what stops harvest-now-decrypt-later. |
-| (or a modern classical curve) | 15 | X25519 / P-256: not post-quantum, but one config change away. |
+| (or a modern classical curve) | 15 | X25519, P-256, P-384, P-521: not post-quantum, but one config change away. |
 | Post-quantum signature (ML-DSA / SLH-DSA) | 25 | The second half of the migration. Almost nobody has it yet, so it's headroom. |
 
 Three bands: **Quantum-ready (≥75)**, **Modern, not quantum-safe (35–74)**, **Legacy (<35)**.
+
+The modern-curve line originally listed only X25519 and P-256, which meant the
+75 sites on P-384 or P-521 scored zero for key exchange — bing.com, on TLS 1.3
+with a 521-bit curve, came out at 20, the same as canada.ca on TLS 1.2. Those
+curves are stronger than P-256, not weaker, so they now earn the same partial
+credit. Plain finite-field DH (11 sites) still scores zero: that is old
+machinery rather than a curve a server flips to ML-KEM from. Nothing about the
+stars, the PQC percentage or the attribution changed — only the 0–100.
 
 ## Why the tables show stars, not points
 
@@ -56,8 +64,9 @@ future work.
 - A normal PQC site today: ★★, 75 = TLS 1.3 (20) + ML-KEM (55) + no PQC sig (0).
 - **cloudflare.com / google.com → ★★ (75)**
 - **rbc.com → ★ (35)** — TLS 1.3, modern curve, no PQC
+- **bing.com → ★ (35)** — TLS 1.3 on P-521, so it lands level with rbc.com
 - **canada.ca → no stars (20)** — still on TLS 1.2
-- Canada: 317 sites at ★★, 292 at ★, 136 at zero; average 48.5/100.
+- Canada: 317 sites at ★★, 292 at ★, 136 at zero; average 49.2/100.
 
 ## Open question
 
