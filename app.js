@@ -302,13 +302,15 @@ function starCell(s) {
 }
 
 // How much of each big provider's fleet already negotiates PQC, from our own
-// scan (the numbers in data/cdn-readiness-2026-07-08.csv, rounded). This is
-// what lets the advice line tell "your CDN is ready, flip it on" apart from
-// "your CDN is the blocker".
+// scan - the numbers in data/cdn-readiness-2026-07-22.csv, rounded, biggest
+// fleet first. This is what lets the advice line tell "your CDN is ready, flip
+// it on" apart from "your CDN is the blocker". Self-hosted is deliberately not
+// in here: a site on its own servers gets the generic advice instead.
 const CDN_PQC_RATE = {
-  "Imperva (Incapsula)": 91, "Cloudflare": 80, "Amazon CloudFront": 69,
-  "Fastly": 58, "Google": 52, "Akamai": 4, "Azure Front Door": 4,
-  "Microsoft (Azure)": 2, "OVH": 0, "Alibaba Cloud": 0
+  "Cloudflare": 80, "Amazon CloudFront": 70, "Akamai": 4, "Fastly": 60,
+  "Amazon (AWS)": 20, "Google": 52, "Microsoft (Azure)": 3,
+  "Azure Front Door": 2, "Imperva (Incapsula)": 91, "Automattic": 29,
+  "OVH": 0, "Alibaba Cloud": 0
 };
 
 // One plain sentence on what a site's next step is, worked out from the same

@@ -123,12 +123,14 @@ function starCell(r) {
 }
 
 // how much of each big provider's fleet already does PQC, from our own scan (the
-// same numbers the main page uses). Lets the next-step line tell "your CDN is
-// ready, flip it on" apart from "your CDN is the blocker".
+// same numbers the main page uses, out of data/cdn-readiness-2026-07-22.csv).
+// Lets the next-step line tell "your CDN is ready, flip it on" apart from "your
+// CDN is the blocker".
 var CDN_PQC_RATE = {
-  "Imperva (Incapsula)": 91, "Cloudflare": 80, "Amazon CloudFront": 69,
-  "Fastly": 58, "Google": 52, "Akamai": 4, "Azure Front Door": 4,
-  "Microsoft (Azure)": 2, "OVH": 0, "Alibaba Cloud": 0
+  "Cloudflare": 80, "Amazon CloudFront": 70, "Akamai": 4, "Fastly": 60,
+  "Amazon (AWS)": 20, "Google": 52, "Microsoft (Azure)": 3,
+  "Azure Front Door": 2, "Imperva (Incapsula)": 91, "Automattic": 29,
+  "OVH": 0, "Alibaba Cloud": 0
 };
 
 // one plain sentence on what this site's next step is, from the same columns the
