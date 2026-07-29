@@ -1,5 +1,6 @@
 {
   "scan_date": "2026-06-30",
+  "previous_scan": "2026-06-29",
   "country_focus": "CANADA",
   "total": 250,
   "total_all": 908,
@@ -298,7 +299,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "www.canada.ca",
@@ -310,7 +312,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "netflix.com",
@@ -322,7 +325,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "edmonton.ca",
@@ -334,7 +338,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cloudflare.com",
@@ -346,7 +351,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ontario.ca",
@@ -358,7 +364,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "alberta.ca",
@@ -370,7 +377,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "rbc.com",
@@ -382,7 +390,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "td.com",
@@ -394,7 +403,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "scotiabank.com",
@@ -406,7 +416,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cibc.com",
@@ -418,7 +429,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "utoronto.ca",
@@ -430,7 +442,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mcgill.ca",
@@ -442,7 +455,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nshealth.ca",
@@ -454,7 +468,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "dal.ca",
@@ -466,7 +481,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "smu.ca",
@@ -478,7 +494,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "www.linkedin.com",
@@ -490,7 +507,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bankofcanada.ca",
@@ -502,7 +520,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "quebec.ca",
@@ -514,7 +533,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "aircanada.com",
@@ -526,7 +546,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "uwaterloo.ca",
@@ -538,7 +559,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ubc.ca",
@@ -550,7 +572,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sickkids.ca",
@@ -562,7 +585,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "uhn.ca",
@@ -574,7 +598,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sunnybrook.ca",
@@ -586,7 +611,8 @@
       "cdn": "Sucuri",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "camh.ca",
@@ -598,7 +624,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ottawahospital.on.ca",
@@ -610,7 +637,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "albertahealthservices.ca",
@@ -622,7 +650,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "fraserhealth.ca",
@@ -634,7 +663,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "muhc.ca",
@@ -646,7 +676,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cheo.on.ca",
@@ -658,7 +689,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "unityhealth.to",
@@ -670,7 +702,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "trilliumhealthpartners.ca",
@@ -682,7 +715,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bmo.com",
@@ -694,7 +728,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nbc.ca",
@@ -706,7 +741,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "desjardins.com",
@@ -718,7 +754,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "atb.com",
@@ -730,7 +767,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "tangerine.ca",
@@ -742,7 +780,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wealthsimple.com",
@@ -754,7 +793,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ualberta.ca",
@@ -766,7 +806,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ucalgary.ca",
@@ -778,7 +819,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "queensu.ca",
@@ -790,7 +832,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "yorku.ca",
@@ -802,7 +845,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mcmaster.ca",
@@ -814,7 +858,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "uottawa.ca",
@@ -826,7 +871,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ulaval.ca",
@@ -838,7 +884,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "calgary.ca",
@@ -850,7 +897,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ottawa.ca",
@@ -862,7 +910,8 @@
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "halifax.ca",
@@ -874,7 +923,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "statcan.gc.ca",
@@ -886,7 +936,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "icloud.com",
@@ -898,7 +949,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cra-arc.gc.ca",
@@ -910,7 +962,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "justice.gc.ca",
@@ -922,7 +975,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ic.gc.ca",
@@ -934,7 +988,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "pm.gc.ca",
@@ -946,7 +1001,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "forces.gc.ca",
@@ -958,7 +1014,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "gov.bc.ca",
@@ -970,7 +1027,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "saskatchewan.ca",
@@ -982,7 +1040,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "manitoba.ca",
@@ -994,7 +1053,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "novascotia.ca",
@@ -1006,7 +1066,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "gnb.ca",
@@ -1018,7 +1079,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vancouver.ca",
@@ -1030,7 +1092,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "montreal.ca",
@@ -1042,7 +1105,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "winnipeg.ca",
@@ -1054,7 +1118,8 @@
       "cdn": "F5",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bell.ca",
@@ -1066,7 +1131,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "rogers.com",
@@ -1078,7 +1144,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "telus.com",
@@ -1090,7 +1157,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "canadiantire.ca",
@@ -1102,7 +1170,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "loblaws.ca",
@@ -1114,7 +1183,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "walmart.ca",
@@ -1126,7 +1196,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "shopify.com",
@@ -1138,7 +1209,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cbc.ca",
@@ -1150,7 +1222,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ctvnews.ca",
@@ -1162,7 +1235,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "theglobeandmail.com",
@@ -1174,7 +1248,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "canadapost.ca",
@@ -1186,7 +1261,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "viarail.ca",
@@ -1198,7 +1274,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "westjet.com",
@@ -1210,7 +1287,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "facebook.com",
@@ -1222,7 +1300,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "microsoft.com",
@@ -1234,7 +1313,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "apple.com",
@@ -1246,7 +1326,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "equitablebank.ca",
@@ -1258,7 +1339,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "meridiancu.ca",
@@ -1270,7 +1352,8 @@
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vancity.com",
@@ -1282,7 +1365,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "coastcapitalsavings.com",
@@ -1294,7 +1378,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cwbank.com",
@@ -1306,7 +1391,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "laurentianbank.ca",
@@ -1318,7 +1404,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "manulife.ca",
@@ -1330,7 +1417,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sunlife.ca",
@@ -1342,7 +1430,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "carleton.ca",
@@ -1354,7 +1443,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "torontomu.ca",
@@ -1366,7 +1456,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "uvic.ca",
@@ -1378,7 +1469,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "umanitoba.ca",
@@ -1390,7 +1482,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "usask.ca",
@@ -1402,7 +1495,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "concordia.ca",
@@ -1414,7 +1508,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mun.ca",
@@ -1426,7 +1521,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mountsinai.on.ca",
@@ -1438,7 +1534,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "hsnsudbury.ca",
@@ -1450,7 +1547,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "niagarahealth.on.ca",
@@ -1462,7 +1560,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mackenziehealth.ca",
@@ -1474,7 +1573,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "vch.ca",
@@ -1486,7 +1586,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "providencehealth.bc.ca",
@@ -1498,7 +1599,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "service.canada.ca",
@@ -1510,7 +1612,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "esdc.gc.ca",
@@ -1522,7 +1625,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "nrcan.gc.ca",
@@ -1534,7 +1638,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ec.gc.ca",
@@ -1546,7 +1651,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tc.gc.ca",
@@ -1558,7 +1664,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "veterans.gc.ca",
@@ -1570,7 +1677,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "princeedwardisland.ca",
@@ -1582,7 +1690,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gov.nl.ca",
@@ -1594,7 +1703,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "yukon.ca",
@@ -1606,7 +1716,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gov.nu.ca",
@@ -1618,7 +1729,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "saskatoon.ca",
@@ -1630,7 +1742,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "london.ca",
@@ -1642,7 +1755,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mississauga.ca",
@@ -1654,7 +1768,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "brampton.ca",
@@ -1666,7 +1781,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "regina.ca",
@@ -1678,7 +1794,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "victoria.ca",
@@ -1690,7 +1807,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "shaw.ca",
@@ -1702,7 +1820,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "videotron.com",
@@ -1714,7 +1833,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "freedommobile.ca",
@@ -1726,7 +1846,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "sobeys.com",
@@ -1738,7 +1859,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "indigo.ca",
@@ -1750,7 +1872,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "lululemon.com",
@@ -1762,7 +1885,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "thebay.com",
@@ -1774,7 +1898,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "shoppersdrugmart.ca",
@@ -1786,7 +1911,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "metro.ca",
@@ -1798,7 +1924,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nationalpost.com",
@@ -1810,7 +1937,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "thestar.com",
@@ -1822,7 +1950,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "lapresse.ca",
@@ -1834,7 +1963,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ttc.ca",
@@ -1846,7 +1976,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "yvr.ca",
@@ -1858,7 +1989,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "torontopearson.com",
@@ -1870,7 +2002,8 @@
       "cdn": "Radware",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.com",
@@ -1882,7 +2015,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "github.com",
@@ -1894,7 +2028,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wikipedia.org",
@@ -1906,7 +2041,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "youtube.com",
@@ -1918,7 +2054,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nytimes.com",
@@ -1930,7 +2067,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "chase.com",
@@ -1942,7 +2080,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wellsfargo.com",
@@ -1954,7 +2093,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "intact.ca",
@@ -1966,7 +2106,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "aviva.ca",
@@ -1978,7 +2119,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "cooperators.com",
@@ -1990,7 +2132,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "paypal.com",
@@ -2002,7 +2145,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "stripe.com",
@@ -2014,7 +2158,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mastercard.ca",
@@ -2026,7 +2171,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "visa.ca",
@@ -2038,7 +2184,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "senecacollege.ca",
@@ -2050,7 +2197,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "humber.ca",
@@ -2062,7 +2210,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "algonquincollege.com",
@@ -2074,7 +2223,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nait.ca",
@@ -2086,7 +2236,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bcit.ca",
@@ -2098,7 +2249,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bestbuy.ca",
@@ -2110,7 +2262,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "homedepot.ca",
@@ -2122,7 +2275,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "costco.ca",
@@ -2134,7 +2288,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ikea.com",
@@ -2146,7 +2301,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "staples.ca",
@@ -2158,7 +2314,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "timhortons.com",
@@ -2170,7 +2327,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mcdonalds.com",
@@ -2182,7 +2340,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "starbucks.com",
@@ -2194,7 +2353,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "subway.com",
@@ -2206,7 +2366,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "pizzapizza.ca",
@@ -2218,7 +2379,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "edc.ca",
@@ -2230,7 +2392,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bdc.ca",
@@ -2242,7 +2405,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nserc-crsng.gc.ca",
@@ -2254,7 +2418,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 5,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "cihr-irsc.gc.ca",
@@ -2266,7 +2431,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "yyc.com",
@@ -2278,7 +2444,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yow.ca",
@@ -2290,7 +2457,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yul.com",
@@ -2302,7 +2470,8 @@
       "cdn": "Network Solutions",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "gatineau.ca",
@@ -2314,7 +2483,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "markham.ca",
@@ -2326,7 +2496,8 @@
       "cdn": "DOSarrest",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "burnaby.ca",
@@ -2338,7 +2509,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "richmond.ca",
@@ -2350,7 +2522,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bbc.co.uk",
@@ -2362,7 +2535,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gov.uk",
@@ -2374,7 +2548,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nhs.uk",
@@ -2386,7 +2561,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "barclays.co.uk",
@@ -2398,7 +2574,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "hsbc.co.uk",
@@ -2410,7 +2587,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "spotify.com",
@@ -2422,7 +2600,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "airbnb.com",
@@ -2434,7 +2613,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "reddit.com",
@@ -2446,7 +2626,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "opentext.com",
@@ -2458,7 +2639,8 @@
       "cdn": "OpenText",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "blackberry.com",
@@ -2470,7 +2652,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hootsuite.com",
@@ -2482,7 +2665,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "lightspeedhq.com",
@@ -2494,7 +2678,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "1password.com",
@@ -2506,7 +2691,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ebay.com",
@@ -2518,7 +2704,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "instagram.com",
@@ -2530,7 +2717,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "servus.ca",
@@ -2542,7 +2730,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "alterna.ca",
@@ -2554,7 +2743,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "canlife.com",
@@ -2566,7 +2756,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tdinsurance.com",
@@ -2578,7 +2769,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "belairdirect.com",
@@ -2590,7 +2782,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "allstate.ca",
@@ -2602,7 +2795,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "empire.ca",
@@ -2614,7 +2808,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "uqam.ca",
@@ -2626,7 +2821,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "usherbrooke.ca",
@@ -2638,7 +2834,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ubishops.ca",
@@ -2650,7 +2847,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "georgebrown.ca",
@@ -2662,7 +2860,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "centennialcollege.ca",
@@ -2674,7 +2873,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mohawkcollege.ca",
@@ -2686,7 +2886,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "conestogac.on.ca",
@@ -2698,7 +2899,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "sait.ca",
@@ -2710,7 +2912,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "hamiltonhealthsciences.ca",
@@ -2722,7 +2925,8 @@
       "cdn": "Sucuri",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "humberriverhealth.ca",
@@ -2734,7 +2938,8 @@
       "cdn": "Nuday",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bcchildrens.ca",
@@ -2746,7 +2951,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "chu-sainte-justine.org",
@@ -2758,7 +2964,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bchydro.com",
@@ -2770,7 +2977,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "enmax.com",
@@ -2782,7 +2990,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "epcor.com",
@@ -2794,7 +3003,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "enbridge.com",
@@ -2806,7 +3016,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tcenergy.com",
@@ -2818,7 +3029,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "suncor.com",
@@ -2830,7 +3042,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "atco.com",
@@ -2842,7 +3055,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "gotransit.com",
@@ -2854,7 +3068,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "octranspo.com",
@@ -2866,7 +3081,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "translink.ca",
@@ -2878,7 +3094,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "stm.info",
@@ -2890,7 +3107,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cmhc-schl.gc.ca",
@@ -2902,7 +3120,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bac-lac.gc.ca",
@@ -2914,7 +3133,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mint.ca",
@@ -2926,7 +3146,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "elections.ca",
@@ -2938,7 +3159,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "x.com",
@@ -2950,7 +3172,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "tiktok.com",
@@ -2962,7 +3185,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "whatsapp.com",
@@ -2974,7 +3198,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "discord.com",
@@ -2986,7 +3211,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "slack.com",
@@ -2998,7 +3224,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "zoom.us",
@@ -3010,7 +3237,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "dropbox.com",
@@ -3022,7 +3250,8 @@
       "cdn": "Dropbox",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "twitch.tv",
@@ -3034,7 +3263,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "pinterest.com",
@@ -3046,7 +3276,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "snapchat.com",
@@ -3058,7 +3289,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bankofamerica.com",
@@ -3070,7 +3302,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "citibank.com",
@@ -3082,7 +3315,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "usa.gov",
@@ -3094,7 +3328,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "raymondjames.ca",
@@ -3106,7 +3341,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ig.ca",
@@ -3118,7 +3354,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "questrade.com",
@@ -3130,7 +3367,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "duca.com",
@@ -3142,7 +3380,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "libro.ca",
@@ -3154,7 +3393,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "usaa.com",
@@ -3166,7 +3406,8 @@
       "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vanguard.com",
@@ -3178,7 +3419,8 @@
       "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "fidelity.com",
@@ -3190,7 +3432,8 @@
       "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 1
     },
     {
       "site": "ocadu.ca",
@@ -3202,7 +3445,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ufv.ca",
@@ -3214,7 +3458,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "tru.ca",
@@ -3226,7 +3471,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "royalroads.ca",
@@ -3238,7 +3484,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "westernu.ca",
@@ -3250,7 +3497,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "horizonnb.ca",
@@ -3262,7 +3510,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "saskhealthauthority.ca",
@@ -3274,7 +3523,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "intuit.com",
@@ -3286,7 +3536,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "adobe.com",
@@ -3298,7 +3549,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "salesforce.com",
@@ -3310,7 +3562,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "oracle.com",
@@ -3322,7 +3575,8 @@
       "cdn": "Oracle Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ibm.com",
@@ -3334,7 +3588,8 @@
       "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "globalnews.ca",
@@ -3346,7 +3601,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ledevoir.com",
@@ -3358,7 +3614,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "montrealgazette.com",
@@ -3370,7 +3627,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "flyporter.com",
@@ -3382,7 +3640,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "airtransat.com",
@@ -3394,7 +3653,8 @@
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "expedia.ca",
@@ -3406,7 +3666,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "booking.com",
@@ -3418,7 +3679,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "tripadvisor.com",
@@ -3430,7 +3692,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "royal.uk",
@@ -3442,7 +3705,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "parliament.uk",
@@ -3454,7 +3718,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "abc.net.au",
@@ -3466,7 +3731,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "commbank.com.au",
@@ -3478,7 +3744,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "anz.com.au",
@@ -3490,7 +3757,8 @@
       "cdn": "Imperva (Incapsula)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "westpac.com.au",
@@ -3502,7 +3770,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nab.com.au",
@@ -3514,7 +3783,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "gstatic.com",
@@ -3526,7 +3796,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "googleapis.com",
@@ -3538,7 +3809,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazonaws.com",
@@ -3550,7 +3822,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mail.ru",
@@ -3562,7 +3835,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "fbcdn.net",
@@ -3574,7 +3848,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "twitter.com",
@@ -3586,7 +3861,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "dzen.ru",
@@ -3598,7 +3874,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "googletagmanager.com",
@@ -3610,7 +3887,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "googlevideo.com",
@@ -3622,7 +3900,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "live.com",
@@ -3634,7 +3913,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "office.com",
@@ -3646,7 +3926,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "azure.com",
@@ -3658,7 +3939,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "googleusercontent.com",
@@ -3670,7 +3952,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "doubleclick.net",
@@ -3682,7 +3965,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bing.com",
@@ -3694,7 +3978,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "appsflyersdk.com",
@@ -3706,7 +3991,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "fastly.net",
@@ -3718,7 +4004,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "whatsapp.net",
@@ -3730,7 +4017,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "digicert.com",
@@ -3742,7 +4030,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "wordpress.org",
@@ -3754,7 +4043,8 @@
       "cdn": "Automattic",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "skype.com",
@@ -3766,7 +4056,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sharepoint.com",
@@ -3778,7 +4069,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "youtu.be",
@@ -3790,7 +4082,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gandi.net",
@@ -3802,7 +4095,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "goo.gl",
@@ -3814,7 +4108,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "googlesyndication.com",
@@ -3826,7 +4121,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yahoo.com",
@@ -3838,7 +4134,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cloud.microsoft",
@@ -3850,7 +4147,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "msn.com",
@@ -3862,7 +4160,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ntp.org",
@@ -3874,7 +4173,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "cloudflare.net",
@@ -3886,7 +4186,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vimeo.com",
@@ -3898,7 +4199,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "googledomains.com",
@@ -3910,7 +4212,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "chatgpt.com",
@@ -3922,7 +4225,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "windows.net",
@@ -3934,7 +4238,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wa.me",
@@ -3946,7 +4251,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "telekom.de",
@@ -3958,7 +4264,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "myfritz.net",
@@ -3970,7 +4277,8 @@
       "cdn": "Rackspace",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "roblox.com",
@@ -3982,7 +4290,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tiktokv.com",
@@ -3994,7 +4303,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "qq.com",
@@ -4006,7 +4316,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "cloudflare-dns.com",
@@ -4018,7 +4329,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yandex.net",
@@ -4030,7 +4342,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "baidu.com",
@@ -4042,7 +4355,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "nginx.org",
@@ -4054,7 +4368,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "workers.dev",
@@ -4066,7 +4381,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mozilla.org",
@@ -4078,7 +4394,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "opera.com",
@@ -4090,7 +4407,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nic.ru",
@@ -4102,7 +4420,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "windows.com",
@@ -4114,7 +4433,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "yandex.ru",
@@ -4126,7 +4446,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "samsung.com",
@@ -4138,7 +4459,8 @@
       "cdn": "Samsung SDS",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "sentry.io",
@@ -4150,7 +4472,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "google-analytics.com",
@@ -4162,7 +4485,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nginx.com",
@@ -4174,7 +4498,8 @@
       "cdn": "F5",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wordpress.com",
@@ -4186,7 +4511,8 @@
       "cdn": "Automattic",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ui.com",
@@ -4198,7 +4524,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "office365.com",
@@ -4210,7 +4537,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bit.ly",
@@ -4222,7 +4550,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "okcdn.ru",
@@ -4234,7 +4563,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "discord.gg",
@@ -4246,7 +4576,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "criteo.com",
@@ -4258,7 +4589,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "t.me",
@@ -4270,7 +4602,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "googleadservices.com",
@@ -4282,7 +4615,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "trbcdn.net",
@@ -4294,7 +4628,8 @@
       "cdn": "CDNvideo",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "blogspot.com",
@@ -4306,7 +4641,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "europa.eu",
@@ -4318,7 +4654,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "vk.com",
@@ -4330,7 +4667,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "f5.com",
@@ -4342,7 +4680,8 @@
       "cdn": "F5",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "epicgames.com",
@@ -4354,7 +4693,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "b-cdn.net",
@@ -4366,7 +4706,8 @@
       "cdn": "CDN77",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "unity3d.com",
@@ -4378,7 +4719,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mailinabox.email",
@@ -4390,7 +4732,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon-adsystem.com",
@@ -4402,7 +4745,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "app-measurement.com",
@@ -4414,7 +4758,8 @@
       "cdn": "Google",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "github.io",
@@ -4426,7 +4771,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazonvideo.com",
@@ -4438,7 +4784,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "apache.org",
@@ -4450,7 +4797,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "prodregistryv2.org",
@@ -4462,7 +4810,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nih.gov",
@@ -4474,7 +4823,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "kaspersky.com",
@@ -4486,7 +4836,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "dns.google",
@@ -4498,7 +4849,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gravatar.com",
@@ -4510,7 +4862,8 @@
       "cdn": "Automattic",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "outlook.com",
@@ -4522,7 +4875,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "app-analytics-services.com",
@@ -4534,7 +4888,8 @@
       "cdn": "Google",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "xiaomi.com",
@@ -4546,7 +4901,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "forms.gle",
@@ -4558,7 +4914,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "archive.org",
@@ -4570,7 +4927,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "godaddy.com",
@@ -4582,7 +4940,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vkuserphoto.ru",
@@ -4594,7 +4953,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tumblr.com",
@@ -4606,7 +4966,8 @@
       "cdn": "Automattic",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "one.one",
@@ -4618,7 +4979,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "applovin.com",
@@ -4630,7 +4992,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "aliyuncs.com",
@@ -4642,7 +5005,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "webex.com",
@@ -4654,7 +5018,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "adobe.io",
@@ -4666,7 +5031,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "flickr.com",
@@ -4678,7 +5044,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "userapi.com",
@@ -4690,7 +5057,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "example.com",
@@ -4702,7 +5070,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "soundcloud.com",
@@ -4714,7 +5083,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "adtrafficquality.google",
@@ -4726,7 +5096,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "medium.com",
@@ -4738,7 +5109,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "w3.org",
@@ -4750,7 +5122,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "rubiconproject.com",
@@ -4762,7 +5135,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "taboola.com",
@@ -4774,7 +5148,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cnn.com",
@@ -4786,7 +5161,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vungle.com",
@@ -4798,7 +5174,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "theguardian.com",
@@ -4810,7 +5187,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "avast.com",
@@ -4822,7 +5200,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "creativecommons.org",
@@ -4834,7 +5213,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "forbes.com",
@@ -4846,7 +5226,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ozon.ru",
@@ -4858,7 +5239,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "pubmatic.com",
@@ -4870,7 +5252,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bbc.com",
@@ -4882,7 +5265,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cpanel.net",
@@ -4894,7 +5278,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "weather.com",
@@ -4906,7 +5291,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "t.co",
@@ -4918,7 +5304,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "adnxs.com",
@@ -4930,7 +5317,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "sciencedirect.com",
@@ -4942,7 +5330,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "researchgate.net",
@@ -4954,7 +5343,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "oxylabs.io",
@@ -4966,7 +5356,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gmail.com",
@@ -4978,7 +5369,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "youtube-nocookie.com",
@@ -4990,7 +5382,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "pki.goog",
@@ -5002,7 +5395,8 @@
       "cdn": "Google",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mit.edu",
@@ -5014,7 +5408,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "roku.com",
@@ -5026,7 +5421,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sourceforge.net",
@@ -5038,7 +5434,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "adsafeprotected.com",
@@ -5050,7 +5447,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "android.com",
@@ -5062,7 +5460,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "canva.com",
@@ -5074,7 +5473,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ubuntu.com",
@@ -5086,7 +5486,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "doi.org",
@@ -5098,7 +5499,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "t-online.de",
@@ -5110,7 +5512,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "meraki.com",
@@ -5122,7 +5525,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nic.direct",
@@ -5134,7 +5538,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nist.gov",
@@ -5146,7 +5551,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "scorecardresearch.com",
@@ -5158,7 +5564,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "miui.com",
@@ -5170,7 +5577,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "imdb.com",
@@ -5182,7 +5590,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "casalemedia.com",
@@ -5194,7 +5603,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "doubleverify.com",
@@ -5206,7 +5616,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "telegram.org",
@@ -5218,7 +5629,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "who.int",
@@ -5230,7 +5642,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cisco.com",
@@ -5242,7 +5655,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hubspot.com",
@@ -5254,7 +5668,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "adsrvr.org",
@@ -5266,7 +5681,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "triplinkintl.com",
@@ -5278,7 +5694,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "linktr.ee",
@@ -5290,7 +5707,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "openai.com",
@@ -5302,7 +5720,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "launchpad.net",
@@ -5314,7 +5733,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wikimedia.org",
@@ -5326,7 +5746,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mts.ru",
@@ -5338,7 +5759,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "lencr.org",
@@ -5350,7 +5772,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "hp.com",
@@ -5362,7 +5785,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "springer.com",
@@ -5374,7 +5798,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "autodesk.com",
@@ -5386,7 +5811,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tinyurl.com",
@@ -5398,7 +5824,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "reuters.com",
@@ -5410,7 +5837,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mozilla.com",
@@ -5422,7 +5850,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "etsy.com",
@@ -5434,7 +5863,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "drom.ru",
@@ -5446,7 +5876,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "alibaba.com",
@@ -5458,7 +5889,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ok.ru",
@@ -5470,7 +5902,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nature.com",
@@ -5482,7 +5915,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "harvard.edu",
@@ -5494,7 +5928,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "steampowered.com",
@@ -5506,7 +5941,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "debian.org",
@@ -5518,7 +5954,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "php.net",
@@ -5530,7 +5967,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.co.uk",
@@ -5542,7 +5980,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "vk.ru",
@@ -5554,7 +5993,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "weibo.com",
@@ -5566,7 +6006,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "aol.com",
@@ -5578,7 +6019,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ea.com",
@@ -5590,7 +6032,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "issuu.com",
@@ -5602,7 +6045,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "gnu.org",
@@ -5614,7 +6058,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "checkpoint.com",
@@ -5626,7 +6071,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "weebly.com",
@@ -5638,7 +6084,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cdc.gov",
@@ -5650,7 +6097,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wildberries.ru",
@@ -5662,7 +6110,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "opendns.com",
@@ -5674,7 +6123,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "tradingview.com",
@@ -5686,7 +6136,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mi.com",
@@ -5698,7 +6149,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 0
     },
     {
       "site": "trustpilot.com",
@@ -5710,7 +6162,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ivi.ru",
@@ -5722,7 +6175,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "naver.com",
@@ -5734,7 +6188,8 @@
       "cdn": "Naver Cloud",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "wsj.com",
@@ -5746,7 +6201,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "washingtonpost.com",
@@ -5758,7 +6214,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 1
     },
     {
       "site": "aliyun.com",
@@ -5770,7 +6227,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bilibili.com",
@@ -5782,7 +6240,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "dell.com",
@@ -5794,7 +6253,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "google.cn",
@@ -5806,7 +6266,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cnbc.com",
@@ -5818,7 +6279,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "dailymail.co.uk",
@@ -5830,7 +6292,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "dailymotion.com",
@@ -5842,7 +6305,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bloomberg.com",
@@ -5854,7 +6318,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nvidia.com",
@@ -5866,7 +6331,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "nasa.gov",
@@ -5878,7 +6344,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "temu.com",
@@ -5890,7 +6357,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yahoo.co.jp",
@@ -5902,7 +6370,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "tp-link.com",
@@ -5914,7 +6383,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "vivoglobal.com",
@@ -5926,7 +6396,8 @@
       "cdn": "Zenlayer",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "yandex.com",
@@ -5938,7 +6409,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "unsplash.com",
@@ -5950,7 +6422,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "indeed.com",
@@ -5962,7 +6435,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "calendly.com",
@@ -5974,7 +6448,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazon.de",
@@ -5986,7 +6461,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "globo.com",
@@ -5998,7 +6474,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "arubanetworks.com",
@@ -6010,7 +6487,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "gitlab.com",
@@ -6022,7 +6500,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "duckduckgo.com",
@@ -6034,7 +6513,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "zendesk.com",
@@ -6046,7 +6526,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "espn.com",
@@ -6058,7 +6539,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "businessinsider.com",
@@ -6070,7 +6552,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "supercell.com",
@@ -6082,7 +6565,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "pixabay.com",
@@ -6094,7 +6578,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "163.com",
@@ -6106,7 +6591,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "line.me",
@@ -6118,7 +6604,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "brave.com",
@@ -6130,7 +6617,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "steamcommunity.com",
@@ -6142,7 +6630,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "intel.com",
@@ -6154,7 +6643,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "taobao.com",
@@ -6166,7 +6656,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "go.com",
@@ -6178,7 +6669,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "statista.com",
@@ -6190,7 +6682,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "netease.com",
@@ -6202,7 +6695,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "aliexpress.com",
@@ -6214,7 +6708,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "speedtest.net",
@@ -6226,7 +6721,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "duolingo.com",
@@ -6238,7 +6734,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mcafee.com",
@@ -6250,7 +6747,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "t-mobile.com",
@@ -6262,7 +6760,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mikrotik.com",
@@ -6274,7 +6773,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "quora.com",
@@ -6286,7 +6786,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "eventbrite.com",
@@ -6298,7 +6799,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bsky.app",
@@ -6310,7 +6812,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hostgator.com",
@@ -6322,7 +6825,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ietf.org",
@@ -6334,7 +6838,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sohu.com",
@@ -6346,7 +6851,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "goodreads.com",
@@ -6358,7 +6864,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "scribd.com",
@@ -6370,7 +6877,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mysql.com",
@@ -6382,7 +6890,8 @@
       "cdn": "Oracle Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "gosuslugi.ru",
@@ -6394,7 +6903,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "npr.org",
@@ -6406,7 +6916,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "name.com",
@@ -6418,7 +6929,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mediatek.com",
@@ -6430,7 +6942,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "walmart.com",
@@ -6442,7 +6955,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sberbank.ru",
@@ -6454,7 +6968,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "paloaltonetworks.com",
@@ -6466,7 +6981,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "foxnews.com",
@@ -6478,7 +6994,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "shein.com",
@@ -6490,7 +7007,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "giphy.com",
@@ -6502,7 +7020,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sina.com.cn",
@@ -6514,7 +7033,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "slideshare.net",
@@ -6526,7 +7046,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "stackoverflow.com",
@@ -6538,7 +7059,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "indiatimes.com",
@@ -6550,7 +7072,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.co.jp",
@@ -6562,7 +7085,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "google.de",
@@ -6574,7 +7098,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "substack.com",
@@ -6586,7 +7111,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "behance.net",
@@ -6598,7 +7124,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "fandom.com",
@@ -6610,7 +7137,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nbcnews.com",
@@ -6622,7 +7150,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "docker.com",
@@ -6634,7 +7163,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "okta.com",
@@ -6646,7 +7176,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "wired.com",
@@ -6658,7 +7189,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "firefox.com",
@@ -6670,7 +7202,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "blogger.com",
@@ -6682,7 +7215,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ft.com",
@@ -6694,7 +7228,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "jquery.com",
@@ -6706,7 +7241,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "uol.com.br",
@@ -6718,7 +7254,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "time.com",
@@ -6730,7 +7267,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "360.cn",
@@ -6742,7 +7280,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "trendmicro.com",
@@ -6754,7 +7293,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "arxiv.org",
@@ -6766,7 +7306,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "capcut.com",
@@ -6778,7 +7319,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "patreon.com",
@@ -6790,7 +7332,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "usatoday.com",
@@ -6802,7 +7345,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "deviantart.com",
@@ -6814,7 +7358,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "visualstudio.com",
@@ -6826,7 +7371,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "2gis.com",
@@ -6838,7 +7384,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "google.com.hk",
@@ -6850,7 +7397,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "eset.com",
@@ -6862,7 +7410,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "grammarly.com",
@@ -6874,7 +7423,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "wix.com",
@@ -6886,7 +7436,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "teamviewer.com",
@@ -6898,7 +7449,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "fast.com",
@@ -6910,7 +7462,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "tandfonline.com",
@@ -6922,7 +7475,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "atlassian.com",
@@ -6934,7 +7488,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "deere.com",
@@ -6946,7 +7501,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "oup.com",
@@ -6958,7 +7514,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ca.gov",
@@ -6970,7 +7527,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "telegraph.co.uk",
@@ -6982,7 +7540,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "deepl.com",
@@ -6994,7 +7553,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cornell.edu",
@@ -7006,7 +7566,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "surveymonkey.com",
@@ -7018,7 +7579,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "rakuten.co.jp",
@@ -7030,7 +7592,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "avito.ru",
@@ -7042,7 +7605,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "target.com",
@@ -7054,7 +7618,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "berkeley.edu",
@@ -7066,7 +7631,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "playstation.com",
@@ -7078,7 +7644,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ieee.org",
@@ -7090,7 +7657,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "apnews.com",
@@ -7102,7 +7670,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "free.fr",
@@ -7114,7 +7683,8 @@
       "cdn": "Free (hosting)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "digitalocean.com",
@@ -7126,7 +7696,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mdpi.com",
@@ -7138,7 +7709,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "verisign.com",
@@ -7150,7 +7722,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "jotform.com",
@@ -7162,7 +7735,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "accuweather.com",
@@ -7174,7 +7748,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "britannica.com",
@@ -7186,7 +7761,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "claude.ai",
@@ -7198,7 +7774,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "loc.gov",
@@ -7210,7 +7787,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "squarespace.com",
@@ -7222,7 +7800,8 @@
       "cdn": "Squarespace",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "redhat.com",
@@ -7234,7 +7813,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nintendo.com",
@@ -7246,7 +7826,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "threads.com",
@@ -7258,7 +7839,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazon.fr",
@@ -7270,7 +7852,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "independent.co.uk",
@@ -7282,7 +7865,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "cbsnews.com",
@@ -7294,7 +7878,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "cnet.com",
@@ -7306,7 +7891,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "viber.com",
@@ -7318,7 +7904,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nike.com",
@@ -7330,7 +7917,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "elpais.com",
@@ -7342,7 +7930,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sagepub.com",
@@ -7354,7 +7943,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "yelp.com",
@@ -7366,7 +7956,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "imgur.com",
@@ -7378,7 +7969,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "unesco.org",
@@ -7390,7 +7982,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "dreamhost.com",
@@ -7402,7 +7995,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "techcrunch.com",
@@ -7414,7 +8008,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.ca",
@@ -7426,7 +8021,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "noaa.gov",
@@ -7438,7 +8034,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "ups.com",
@@ -7450,7 +8047,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cambridge.org",
@@ -7462,7 +8060,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bluehost.com",
@@ -7474,7 +8073,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mailchimp.com",
@@ -7486,7 +8086,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ted.com",
@@ -7498,7 +8099,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "tencent.com",
@@ -7510,7 +8112,8 @@
       "cdn": "Tencent Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "lemonde.fr",
@@ -7522,7 +8125,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "spiegel.de",
@@ -7534,7 +8138,8 @@
       "cdn": "Link11",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "anydesk.com",
@@ -7546,7 +8151,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "att.net",
@@ -7558,7 +8164,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "rt.ru",
@@ -7570,7 +8177,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "wps.com",
@@ -7582,7 +8190,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "google.co.uk",
@@ -7594,7 +8203,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazon.in",
@@ -7606,7 +8216,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "shopee.com.br",
@@ -7618,7 +8229,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mediafire.com",
@@ -7630,7 +8242,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "asus.com",
@@ -7642,7 +8255,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "cursor.sh",
@@ -7654,7 +8268,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "wattpad.com",
@@ -7666,7 +8281,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sophos.com",
@@ -7678,7 +8294,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "box.com",
@@ -7690,7 +8307,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "shopee.co.id",
@@ -7702,7 +8320,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "bitrix24.ru",
@@ -7714,7 +8333,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.es",
@@ -7726,7 +8346,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "homedepot.com",
@@ -7738,7 +8359,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "marriott.com",
@@ -7750,7 +8372,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "seznam.cz",
@@ -7762,7 +8385,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "amazon.it",
@@ -7774,7 +8398,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "google.com.br",
@@ -7786,7 +8411,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "jetbrains.com",
@@ -7798,7 +8424,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "myspace.com",
@@ -7810,7 +8437,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "iso.org",
@@ -7822,7 +8450,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ring.com",
@@ -7834,7 +8463,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "mckinsey.com",
@@ -7846,7 +8476,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "bandcamp.com",
@@ -7858,7 +8489,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "anthropic.com",
@@ -7870,7 +8502,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "fda.gov",
@@ -7882,7 +8515,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "zillow.com",
@@ -7894,7 +8528,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "python.org",
@@ -7906,7 +8541,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "freepik.com",
@@ -7918,7 +8554,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "primevideo.com",
@@ -7930,7 +8567,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mercadolivre.com.br",
@@ -7942,7 +8580,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "prnewswire.com",
@@ -7954,7 +8593,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mlb.com",
@@ -7966,7 +8606,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nikkei.com",
@@ -7978,7 +8619,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wp.pl",
@@ -7990,7 +8632,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "fiverr.com",
@@ -8002,7 +8645,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "theverge.com",
@@ -8014,7 +8658,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ameblo.jp",
@@ -8026,7 +8671,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hbr.org",
@@ -8038,7 +8684,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "people.com",
@@ -8050,7 +8697,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "uber.com",
@@ -8062,7 +8710,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "washington.edu",
@@ -8074,7 +8723,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "hostgator.com.br",
@@ -8086,7 +8736,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "globalsign.com",
@@ -8098,7 +8749,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 0
     },
     {
       "site": "welt.de",
@@ -8110,7 +8762,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "allegro.pl",
@@ -8122,7 +8775,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "disneyplus.com",
@@ -8134,7 +8788,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "rakuten.com",
@@ -8146,7 +8801,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "disqus.com",
@@ -8158,7 +8814,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bild.de",
@@ -8170,7 +8827,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "openstreetmap.org",
@@ -8182,7 +8840,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "mayoclinic.org",
@@ -8194,7 +8853,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "lenovo.com",
@@ -8206,7 +8866,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "zhihu.com",
@@ -8218,7 +8879,8 @@
       "cdn": "Tencent Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "usps.com",
@@ -8230,7 +8892,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "lefigaro.fr",
@@ -8242,7 +8905,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "academia.edu",
@@ -8254,7 +8918,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "latimes.com",
@@ -8266,7 +8931,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "aljazeera.com",
@@ -8278,7 +8944,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "pexels.com",
@@ -8290,7 +8957,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "onlyfans.com",
@@ -8302,7 +8970,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "investopedia.com",
@@ -8314,7 +8983,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "figma.com",
@@ -8326,7 +8996,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "discogs.com",
@@ -8338,7 +9009,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "kick.com",
@@ -8350,7 +9022,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "news.com.au",
@@ -8362,7 +9035,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ebay.co.uk",
@@ -8374,7 +9048,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "merriam-webster.com",
@@ -8386,7 +9061,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "focus.de",
@@ -8398,7 +9074,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "zoho.com",
@@ -8410,7 +9087,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "princeton.edu",
@@ -8422,7 +9100,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "agoda.com",
@@ -8434,7 +9113,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "chess.com",
@@ -8446,7 +9126,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "change.org",
@@ -8458,7 +9139,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "synology.com",
@@ -8470,7 +9152,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "biblegateway.com",
@@ -8482,7 +9165,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ndtv.com",
@@ -8494,7 +9178,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "irs.gov",
@@ -8506,7 +9191,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "life360.com",
@@ -8518,7 +9204,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "themeforest.net",
@@ -8530,7 +9217,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "smartthings.com",
@@ -8542,7 +9230,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ebay.de",
@@ -8554,7 +9243,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "qualtrics.com",
@@ -8566,7 +9256,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "usda.gov",
@@ -8578,7 +9269,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "kontur.ru",
@@ -8590,7 +9282,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "healthline.com",
@@ -8602,7 +9295,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazon.com.br",
@@ -8614,7 +9308,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "arcgis.com",
@@ -8626,7 +9321,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "worldbank.org",
@@ -8638,7 +9334,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "starlink.com",
@@ -8650,7 +9347,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "otto.de",
@@ -8662,7 +9360,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "deloitte.com",
@@ -8674,7 +9373,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "www.gov.br",
@@ -8698,7 +9398,8 @@
       "cdn": "Azure Front Door",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "deepseek.com",
@@ -8710,7 +9411,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "daum.net",
@@ -8722,7 +9424,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "genius.com",
@@ -8734,7 +9437,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hm.com",
@@ -8746,7 +9450,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "rutube.ru",
@@ -8758,7 +9463,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 2
     },
     {
       "site": "pixiv.net",
@@ -8770,7 +9476,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "playrix.com",
@@ -8782,7 +9489,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "clever.com",
@@ -8794,7 +9502,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "perplexity.ai",
@@ -8806,7 +9515,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "jimdo.com",
@@ -8818,7 +9528,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "state.gov",
@@ -8830,7 +9541,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "classlink.com",
@@ -8842,7 +9554,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "poki.com",
@@ -8854,7 +9567,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "typeform.com",
@@ -8866,7 +9580,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "linode.com",
@@ -8878,7 +9593,8 @@
       "cdn": "Akamai",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "epa.gov",
@@ -8890,7 +9606,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "coupang.com",
@@ -8902,7 +9619,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "character.ai",
@@ -8914,7 +9632,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ryanair.com",
@@ -8926,7 +9645,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nationalgeographic.com",
@@ -8938,7 +9658,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "youku.com",
@@ -8950,7 +9671,8 @@
       "cdn": "Alibaba Cloud",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "repubblica.it",
@@ -8962,7 +9684,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "rackspace.com",
@@ -8974,7 +9697,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "amazon.com.au",
@@ -8986,7 +9710,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "wyzecam.com",
@@ -8998,7 +9723,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "xerox.com",
@@ -9010,7 +9736,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "mercadolibre.com.ar",
@@ -9022,7 +9749,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "lowes.com",
@@ -9034,7 +9762,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "kleinanzeigen.de",
@@ -9046,7 +9775,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "corriere.it",
@@ -9058,7 +9788,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "kickstarter.com",
@@ -9070,7 +9801,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "weforum.org",
@@ -9082,7 +9814,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "theatlantic.com",
@@ -9094,7 +9827,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "readthedocs.io",
@@ -9106,7 +9840,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "rambler.ru",
@@ -9118,7 +9853,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "pbs.org",
@@ -9130,7 +9866,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "umich.edu",
@@ -9142,7 +9879,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "kwai.com",
@@ -9154,7 +9892,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "yandex.com.tr",
@@ -9166,7 +9905,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "note.com",
@@ -9178,7 +9918,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "whitehouse.gov",
@@ -9190,7 +9931,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "jd.com",
@@ -9202,7 +9944,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "caixa.gov.br",
@@ -9214,7 +9957,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 2
     },
     {
       "site": "elmundo.es",
@@ -9226,7 +9970,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "theconversation.com",
@@ -9238,7 +9983,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "netgear.com",
@@ -9250,7 +9996,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "onet.pl",
@@ -9262,7 +10009,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nexusmods.com",
@@ -9274,7 +10022,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "utorrent.com",
@@ -9286,7 +10035,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "hotstar.com",
@@ -9298,7 +10048,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sofascore.com",
@@ -9310,7 +10061,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "costco.com",
@@ -9322,7 +10074,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "binance.com",
@@ -9334,7 +10087,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "nypost.com",
@@ -9346,7 +10100,8 @@
       "cdn": "Automattic",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "columbia.edu",
@@ -9358,7 +10113,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bol.com",
@@ -9370,7 +10126,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "quizlet.com",
@@ -9382,7 +10139,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "tagesschau.de",
@@ -9394,7 +10152,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ecosia.org",
@@ -9406,7 +10165,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ancestry.com",
@@ -9418,7 +10178,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "tesla.com",
@@ -9430,7 +10191,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "odoo.com",
@@ -9442,7 +10204,8 @@
       "cdn": "OVH",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "infobae.com",
@@ -9454,7 +10217,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "spamhaus.org",
@@ -9466,7 +10230,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "huffpost.com",
@@ -9478,7 +10243,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "docomo.ne.jp",
@@ -9490,7 +10256,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "flipkart.com",
@@ -9502,7 +10269,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ubi.com",
@@ -9514,7 +10282,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "nextcloud.com",
@@ -9526,7 +10295,8 @@
       "cdn": "Hetzner",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "rbc.ru",
@@ -9538,7 +10308,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "leparisien.fr",
@@ -9550,7 +10321,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "redfin.com",
@@ -9562,7 +10334,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "amazon.com.mx",
@@ -9574,7 +10347,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "moneycontrol.com",
@@ -9586,7 +10360,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "marca.com",
@@ -9598,7 +10373,8 @@
       "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "google.ca",
@@ -9610,7 +10386,8 @@
       "cdn": "Google",
       "pqc_source": "own",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "terra.com.br",
@@ -9622,7 +10399,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "coursera.org",
@@ -9634,7 +10412,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "hilton.com",
@@ -9646,7 +10425,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "as.com",
@@ -9658,7 +10438,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ameba.jp",
@@ -9670,7 +10451,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ox.ac.uk",
@@ -9682,7 +10464,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "instructure.com",
@@ -9694,7 +10477,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "adblockplus.org",
@@ -9706,7 +10490,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "garmin.com",
@@ -9718,7 +10503,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "notion.so",
@@ -9730,7 +10516,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "letterboxd.com",
@@ -9742,7 +10529,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "trendyol.com",
@@ -9754,7 +10542,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "olx.com.br",
@@ -9766,7 +10555,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "xing.com",
@@ -9778,7 +10568,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "crazygames.com",
@@ -9790,7 +10581,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bfmtv.com",
@@ -9802,7 +10594,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "oecd.org",
@@ -9814,7 +10607,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "archiveofourown.org",
@@ -9826,7 +10620,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "n-tv.de",
@@ -9838,7 +10633,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "yandex.kz",
@@ -9850,7 +10646,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ilovepdf.com",
@@ -9862,7 +10659,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "goal.com",
@@ -9874,7 +10672,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "dribbble.com",
@@ -9886,7 +10685,8 @@
       "cdn": "Amazon CloudFront",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "servicecanada.gc.ca",
@@ -9898,7 +10698,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "hamilton.ca",
@@ -9910,7 +10711,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "surrey.ca",
@@ -9922,7 +10724,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "canadalife.com",
@@ -9934,7 +10737,8 @@
       "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ia.ca",
@@ -9946,7 +10750,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "eqbank.ca",
@@ -9958,7 +10763,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 1
     },
     {
       "site": "simplii.com",
@@ -9970,7 +10776,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "unb.ca",
@@ -9982,7 +10789,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "upei.ca",
@@ -9994,7 +10802,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "acadiau.ca",
@@ -10006,7 +10815,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "stfx.ca",
@@ -10018,7 +10828,8 @@
       "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "ontariotechu.ca",
@@ -10030,7 +10841,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "thp.ca",
@@ -10042,7 +10854,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "theroyal.ca",
@@ -10054,7 +10867,8 @@
       "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "baycrest.org",
@@ -10066,7 +10880,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "islandhealth.ca",
@@ -10078,7 +10893,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "iwk.nshealth.ca",
@@ -10090,7 +10906,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "lhsc.on.ca",
@@ -10102,7 +10919,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "sasktel.com",
@@ -10114,7 +10932,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "eastlink.ca",
@@ -10126,7 +10945,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "fido.ca",
@@ -10138,7 +10958,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "koodomobile.com",
@@ -10150,7 +10971,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "teksavvy.com",
@@ -10162,7 +10984,8 @@
       "cdn": "Microsoft (Azure)",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "rona.ca",
@@ -10174,7 +10997,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "sportchek.ca",
@@ -10186,7 +11010,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
-      "stars": 0
+      "stars": 0,
+      "was": 0
     },
     {
       "site": "simons.ca",
@@ -10198,7 +11023,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "ssense.com",
@@ -10210,7 +11036,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "aritzia.com",
@@ -10222,7 +11049,8 @@
       "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "roots.com",
@@ -10234,7 +11062,8 @@
       "cdn": "Amazon (AWS)",
       "pqc_source": "provider",
       "score": 75,
-      "stars": 2
+      "stars": 2,
+      "was": 2
     },
     {
       "site": "bcferries.com",
@@ -10246,7 +11075,8 @@
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
-      "stars": 1
+      "stars": 1,
+      "was": 1
     },
     {
       "site": "vercel.com",

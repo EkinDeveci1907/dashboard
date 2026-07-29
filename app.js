@@ -7,6 +7,8 @@
 let allSites = [];
 let currentScanDate = "";
 let cdnRates = {};
+let previousScanDate = "";
+let sectorTotals = {};
 let tlsChart = null;
 let kexChart = null;
 let cdnChart = null;
@@ -61,6 +63,8 @@ async function showScan(date) {
 
   currentScanDate = date;
   cdnRates = data.cdn_rates || {};
+  previousScanDate = data.previous_scan || "";
+  sectorTotals = data.sectors;
 
   updateSummaryCards(data);
   drawSectorBars(data.sectors);
@@ -92,20 +96,26 @@ function drawCharts(data) {
   drawCdnChart(data);
 }
 
-// canada.ca on the government's own deadline card. It sat at zero stars when I
-// wrote that paragraph, but hard-coding that means the page starts lying the day
-// they turn TLS 1.3 on, so read it off the scan instead.
+// canada.ca on the government's own deadline card. Hard-coding "it has no stars"
+// means the page starts lying the day they move, so read it off the scan. We
+// scan the apex and the www host separately and they disagree - the apex is
+// still TLS 1.2 while www is on 1.3 - so talk about the post-quantum key
+// exchange, which neither of them does and which is the point of the sentence.
 function showCanadaCaNote(sites) {
-  let note = "";
+  let found = false;
+  let anyPqc = false;
   for (let i = 0; i < sites.length; i++) {
-    if (sites[i].site === "canada.ca") {
-      if (sites[i].stars === 0) {
-        note = ", and canada.ca itself still has no stars at all";
-      } else {
-        note = ", and canada.ca itself is at " + sites[i].stars + " of 3 stars";
-      }
-      break;
+    let s = sites[i];
+    if (s.site === "canada.ca" || s.site === "www.canada.ca") {
+      found = true;
+      if (s.kex.indexOf("MLKEM") !== -1) anyPqc = true;
     }
+  }
+  let note = "";
+  if (found && !anyPqc) {
+    note = ", and canada.ca itself still does not negotiate a post-quantum key exchange";
+  } else if (found) {
+    note = ", and canada.ca itself now negotiates a post-quantum key exchange";
   }
   document.getElementById("canada-ca-note").textContent = note;
 }
@@ -323,8 +333,10 @@ function drawWorldMap(countries) {
 }
 
 function drawTable(sites) {
-  // hand the rows to report-card.js so a click can find the site again
-  setReportCard(sites, currentScanDate, cdnRates);
+  // hand the rows to report-card.js so a click can find the site again, plus
+  // what the card needs to put a site in context
+  setReportCard(sites, currentScanDate, cdnRates,
+                {previousDate: previousScanDate, sectorPqc: sectorTotals});
   let rows = "";
   for (let i = 0; i < sites.length; i++) {
     let s = sites[i];

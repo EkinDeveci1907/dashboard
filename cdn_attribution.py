@@ -44,6 +44,21 @@ OWN_BRANDS = {
 }
 
 
+def brand_owns(site, word):
+    # Does this domain really belong to the brand, or do the letters just happen
+    # to appear in it? "loblaws.ca" contains "aws" and "metoffice.gov.uk"
+    # contains "office" - neither is Amazon's or Microsoft's site, and counting
+    # them as own effort would pad the one number this project is built on.
+    # A brand word has to be a whole piece of the domain, or start one:
+    # googleapis and primevideo count, loblaws does not.
+    if "." in word:
+        return site == word or site.endswith("." + word)
+    for label in site.split("."):
+        if label == word or label.startswith(word):
+            return True
+    return False
+
+
 # the short value that goes in the pqc_source column and the site table.
 # aggregate.py and enrich.py both read it from here so there's one copy.
 PQC_SOURCE = {
@@ -75,7 +90,7 @@ def attribution_for(row):
     # CDN company itself, that also counts as their own infra.
     own_infra = (cdn == "Self-hosted")
     for word in OWN_BRANDS.get(cdn, []):
-        if word in site:
+        if brand_owns(site, word):
             own_infra = True
             break
 

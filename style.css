@@ -188,7 +188,8 @@ tbody tr:hover { background: #f9fafb; }
 
 .rc-head { display: flex; align-items: flex-start; gap: 14px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
 .rc-site { font-size: 18px; font-weight: 700; color: var(--ink); }
-.rc-sub { font-size: 12px; color: var(--muted); margin-top: 2px; text-transform: capitalize; }
+.rc-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.rc-sector { text-transform: capitalize; }
 .rc-scorebox { margin-left: auto; }
 .rc-scorebox .stars { font-size: 20px; }
 
@@ -199,6 +200,15 @@ tbody tr:hover { background: #f9fafb; }
 .rc-step { font-weight: 600; color: var(--ink); width: 250px; }
 .rc-detail { color: var(--muted); font-size: 13px; }
 .rc-next { font-size: 13px; color: var(--ink); margin: 12px 0 0; }
+
+/* did the site move since the scan before: green up, red down, grey for held */
+.rc-moved { font-size: 12px; font-weight: 600; margin: 10px 0 0; }
+.rc-up { color: var(--green); }
+.rc-down { color: #dc2626; }
+.rc-flat { color: var(--muted); font-weight: 500; }
+
+/* how it sits against the other Canadian sites in its sector */
+.rc-peer { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
 
 /* table rows open the report card - both tabs now, so both id's get the pointer
    (#tableBody is the main page, #rows is the most-visited page) */

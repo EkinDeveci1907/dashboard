@@ -12,15 +12,20 @@
 let reportRows = [];
 let reportDate = "";
 let cdnPqcRate = {};
+let previousDate = "";
+let sectorPqc = {};
 
 // cdnRates is provider name -> what percent of that provider's sites already
 // negotiate PQC, measured in the same scan. aggregate.py works it out and puts
 // it in the stats json; toplist_report.py bakes the same numbers into its page.
 // It used to be a table typed in by hand, which went stale every scan.
-function setReportCard(rows, scanDate, cdnRates) {
+function setReportCard(rows, scanDate, cdnRates, options) {
   reportRows = rows;
   reportDate = scanDate;
   cdnPqcRate = cdnRates || {};
+  options = options || {};
+  previousDate = options.previousDate || "";
+  sectorPqc = options.sectorPqc || {};
 }
 
 // The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
@@ -74,6 +79,36 @@ function adviceFor(s) {
          "so this site is two steps behind.";
 }
 
+// Did this site move since the scan before? s.was is its star rating last time,
+// and it's absent when the site wasn't in that scan at all - which is not the
+// same as standing still, so say nothing rather than claim "no change".
+function movementFor(s) {
+  if (!previousDate || s.was === undefined) return "";
+  if (s.stars > s.was) {
+    return "<span class='rc-up'>▲ gained a star since the " + previousDate + " scan</span>";
+  }
+  if (s.stars < s.was) {
+    return "<span class='rc-down'>▼ lost a star since the " + previousDate + " scan</span>";
+  }
+  return "<span class='rc-flat'>unchanged since the " + previousDate + " scan</span>";
+}
+
+// How this site sits against others doing the same job. The sector shares are
+// Canadian, so only say it for a Canadian site - quoting a Canadian rate at a
+// German bank would be wrong.
+function sectorLineFor(s) {
+  if (s.country !== "CANADA") return "";
+  let bucket = sectorPqc[s.sector];
+  if (!bucket || bucket.total < 5) return "";
+  let pct = Math.round(100 * bucket.pqc / bucket.total);
+  let line = pct + "% of the " + bucket.total + " Canadian " + s.sector +
+             " sites we scan negotiate it. ";
+  if (s.kex.indexOf("MLKEM") !== -1) {
+    return line + "This one is among them.";
+  }
+  return line + "This one is not.";
+}
+
 // one line of the report card's checklist: a tick or a cross, the step name,
 // and the detail we actually saw (the TLS version, the key-exchange group, etc.)
 function checkRow(done, label, detail) {
@@ -93,19 +128,35 @@ function showSite(i) {
   let hasPqcKex = s.kex.indexOf("MLKEM") !== -1;
   let hasPqcSig = s.stars === 3;   // no site has this yet, but keep it honest
 
+  // the signature row shows what the certificate is actually signed with today,
+  // which is the thing that has to change for the third star
+  let sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
+
   let card = "";
   card += "<div class='rc-head'>";
   card += "<div><div class='rc-site'>" + s.site + "</div>";
-  card += "<div class='rc-sub'>" + s.sector + " · " + s.country + " · scanned " + reportDate + "</div></div>";
+  // only the sector wants capitalising - the rest is already how it should read
+  card += "<div class='rc-sub'><span class='rc-sector'>" + s.sector + "</span> · " +
+          s.country + " · served by " + s.cdn + " · scanned " + reportDate + "</div></div>";
   card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
   card += "</div>";
 
+  let moved = movementFor(s);
+  if (moved !== "") {
+    card += "<p class='rc-moved'>" + moved + "</p>";
+  }
+
   card += "<div class='rc-checks'>";
   card += checkRow(hasTls13, "TLS 1.3", s.tls);
   card += checkRow(hasPqcKex, "Post-quantum key exchange", s.kex);
-  card += checkRow(hasPqcSig, "Post-quantum certificate signature", "no public CA issues these yet");
+  card += checkRow(hasPqcSig, "Post-quantum certificate signature", sigDetail);
   card += "</div>";
+
+  let sectorLine = sectorLineFor(s);
+  if (sectorLine !== "") {
+    card += "<p class='rc-peer'>" + sectorLine + "</p>";
+  }
 
   card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(s) + "</p>";
 
