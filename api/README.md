@@ -70,7 +70,14 @@ handshake we can read.
   results cached for an hour. Both reset when the process restarts, which is fine
   for what they are for. On more than one machine they would need Redis or
   similar.
-- **New domains are queued, not published.** Anything scanned that isn't already
-  in the corpus is appended to `data/community-scans.csv`. Nothing reads that
-  file automatically - it is a list to look at before the next full scan, so
-  nobody can inject rows into the published dataset by scanning a domain.
+- **New domains are noted, not published.** Anything scanned that isn't already
+  in the corpus is appended to `data/community-scans.csv` and printed to the
+  log. Nothing reads either automatically, so nobody can push rows into the
+  published dataset by scanning a domain.
+- **The CSV does not survive on the deployed host.** Render's disk is wiped on
+  restart and redeploy, and the free plan has no persistent disk. Locally the
+  CSV is the useful copy; deployed, the log line is - search the service logs
+  for `new domain scanned`. If keeping the list properly starts to matter,
+  that's a paid disk or a small database, not a bigger file.
+- **No IP addresses are stored.** The rate limiter keeps them in memory and
+  nothing writes them out.

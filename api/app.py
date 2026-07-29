@@ -1,20 +1,14 @@
 # The live scan endpoint behind the "Scan a site" tab.
 #
-# Everything the dashboard shows so far comes out of a scan we ran earlier, so
-# a site nobody thought to put in data/sites.csv simply isn't there. This lets
-# anyone hand us a domain and get the same measurement back in a few seconds.
+# The dashboard can only show sites that were in data/sites.csv when the last
+# scan ran. This takes a domain over HTTP, runs the same handshake, and hands
+# back the same fields, plus the site's history and how it compares to the rest
+# of the corpus.
 #
-# It is deliberately thin. scan.py already knows how to do the handshake and
-# work out the CDN, readiness_score.py already knows how to turn that into
-# stars, and cdn_attribution.py already knows whether the PQC came from the
-# provider or the site itself. This file does the parts those three can't:
-# take an HTTP request, keep somebody from hammering it, and put the answer in
-# context using the scans we already have on disk.
-#
-# The context is the whole point. scan.cyberzero.io and zerotrustpqc.com will
-# both tell you rbc.com has no post-quantum key exchange. Neither can tell you
-# where that puts it against the other 90 sites Canadians actually visit, or
-# that it has looked exactly the same in every scan since June. We can.
+# Thin on purpose: scan.py does the handshake and the CDN, readiness_score.py
+# does the stars, cdn_attribution.py does provider-vs-own-effort. What's left
+# for this file is taking the request, stopping anyone hammering it, and
+# reading the old scans off disk.
 #
 # run it locally:   uvicorn app:app --reload --port 8000
 # then:             curl "localhost:8000/api/scan?domain=cloudflare.com"
@@ -58,16 +52,11 @@ app.add_middleware(
 )
 
 
-# ----------------------------------------------------------------------------
-# who we're willing to connect to
-# ----------------------------------------------------------------------------
-#
-# This endpoint is public and it makes an outbound connection to whatever
-# string it's given, which is exactly the shape of request people abuse. Two
-# rules: it has to look like a hostname, and it has to resolve to an address on
-# the public internet. Without the second one, someone could point us at
-# 169.254.169.254 or 10.0.0.x and use us to read things inside whatever machine
-# this is deployed on.
+# This endpoint is public and opens a connection to whatever string it's handed,
+# which is the shape of request people abuse. So: it has to look like a hostname,
+# and it has to resolve to a public address. Without the second rule someone
+# could point us at 169.254.169.254 or 10.0.0.x and read things inside whatever
+# machine this is deployed on.
 
 HOSTNAME = re.compile(r"^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?(\.[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?)+$")
 
@@ -102,13 +91,9 @@ def resolves_publicly(domain):
     return True, ""
 
 
-# ----------------------------------------------------------------------------
-# rate limit and cache
-# ----------------------------------------------------------------------------
-#
-# Both are plain dictionaries held in memory. If the process restarts they're
-# empty again, which is fine - the cache is a courtesy and the limit is there to
-# stop someone looping over a wordlist, not to be airtight.
+# Rate limit and cache, both plain dictionaries in memory. They empty out when
+# the process restarts, which is fine - the cache is a courtesy and the limit is
+# to stop someone looping over a wordlist, not to be airtight.
 
 WINDOW = 300          # seconds
 MAX_IN_WINDOW = 12    # scans per IP per window
@@ -131,10 +116,6 @@ def over_limit(ip):
     kept.append(now)
     return False
 
-
-# ----------------------------------------------------------------------------
-# the scans we already have, for context
-# ----------------------------------------------------------------------------
 
 def latest_enriched():
     # the newest data/scan-YYYY-MM-DD-enriched.csv, as (date, rows). enrich.py
@@ -235,10 +216,20 @@ def known_row(domain):
 
 
 def remember(domain, tls, kex, cert, cdn):
-    # anything somebody scans that we've never covered gets written down. It
-    # isn't merged into the published dataset automatically - it's a queue to
-    # look at before the next full scan - but it means the site list grows from
-    # people using the thing rather than only from me adding rows by hand.
+    # A domain somebody scanned that isn't in the corpus is worth knowing about -
+    # it's a candidate for the next full scan. Nothing reads this automatically;
+    # it never touches the published numbers.
+    #
+    # Two places, because neither is enough on its own. The CSV is the useful one
+    # when this runs locally. On the deployed host the container's disk is wiped
+    # on every restart and redeploy, so the CSV there is temporary and the log
+    # line is what actually survives - Render keeps logs, and searching them for
+    # "new domain" gets the list back.
+    #
+    # Only the domain and what we measured. Not who asked: the rate limiter holds
+    # IP addresses in memory and nothing writes them down.
+    print("new domain scanned: " + domain + "  " + tls + "  " + kex + "  " + cdn)
+
     path = os.path.join(DATA_DIR, "community-scans.csv")
     is_new = not os.path.exists(path)
     f = open(path, "a", newline="")
@@ -248,10 +239,6 @@ def remember(domain, tls, kex, cert, cdn):
     w.writerow([time.strftime("%Y-%m-%d %H:%M:%S"), domain, tls, kex, cert, cdn])
     f.close()
 
-
-# ----------------------------------------------------------------------------
-# the endpoint
-# ----------------------------------------------------------------------------
 
 @app.get("/")
 def root():
