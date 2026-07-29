@@ -73,8 +73,21 @@ function adviceFor(s) {
     return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
            "(OpenSSL 3.5+ or equivalent) on whatever terminates TLS for this site.";
   }
-  return "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
-         "so this site is two steps behind.";
+  // no stars: TLS 1.2, so the key exchange is not even reachable yet. Still worth
+  // saying where the provider stands, because that decides whether the second
+  // star follows on its own once TLS 1.3 is on or turns into another wait.
+  let first = "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
+              "so this site is two steps behind.";
+  let rate = cdnPqcRate[s.cdn];
+  if (rate !== undefined && rate >= 50) {
+    return first + " Its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
+           "% of the sites we scan, so the second star should follow once TLS 1.3 is on.";
+  }
+  if (rate !== undefined) {
+    return first + " After that it would still be waiting on " + s.cdn +
+           ", which has PQC on only about " + rate + "% of the sites we scan.";
+  }
+  return first;
 }
 
 // How this site sits against others doing the same job. The sector shares are
@@ -84,8 +97,9 @@ function sectorLineFor(s) {
   if (s.country !== "CANADA") return "";
   let bucket = sectorPqc[s.sector];
   if (!bucket || bucket.total < 5) return "";
-  let pct = Math.round(100 * bucket.pqc / bucket.total);
-  let line = pct + "% of the " + bucket.total + " Canadian " + s.sector +
+  // the count rather than the percentage: "60% of the 60 media sites" reads like
+  // a typo, and the raw fraction says how big the sample is at the same time
+  let line = bucket.pqc + " of the " + bucket.total + " Canadian " + s.sector +
              " sites we scan negotiate it. ";
   if (s.kex.indexOf("MLKEM") !== -1) {
     return line + "This one is among them.";
