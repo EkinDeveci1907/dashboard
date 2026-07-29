@@ -131,11 +131,19 @@ function showSite(i) {
   let sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
 
   let card = "";
+  // a live scan also knows how long the handshake took. rows that came out of a
+  // stored scan don't, so the line only shows up when there's a number for it.
+  let timing = "";
+  if (s.handshake_ms) {
+    timing = " · handshake " + s.handshake_ms + " ms";
+  }
+
   card += "<div class='rc-head'>";
   card += "<div><div class='rc-site'>" + s.site + "</div>";
   // only the sector wants capitalising - the rest is already how it should read
   card += "<div class='rc-sub'><span class='rc-sector'>" + s.sector + "</span> · " +
-          s.country + " · served by " + s.cdn + " · scanned " + reportDate + "</div></div>";
+          s.country + " · served by " + s.cdn + " · scanned " + reportDate + timing +
+          "</div></div>";
   card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
   card += "</div>";

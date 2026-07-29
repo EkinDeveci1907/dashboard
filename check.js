@@ -53,14 +53,17 @@ function clearResult() {
   document.getElementById("live").innerHTML = "";
 }
 
-// "Measured just now, handshake took 412 ms" - the line that makes it feel live
-// rather than looked up. If the answer came out of the cache, say so; pretending
-// we ran a handshake we didn't run would be a lie about the timestamp.
+// Whether this was a fresh handshake or a cached answer. Worth saying plainly:
+// the card shows a handshake time either way, and on a cached result that number
+// is from when it was measured, not from now.
 function measuredLine(r) {
+  // the timing itself is on the card now. this line only has to say whether the
+  // handshake happened just now or came back out of the cache, because the
+  // number means different things in those two cases.
   if (r.cached) {
-    return "Measured within the last hour (cached). Handshake took " + r.handshake_ms + " ms.";
+    return "Measured within the last hour, returned from the cache.";
   }
-  return "Measured just now. Handshake took " + r.handshake_ms + " ms.";
+  return "Measured just now.";
 }
 
 // What the site looked like in the scans we already had. This is the part no
@@ -156,7 +159,8 @@ async function runScan(domain) {
     cert: r.cert,
     cdn: r.cdn,
     source: r.source,
-    stars: r.stars
+    stars: r.stars,
+    handshake_ms: r.handshake_ms
   };
   setReportCard([row], today, cdnRates);
   showSite(0);
