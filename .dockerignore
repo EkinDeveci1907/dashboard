@@ -1,0 +1,8 @@
+# the image only needs the scanner, the scoring and the scan CSVs. everything
+# below is either huge or pointless inside a container, and .venv is both.
+.git
+api/.venv
+_to_delete
+__pycache__
+*.pyc
+recordings

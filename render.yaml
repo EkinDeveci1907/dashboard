@@ -1,0 +1,17 @@
+# Render builds this from api/Dockerfile whenever the branch it's pointed at
+# moves. The context is the repo root, not api/, because the service imports
+# scan.py, readiness_score.py and cdn_attribution.py from the folder above it
+# and reads data/ for the corpus.
+#
+# The free instance sleeps after about 15 minutes of no traffic and takes a
+# little while to wake. check.js calls /api/health when the page loads, so the
+# machine is usually awake by the time anyone has typed a domain in.
+services:
+  - type: web
+    name: pqc-monitor-scan
+    runtime: docker
+    plan: free
+    region: ohio
+    dockerfilePath: ./api/Dockerfile
+    dockerContext: .
+    healthCheckPath: /api/health

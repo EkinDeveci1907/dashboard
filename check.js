@@ -11,10 +11,19 @@
 // only a live scan has: how long the handshake took, what the site looked like in
 // earlier scans, and where it sits against the corpus.
 
-// Where the scanner is running. Locally that's uvicorn on port 8000; once it's
-// deployed put the public URL here. It has to be https if the dashboard is,
-// otherwise the browser blocks the call as mixed content.
-const API = "http://127.0.0.1:8000";
+// Where the scanner is running. GitHub Pages can only serve files - it has no
+// way to run openssl - so the handshake happens in a small service deployed
+// somewhere else, and this is how the page finds it.
+//
+// Picking by hostname rather than hard-coding one URL means the same file works
+// in both places: uvicorn on port 8000 while developing, the deployed service
+// once it's published. Otherwise this line has to be edited before every push
+// and eventually gets pushed wrong.
+//
+// The deployed URL has to be https. The dashboard is served over https, and a
+// browser will block a plain http call from an https page as mixed content.
+const LOCAL = (location.hostname === "localhost" || location.hostname === "127.0.0.1");
+const API = LOCAL ? "http://127.0.0.1:8000" : "https://pqc-monitor-scan.onrender.com";
 
 let cdnRates = {};
 
