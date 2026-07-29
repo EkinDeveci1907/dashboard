@@ -1,0 +1,15 @@
+# fly.io config. `fly launch --no-deploy` then `fly deploy` from the dashboard
+# folder. The machine sleeps when nobody is scanning, so leaving it up costs
+# nothing.
+app = "pqc-monitor-scan"
+primary_region = "yul"
+
+[build]
+  dockerfile = "api/Dockerfile"
+
+[http_service]
+  internal_port = 8000
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0

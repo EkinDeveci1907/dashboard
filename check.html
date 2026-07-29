@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PQC Monitor - Scan a site</title>
+  <!-- No charts on this page, so no Chart.js and no map library. report-card.js
+       draws the card - the same one the other two tabs open when you click a row,
+       the only difference being where the row came from. check.js has to load
+       after it. -->
+  <link rel="stylesheet" href="style.css">
+  <script src="report-card.js" defer></script>
+  <script src="check.js" defer></script>
+</head>
+<body>
+  <div class="page">
+
+    <header class="header">
+      <div>
+        <h1>PQC Deployment Monitor</h1>
+        <p class="tagline">Post-quantum readiness of Canadian websites</p>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a href="index.html">Canada &amp; the world</a>
+      <a href="canada-topvisited.html">Most visited by Canadians</a>
+      <a href="check.html" class="active">Scan a site</a>
+    </nav>
+
+    <p class="headline">Type any domain and we run the handshake now, then show you where it sits
+       against the Canadian sites we already track.</p>
+
+    <section class="card">
+      <h2>Scan a site</h2>
+      <p class="hint">The other two tabs only know the sites that were in the list when we last
+         scanned. This one contacts whatever you type, live. Same measurement: TLS version, the
+         key-exchange group it negotiates, the certificate signature, and the network serving it.</p>
+      <div class="filters">
+        <input id="domain" placeholder="rbc.com" autocomplete="off" spellcheck="false">
+        <button id="go" class="btn">Scan</button>
+      </div>
+      <p id="status" class="hint"></p>
+      <div id="siteDetail" class="site-detail" style="display:none"></div>
+      <div id="live"></div>
+    </section>
+
+    <section class="card">
+      <h2>About this view</h2>
+      <p>Every other post-quantum checker will tell you whether one domain negotiates
+         <code>X25519MLKEM768</code>. What none of them tell you is whether that is normal. This page
+         answers the second question, because there is a population behind it: how many Canadian
+         sites are further along, how the site's own sector is doing, and - if we have scanned it
+         before - whether anything has actually changed.</p>
+      <p>The handshake runs on our own machine rather than in your browser, so the result doesn't
+         depend on which browser you happen to be using. Results are cached for an hour and there is
+         a limit on how many scans one address can run, which is why a repeat scan comes back
+         instantly.</p>
+      <p>Anything you scan that isn't in the dataset yet is written to a queue for the next full
+         scan, so the site list grows from people using this rather than only from sites I add by
+         hand. Built for the NSERC Summer 2026 research project (E. Deveci, Dalhousie University).</p>
+    </section>
+
+  </div>
+</body>
+</html>
