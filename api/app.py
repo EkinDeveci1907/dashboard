@@ -312,7 +312,11 @@ def scan_domain(request: Request, domain: str = ""):
     cdn = scan.detect_cdn(d, scan.get_ip(d))
     took = int((time.time() - started) * 1000)
 
-    # score it with the same functions the published dataset uses
+    # score it with the same functions the published dataset uses. Only the three
+    # part-scores are wanted here - stars_for() turns them into one star per
+    # migration step done. score_site() also hands back the old 0-100 total and
+    # its band, but the dashboard stopped showing those when the score became
+    # stars, so they stop here rather than going out in the JSON.
     row = {"site": d, "tls_version": tls, "key_exchange": kex, "cert": cert, "cdn": cdn}
     total, band, tls_pts, kex_pts, sig_pts = readiness_score.score_site(row)
     stars = readiness_score.stars_for(tls_pts, kex_pts, sig_pts)
@@ -334,8 +338,6 @@ def scan_domain(request: Request, domain: str = ""):
         "sector": sector,
         "country": country,
         "source": source,
-        "score": total,
-        "band": band,
         "stars": stars,
         "handshake_ms": took,
         "in_corpus": old is not None,

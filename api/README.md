@@ -52,7 +52,7 @@ whether that openssl can see `X25519MLKEM768`. The page calls this on load so it
 can warn you instead of reporting every site as classical.
 
 **`GET /api/scan?domain=rbc.com`** - the scan. Returns the measurement (`tls`,
-`kex`, `cert`, `cdn`, `source`, `score`, `stars`, `handshake_ms`), the site's
+`kex`, `cert`, `cdn`, `source`, `stars`, `handshake_ms`), the site's
 `history` across every scan on disk, and a `context` block with how many Canadian
 sites are ahead of it and how its sector is doing.
 

@@ -147,7 +147,6 @@ async function runScan(domain) {
     cert: r.cert,
     cdn: r.cdn,
     source: r.source,
-    score: r.score,
     stars: r.stars
   };
   setReportCard([row], today, cdnRates);
