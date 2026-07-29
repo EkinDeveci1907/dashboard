@@ -74,22 +74,6 @@ for path in sorted(glob.glob("data/scan-*.csv")):
         main_scans.append(path)
 cdn_rates = provider_pqc_rates(list(csv.DictReader(open(main_scans[-1]))))
 
-# what each site scored in the toplist scan before this one, so the report card
-# can say whether it moved. The list itself changed source between scans, but a
-# single site's rating on two dates is still a fair comparison.
-previous_date = ""
-was = {}
-older = []
-for path in sorted(glob.glob("data/toplist-*-enriched.csv")):
-    if path != in_file:
-        older.append(path)
-if older:
-    previous_date = os.path.basename(older[-1]).replace("toplist-", "").replace("-enriched.csv", "")
-    for row in csv.DictReader(open(older[-1])):
-        if row["stars"].strip() != "":
-            was[row["site"]] = int(row["stars"])
-
-
 def by_score(row):
     return row["score"]
 
@@ -101,13 +85,10 @@ def by_score(row):
 # stars === 3 test never fires.
 table = []
 for r in sites:
-    entry = {"site": r["site"], "sector": r["sector"], "country": r["country"],
-             "tls": r["tls_version"], "kex": r["key_exchange"], "cdn": r["cdn"],
-             "source": r["pqc_source"], "score": int(r["readiness_score"]),
-             "stars": int(r["stars"])}
-    if r["site"] in was:
-        entry["was"] = was[r["site"]]
-    table.append(entry)
+    table.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
+                  "tls": r["tls_version"], "kex": r["key_exchange"], "cdn": r["cdn"],
+                  "source": r["pqc_source"], "score": int(r["readiness_score"]),
+                  "stars": int(r["stars"])})
 table.sort(key=by_score, reverse=True)
 
 # Build the page. It reuses the dashboard's style.css and report-card.js, so it
@@ -159,12 +140,11 @@ html += "<script src='report-card.js'></script>\n"
 html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
 html += "const SCAN_DATE = " + json.dumps(scan_date) + ";\n"
 html += "const CDN_RATES = " + json.dumps(cdn_rates) + ";\n"
-html += "const PREV_SCAN = " + json.dumps(previous_date) + ";\n"
 html += """
 // report-card.js holds starCell(), showSite() and the rest - the same code the
 // main dashboard uses. All this page has to do is hand it the rows and draw
 // the table.
-setReportCard(DATA, SCAN_DATE, CDN_RATES, {previousDate: PREV_SCAN});
+setReportCard(DATA, SCAN_DATE, CDN_RATES);
 
 function draw() {
   var q = document.getElementById('search').value.toLowerCase();

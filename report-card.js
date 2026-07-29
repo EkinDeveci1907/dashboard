@@ -12,7 +12,6 @@
 let reportRows = [];
 let reportDate = "";
 let cdnPqcRate = {};
-let previousDate = "";
 let sectorPqc = {};
 
 // cdnRates is provider name -> what percent of that provider's sites already
@@ -24,7 +23,6 @@ function setReportCard(rows, scanDate, cdnRates, options) {
   reportDate = scanDate;
   cdnPqcRate = cdnRates || {};
   options = options || {};
-  previousDate = options.previousDate || "";
   sectorPqc = options.sectorPqc || {};
 }
 
@@ -79,20 +77,6 @@ function adviceFor(s) {
          "so this site is two steps behind.";
 }
 
-// Did this site move since the scan before? s.was is its star rating last time,
-// and it's absent when the site wasn't in that scan at all - which is not the
-// same as standing still, so say nothing rather than claim "no change".
-function movementFor(s) {
-  if (!previousDate || s.was === undefined) return "";
-  if (s.stars > s.was) {
-    return "<span class='rc-up'>▲ gained a star since the " + previousDate + " scan</span>";
-  }
-  if (s.stars < s.was) {
-    return "<span class='rc-down'>▼ lost a star since the " + previousDate + " scan</span>";
-  }
-  return "<span class='rc-flat'>unchanged since the " + previousDate + " scan</span>";
-}
-
 // How this site sits against others doing the same job. The sector shares are
 // Canadian, so only say it for a Canadian site - quoting a Canadian rate at a
 // German bank would be wrong.
@@ -141,11 +125,6 @@ function showSite(i) {
   card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
   card += "</div>";
-
-  let moved = movementFor(s);
-  if (moved !== "") {
-    card += "<p class='rc-moved'>" + moved + "</p>";
-  }
 
   card += "<div class='rc-checks'>";
   card += checkRow(hasTls13, "TLS 1.3", s.tls);

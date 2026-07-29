@@ -38,21 +38,7 @@ def key_exchange_group(kex):
     return "other"
 
 
-def stars_last_time(csv_path):
-    # star rating per site from the scan before this one, so the report card can
-    # say whether a site moved. Worked out here rather than in the browser - the
-    # page would otherwise have to download a second whole scan to answer it.
-    if csv_path == "":
-        return {}
-    was = {}
-    for row in csv.DictReader(open(csv_path)):
-        if row["site"] and row["tls_version"] and row["key_exchange"] and row["cert"] and row["cdn"]:
-            score, band, tls_pts, kex_pts, sig_pts = score_site(row)
-            was[row["site"]] = stars_for(tls_pts, kex_pts, sig_pts)
-    return was
-
-
-def summarise_one_scan(csv_path, date, previous_path="", previous_date=""):
+def summarise_one_scan(csv_path, date):
     # 1. Read the rows, keeping only the ones where every field is filled in
     #    (a site that didn't answer is written with blanks, and we skip those).
     scanned = []
@@ -133,7 +119,6 @@ def summarise_one_scan(csv_path, date, previous_path="", previous_date=""):
     #    also gets where its PQC comes from, its 0-100 readiness score, and the
     #    star rating (0-3) the page shows instead of raw points - all worked
     #    out with the same rules as cdn_attribution.py and readiness_score.py.
-    was = stars_last_time(previous_path)
     sites = []
     for row in scanned:
         attribution = attribution_for(row)
@@ -144,11 +129,6 @@ def summarise_one_scan(csv_path, date, previous_path="", previous_date=""):
                 "pqc_source": PQC_SOURCE.get(attribution, ""),
                 "score": score,
                 "stars": stars_for(tls_pts, kex_pts, sig_pts)}
-        # what this site did in the scan before, for the report card. missing
-        # means it wasn't in that scan (or didn't answer it), which is not the
-        # same as "no change", so leave it out rather than guess.
-        if row["site"] in was:
-            site["was"] = was[row["site"]]
         sites.append(site)
 
     # overall Canadian PQC percentage (guard against dividing by zero)
@@ -164,7 +144,6 @@ def summarise_one_scan(csv_path, date, previous_path="", previous_date=""):
 
     return {
         "scan_date": date,
-        "previous_scan": previous_date,
         "country_focus": "CANADA",
         "total": len(canada),
         "total_all": len(scanned),
@@ -184,21 +163,14 @@ def summarise_one_scan(csv_path, date, previous_path="", previous_date=""):
 # Run the summary for every scan CSV we have, oldest date first.
 # The "-enriched" copies (scan.py output plus the three extra columns) are skipped
 # here - they hold the same sites, and we don't want them as separate dates.
-scans = []
-for path in sorted(glob.glob("data/scan-*.csv")):
-    if "-enriched" not in path:
-        scans.append(path)
-
 dates = []
-previous_path = ""
-previous_date = ""
-for path in scans:
+for path in sorted(glob.glob("data/scan-*.csv")):
+    if "-enriched" in path:
+        continue
     date = os.path.basename(path).replace("scan-", "").replace(".csv", "")
-    stats = summarise_one_scan(path, date, previous_path, previous_date)
+    stats = summarise_one_scan(path, date)
     json.dump(stats, open("stats-" + date + ".json", "w"), indent=2)
     dates.append(date)
-    previous_path = path
-    previous_date = date
     print("made stats-" + date + ".json")
 
 json.dump(dates, open("scans.json", "w"), indent=2)
