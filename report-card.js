@@ -134,7 +134,7 @@ function showSite(i) {
   // a live scan also knows how long the handshake took. rows that came out of a
   // stored scan don't, so the line only shows up when there's a number for it.
   let timing = "";
-  if (s.handshake_ms) {
+  if (s.handshake_ms !== undefined) {
     timing = " · handshake " + s.handshake_ms + " ms";
   }
 
