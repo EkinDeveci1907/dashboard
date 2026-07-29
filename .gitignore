@@ -11,3 +11,7 @@ data/canada10-domains.txt
 data/pqcmonitor-canada10.csv
 data/scan_new.csv
 data/sites_new.csv
+
+# the scan service runs in a venv, don't commit it
+api/.venv/
+_to_delete/

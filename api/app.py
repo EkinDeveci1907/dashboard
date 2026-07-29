@@ -253,6 +253,17 @@ def remember(domain, tls, kex, cert, cdn):
 # the endpoint
 # ----------------------------------------------------------------------------
 
+@app.get("/")
+def root():
+    # there's no site here, only the two endpoints - but "/" is the first thing
+    # anyone opens, so say that rather than leaving them on a bare 404.
+    return {
+        "service": "PQC Monitor scan API",
+        "endpoints": ["/api/health", "/api/scan?domain=example.com"],
+        "dashboard": "https://ekindeveci1907.github.io/dashboard/check.html",
+    }
+
+
 @app.get("/api/health")
 def health():
     # the dashboard calls this on page load so it can say "scanner offline"
