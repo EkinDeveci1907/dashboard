@@ -107,7 +107,10 @@ headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
 html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n"
 html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n"
 html += "<title>PQC Monitor - Most visited by Canadians</title>\n"
-html += "<link rel='stylesheet' href='style.css'>\n</head>\n<body>\n"
+# the ?v= is a cache buster - see the note in index.html. bump it in both
+# places when style.css or report-card.js changes.
+ASSETS = "2026-07-30"
+html += "<link rel='stylesheet' href='style.css?v=" + ASSETS + "'>\n</head>\n<body>\n"
 html += "<div class='page'>\n"
 html += "<header class='header'><div><h1>PQC Deployment Monitor</h1>"
 html += "<p class='tagline'>Post-quantum readiness of Canadian websites</p></div></header>\n"
@@ -137,7 +140,7 @@ html += "every month.</p>\n"
 html += "</section>\n</div>\n"
 # report-card.js has to be loaded before the inline script below runs, so it goes
 # here at the end of the body rather than in the head with a defer.
-html += "<script src='report-card.js'></script>\n"
+html += "<script src='report-card.js?v=" + ASSETS + "'></script>\n"
 html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
 html += "const SCAN_DATE = " + json.dumps(scan_date) + ";\n"
 html += "const CDN_RATES = " + json.dumps(cdn_rates) + ";\n"

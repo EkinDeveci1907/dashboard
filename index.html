@@ -11,14 +11,17 @@
        missing. report-card.js is the per-site card, shared with the most-visited
        page; app.js has to load last since it uses everything above it.
        note: we load our own style.css AFTER the map's stylesheet, so our tweaks
-       (like the zoom buttons) override the library's defaults. -->
+       (like the zoom buttons) override the library's defaults.
+       The ?v= on our own files is a cache buster - Pages tells browsers to hold on
+       to js and css, so without it a returning visitor runs last week's script
+       against this week's page. Bump the date when you change any of them. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2026-07-30">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js" defer></script>
-  <script src="report-card.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="report-card.js?v=2026-07-30" defer></script>
+  <script src="app.js?v=2026-07-30" defer></script>
 </head>
 <body>
   <div class="page">

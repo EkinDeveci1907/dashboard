@@ -30,7 +30,7 @@ const COUNTRY_CODE = {
 
 // on page load: get the list of scan dates, fill the dropdown, and show the newest one
 async function loadScanDates() {
-  let response = await fetch("scans.json");
+  let response = await fetch("scans.json", {cache: "no-store"});
   let dates = await response.json();
 
   let picker = document.getElementById("datePicker");
@@ -57,7 +57,7 @@ loadScanDates();
 // need libraries fetched from a CDN. If that CDN is blocked or slow, the charts
 // are the only thing missing instead of the whole page below the cards.
 async function showScan(date) {
-  let response = await fetch("stats-" + date + ".json");
+  let response = await fetch("stats-" + date + ".json", {cache: "no-store"});
   let data = await response.json();
 
   currentScanDate = date;

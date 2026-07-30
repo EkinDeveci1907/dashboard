@@ -33,9 +33,9 @@ let cdnRates = {};
 // rather than keeping a second copy that goes stale.
 async function loadCdnRates() {
   try {
-    let scans = await (await fetch("scans.json")).json();
+    let scans = await (await fetch("scans.json", {cache: "no-store"})).json();
     let latest = scans[scans.length - 1];
-    let stats = await (await fetch("stats-" + latest + ".json")).json();
+    let stats = await (await fetch("stats-" + latest + ".json", {cache: "no-store"})).json();
     cdnRates = stats.cdn_rates || {};
   } catch (e) {
     // not fatal. without the rates the card still draws, it just gives the
