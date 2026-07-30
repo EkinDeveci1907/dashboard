@@ -109,7 +109,7 @@ html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\
 html += "<title>PQC Monitor - Most visited by Canadians</title>\n"
 # the ?v= is a cache buster - see the note in index.html. bump it in both
 # places when style.css or report-card.js changes.
-ASSETS = "2026-07-30"
+ASSETS = "2026-07-30-2"
 html += "<link rel='stylesheet' href='style.css?v=" + ASSETS + "'>\n</head>\n<body>\n"
 html += "<div class='page'>\n"
 html += "<header class='header'><div><h1>PQC Deployment Monitor</h1>"
