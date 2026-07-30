@@ -131,19 +131,24 @@ function showSite(i) {
   let sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
 
   let card = "";
-  // a live scan also knows how long the handshake took. rows that came out of a
-  // stored scan don't, so the line only shows up when there's a number for it.
-  let timing = "";
+  // The line under the site name. A stored row gets the full version, since the
+  // sector, the country and the scan date all come from the corpus it's part of.
+  // A live scan is the one case where they don't - a domain nobody has added has
+  // no sector or country, and printing "unknown · unknown" is worse than printing
+  // nothing. So a live result shows the one thing it does know, the handshake
+  // time; the provider is named in the next-step line underneath either way.
+  let sub = "";
   if (s.handshake_ms !== undefined) {
-    timing = " · handshake " + s.handshake_ms + " ms";
+    sub = "handshake " + s.handshake_ms + " ms";
+  } else {
+    // only the sector wants capitalising - the rest already reads how it should
+    sub = "<span class='rc-sector'>" + s.sector + "</span> · " + s.country +
+          " · served by " + s.cdn + " · scanned " + reportDate;
   }
 
   card += "<div class='rc-head'>";
   card += "<div><div class='rc-site'>" + s.site + "</div>";
-  // only the sector wants capitalising - the rest is already how it should read
-  card += "<div class='rc-sub'><span class='rc-sector'>" + s.sector + "</span> · " +
-          s.country + " · served by " + s.cdn + " · scanned " + reportDate + timing +
-          "</div></div>";
+  card += "<div class='rc-sub'>" + sub + "</div></div>";
   card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
   card += "</div>";
