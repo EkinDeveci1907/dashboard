@@ -35,7 +35,7 @@
       <h2>Scan a site</h2>
       <p class="hint">The other two tabs only know the sites that were in the list when we last
          scanned. This one contacts whatever you type, live. Same measurement: TLS version, the
-         key-exchange group it negotiates, the certificate signature, and the network serving it.</p>
+         key-exchange group it negotiates, and the certificate signature.</p>
       <div class="filters">
         <input id="domain" placeholder="example: rbc.com" autocomplete="off" spellcheck="false">
         <button id="go" class="btn">Scan</button>
@@ -48,8 +48,8 @@
       <h2>About this view</h2>
       <p>The other two tabs are a scan we ran earlier, so they only know the sites that were on
          the list at the time. This one runs the handshake when you ask for it, against any domain,
-         and reports the same things: the TLS version, the key-exchange group, the certificate
-         signature and the network serving it.</p>
+         and reports the same things: the TLS version, the key-exchange group and the certificate
+         signature.</p>
       <p>The handshake runs on our own machine rather than in your browser, so the result doesn't
          depend on which browser you happen to be using. Results are cached for an hour and there is
          a limit on how many scans one address can run, which is why a repeat scan comes back
