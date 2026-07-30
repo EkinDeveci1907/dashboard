@@ -3,8 +3,7 @@
 // and draws the answer.
 //
 // report-card.js draws the card, same as the other two tabs, so a live scan and
-// a stored row look identical. What this file adds is the three things only a
-// live scan has: the handshake time, the earlier scans, and the comparison.
+// a stored row look identical.
 
 // Picking the scanner by hostname means the same file works locally and once
 // published, instead of being edited before every push. The deployed one has to
@@ -37,7 +36,6 @@ function setStatus(text) {
 
 function clearResult() {
   document.getElementById("siteDetail").style.display = "none";
-  document.getElementById("live").innerHTML = "";
 }
 
 // Whether this was a fresh handshake or a cached answer. Worth saying plainly:
@@ -51,65 +49,6 @@ function measuredLine(r) {
     return "Measured within the last hour, returned from the cache.";
   }
   return "Measured just now.";
-}
-
-// What the site looked like in the scans we already had. This is the part no
-// other checker can do - they see one moment, we have the series. Two months of
-// "no change" is a finding, not an absence of one.
-function historyBlock(r) {
-  let h = r.history || [];
-  if (h.length === 0) {
-    return "<p class='rc-peer'>We had not scanned this site before, so there is no history yet. " +
-           "It has been added to the queue for the next full scan.</p>";
-  }
-
-  let dots = "";
-  for (let i = 0; i < h.length; i++) {
-    let cls = h[i].pqc ? "hist-on" : "hist-off";
-    let label = h[i].date + ": " + (h[i].pqc ? "post-quantum" : "classical");
-    dots += "<span class='hist-dot " + cls + "' title='" + label + "'></span>";
-  }
-
-  // did it ever change? comparing first to last is enough for a sentence - the
-  // dots above are there for anyone who wants the detail.
-  let first = h[0];
-  let last = h[h.length - 1];
-  let sentence = "";
-  if (first.pqc === last.pqc && !first.pqc) {
-    sentence = "Classical in every scan since " + first.date + ". Nothing has changed.";
-  } else if (first.pqc === last.pqc && first.pqc) {
-    sentence = "Post-quantum in every scan since " + first.date + ".";
-  } else if (last.pqc) {
-    sentence = "Turned post-quantum on between " + first.date + " and " + last.date + ".";
-  } else {
-    sentence = "Was post-quantum in " + first.date + " and is not now, which is worth a second look.";
-  }
-
-  return "<div class='hist'><span class='hist-label'>Earlier scans</span>" + dots +
-         "<span class='hist-note'>" + sentence + "</span></div>";
-}
-
-// Where it sits against everything else we track. Only says the Canadian lines
-// for a Canadian site - the population is Canadian, so quoting it at a US site
-// would be a number without a meaning.
-function contextBlock(r) {
-  let c = r.context || {};
-  if (!c.canada_total) return "";
-
-  let lines = [];
-  if (c.ahead !== undefined) {
-    lines.push("<strong>" + c.ahead + "</strong> of the " + c.canada_total +
-               " Canadian sites we track are further along than this one, and " +
-               c.same + " are at the same point.");
-  }
-  if (c.sector_total) {
-    lines.push(c.sector_pqc + " of the " + c.sector_total + " Canadian " + c.sector +
-               " sites we scan negotiate post-quantum key exchange.");
-  }
-  lines.push("Across the Canadian sites in the " + c.scan_date + " scan, " +
-             c.canada_pqc_pct + "% do.");
-
-  return "<p class='rc-peer'>" + lines.join(" ") + "</p>";
 }
 
 async function runScan(domain) {
@@ -151,8 +90,6 @@ async function runScan(domain) {
   };
   setReportCard([row], today, cdnRates);
   showSite(0);
-
-  document.getElementById("live").innerHTML = historyBlock(r) + contextBlock(r);
 
   // make the result linkable. check.html?domain=rbc.com reproduces this page,
   // which is what makes a single site's card something you can send to someone.

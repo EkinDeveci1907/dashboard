@@ -42,16 +42,14 @@
       </div>
       <p id="status" class="hint"></p>
       <div id="siteDetail" class="site-detail" style="display:none"></div>
-      <div id="live"></div>
     </section>
 
     <section class="card">
       <h2>About this view</h2>
-      <p>Every other post-quantum checker will tell you whether one domain negotiates
-         <code>X25519MLKEM768</code>. What none of them tell you is whether that is normal. This page
-         answers the second question, because there is a population behind it: how many Canadian
-         sites are further along, how the site's own sector is doing, and - if we have scanned it
-         before - whether anything has actually changed.</p>
+      <p>The other two tabs are a scan we ran earlier, so they only know the sites that were on
+         the list at the time. This one runs the handshake when you ask for it, against any domain,
+         and reports the same things: the TLS version, the key-exchange group, the certificate
+         signature and the network serving it.</p>
       <p>The handshake runs on our own machine rather than in your browser, so the result doesn't
          depend on which browser you happen to be using. Results are cached for an hour and there is
          a limit on how many scans one address can run, which is why a repeat scan comes back
