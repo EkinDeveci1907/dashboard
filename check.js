@@ -1,27 +1,14 @@
-// The "Scan a site" tab.
+// The "Scan a site" tab. The page is static like the rest of the dashboard, so
+// api/app.py does the handshake and hands back JSON; this asks it for a domain
+// and draws the answer.
 //
-// The page itself is static like the rest of the dashboard, so it can't open a
-// TLS connection - GitHub Pages has no way to run openssl. api/app.py does that
-// part and hands back JSON. Everything here is asking it for a domain and
-// drawing the answer.
-//
-// The card itself is not drawn here on purpose. report-card.js already knows how
-// to lay out a site, and it is what the other two tabs use, so a live scan and a
-// stored row end up looking identical. All this file adds are the three things
-// only a live scan has: how long the handshake took, what the site looked like in
-// earlier scans, and where it sits against the corpus.
+// report-card.js draws the card, same as the other two tabs, so a live scan and
+// a stored row look identical. What this file adds is the three things only a
+// live scan has: the handshake time, the earlier scans, and the comparison.
 
-// Where the scanner is running. GitHub Pages can only serve files - it has no
-// way to run openssl - so the handshake happens in a small service deployed
-// somewhere else, and this is how the page finds it.
-//
-// Picking by hostname rather than hard-coding one URL means the same file works
-// in both places: uvicorn on port 8000 while developing, the deployed service
-// once it's published. Otherwise this line has to be edited before every push
-// and eventually gets pushed wrong.
-//
-// The deployed URL has to be https. The dashboard is served over https, and a
-// browser will block a plain http call from an https page as mixed content.
+// Picking the scanner by hostname means the same file works locally and once
+// published, instead of being edited before every push. The deployed one has to
+// be https or the browser blocks the call as mixed content.
 const LOCAL = (location.hostname === "localhost" || location.hostname === "127.0.0.1");
 const API = LOCAL ? "http://127.0.0.1:8000" : "https://pqc-monitor-scan.onrender.com";
 

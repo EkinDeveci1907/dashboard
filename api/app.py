@@ -216,18 +216,11 @@ def known_row(domain):
 
 
 def remember(domain, tls, kex, cert, cdn):
-    # A domain somebody scanned that isn't in the corpus is worth knowing about -
-    # it's a candidate for the next full scan. Nothing reads this automatically;
-    # it never touches the published numbers.
-    #
-    # Two places, because neither is enough on its own. The CSV is the useful one
-    # when this runs locally. On the deployed host the container's disk is wiped
-    # on every restart and redeploy, so the CSV there is temporary and the log
-    # line is what actually survives - Render keeps logs, and searching them for
-    # "new domain" gets the list back.
-    #
-    # Only the domain and what we measured. Not who asked: the rate limiter holds
-    # IP addresses in memory and nothing writes them down.
+    # A scanned domain we don't already track is a candidate for the next full
+    # scan. Nothing reads this automatically, so it never moves the published
+    # numbers. Written down twice because the deployed container's disk is wiped
+    # on every restart - locally the CSV is the copy that lasts, deployed it's
+    # the log line. Domain and measurement only, never who asked.
     print("new domain scanned: " + domain + "  " + tls + "  " + kex + "  " + cdn)
 
     path = os.path.join(DATA_DIR, "community-scans.csv")
