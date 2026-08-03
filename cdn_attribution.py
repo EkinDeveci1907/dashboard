@@ -11,11 +11,12 @@
 # attribution_for(row) is also imported by enrich.py, so the rule lives here once.
 #
 # usage: python3 cdn_attribution.py [data/scan-YYYY-MM-DD.csv]
-#        no argument = the 2026-07-08 scan (2714 sites)
+#        no argument = the newest scan in data/
 
 import csv
 import sys
 import os
+import glob
 
 # One catch: if the site itself belongs to the company running the CDN, the PQC
 # is their own effort, not outsourced. google.com on Google and cloudflare.com
@@ -47,7 +48,7 @@ OWN_BRANDS = {
 def brand_owns(site, word):
     # Does this domain really belong to the brand, or do the letters just happen
     # to appear in it? "loblaws.ca" contains "aws" and "metoffice.gov.uk"
-    # contains "office" - neither is Amazon's or Microsoft's site, and counting
+    # contains "office". neither is Amazon's or Microsoft's site, and counting
     # them as own effort would pad the one number this project is built on.
     # A brand word has to be a whole piece of the domain, or start one:
     # googleapis and primevideo count, loblaws does not.
@@ -73,8 +74,8 @@ def attribution_for(row):
     # returns one of: "PQC via provider", "PQC own effort", "No PQC", "unreachable"
     #
     # A row only counts if the scan filled in everything. scan.py leaves the cdn
-    # blank whenever any of the crypto fields came back empty - it skips the CDN
-    # step entirely for those - so a half-filled row would look self-hosted here
+    # blank whenever any of the crypto fields came back empty, since it skips the
+    # CDN step entirely for those, so a half-filled row would look self-hosted here
     # and get called "own effort" when nobody ever checked who serves it. Same
     # test aggregate.py uses.
     for field in ["tls_version", "key_exchange", "cert", "cdn"]:
@@ -136,9 +137,20 @@ def provider_pqc_rates(rows):
 
 
 def main():
-    IN_FILE = "data/scan-2026-07-08.csv"
+    # no file named: use the newest scan we have. The dates sort the same way the
+    # names do, so the last one is the newest, and the -enriched copies are the
+    # same sites again with extra columns.
+    scans = []
+    for path in sorted(glob.glob("data/scan-*.csv")):
+        if "-enriched" not in path:
+            scans.append(path)
     if len(sys.argv) > 1:
         IN_FILE = sys.argv[1]
+    elif scans:
+        IN_FILE = scans[-1]
+    else:
+        print("no data/scan-*.csv to read. run python3 scan.py first")
+        return
 
     # tag the outputs with the scan date, e.g. attribution-2026-07-08.csv
     date = os.path.basename(IN_FILE).replace("scan-", "").replace(".csv", "")
@@ -208,7 +220,7 @@ def main():
     out.close()
 
     # how ready each CDN/provider looks across the sites we saw. the csv keeps
-    # every provider, however few sites we saw it on - sites_observed is right
+    # every provider, however few sites we saw it on. sites_observed is right
     # there to judge it by. the dashboard is the one that needs a cutoff.
     providers = provider_counts(rows)
 

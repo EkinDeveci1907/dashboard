@@ -52,8 +52,8 @@ loadScanDates();
 // Load one scan's summary json and redraw the whole page from it. Each step below
 // is its own small function, so you can read this like a table of contents.
 //
-// Order matters. Everything we can draw ourselves goes first - the cards, the
-// sector bars, the table - then the three Chart.js charts and the map, which
+// Order matters. Everything we can draw ourselves goes first (the cards, the
+// sector bars, the table), then the three Chart.js charts and the map, which
 // need libraries fetched from a CDN. If that CDN is blocked or slow, the charts
 // are the only thing missing instead of the whole page below the cards.
 async function showScan(date) {
@@ -75,7 +75,7 @@ async function showScan(date) {
 }
 
 // The three charts, all of them Chart.js. If it didn't download, swap each
-// canvas for a line saying so and carry on - the rest of the page is ours and
+// canvas for a line saying so and carry on. the rest of the page is ours and
 // doesn't need it. Picking another date runs this again, so check the canvas is
 // still there before touching it.
 function drawCharts(data) {
@@ -96,8 +96,8 @@ function drawCharts(data) {
 
 // canada.ca on the government's own deadline card. Hard-coding "it has no stars"
 // means the page starts lying the day they move, so read it off the scan. We
-// scan the apex and the www host separately and they disagree - the apex is
-// still TLS 1.2 while www is on 1.3 - so talk about the post-quantum key
+// scan the apex and the www host separately and they disagree. the apex is
+// still TLS 1.2 while www is on 1.3, so talk about the post-quantum key
 // exchange, which neither of them does and which is the point of the sentence.
 function showCanadaCaNote(sites) {
   let found = false;
@@ -169,7 +169,7 @@ function drawKexChart(data) {
   let kexLabels = Object.keys(data.kex_families);
   let kexColors = [];
   for (let i = 0; i < kexLabels.length; i++) {
-    if (kexLabels[i].includes("MLKEM")) {
+    if (kexLabels[i].indexOf("MLKEM") !== -1) {
       kexColors.push(INDIGO);
     } else {
       kexColors.push(GREY);
@@ -189,7 +189,7 @@ function drawKexChart(data) {
 
 // CDN bar: show the 8 most common, and roll the rest into one "Other" bar.
 // Each bar is stacked into the sites already negotiating PQC and the sites not,
-// so the same chart also reads as each CDN's PQC readiness - Cloudflare's bar
+// so the same chart also reads as each CDN's PQC readiness. Cloudflare's bar
 // comes out nearly all indigo, Akamai's (all the big banks) nearly all grey.
 function drawCdnChart(data) {
   let names = Object.keys(data.cdn_families);
@@ -315,7 +315,7 @@ function drawWorldMap(countries) {
         } else {
           extra = "no sites scanned";
         }
-        tooltip.text(tooltip.text() + " — " + extra, true);
+        tooltip.text(tooltip.text() + " - " + extra, true);
       }
     });
   } catch (e) {
@@ -389,7 +389,7 @@ function applyFilters() {
   let matches = [];
   for (let i = 0; i < allSites.length; i++) {
     let s = allSites[i];
-    if (!s.site.toLowerCase().includes(term)) continue;
+    if (s.site.toLowerCase().indexOf(term) === -1) continue;
     if (country && s.country !== country) continue;
     if (sector && s.sector !== sector) continue;
     if (kex && s.kex !== kex) continue;

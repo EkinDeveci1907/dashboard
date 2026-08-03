@@ -90,7 +90,7 @@ def summarise_one_scan(csv_path, date):
         kex_counts[family] = kex_counts[family] + 1
 
         # count which CDN / network serves the site, and how many of that CDN's
-        # sites already negotiate PQC - the CDN chart stacks one on the other,
+        # sites already negotiate PQC. the CDN chart stacks one on the other,
         # which is what shows a CDN's PQC readiness (Cloudflare full, Akamai empty)
         cdn = clean_cdn_name(row["cdn"])
         if cdn not in cdn_counts:
@@ -117,7 +117,7 @@ def summarise_one_scan(csv_path, date):
 
     # 4. The site table lists every site we scanned, not just Canada. Each row
     #    also gets where its PQC comes from, its 0-100 readiness score, and the
-    #    star rating (0-3) the page shows instead of raw points - all worked
+    #    star rating (0-3) the page shows instead of raw points, all worked
     #    out with the same rules as cdn_attribution.py and readiness_score.py.
     sites = []
     for row in scanned:
@@ -162,7 +162,7 @@ def summarise_one_scan(csv_path, date):
 
 # Run the summary for every scan CSV we have, oldest date first.
 # The "-enriched" copies (scan.py output plus the three extra columns) are skipped
-# here - they hold the same sites, and we don't want them as separate dates.
+# here, because they hold the same sites and we don't want them as separate dates.
 dates = []
 for path in sorted(glob.glob("data/scan-*.csv")):
     if "-enriched" in path:

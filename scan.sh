@@ -5,7 +5,7 @@
 #     ./scan.sh
 #
 # It needs openssl@3.5, curl, dig and whois (see the README). The main scan is
-# the slow part - give it 20 to 40 minutes. If any step fails it stops there
+# the slow part, so give it 20 to 40 minutes. If any step fails it stops there
 # instead of carrying on with half the data.
 #
 # The four steps:

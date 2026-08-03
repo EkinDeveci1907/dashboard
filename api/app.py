@@ -27,7 +27,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 # the scanner lives one directory up. importing it rather than copying it means
-# the API can never drift from what the nightly scan measures - if scan.py
+# the API can never drift from what the nightly scan measures. if scan.py
 # learns a new CDN rule tomorrow, this gets it for free.
 HERE = os.path.dirname(os.path.abspath(__file__))
 DASHBOARD = os.path.dirname(HERE)
@@ -79,7 +79,9 @@ def clean_domain(raw):
 
 
 def resolves_publicly(domain):
-    # returns (ok, reason). we only care that at least one address is public.
+    # returns (ok, reason). every address the name resolves to has to be public -
+    # one private answer among several is enough to refuse, because we don't get
+    # to choose which one the handshake below ends up using.
     try:
         infos = socket.getaddrinfo(domain, 443, proto=socket.IPPROTO_TCP)
     except Exception:
@@ -92,7 +94,7 @@ def resolves_publicly(domain):
 
 
 # Rate limit and cache, both plain dictionaries in memory. They empty out when
-# the process restarts, which is fine - the cache is a courtesy and the limit is
+# the process restarts, which is fine. the cache is a courtesy and the limit is
 # to stop someone looping over a wordlist, not to be airtight.
 
 WINDOW = 300          # seconds
@@ -133,6 +135,14 @@ def history_for(domain):
     # every scan we've run, in date order, with what this domain's key exchange
     # looked like at the time. Sites we never scanned come back empty, which is
     # the normal case for a domain somebody just typed in.
+    #
+    # The card stopped drawing this. One live measurement next to a row of old
+    # dots was more clutter than it was worth. But it stays in the JSON, because
+    # a site's history over time is the one thing this project has that a
+    # one-shot scanner doesn't, and anyone calling the API directly wants it.
+    # It does mean reading every scan file per uncached request; at eight files
+    # that is fine, and if it stops being fine the answer is an index, not
+    # dropping the field.
     out = []
     for path in sorted(glob.glob(os.path.join(DATA_DIR, "scan-*.csv"))):
         name = os.path.basename(path)
@@ -153,7 +163,7 @@ def context_for(domain, stars, sector, country):
     #
     # Two deliberate limits. The comparison population is Canadian sites only,
     # because that's what the monitor is about, so it's only quoted for a
-    # Canadian site - telling a German bank it's "ahead of 300 Canadian sites"
+    # Canadian site. telling a German bank it's "ahead of 300 Canadian sites"
     # would be a number, not a fact. And sites are compared by how many stars
     # they have rather than being given a rank: hundreds of sites share the same
     # two stars, so "ranked 41st" would be an ordering we invented.
@@ -219,7 +229,7 @@ def remember(domain, tls, kex, cert, cdn):
     # A scanned domain we don't already track is a candidate for the next full
     # scan. Nothing reads this automatically, so it never moves the published
     # numbers. Written down twice because the deployed container's disk is wiped
-    # on every restart - locally the CSV is the copy that lasts, deployed it's
+    # on every restart. locally the CSV is the copy that lasts, deployed it's
     # the log line. Domain and measurement only, never who asked.
     print("new domain scanned: " + domain + "  " + tls + "  " + kex + "  " + cdn)
 
@@ -235,7 +245,7 @@ def remember(domain, tls, kex, cert, cdn):
 
 @app.get("/")
 def root():
-    # there's no site here, only the two endpoints - but "/" is the first thing
+    # there's no site here, only the two endpoints, but "/" is the first thing
     # anyone opens, so say that rather than leaving them on a bare 404.
     return {
         "service": "PQC Monitor scan API",
@@ -260,7 +270,12 @@ def health():
 
 @app.get("/api/scan")
 def scan_domain(request: Request, domain: str = ""):
-    ip = request.client.host if request.client else "unknown"
+    # the annotations here are the only ones in the project, and they are not
+    # decoration: FastAPI reads them to know that domain is a query parameter and
+    # that request is the request object. Take them off and the route breaks.
+    ip = "unknown"
+    if request.client:
+        ip = request.client.host
 
     d = clean_domain(domain)
     if d == "":
@@ -293,7 +308,7 @@ def scan_domain(request: Request, domain: str = ""):
     took = int((time.time() - started) * 1000)
 
     # score it with the same functions the published dataset uses. Only the three
-    # part-scores are wanted here - stars_for() turns them into one star per
+    # part-scores are wanted here. stars_for() turns them into one star per
     # migration step done. score_site() also hands back the old 0-100 total and
     # its band, but the dashboard stopped showing those when the score became
     # stars, so they stop here rather than going out in the JSON.
@@ -306,8 +321,11 @@ def scan_domain(request: Request, domain: str = ""):
     # a domain we already track keeps its sector and country; a new one is
     # unknown on both, and saying so is better than inventing a label.
     old = known_row(d)
-    sector = old.get("sector", "") if old else ""
-    country = old.get("country", "") if old else ""
+    sector = ""
+    country = ""
+    if old:
+        sector = old.get("sector", "")
+        country = old.get("country", "")
 
     result = {
         "site": d,

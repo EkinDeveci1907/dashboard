@@ -2,7 +2,7 @@
 # how post-quantum-ready the sites Canadians actually connect to are. It reads
 # the enriched toplist scan (the one with pqc_source and readiness_score) and
 # bakes the numbers straight into canada-topvisited.html, so you open it by just
-# double-clicking - no server, nothing else to run.
+# double-clicking. no server, nothing else to run.
 #
 # The page shares style.css and report-card.js with the main dashboard, so the
 # table and the click-through report card look and behave the same on both tabs.
@@ -31,7 +31,12 @@ else:
 
 scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched.csv", "")
 
-# keep the sites that actually answered - same test aggregate.py uses, so this
+# bump this when style.css or report-card.js changes, and bump the matching one
+# in index.html too. Pages tells browsers to hold on to js and css, so without it
+# a returning visitor runs last week's script against this week's page.
+ASSETS = "2026-07-30-2"
+
+# keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
 sites = []
 for row in csv.DictReader(open(in_file)):
@@ -62,17 +67,22 @@ if total == 0:
 pqc_pct = round(100 * pqc / total)
 
 # how many sites were on the list to begin with, so the line under the heading
-# can say how many we asked - otherwise the ones that never replied vanish
+# can say how many we asked, otherwise the ones that never replied vanish
 listed = len(list(csv.DictReader(open("data/sites-ca-toplist.csv"))))
 
-# the rates the report card quotes come off the main scan, not this list - 91
-# sites is nowhere near enough to say what Akamai is doing
+# the rates the report card quotes come off the main scan, not this list. ninety
+# odd sites is nowhere near enough to say what Akamai is doing
 
 main_scans = []
 for path in sorted(glob.glob("data/scan-*.csv")):
     if "-enriched" not in path:
         main_scans.append(path)
+if not main_scans:
+    print("No data/scan-*.csv found, and the report card needs the provider rates")
+    print("off the main scan. Run:  python3 scan.py")
+    sys.exit(1)
 cdn_rates = provider_pqc_rates(list(csv.DictReader(open(main_scans[-1]))))
+
 
 def by_score(row):
     return row["score"]
@@ -80,84 +90,86 @@ def by_score(row):
 
 # the rows for the table, best score first. Same columns as the main dashboard
 # table so the two tabs line up. The score and stars come straight out of the
-# enriched csv - enrich.py already worked them out, no reason to redo it here.
+# enriched csv, where enrich.py already worked them out. no reason to redo it here.
 # Both have to be numbers, not the strings csv hands back, or the star cell's
 # stars === 3 test never fires.
+# cert is not in the table itself, but the report card prints it on the signature
+# line, and leaving it out is why that line used to read "undefined".
 table = []
 for r in sites:
     table.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
-                  "tls": r["tls_version"], "kex": r["key_exchange"], "cdn": r["cdn"],
-                  "source": r["pqc_source"], "score": int(r["readiness_score"]),
-                  "stars": int(r["stars"])})
+                  "tls": r["tls_version"], "kex": r["key_exchange"], "cert": r["cert"],
+                  "cdn": r["cdn"], "source": r["pqc_source"],
+                  "score": int(r["readiness_score"]), "stars": int(r["stars"])})
 table.sort(key=by_score, reverse=True)
 
-# Build the page. It reuses the dashboard's style.css and report-card.js, so it
-# matches the main tab without any of that code being written out twice.
-# the headline right above already gives the percentage and how many sites
-# answered, so the cards give the four numbers behind it instead of repeating it
+# the four number boxes across the top. the headline right above already gives the
+# percentage and how many sites answered, so these give the four numbers behind it
+# instead of repeating it
+boxes = [
+    (str(listed), "sites on the list"),
+    (str(tls13), "on TLS 1.3"),
+    (str(pqc), "quantum-safe (PQC key exchange)"),
+    (str(via) + " / " + str(own), "PQC via CDN / own effort"),
+]
 cards = ""
-cards += "<div class='box'><div class='num'>" + str(listed) + "</div><div class='label'>sites on the list</div></div>"
-cards += "<div class='box'><div class='num'>" + str(tls13) + "</div><div class='label'>on TLS 1.3</div></div>"
-cards += "<div class='box'><div class='num'>" + str(pqc) + "</div><div class='label'>quantum-safe (PQC key exchange)</div></div>"
-cards += "<div class='box'><div class='num'>" + str(via) + " / " + str(own) + "</div><div class='label'>PQC via CDN / own effort</div></div>"
+for number, label in boxes:
+    cards = cards + "<div class='box'><div class='num'>" + number + "</div>"
+    cards = cards + "<div class='label'>" + label + "</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
             " sites Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
 
-html = "<!DOCTYPE html>\n<html lang='en'>\n<head>\n<meta charset='UTF-8'>\n"
-html += "<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n"
-html += "<title>PQC Monitor - Most visited by Canadians</title>\n"
-# the ?v= is a cache buster - see the note in index.html. bump it in both
-# places when style.css or report-card.js changes.
-ASSETS = "2026-07-30-2"
-html += "<link rel='stylesheet' href='style.css?v=" + ASSETS + "'>\n</head>\n<body>\n"
-html += "<div class='page'>\n"
-html += "<header class='header'><div><h1>PQC Deployment Monitor</h1>"
-html += "<p class='tagline'>Post-quantum readiness of Canadian websites</p></div></header>\n"
-html += "<nav class='nav'>"
-html += "<a href='index.html'>Canada &amp; the world</a>"
-html += "<a href='canada-topvisited.html' class='active'>Most visited by Canadians</a>"
-html += "<a href='check.html'>Scan a site</a></nav>\n"
-html += "<p class='headline'>" + headline + "</p>\n"
-html += "<h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>\n"
-html += "<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). "
-html += str(listed) + " sites on the list, " + str(total) + " answered a TLS handshake when we scanned on " + scan_date + ".</p>\n"
-html += "<section class='summary'>" + cards + "</section>\n"
-html += "<section class='card'>\n<h2>Site directory</h2>\n"
-html += "<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. "
-html += "Stars work like on the main page: one per migration step done, best today is <span class='stars'>★★</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>\n"
-html += "<div id='siteDetail' class='site-detail' style='display:none'></div>\n"
-html += "<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>\n"
-html += "<div class='table-scroll'><table><thead><tr>"
-html += "<th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th>"
-html += "</tr></thead><tbody id='rows'></tbody></table></div>\n</section>\n"
-html += "<section class='card'><h2>About this view</h2>\n"
-html += "<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so because of their CDN, not their own servers - the <strong>PQC from</strong> column shows which.</p>\n"
-html += "<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's "
-html += "Most Visited Websites in Canada</a> ranking, in rank order, with the adult and "
-html += "pirate-stream sites dropped. Nothing hand-picked, so the sample means the same thing "
-html += "every month.</p>\n"
-html += "</section>\n</div>\n"
-# report-card.js has to be loaded before the inline script below runs, so it goes
-# here at the end of the body rather than in the head with a defer.
-html += "<script src='report-card.js?v=" + ASSETS + "'></script>\n"
-html += "<script>\nconst DATA = " + json.dumps(table) + ";\n"
-html += "const SCAN_DATE = " + json.dumps(scan_date) + ";\n"
-html += "const CDN_RATES = " + json.dumps(cdn_rates) + ";\n"
-html += """
-// report-card.js holds starCell(), showSite() and the rest - the same code the
+# reuses the dashboard's style.css and report-card.js, so this tab matches the main 
+# one without any of that code being written out twice. report-card.js has to load before
+#  the script  at the bottom runs, which is why it sits down there and not up in the head.
+PAGE = """<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0'>
+<title>PQC Monitor - Most visited by Canadians</title>
+<link rel='stylesheet' href='style.css?v=__ASSETS__'>
+</head>
+<body>
+<div class='page'>
+<header class='header'><div><h1>PQC Deployment Monitor</h1><p class='tagline'>Post-quantum readiness of Canadian websites</p></div></header>
+<nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a site</a></nav>
+<p class='headline'>__HEADLINE__</p>
+<h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
+<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). __LISTED__ sites on the list, __TOTAL__ answered a TLS handshake when we scanned on __SCANDATE__.</p>
+<section class='summary'>__CARDS__</section>
+<section class='card'>
+<h2>Site directory</h2>
+<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
+<div id='siteDetail' class='site-detail' style='display:none'></div>
+<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>
+<div class='table-scroll'><table><thead><tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
+</section>
+<section class='card'><h2>About this view</h2>
+<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so because of their CDN, not their own servers, and the <strong>PQC from</strong> column shows which.</p>
+<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream sites dropped. Nothing hand-picked, so the sample means the same thing every month.</p>
+</section>
+</div>
+<script src='report-card.js?v=__ASSETS__'></script>
+<script>
+const DATA = __DATA__;
+const SCAN_DATE = __SCANDATEJSON__;
+const CDN_RATES = __CDNRATES__;
+
+// report-card.js holds starCell(), showSite() and the rest, the same code the
 // main dashboard uses. All this page has to do is hand it the rows and draw
 // the table.
 setReportCard(DATA, SCAN_DATE, CDN_RATES);
 
 function draw() {
-  var q = document.getElementById('search').value.toLowerCase();
-  var out = '';
-  for (var i = 0; i < DATA.length; i++) {
-    var r = DATA[i];
+  let q = document.getElementById('search').value.toLowerCase();
+  let out = '';
+  for (let i = 0; i < DATA.length; i++) {
+    let r = DATA[i];
     if (q && r.site.toLowerCase().indexOf(q) === -1) continue;
-    var kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
-    var src = r.source ? r.source : 'none';
+    let kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
+    let src = r.source ? r.source : 'none';
     out += "<tr onclick='showSite(" + i + ")'><td>" + r.site + "</td><td>" + r.sector + "</td><td>" + r.country +
            "</td><td>" + r.tls + "</td><td>" + kex + "</td><td>" + r.cdn +
            "</td><td><span class='pill pill-" + src + "'>" + src + "</span></td><td>" + starCell(r) + "</td></tr>";
@@ -168,6 +180,19 @@ draw();
 </script>
 </body>
 </html>"""
-open("canada-topvisited.html", "w").write(html)
+
+page = PAGE
+page = page.replace("__ASSETS__", ASSETS)
+page = page.replace("__HEADLINE__", headline)
+page = page.replace("__LISTED__", str(listed))
+page = page.replace("__TOTAL__", str(total))
+page = page.replace("__SCANDATE__", scan_date)
+page = page.replace("__CARDS__", cards)
+page = page.replace("__STARS__", "★★")
+page = page.replace("__DATA__", json.dumps(table))
+page = page.replace("__SCANDATEJSON__", json.dumps(scan_date))
+page = page.replace("__CDNRATES__", json.dumps(cdn_rates))
+
+open("canada-topvisited.html", "w").write(page)
 print("wrote canada-topvisited.html")
 print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% quantum-safe")

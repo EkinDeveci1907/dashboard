@@ -29,7 +29,7 @@ function setReportCard(rows, scanDate, cdnRates, options) {
 // The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
 // exchange, PQC signature). Filled stars first, empty ones after, and the hover
 // title spells out which step is done and which is not. A typical quantum-safe
-// site today shows 2 of 3 - the signature star is still open for everyone,
+// site today shows 2 of 3. the signature star is still open for everyone,
 // because no public CA issues PQC certificates yet.
 function starCell(s) {
   let stars = s.stars || 0;
@@ -51,7 +51,7 @@ function starCell(s) {
 
 // One plain sentence on what a site's next step is, worked out from the same
 // measurements the row already shows. The idea comes from pqc-monitor, which
-// attaches a recommendation to every finding - ours is per site instead.
+// attaches a recommendation to every finding. ours is per site instead.
 // Knowing the provider's own PQC rate is what lets this tell "your CDN is
 // ready, flip it on" apart from "your CDN is the blocker".
 function adviceFor(s) {
@@ -63,11 +63,11 @@ function adviceFor(s) {
     let rate = cdnPqcRate[s.cdn];
     if (rate !== undefined && rate >= 50) {
       return "TLS 1.3 is done, and its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites we scan - this site is likely one configuration change away from its second star.";
+             "% of the sites we scan, so this site is likely one configuration change away from its second star.";
     }
     if (rate !== undefined) {
       return "TLS 1.3 is done, but its provider (" + s.cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan - this site is mostly waiting on " + s.cdn + " to move.";
+             "% of the sites we scan, so this site is mostly waiting on " + s.cdn + " to move.";
     }
     // self-hosted, or a provider we see too few sites on to quote a rate for
     return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
@@ -91,7 +91,7 @@ function adviceFor(s) {
 }
 
 // How this site sits against others doing the same job. The sector shares are
-// Canadian, so only say it for a Canadian site - quoting a Canadian rate at a
+// Canadian, so only say it for a Canadian site. quoting a Canadian rate at a
 // German bank would be wrong.
 function sectorLineFor(s) {
   if (s.country !== "CANADA") return "";
@@ -117,7 +117,7 @@ function checkRow(done, label, detail) {
 
 // open the report card for one site: its stars up top, a three-line
 // checklist of what we actually measured, and the next step. Meant to be
-// readable on its own - you can screenshot it and hand it to someone.
+// readable on its own, so you can screenshot it and hand it to someone.
 function showSite(i) {
   let s = reportRows[i];
   if (!s) return;
@@ -127,13 +127,18 @@ function showSite(i) {
   let hasPqcSig = s.stars === 3;   // no site has this yet, but keep it honest
 
   // the signature row shows what the certificate is actually signed with today,
-  // which is the thing that has to change for the third star
-  let sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
+  // which is the thing that has to change for the third star. Don't hard-code the
+  // "classical" half of that sentence: the row would keep saying it under a tick
+  // the day a CA finally issues a post-quantum certificate.
+  let sigDetail = s.cert;
+  if (!hasPqcSig) {
+    sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
+  }
 
   let card = "";
   // The line under the site name. A stored row gets the full version, since the
   // sector, the country and the scan date all come from the corpus it's part of.
-  // A live scan is the one case where they don't - a domain nobody has added has
+  // A live scan is the one case where they don't. A domain nobody has added has
   // no sector or country, and printing "unknown · unknown" is worse than printing
   // nothing. So a live result shows the one thing it does know, the handshake
   // time; the provider is named in the next-step line underneath either way.
@@ -141,7 +146,7 @@ function showSite(i) {
   if (s.handshake_ms !== undefined) {
     sub = "handshake " + s.handshake_ms + " ms";
   } else {
-    // only the sector wants capitalising - the rest already reads how it should
+    // only the sector wants capitalising. the rest already reads how it should
     sub = "<span class='rc-sector'>" + s.sector + "</span> · " + s.country +
           " · served by " + s.cdn + " · scanned " + reportDate;
   }

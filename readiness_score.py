@@ -2,7 +2,7 @@
 #
 # The idea: we already take good measurements, so turn them into a single
 # score that lets sites be ranked and compared over time. Built only from
-# what the scan already records - TLS version, key-exchange group, cert
+# what the scan already records: TLS version, key-exchange group, cert
 # signature. No new data, and nothing fancy: three parts that add up to 100.
 #
 # How the points are reasoned:
@@ -10,7 +10,7 @@
 #     the foundation and earns points on its own. TLS 1.2 gets a little (it's
 #     still safe today) but it's a dead end for PQC.
 #   - The part that actually matters right now is a post-quantum (ML-KEM) key
-#     exchange - that's what stops "harvest now, decrypt later". Biggest chunk.
+#     exchange, which is what stops "harvest now, decrypt later". Biggest chunk.
 #   - Post-quantum signatures (ML-DSA / SLH-DSA) are the second half of the
 #     migration. Basically no public site has them yet, so these points are
 #     headroom: what a fully migrated site will score later.
@@ -19,19 +19,20 @@
 # room still to earn once certificate authorities start issuing PQC certs.
 #
 # usage: python3 readiness_score.py [data/scan-YYYY-MM-DD.csv]
-#        no argument = the 2026-07-08 scan
+#        no argument = the newest scan in data/
 
 import csv
 import sys
 import os
+import glob
 
 # The 100 points, split out as plain numbers so they're easy to argue about
 # and easy to change in one place.
-TLS_1_3_POINTS   = 20   # TLS 1.3 present - the floor you need before any PQC
-TLS_1_2_POINTS   = 5    # still on TLS 1.2 - safe today, but a dead end for PQC
-PQC_KEX_POINTS   = 55   # post-quantum key exchange (ML-KEM) - the urgent part
+TLS_1_3_POINTS   = 20   # TLS 1.3 present, the floor you need before any PQC
+TLS_1_2_POINTS   = 5    # still on TLS 1.2, safe today but a dead end for PQC
+PQC_KEX_POINTS   = 55   # post-quantum key exchange (ML-KEM), the urgent part
 MODERN_KEX_POINTS = 15  # no PQC yet, but a modern curve (X25519 / P-256), ready to flip
-PQC_SIG_POINTS   = 25   # post-quantum certificate signature - the second half
+PQC_SIG_POINTS   = 25   # post-quantum certificate signature, the second half
 
 
 def tls_points(tls_version):
@@ -48,7 +49,7 @@ def kex_points(key_exchange):
         return PQC_KEX_POINTS
     # a modern classical curve isn't post-quantum, but the site is one config
     # change away from it, so give partial credit. secp384r1 and secp521r1
-    # belong here too - they are stronger than P-256, not weaker, and leaving
+    # belong here too. they are stronger than P-256, not weaker, and leaving
     # them out scored bing.com (TLS 1.3, 521-bit curve) the same as a site
     # still on TLS 1.2. Plain finite-field DH stays at zero: that is old
     # machinery, not a curve a server flips to ML-KEM from.
@@ -88,7 +89,7 @@ def band_for(score):
 def stars_for(tls, kex, sig):
     # Each of the three parts is pass/fail at the depth we measure, so the
     # tables show them as stars instead of points. One star per part fully
-    # earned: TLS 1.3 - PQC key exchange - PQC signature.
+    # earned: TLS 1.3, then PQC key exchange, then PQC signature.
     # Partial points (TLS 1.2 = 5, modern curve = 15) don't earn the star -
     # a star means done, not almost. The 0-100 stays underneath for sorting
     # and for when signatures arrive; the stars are what people read.
@@ -121,9 +122,18 @@ def main():
     # aggregate.py, enrich.py and toplist_report.py import the scoring functions
     # above, so the command-line handling stays in here where it only runs when
     # this file is the one being executed.
-    IN_FILE = "data/scan-2026-07-08.csv"
+    # no file named: use the newest scan we have, same as cdn_attribution.py does.
+    scans = []
+    for path in sorted(glob.glob("data/scan-*.csv")):
+        if "-enriched" not in path:
+            scans.append(path)
     if len(sys.argv) > 1:
         IN_FILE = sys.argv[1]
+    elif scans:
+        IN_FILE = scans[-1]
+    else:
+        print("no data/scan-*.csv to read. run python3 scan.py first")
+        return
     date = os.path.basename(IN_FILE).replace("scan-", "").replace(".csv", "")
 
     rows = list(csv.DictReader(open(IN_FILE)))

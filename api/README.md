@@ -35,14 +35,20 @@ and open `check.html` from the dashboard folder. `check.js` points at
     docker build -f api/Dockerfile -t pqc-scan .        # from the dashboard folder
     docker run -p 8000:8000 pqc-scan
 
-`fly.toml` is set up for fly.io, which is where this is meant to live - the
-machine sleeps when nobody is scanning:
+It runs on **Render**, from `render.yaml` in the dashboard folder: Render builds
+`api/Dockerfile` with the repo root as the context, because the service imports
+`scan.py` and friends from the folder above it. The free instance sleeps after
+about fifteen minutes of no traffic and takes a moment to wake, which is why the
+first scan of the day is slow. `check.js` calls `/api/health` on page load, so
+the machine is usually awake by the time anyone has typed a domain in.
 
-    fly launch --no-deploy
-    fly deploy
+`api/fly.toml` is from an earlier attempt at putting this on fly.io. Render won
+because the free plan does not need a credit card. I left the file in, since the
+Dockerfile is the same either way, so `fly launch --no-deploy && fly deploy` still
+works if the Render side ever goes away.
 
-Then change `API` at the top of `check.js` to the deployed URL. It has to be
-https, or the browser blocks the call from the GitHub Pages site as mixed
+Whichever host it is, the URL goes in `API` at the top of `check.js`, and it has
+to be https or the browser blocks the call from the GitHub Pages site as mixed
 content.
 
 ## Endpoints
@@ -66,6 +72,16 @@ handshake we can read.
   connection to whatever string it is handed is the standard shape of an SSRF
   bug, so `resolves_publicly()` refuses anything resolving to a private, loopback
   or link-local address. Don't remove it.
+- **That check and the handshake look the name up separately.** `resolves_publicly()`
+  does its own `getaddrinfo`, then `openssl`, `dig`, `curl` and `whois` each resolve
+  the domain again on their own. Somebody running their own DNS with a short TTL
+  could answer with a public address for the check and a private one a moment later,
+  which is the gap the check is meant to close. Closing it properly means pinning
+  the address that was checked and connecting to that one, rather than passing the
+  name down to four separate tools. I have left it as it is and written it down
+  instead: the endpoint only ever reports back what a TLS handshake returns, so what
+  an attacker wins here is knowing whether some internal port speaks TLS. Worth
+  fixing, not worth pretending isn't there.
 - **Rate limit and cache are in memory.** 12 scans per address per 5 minutes,
   results cached for an hour. Both reset when the process restarts, which is fine
   for what they are for. On more than one machine they would need Redis or
@@ -76,7 +92,7 @@ handshake we can read.
   published dataset by scanning a domain.
 - **The CSV does not survive on the deployed host.** Render's disk is wiped on
   restart and redeploy, and the free plan has no persistent disk. Locally the
-  CSV is the useful copy; deployed, the log line is - search the service logs
+  CSV is the useful copy; deployed, the log line is. Search the service logs
   for `new domain scanned`. If keeping the list properly starts to matter,
   that's a paid disk or a small database, not a bigger file.
 - **No IP addresses are stored.** The rate limiter keeps them in memory and

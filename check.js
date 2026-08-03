@@ -66,7 +66,7 @@ async function runScan(domain) {
   } catch (e) {
     // the usual cause is the scanner not being up, so say that rather than
     // showing the browser's own network error, which tells the reader nothing.
-    setStatus("Could not reach the scanner. It runs as a separate service - see api/README.md.");
+    setStatus("Could not reach the scanner. It runs as a separate service, see api/README.md.");
     return;
   }
 
@@ -84,7 +84,6 @@ async function runScan(domain) {
     kex: r.kex,
     cert: r.cert,
     cdn: r.cdn,
-    source: r.source,
     stars: r.stars,
     handshake_ms: r.handshake_ms
   };

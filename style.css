@@ -129,7 +129,7 @@ tbody tr:hover { background: #f9fafb; }
 /* The little box that pops up when you hover a country on the map. We style it
    here (not just rely on the map library's stylesheet) so the hover text always
    shows up clearly: dark rounded box, white text. The library parks this element
-   at the end of <body> and toggles an "active" class on hover - so it must stay
+   at the end of <body> and toggles an "active" class on hover, so it must stay
    display:none until then, or it sits in the bottom-left corner of the page as a
    stray dark box (which is exactly what happened when the library's own
    stylesheet failed to load). Hiding it is our job now, not just the library's. */
@@ -153,7 +153,6 @@ tbody tr:hover { background: #f9fafb; }
 .map-scale { width: 120px; height: 10px; border-radius: 5px; background: linear-gradient(to right, #c7d2fe, #312e81); }
 .map-none { margin-left: 16px; }
 .kex-pqc { color: var(--green); font-weight: 600; }
-.subhead { font-size: 14px; font-weight: 600; margin: 20px 0 10px; color: var(--ink); }
 .hint { color: var(--muted); font-size: 13px; margin-bottom: 12px; }
 
 /* the two tabs that switch between the Canadian-institutions view (index.html)
@@ -204,7 +203,7 @@ tbody tr:hover { background: #f9fafb; }
 /* how it sits against the other Canadian sites in its sector */
 .rc-peer { font-size: 13px; color: var(--muted); margin: 10px 0 0; }
 
-/* table rows open the report card - both tabs now, so both id's get the pointer
+/* table rows open the report card on both tabs now, so both id's get the pointer
    (#tableBody is the main page, #rows is the most-visited page) */
 #tableBody tr, #rows tr { cursor: pointer; }
 
@@ -214,18 +213,10 @@ tbody tr:hover { background: #f9fafb; }
 .pill-own { background: #dcfce7; color: #166534; }
 .pill-none { background: #f1f5f9; color: #94a3b8; }
 
-/* the Scan a site tab (check.html): the button next to the domain box, and the
-   little run of dots showing what the site looked like in earlier scans */
+/* the Scan a site tab (check.html): the button next to the domain box */
 .btn {
   border: 1px solid var(--indigo); background: var(--indigo); color: #fff;
   border-radius: 8px; padding: 10px 18px; font-size: 14px; font-weight: 600;
   cursor: pointer;
 }
 .btn:hover { background: #4338ca; }
-
-.hist { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 14px; }
-.hist-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-right: 4px; }
-.hist-dot { width: 11px; height: 11px; border-radius: 50%; display: inline-block; cursor: default; }
-.hist-on { background: var(--green); }
-.hist-off { background: var(--slate); }
-.hist-note { font-size: 13px; color: var(--muted); margin-left: 8px; }
