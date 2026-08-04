@@ -118,16 +118,23 @@ def get_tls(site):
     tls = ""
     kex = ""
     cert = ""
-    for line in out.splitlines():
-        if "Protocol version:" in line:
+    # Match on the start of the line, not anywhere in it. -brief also prints
+    # "Peer certificate: CN = ...", and that CN is chosen by whoever we just
+    # connected to, so a certificate with "Signature type: <script>" for a name
+    # used to land in a field the dashboard prints. openssl happens to print the
+    # real line after the certificate, so the injected one got overwritten - but
+    # that is the order openssl prints in, not a rule we enforce.
+    for raw in out.splitlines():
+        line = raw.strip()
+        if line.startswith("Protocol version:"):
             tls = line.split(":", 1)[1].strip()
         # on TLS 1.3 the group is printed here (e.g. X25519MLKEM768)
-        if "Negotiated TLS1.3 group:" in line:
+        elif line.startswith("Negotiated TLS1.3 group:"):
             kex = line.split(":", 1)[1].strip()
         # on TLS 1.2 there's no "group" line, the temp key line has the curve instead
-        if "Peer Temp Key:" in line:
+        elif line.startswith("Peer Temp Key:"):
             kex = line.split(":", 1)[1].strip()
-        if "Signature type:" in line:
+        elif line.startswith("Signature type:"):
             cert = line.split(":", 1)[1].strip()
     return tls, kex, cert
 
@@ -145,7 +152,14 @@ def detect_cdn(site, ip):
     # three signals, most reliable first: response headers, then the CNAME chain,
     # then the announcing AS as a last resort. AS alone is fuzzy (can't tell a real
     # CloudFront site from something just parked on AWS) so it only decides ties.
-    headers = run(["curl", "-sIL", "https://" + site]).lower()
+    # -L is here because plenty of sites answer the apex with a 301 and the CDN
+    # headers are on the hop after it. It is bounded, though: the caller may have
+    # checked that the name resolves to a public address, but nothing checks
+    # where a redirect points, so an unbounded -L will happily walk onto the
+    # private address that check just refused. Two hops, https only, both ways.
+    headers = run(["curl", "-sIL", "--max-redirs", "2",
+                   "--proto", "=https", "--proto-redir", "=https",
+                   "--max-time", "10", "https://" + site]).lower()
     for line in headers.splitlines():
         if ":" not in line:
             continue

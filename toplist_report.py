@@ -34,7 +34,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-07-30-2"
+ASSETS = "2026-08-04"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -110,7 +110,7 @@ boxes = [
     (str(listed), "sites on the list"),
     (str(tls13), "on TLS 1.3"),
     (str(pqc), "quantum-safe (PQC key exchange)"),
-    (str(via) + " / " + str(own), "PQC via CDN / own effort"),
+    (str(via) + " / " + str(own), "PQC endpoint: via CDN / own"),
 ]
 cards = ""
 for number, label in boxes:
@@ -144,10 +144,10 @@ PAGE = """<!DOCTYPE html>
 <p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
 <div id='siteDetail' class='site-detail' style='display:none'></div>
 <div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>
-<div class='table-scroll'><table><thead><tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
+<div class='table-scroll'><table><thead><tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
 </section>
 <section class='card'><h2>About this view</h2>
-<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so because of their CDN, not their own servers, and the <strong>PQC from</strong> column shows which.</p>
+<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so at their CDN's edge rather than on their own servers, and the <strong>PQC endpoint</strong> column shows which. That column says where the connection terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell you.</p>
 <p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream sites dropped. Nothing hand-picked, so the sample means the same thing every month.</p>
 </section>
 </div>
@@ -168,11 +168,11 @@ function draw() {
   for (let i = 0; i < DATA.length; i++) {
     let r = DATA[i];
     if (q && r.site.toLowerCase().indexOf(q) === -1) continue;
-    let kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + r.kex + "</span>" : r.kex;
-    let src = r.source ? r.source : 'none';
-    out += "<tr onclick='showSite(" + i + ")'><td>" + r.site + "</td><td>" + r.sector + "</td><td>" + r.country +
-           "</td><td>" + r.tls + "</td><td>" + kex + "</td><td>" + r.cdn +
-           "</td><td><span class='pill pill-" + src + "'>" + src + "</span></td><td>" + starCell(r) + "</td></tr>";
+    let kex = r.kex.indexOf('MLKEM') !== -1 ? "<span class='kex-pqc'>" + esc(r.kex) + "</span>" : esc(r.kex);
+    let src = r.source ? r.source : 'none';   // sourceLabel() and esc() are in report-card.js
+    out += "<tr onclick='showSite(" + i + ")'><td>" + esc(r.site) + "</td><td>" + esc(r.sector) + "</td><td>" + esc(r.country) +
+           "</td><td>" + esc(r.tls) + "</td><td>" + kex + "</td><td>" + esc(r.cdn) +
+           "</td><td><span class='pill pill-" + src + "'>" + sourceLabel(src) + "</span></td><td>" + starCell(r) + "</td></tr>";
   }
   document.getElementById('rows').innerHTML = out;
 }
@@ -189,7 +189,10 @@ page = page.replace("__TOTAL__", str(total))
 page = page.replace("__SCANDATE__", scan_date)
 page = page.replace("__CARDS__", cards)
 page = page.replace("__STARS__", "★★")
-page = page.replace("__DATA__", json.dumps(table))
+# the rows go inside a <script> block, and a browser ends that block at the
+# first </script> it sees no matter what the JSON thinks. json.dumps has no
+# reason to escape a slash, so do it here.
+page = page.replace("__DATA__", json.dumps(table).replace("</", "<\\/"))
 page = page.replace("__SCANDATEJSON__", json.dumps(scan_date))
 page = page.replace("__CDNRATES__", json.dumps(cdn_rates))
 

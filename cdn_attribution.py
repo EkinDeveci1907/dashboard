@@ -1,11 +1,19 @@
-# For every scanned site: is its PQC coming from the CDN in front of it, or is
-# it the org's own doing? The cdn column scan.py fills in already tells us who
-# terminates TLS ("Self-hosted", "Cloudflare", "Amazon CloudFront", ...), so if
-# a site does ML-KEM and sits behind a CDN, the CDN's edge config is what
-# enabled it. If it does ML-KEM while self-hosted, that's the org's own effort.
-#   "PQC via provider" - a CDN/cloud terminates TLS, ML-KEM comes from them
+# For every scanned site: where does the post-quantum key exchange actually
+# happen? The cdn column scan.py fills in already tells us who terminates TLS
+# ("Self-hosted", "Cloudflare", "Amazon CloudFront", ...), so if a site does
+# ML-KEM from behind a CDN, the edge doing it belongs to the CDN. If it does
+# ML-KEM while self-hosted, it is happening on the org's own machines.
+#   "PQC via provider" - a CDN/cloud terminates TLS, so that edge is the endpoint
 #   "PQC own effort"   - self-hosted (or the provider's own site) and still PQC
 #   "No PQC"           - classical key exchange only
+#
+# Read these as statements about the endpoint, not about credit. A handshake
+# cannot tell you whether a site asked its CDN for post-quantum or the CDN
+# turned it on for every customer at once, which is why the pages show this
+# column as "via CDN" and say so in as many words. The two stored values keep
+# their old names on purpose: they are written into every committed scan CSV
+# back to June, and renaming them now would only make the old files disagree
+# with the new ones.
 # No new scan needed, this just re-reads an existing scan CSV.
 #
 # attribution_for(row) is also imported by enrich.py, so the rule lives here once.

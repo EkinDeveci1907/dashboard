@@ -281,17 +281,20 @@ def scan_domain(request: Request, domain: str = ""):
     if d == "":
         return JSONResponse({"error": "that doesn't look like a domain name"}, status_code=400)
 
-    hit = cache.get(d)
-    if hit and time.time() - hit[0] < CACHE_TTL:
-        result = dict(hit[1])
-        result["cached"] = True
-        return result
-
+    # Count the request before looking in the cache. The other way round a
+    # cached domain is free to ask for as often as you like, and the limit only
+    # ever sees the requests that were going to be cheap anyway.
     if over_limit(ip):
         return JSONResponse(
             {"error": "too many scans from this address, give it a few minutes"},
             status_code=429,
         )
+
+    hit = cache.get(d)
+    if hit and time.time() - hit[0] < CACHE_TTL:
+        result = dict(hit[1])
+        result["cached"] = True
+        return result
 
     ok, why = resolves_publicly(d)
     if not ok:

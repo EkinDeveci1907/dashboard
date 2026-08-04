@@ -15,13 +15,22 @@
        The ?v= on our own files is a cache buster. Pages tells browsers to hold on
        to js and css, so without it a returning visitor runs last week's script
        against this week's page. Bump the date when you change any of them. -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css">
-  <link rel="stylesheet" href="style.css?v=2026-07-30-2">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js" defer></script>
-  <script src="report-card.js?v=2026-07-30-2" defer></script>
-  <script src="app.js?v=2026-07-30-2" defer></script>
+  <!-- The three libraries come off a public CDN, so pin what we expect them to
+       be: with an integrity hash the browser refuses anything that isn't the
+       exact file we tested against, instead of running whatever it was handed.
+       If you bump a version, the hash has to be recomputed with it:
+         curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
+        integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css?v=2026-08-04">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
+          integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
+          integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
+          integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
+  <script src="report-card.js?v=2026-08-04" defer></script>
+  <script src="app.js?v=2026-08-04" defer></script>
 </head>
 <body>
   <div class="page">
@@ -107,7 +116,7 @@
       <div class="table-scroll">
         <table>
           <thead>
-            <tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC from</th><th>Readiness</th></tr>
+            <tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr>
           </thead>
           <tbody id="tableBody"></tbody>
         </table>
@@ -131,6 +140,11 @@
          contacted with a TLS handshake; we record its TLS version, the key-exchange group it negotiates (flagging
          the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature, and the network / CDN
          that serves it.</p>
+      <p>What gets measured is the <strong>endpoint</strong> a browser connects to. When a site sits behind a CDN,
+         the post-quantum key exchange is reachable via that CDN's edge, and the handshake gives no way to tell
+         whether the site asked for it or the provider turned it on for every customer at once. So the
+         <strong>PQC endpoint</strong> column says where the connection terminates, not whose doing it was. It also
+         says nothing about the origin server behind the CDN, the internal network, or data at rest.</p>
       <p>Why it matters: an attacker can record encrypted traffic today and decrypt it once quantum computers
          arrive ("harvest now, decrypt later"). Post-quantum key exchange closes that window. Post-quantum
          certificate <em>signatures</em> are a separate, slower migration. No public certificate authority

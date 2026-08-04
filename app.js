@@ -338,20 +338,22 @@ function drawTable(sites) {
   for (let i = 0; i < sites.length; i++) {
     let s = sites[i];
     // the post-quantum group is the whole point, so highlight it when it's there
-    let kexCell = s.kex;
+    let kexCell = esc(s.kex);
     if (s.kex.indexOf("MLKEM") !== -1) {
-      kexCell = "<span class='kex-pqc'>" + s.kex + "</span>";
+      kexCell = "<span class='kex-pqc'>" + esc(s.kex) + "</span>";
     }
-    // where the PQC comes from (provider / own / none), shown as a small pill
+    // where the handshake terminated (provider / own / none), as a small pill.
+    // sourceLabel() lives in report-card.js so this page and the most-visited
+    // one word it the same way.
     let src = s.pqc_source ? s.pqc_source : "none";
     rows += "<tr onclick='showSite(" + i + ")'>" +
-      "<td>" + s.site + "</td>" +
-      "<td>" + s.sector + "</td>" +
-      "<td>" + s.country + "</td>" +
-      "<td>" + s.tls + "</td>" +
+      "<td>" + esc(s.site) + "</td>" +
+      "<td>" + esc(s.sector) + "</td>" +
+      "<td>" + esc(s.country) + "</td>" +
+      "<td>" + esc(s.tls) + "</td>" +
       "<td>" + kexCell + "</td>" +
-      "<td>" + s.cdn + "</td>" +
-      "<td><span class='pill pill-" + src + "'>" + src + "</span></td>" +
+      "<td>" + esc(s.cdn) + "</td>" +
+      "<td><span class='pill pill-" + src + "'>" + sourceLabel(src) + "</span></td>" +
       "<td>" + starCell(s) + "</td>" +
     "</tr>";
   }

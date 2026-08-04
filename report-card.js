@@ -26,6 +26,20 @@ function setReportCard(rows, scanDate, cdnRates, options) {
   sectorPqc = options.sectorPqc || {};
 }
 
+// Everything below is built as a string and handed to innerHTML, and not all of
+// it comes from our own list: on the live scan tab the TLS version, the group,
+// the signature and the provider are whatever the server we just contacted said
+// they were. Escape once, here, so a value cannot stop being a value.
+function esc(v) {
+  if (v === undefined || v === null) return "";
+  return String(v)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 // The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
 // exchange, PQC signature). Filled stars first, empty ones after, and the hover
 // title spells out which step is done and which is not. A typical quantum-safe
@@ -49,25 +63,48 @@ function starCell(s) {
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
+// The pill in the "PQC endpoint" column, on both the main table and the
+// most-visited one, so the wording lives in one place instead of two. It says
+// where the connection terminates and nothing else: "via CDN" is not a claim
+// about whose doing it was, because a handshake cannot tell you that.
+function sourceLabel(src) {
+  if (src === "provider") return "via CDN";
+  if (src === "own") return "own";
+  return "none";
+}
+
 // One plain sentence on what a site's next step is, worked out from the same
 // measurements the row already shows. The idea comes from pqc-monitor, which
 // attaches a recommendation to every finding. ours is per site instead.
 // Knowing the provider's own PQC rate is what lets this tell "your CDN is
 // ready, flip it on" apart from "your CDN is the blocker".
 function adviceFor(s) {
+  // the rates are keyed by the raw provider name, so look up with s.cdn and
+  // print with cdn
+  let cdn = esc(s.cdn);
   if (s.stars >= 2) {
-    return "Quantum-safe today: the connection negotiates a post-quantum key exchange. " +
-           "The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
+    // Name where the handshake terminated, and stop there. Behind a CDN the
+    // post-quantum group comes off that CDN's edge, and nothing in a handshake
+    // says whether the site asked for it or the provider switched it on for
+    // everyone. Claiming either would be claiming more than we measured.
+    let where = "";
+    if (s.cdn && s.cdn !== "Self-hosted") {
+      where = " It is negotiated at " + cdn + "'s edge: from outside, what we can see is that the " +
+              "endpoint is reachable with a post-quantum key exchange, not whether " + cdn +
+              " or the site turned it on.";
+    }
+    return "Quantum-safe today: the connection negotiates a post-quantum key exchange." + where +
+           " The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
   }
   if (s.stars === 1) {
     let rate = cdnPqcRate[s.cdn];
     if (rate !== undefined && rate >= 50) {
-      return "TLS 1.3 is done, and its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
+      return "TLS 1.3 is done, and its provider (" + cdn + ") already negotiates PQC on about " + rate +
              "% of the sites we scan, so this site is likely one configuration change away from its second star.";
     }
     if (rate !== undefined) {
-      return "TLS 1.3 is done, but its provider (" + s.cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan, so this site is mostly waiting on " + s.cdn + " to move.";
+      return "TLS 1.3 is done, but its provider (" + cdn + ") has PQC on only about " + rate +
+             "% of the sites we scan, so this site is mostly waiting on " + cdn + " to move.";
     }
     // self-hosted, or a provider we see too few sites on to quote a rate for
     return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
@@ -80,11 +117,11 @@ function adviceFor(s) {
               "so this site is two steps behind.";
   let rate = cdnPqcRate[s.cdn];
   if (rate !== undefined && rate >= 50) {
-    return first + " Its provider (" + s.cdn + ") already negotiates PQC on about " + rate +
+    return first + " Its provider (" + cdn + ") already negotiates PQC on about " + rate +
            "% of the sites we scan, so the second star should follow once TLS 1.3 is on.";
   }
   if (rate !== undefined) {
-    return first + " After that it would still be waiting on " + s.cdn +
+    return first + " After that it would still be waiting on " + cdn +
            ", which has PQC on only about " + rate + "% of the sites we scan.";
   }
   return first;
@@ -99,7 +136,7 @@ function sectorLineFor(s) {
   if (!bucket || bucket.total < 5) return "";
   // the count rather than the percentage: "60% of the 60 media sites" reads like
   // a typo, and the raw fraction says how big the sample is at the same time
-  let line = bucket.pqc + " of the " + bucket.total + " Canadian " + s.sector +
+  let line = bucket.pqc + " of the " + bucket.total + " Canadian " + esc(s.sector) +
              " sites we scan negotiate it. ";
   if (s.kex.indexOf("MLKEM") !== -1) {
     return line + "This one is among them.";
@@ -112,7 +149,7 @@ function sectorLineFor(s) {
 function checkRow(done, label, detail) {
   let mark = done ? "<span class='rc-yes'>✓</span>" : "<span class='rc-no'>✗</span>";
   return "<div class='rc-check'>" + mark + "<span class='rc-step'>" + label + "</span>" +
-         "<span class='rc-detail'>" + detail + "</span></div>";
+         "<span class='rc-detail'>" + esc(detail) + "</span></div>";
 }
 
 // open the report card for one site: its stars up top, a three-line
@@ -134,6 +171,7 @@ function showSite(i) {
   if (!hasPqcSig) {
     sigDetail = s.cert + " - classical, no public CA issues post-quantum yet";
   }
+  // checkRow() escapes the detail, so sigDetail stays raw until then
 
   let card = "";
   // The line under the site name. A stored row gets the full version, since the
@@ -144,15 +182,15 @@ function showSite(i) {
   // time; the provider is named in the next-step line underneath either way.
   let sub = "";
   if (s.handshake_ms !== undefined) {
-    sub = "handshake " + s.handshake_ms + " ms";
+    sub = "handshake " + esc(s.handshake_ms) + " ms";
   } else {
     // only the sector wants capitalising. the rest already reads how it should
-    sub = "<span class='rc-sector'>" + s.sector + "</span> · " + s.country +
-          " · served by " + s.cdn + " · scanned " + reportDate;
+    sub = "<span class='rc-sector'>" + esc(s.sector) + "</span> · " + esc(s.country) +
+          " · served by " + esc(s.cdn) + " · scanned " + esc(reportDate);
   }
 
   card += "<div class='rc-head'>";
-  card += "<div><div class='rc-site'>" + s.site + "</div>";
+  card += "<div><div class='rc-site'>" + esc(s.site) + "</div>";
   card += "<div class='rc-sub'>" + sub + "</div></div>";
   card += "<div class='rc-scorebox'>" + starCell(s) + "</div>";
   card += "<span class='site-detail-close' onclick='hideSite()'>&times;</span>";
