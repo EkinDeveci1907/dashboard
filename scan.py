@@ -47,7 +47,6 @@ HEADER_RULES = [
     ("x-amz-cf-pop", "", "Amazon CloudFront"),
     ("via", "cloudfront", "Amazon CloudFront"),
     ("x-served-by", "", "Fastly"),
-    ("server", "varnish", "Fastly"),
     ("server", "akamai", "Akamai"),
     ("x-akamai-transformed", "", "Akamai"),
     ("x-azure-ref", "", "Azure Front Door"),
