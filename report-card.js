@@ -15,7 +15,11 @@ let cdnPqcRate = {};
 let sectorPqc = {};
 
 // cdnRates is provider name -> what percent of that provider's sites already
-// negotiate PQC, measured in the same scan. aggregate.py works it out and puts
+// negotiate PQC, measured in the same scan. Careful: this one counts every
+// country, while the CDN bar on the main page counts Canadian sites only, so
+// the two give different numbers for the same provider. Hence "worldwide" in
+// the sentences below - without it the card looks like it disagrees with the
+// chart sitting right above it. aggregate.py works it out and puts
 // it in the stats json; toplist_report.py bakes the same numbers into its page.
 // It used to be a table typed in by hand, which went stale every scan.
 function setReportCard(rows, scanDate, cdnRates, options) {
@@ -95,11 +99,11 @@ function adviceFor(s) {
     let rate = cdnPqcRate[s.cdn];
     if (rate !== undefined && rate >= 50) {
       return "TLS 1.3 is done, and its provider (" + cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites we scan, so this site is likely one configuration change away from its second star.";
+             "% of the sites we scan worldwide, so this site is likely one configuration change away from its second star.";
     }
     if (rate !== undefined) {
       return "TLS 1.3 is done, but its provider (" + cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan, so this site is mostly waiting on " + cdn + " to move.";
+             "% of the sites we scan worldwide, so this site is mostly waiting on " + cdn + " to move.";
     }
     // self-hosted, or a provider we see too few sites on to quote a rate for
     return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
@@ -113,11 +117,11 @@ function adviceFor(s) {
   let rate = cdnPqcRate[s.cdn];
   if (rate !== undefined && rate >= 50) {
     return first + " Its provider (" + cdn + ") already negotiates PQC on about " + rate +
-           "% of the sites we scan, so the second star should follow once TLS 1.3 is on.";
+           "% of the sites we scan worldwide, so the second star should follow once TLS 1.3 is on.";
   }
   if (rate !== undefined) {
     return first + " After that it would still be waiting on " + cdn +
-           ", which has PQC on only about " + rate + "% of the sites we scan.";
+           ", which has PQC on only about " + rate + "% of the sites we scan worldwide.";
   }
   return first;
 }

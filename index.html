@@ -22,15 +22,15 @@
          curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
         integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=2026-08-04">
+  <link rel="stylesheet" href="style.css?v=2026-08-05">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
           integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
           integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
           integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
-  <script src="report-card.js?v=2026-08-04" defer></script>
-  <script src="app.js?v=2026-08-04" defer></script>
+  <script src="report-card.js?v=2026-08-05" defer></script>
+  <script src="app.js?v=2026-08-05" defer></script>
 </head>
 <body>
   <div class="page">
@@ -70,8 +70,7 @@
     <section class="card">
       <h2>CDN</h2>
       <p>Which CDN or network serves each Canadian site, with every bar split into the sites that already
-         negotiate PQC and the ones that don't. Read it as each CDN's PQC readiness: Cloudflare has turned it
-         on almost everywhere, while Akamai, which fronts all of the big banks, has not.</p>
+         negotiate PQC and the ones that don't. Read it as each provider's PQC readiness<span id="cdn-note"></span>.</p>
       <canvas id="cdnChart"></canvas>
     </section>
 

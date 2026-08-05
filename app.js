@@ -92,6 +92,7 @@ function drawCharts(data) {
   drawTlsChart(data);
   drawKexChart(data);
   drawCdnChart(data);
+  showCdnNote(data);
 }
 
 // canada.ca on the government's own deadline card. Hard-coding "it has no stars"
@@ -187,10 +188,46 @@ function drawKexChart(data) {
   });
 }
 
+// The sentence under the CDN heading used to name Cloudflare and Akamai and say
+// which way round they were. That was true when it was typed and later stopped
+// being true, which is the trouble with writing a finding into a page: the chart
+// keeps up with the data and the paragraph does not. So work the sentence out
+// from the same two tallies the bars are drawn from.
+//
+// Those two are Canadian sites only, like everything else in this section. Note
+// that stats.cdn_rates is NOT the same thing, it covers every country, so it
+// would print a number here that disagrees with the bar right above it.
+//
+// Providers we have only seen a handful of Canadian sites on stay out of it.
+// Three out of three is not "100% ready", it is three sites, and naming that
+// under the chart would be worse than saying nothing.
+function showCdnNote(data) {
+  let totals = data.cdn_families || {};
+  let pqc = data.cdn_pqc || {};
+  let names = [];
+  for (let name in totals) {
+    if (name !== "Unknown" && totals[name] >= 20) {
+      names.push(name);
+    }
+  }
+  if (names.length < 2) {
+    document.getElementById("cdn-note").textContent = "";
+    return;
+  }
+  function rate(name) {
+    return Math.round(100 * (pqc[name] || 0) / totals[name]);
+  }
+  names.sort(function (a, b) { return rate(b) - rate(a); });
+  let top = names[0];
+  let bottom = names[names.length - 1];
+  document.getElementById("cdn-note").textContent =
+    ", which today runs from " + top + " at " + rate(top) + "% of its Canadian sites down to " +
+    bottom + " at " + rate(bottom) + "%";
+}
+
 // CDN bar: show the 8 most common, and roll the rest into one "Other" bar.
 // Each bar is stacked into the sites already negotiating PQC and the sites not,
-// so the same chart also reads as each CDN's PQC readiness. Cloudflare's bar
-// comes out nearly all indigo, Akamai's (all the big banks) nearly all grey.
+// so the same chart also reads as each provider's PQC readiness.
 function drawCdnChart(data) {
   let names = Object.keys(data.cdn_families);
   names.sort(function (a, b) { return data.cdn_families[b] - data.cdn_families[a]; });
