@@ -139,7 +139,7 @@
          contacted with a TLS handshake; we record its TLS version, the key-exchange group it negotiates (flagging
          the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature, and the network / CDN
          that serves it.</p>
-      <p>What gets measured is the <strong>endpoint</strong> a browser connects to. When a site sits behind a CDN,
+      <p>We measure the <strong>endpoint</strong> a browser connects to. When a site sits behind a CDN,
          the post-quantum key exchange is reachable via that CDN's edge, and the handshake gives no way to tell
          whether the site asked for it or the provider turned it on for every customer at once. So the
          <strong>PQC endpoint</strong> column says where the connection terminates, not who made it happen. It also
