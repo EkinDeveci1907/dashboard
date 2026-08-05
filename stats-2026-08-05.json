@@ -1,31 +1,31 @@
 {
-  "scan_date": "2026-08-04",
+  "scan_date": "2026-08-05",
   "country_focus": "CANADA",
-  "total": 749,
-  "total_all": 2750,
+  "total": 746,
+  "total_all": 2742,
   "tls": {
-    "TLSv1.3": 614,
-    "TLSv1.2": 135
+    "TLSv1.3": 615,
+    "TLSv1.2": 131
   },
-  "pqc_kex_pct": 48,
+  "pqc_kex_pct": 45,
   "pqc_signatures": 0,
   "kex_families": {
     "secp256r1": 110,
-    "X25519 (classical)": 237,
-    "X25519MLKEM768 (PQC)": 363,
-    "other": 39
+    "X25519 (classical)": 266,
+    "X25519MLKEM768 (PQC)": 333,
+    "other": 37
   },
   "cdn_families": {
-    "Akamai": 77,
+    "Akamai": 78,
     "Google": 22,
-    "Amazon CloudFront": 72,
-    "Cloudflare": 208,
-    "Fastly": 56,
+    "Amazon CloudFront": 71,
+    "Cloudflare": 207,
+    "Fastly": 53,
     "Azure Front Door": 32,
-    "Amazon (AWS)": 63,
-    "Self-hosted": 135,
+    "Amazon (AWS)": 64,
+    "Self-hosted": 137,
     "Sucuri": 7,
-    "Microsoft (Azure)": 38,
+    "Microsoft (Azure)": 37,
     "Imperva (Incapsula)": 16,
     "F5": 2,
     "Radware": 2,
@@ -35,18 +35,17 @@
     "Nuday": 1,
     "Automattic": 5,
     "Squarespace": 1,
-    "OVH": 7,
-    "Unknown": 1
+    "OVH": 7
   },
   "cdn_pqc": {
-    "Akamai": 43,
+    "Akamai": 15,
     "Google": 4,
     "Amazon CloudFront": 57,
-    "Cloudflare": 173,
+    "Cloudflare": 170,
     "Fastly": 38,
     "Azure Front Door": 0,
     "Amazon (AWS)": 21,
-    "Self-hosted": 5,
+    "Self-hosted": 6,
     "Sucuri": 5,
     "Microsoft (Azure)": 0,
     "Imperva (Incapsula)": 15,
@@ -58,12 +57,11 @@
     "Nuday": 0,
     "Automattic": 1,
     "Squarespace": 1,
-    "OVH": 0,
-    "Unknown": 0
+    "OVH": 0
   },
   "cdn_rates": {
     "Google": 52,
-    "Akamai": 41,
+    "Akamai": 31,
     "Amazon (AWS)": 19,
     "Cloudflare": 81,
     "Amazon CloudFront": 70,
@@ -75,25 +73,25 @@
     "F5": 0,
     "Automattic": 29,
     "Alibaba Cloud": 0,
-    "OVH": 6,
+    "OVH": 16,
     "Hetzner": 38
   },
   "sectors": {
     "gov": {
-      "total": 103,
+      "total": 101,
       "pqc": 19
     },
     "bank": {
       "total": 80,
-      "pqc": 40
+      "pqc": 36
     },
     "university": {
       "total": 91,
-      "pqc": 28
+      "pqc": 27
     },
     "hospital": {
-      "total": 56,
-      "pqc": 25
+      "total": 55,
+      "pqc": 24
     },
     "control": {
       "total": 13,
@@ -105,11 +103,11 @@
     },
     "retail": {
       "total": 103,
-      "pqc": 77
+      "pqc": 59
     },
     "media": {
       "total": 60,
-      "pqc": 38
+      "pqc": 36
     },
     "transport": {
       "total": 32,
@@ -121,19 +119,19 @@
     },
     "web": {
       "total": 154,
-      "pqc": 84
+      "pqc": 80
     }
   },
   "countries": {
     "USA": {
       "total": 424,
-      "pqc": 240,
-      "pct": 57
+      "pqc": 244,
+      "pct": 58
     },
     "CANADA": {
-      "total": 749,
-      "pqc": 363,
-      "pct": 48
+      "total": 746,
+      "pqc": 333,
+      "pct": 45
     },
     "INTL": {
       "total": 8,
@@ -142,13 +140,13 @@
     },
     "UK": {
       "total": 92,
-      "pqc": 44,
-      "pct": 48
+      "pqc": 48,
+      "pct": 52
     },
     "AUSTRALIA": {
       "total": 92,
-      "pqc": 46,
-      "pct": 50
+      "pqc": 45,
+      "pct": 49
     },
     "RUSSIA": {
       "total": 78,
@@ -157,21 +155,21 @@
     },
     "FRANCE": {
       "total": 94,
-      "pqc": 39,
-      "pct": 41
+      "pqc": 37,
+      "pct": 39
     },
     "GERMANY": {
       "total": 94,
-      "pqc": 39,
-      "pct": 41
+      "pqc": 38,
+      "pct": 40
     },
     "CHINA": {
-      "total": 64,
+      "total": 62,
       "pqc": 9,
-      "pct": 14
+      "pct": 15
     },
     "KOREA": {
-      "total": 72,
+      "total": 71,
       "pqc": 17,
       "pct": 24
     },
@@ -182,18 +180,18 @@
     },
     "JAPAN": {
       "total": 79,
-      "pqc": 28,
-      "pct": 35
+      "pqc": 26,
+      "pct": 33
     },
     "BRAZIL": {
-      "total": 86,
-      "pqc": 47,
-      "pct": 55
+      "total": 84,
+      "pqc": 43,
+      "pct": 51
     },
     "INDIA": {
-      "total": 67,
-      "pqc": 14,
-      "pct": 21
+      "total": 66,
+      "pqc": 13,
+      "pct": 20
     },
     "SPAIN": {
       "total": 84,
@@ -211,9 +209,9 @@
       "pct": 0
     },
     "ITALY": {
-      "total": 92,
-      "pqc": 37,
-      "pct": 40
+      "total": 93,
+      "pqc": 38,
+      "pct": 41
     },
     "POLAND": {
       "total": 94,
@@ -247,8 +245,8 @@
     },
     "NETHERLANDS": {
       "total": 97,
-      "pqc": 38,
-      "pct": 39
+      "pqc": 46,
+      "pct": 47
     },
     "IRELAND": {
       "total": 1,
@@ -272,13 +270,13 @@
     },
     "BELGIUM": {
       "total": 6,
-      "pqc": 4,
-      "pct": 67
+      "pqc": 3,
+      "pct": 50
     },
     "MEXICO": {
       "total": 81,
-      "pqc": 41,
-      "pct": 51
+      "pqc": 40,
+      "pct": 49
     },
     "NEW ZEALAND": {
       "total": 1,
@@ -396,18 +394,30 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "td.com",
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
+      "kex": "X25519, 253 bits",
+      "cert": "rsa_pss_rsae_sha256",
+      "cdn": "Akamai",
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
+    },
+    {
+      "site": "scotiabank.com",
+      "sector": "bank",
+      "country": "CANADA",
+      "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
@@ -416,7 +426,7 @@
       "stars": 2
     },
     {
-      "site": "scotiabank.com",
+      "site": "cibc.com",
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
@@ -426,18 +436,6 @@
       "pqc_source": "none",
       "score": 35,
       "stars": 1
-    },
-    {
-      "site": "cibc.com",
-      "sector": "bank",
-      "country": "CANADA",
-      "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
     },
     {
       "site": "utoronto.ca",
@@ -608,18 +606,6 @@
       "stars": 2
     },
     {
-      "site": "camh.ca",
-      "sector": "hospital",
-      "country": "CANADA",
-      "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
-      "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
-    },
-    {
       "site": "ottawahospital.on.ca",
       "sector": "hospital",
       "country": "CANADA",
@@ -720,12 +706,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "desjardins.com",
@@ -756,12 +742,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Fastly",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wealthsimple.com",
@@ -1019,13 +1005,13 @@
       "site": "novascotia.ca",
       "sector": "gov",
       "country": "CANADA",
-      "tls": "TLSv1.2",
-      "kex": "ECDH, secp384r1, 384 bits",
-      "cert": "rsa_pkcs1_sha256",
+      "tls": "TLSv1.3",
+      "kex": "X25519, 253 bits",
+      "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
       "pqc_source": "none",
-      "score": 20,
-      "stars": 0
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "gnb.ca",
@@ -1128,24 +1114,24 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "walmart.ca",
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "shopify.com",
@@ -1164,12 +1150,12 @@
       "sector": "media",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ctvnews.ca",
@@ -1224,12 +1210,12 @@
       "sector": "transport",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "facebook.com",
@@ -1320,12 +1306,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "laurentianbank.ca",
@@ -1356,12 +1342,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "carleton.ca",
@@ -1752,12 +1738,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "indigo.ca",
@@ -1898,7 +1884,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon (AWS)",
+      "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -1968,12 +1954,12 @@
       "sector": "bank",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "intact.ca",
@@ -2018,7 +2004,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Fastly",
+      "cdn": "Cloudflare",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
@@ -2040,12 +2026,12 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "visa.ca",
@@ -2124,12 +2110,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "homedepot.ca",
@@ -2148,12 +2134,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ikea.com",
@@ -2172,12 +2158,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "timhortons.com",
@@ -2220,24 +2206,24 @@
       "sector": "retail",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "pizzapizza.ca",
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "edc.ca",
@@ -2412,12 +2398,12 @@
       "sector": "bank",
       "country": "UK",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "hsbc.co.uk",
@@ -2532,12 +2518,12 @@
       "sector": "retail",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "instagram.com",
@@ -2592,12 +2578,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "belairdirect.com",
@@ -2868,12 +2854,12 @@
       "sector": "transport",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "octranspo.com",
@@ -3470,7 +3456,7 @@
       "tls": "TLSv1.2",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pkcs1_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -4022,7 +4008,7 @@
       "tls": "TLSv1.2",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
+      "cdn": "Tencent Cloud",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -4115,13 +4101,13 @@
       "site": "nic.ru",
       "sector": "control",
       "country": "RUSSIA",
-      "tls": "TLSv1.3",
+      "tls": "TLSv1.2",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "windows.com",
@@ -4392,7 +4378,7 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -4932,12 +4918,12 @@
       "sector": "media",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "t.co",
@@ -4945,8 +4931,8 @@
       "country": "USA",
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
-      "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Cloudflare",
+      "cert": "rsa_pss_rsae_sha256",
+      "cdn": "Fastly",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
@@ -5532,12 +5518,12 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "debian.org",
@@ -5784,12 +5770,12 @@
       "sector": "media",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "aliyun.com",
@@ -6168,12 +6154,12 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "intel.com",
@@ -6374,7 +6360,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Tencent Cloud",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -6504,12 +6490,12 @@
       "sector": "media",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "shein.com",
@@ -6804,12 +6790,12 @@
       "sector": "control",
       "country": "CHINA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "patreon.com",
@@ -6936,7 +6922,7 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -7200,12 +7186,12 @@
       "sector": "media",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "britannica.com",
@@ -7298,7 +7284,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon CloudFront",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -7454,7 +7440,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon CloudFront",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -7466,7 +7452,7 @@
       "tls": "TLSv1.2",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon CloudFront",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -7692,12 +7678,12 @@
       "sector": "control",
       "country": "UK",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Cloudflare",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "box.com",
@@ -7764,12 +7750,12 @@
       "sector": "control",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "seznam.cz",
@@ -7790,7 +7776,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon (AWS)",
+      "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -7896,12 +7882,12 @@
       "sector": "gov",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zillow.com",
@@ -7982,7 +7968,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Google",
+      "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -8090,7 +8076,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Google",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -8256,12 +8242,12 @@
       "sector": "media",
       "country": "FRANCE",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "academia.edu",
@@ -8630,7 +8616,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon (AWS)",
+      "cdn": "Amazon CloudFront",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -9048,24 +9034,24 @@
       "sector": "retail",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
-      "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
-    },
-    {
-      "site": "kleinanzeigen.de",
-      "sector": "retail",
-      "country": "GERMANY",
-      "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
+    },
+    {
+      "site": "kleinanzeigen.de",
+      "sector": "retail",
+      "country": "GERMANY",
+      "tls": "TLSv1.3",
+      "kex": "X25519, 253 bits",
+      "cert": "ecdsa_secp256r1_sha256",
+      "cdn": "Akamai",
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "corriere.it",
@@ -9662,7 +9648,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
+      "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -9948,12 +9934,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "eqbank.ca",
@@ -9972,7 +9958,7 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.2",
-      "kex": "X25519, 253 bits",
+      "kex": "ECDH, prime256v1, 256 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -10020,12 +10006,12 @@
       "sector": "university",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ontariotechu.ca",
@@ -10562,7 +10548,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon (AWS)",
+      "cdn": "Fastly",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -10668,19 +10654,19 @@
       "sector": "bank",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "morganstanley.com",
       "sector": "bank",
       "country": "USA",
       "tls": "TLSv1.2",
-      "kex": "X25519, 253 bits",
+      "kex": "ECDH, prime256v1, 256 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -10692,12 +10678,12 @@
       "sector": "bank",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "capitalone.com",
@@ -10871,13 +10857,13 @@
       "site": "newegg.com",
       "sector": "retail",
       "country": "USA",
-      "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
-      "cert": "rsa_pkcs1_sha512",
-      "cdn": "Cloudflare",
+      "tls": "TLSv1.3",
+      "kex": "X25519, 253 bits",
+      "cert": "ecdsa_secp256r1_sha256",
+      "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20,
-      "stars": 0
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bhphotovideo.com",
@@ -11028,12 +11014,12 @@
       "sector": "gov",
       "country": "USA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "wto.org",
@@ -11076,12 +11062,12 @@
       "sector": "gov",
       "country": "FRANCE",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "clevelandclinic.org",
@@ -11270,7 +11256,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Fastly",
+      "cdn": "Akamai",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
@@ -11412,12 +11398,12 @@
       "sector": "web",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "tsn.ca",
@@ -11484,12 +11470,12 @@
       "sector": "web",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bnnbloomberg.ca",
@@ -11664,12 +11650,12 @@
       "sector": "web",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "realmoneygaming.ca",
@@ -12648,12 +12634,12 @@
       "sector": "web",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "smartcanucks.ca",
@@ -12791,13 +12777,13 @@
       "site": "newegg.ca",
       "sector": "web",
       "country": "CANADA",
-      "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
-      "cert": "rsa_pkcs1_sha512",
-      "cdn": "Microsoft (Azure)",
+      "tls": "TLSv1.3",
+      "kex": "X25519, 253 bits",
+      "cert": "ecdsa_secp256r1_sha256",
+      "cdn": "Akamai",
       "pqc_source": "none",
-      "score": 20,
-      "stars": 0
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "nrc.ca",
@@ -12876,12 +12862,12 @@
       "sector": "web",
       "country": "BELGIUM",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google.be",
@@ -12915,18 +12901,6 @@
       "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Automattic",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
-    },
-    {
-      "site": "acesso.gov.br",
-      "sector": "web",
-      "country": "BRAZIL",
-      "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -13272,12 +13246,12 @@
       "sector": "web",
       "country": "MEXICO",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "google.com.mx",
@@ -13296,24 +13270,24 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ad.nl",
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "marktplaats.nl",
@@ -13406,7 +13380,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Self-hosted",
+      "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -13730,7 +13704,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon CloudFront",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -14172,12 +14146,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "jysk.ca",
@@ -14196,12 +14170,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "payworks.ca",
@@ -14220,12 +14194,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "princessauto.com",
@@ -14400,12 +14374,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "kent.ca",
@@ -14604,12 +14578,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "superc.ca",
@@ -14712,12 +14686,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "statcan.ca",
@@ -14912,28 +14886,16 @@
       "stars": 1
     },
     {
-      "site": "sencanada.ca",
-      "sector": "gov",
-      "country": "CANADA",
-      "tls": "TLSv1.2",
-      "kex": "ECDH, secp384r1, 384 bits",
-      "cert": "rsa_pkcs1_sha256",
-      "cdn": "Self-hosted",
-      "pqc_source": "none",
-      "score": 20,
-      "stars": 0
-    },
-    {
       "site": "nofrills.ca",
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "kinaxis.com",
@@ -15098,7 +15060,7 @@
       "tls": "TLSv1.2",
       "kex": "ECDH, secp384r1, 384 bits",
       "cert": "rsa_pkcs1_sha256",
-      "cdn": "Unknown",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -15348,12 +15310,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "cambridge.ca",
@@ -15614,7 +15576,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Fastly",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -15672,12 +15634,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "canadianappliance.ca",
@@ -15710,8 +15672,8 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Cloudflare",
-      "pqc_source": "provider",
+      "cdn": "Self-hosted",
+      "pqc_source": "own",
       "score": 75,
       "stars": 2
     },
@@ -15744,12 +15706,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "airmiles.ca",
@@ -15804,12 +15766,12 @@
       "sector": "media",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "salutbonjour.ca",
@@ -16632,24 +16594,24 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "garageclothing.com",
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Cloudflare",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "lavieenrose.com",
@@ -16814,7 +16776,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Fastly",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -17280,12 +17242,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "capitalone.ca",
@@ -17316,12 +17278,12 @@
       "sector": "bank",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "singtao.ca",
@@ -17400,12 +17362,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "partsavatar.ca",
@@ -17448,12 +17410,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mckesson.ca",
@@ -17652,12 +17614,12 @@
       "sector": "web",
       "country": "UK",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "autotrader.co.uk",
@@ -18132,12 +18094,12 @@
       "sector": "web",
       "country": "UK",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ancestry.co.uk",
@@ -19404,12 +19366,12 @@
       "sector": "web",
       "country": "FRANCE",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "pagesjaunes.fr",
@@ -19776,12 +19738,12 @@
       "sector": "web",
       "country": "FRANCE",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "intersport.fr",
@@ -20052,12 +20014,12 @@
       "sector": "web",
       "country": "JAPAN",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "navitime.co.jp",
@@ -20220,12 +20182,12 @@
       "sector": "web",
       "country": "JAPAN",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ecnavi.jp",
@@ -20460,7 +20422,7 @@
       "sector": "web",
       "country": "JAPAN",
       "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -20546,7 +20508,7 @@
       "tls": "TLSv1.2",
       "kex": "ECDH, prime256v1, 256 bits",
       "cert": "rsa_pkcs1_sha256",
-      "cdn": "Amazon (AWS)",
+      "cdn": "Fastly",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -20772,12 +20734,12 @@
       "sector": "web",
       "country": "AUSTRALIA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "unsw.edu.au",
@@ -20834,7 +20796,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Fastly",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -21434,7 +21396,7 @@
       "tls": "TLSv1.2",
       "kex": "ECDH, prime256v1, 256 bits",
       "cert": "rsa_pkcs1_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -21816,12 +21778,12 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "bb.com.br",
@@ -21840,12 +21802,12 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "serpro.gov.br",
@@ -21912,12 +21874,12 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "vivo.com.br",
@@ -21936,12 +21898,12 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "mercadopago.com.br",
@@ -21960,12 +21922,12 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "correios.com.br",
@@ -22034,7 +21996,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "CDN77",
+      "cdn": "OVH",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
@@ -22082,22 +22044,10 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
-    },
-    {
-      "site": "claro.com.br",
-      "sector": "web",
-      "country": "BRAZIL",
-      "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Amazon CloudFront",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
     },
     {
       "site": "lojasrenner.com.br",
@@ -22176,8 +22126,8 @@
       "sector": "web",
       "country": "BRAZIL",
       "tls": "TLSv1.2",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
+      "kex": "ECDH, prime256v1, 256 bits",
+      "cert": "rsa_pkcs1_sha512",
       "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
@@ -22286,7 +22236,7 @@
       "tls": "TLSv1.2",
       "kex": "ECDH, prime256v1, 256 bits",
       "cert": "rsa_pkcs1_sha512",
-      "cdn": "Amazon CloudFront",
+      "cdn": "Amazon (AWS)",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -22784,18 +22734,6 @@
       "stars": 0
     },
     {
-      "site": "kerala.gov.in",
-      "sector": "gov",
-      "country": "INDIA",
-      "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
-    },
-    {
       "site": "goindigo.in",
       "sector": "web",
       "country": "INDIA",
@@ -23052,12 +22990,12 @@
       "sector": "web",
       "country": "INDIA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "sheinindia.in",
@@ -23102,7 +23040,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Google",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -24212,13 +24150,25 @@
       "stars": 2
     },
     {
+      "site": "cnr.it",
+      "sector": "web",
+      "country": "ITALY",
+      "tls": "TLSv1.2",
+      "kex": "ECDH, prime256v1, 256 bits",
+      "cert": "rsa_pkcs1_sha256",
+      "cdn": "Self-hosted",
+      "pqc_source": "none",
+      "score": 20,
+      "stars": 0
+    },
+    {
       "site": "aruba.it",
       "sector": "web",
       "country": "ITALY",
       "tls": "TLSv1.2",
       "kex": "ECDH, secp384r1, 384 bits",
       "cert": "rsa_pkcs1_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 20,
       "stars": 0
@@ -24336,12 +24286,12 @@
       "sector": "gov",
       "country": "ITALY",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "unibo.it",
@@ -24420,12 +24370,12 @@
       "sector": "gov",
       "country": "ITALY",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "fanpage.it",
@@ -24624,12 +24574,12 @@
       "sector": "web",
       "country": "ITALY",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "casa.it",
@@ -24684,19 +24634,19 @@
       "sector": "web",
       "country": "ITALY",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "lefrecce.it",
       "sector": "web",
       "country": "ITALY",
       "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
       "pqc_source": "none",
@@ -24792,12 +24742,12 @@
       "sector": "web",
       "country": "ITALY",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "iliad.it",
@@ -24998,7 +24948,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Cloudflare",
+      "cdn": "Self-hosted",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -25250,7 +25200,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Self-hosted",
+      "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -25308,12 +25258,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "zalando.nl",
@@ -25368,12 +25318,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "rijksoverheid.nl",
@@ -25416,12 +25366,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "hostnet.nl",
@@ -25608,12 +25558,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "universiteitleiden.nl",
@@ -25632,12 +25582,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "blogspot.nl",
@@ -25752,12 +25702,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "chello.nl",
@@ -25800,12 +25750,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "weeronline.nl",
@@ -25836,12 +25786,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "wehkamp.nl",
@@ -25872,12 +25822,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ideal.nl",
@@ -25908,12 +25858,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "government.nl",
@@ -26028,12 +25978,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "ticketmaster.nl",
@@ -26148,12 +26098,12 @@
       "sector": "web",
       "country": "NETHERLANDS",
       "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
+      "kex": "X25519MLKEM768",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "pqc_source": "provider",
+      "score": 75,
+      "stars": 2
     },
     {
       "site": "praxis.nl",
@@ -26844,12 +26794,12 @@
       "sector": "web",
       "country": "CHINA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "rsa_pss_rsae_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "ucloud.cn",
@@ -27020,18 +26970,6 @@
       "stars": 0
     },
     {
-      "site": "22.cn",
-      "sector": "web",
-      "country": "CHINA",
-      "tls": "TLSv1.2",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pkcs1_sha256",
-      "cdn": "Self-hosted",
-      "pqc_source": "none",
-      "score": 20,
-      "stars": 0
-    },
-    {
       "site": "midea.com.cn",
       "sector": "web",
       "country": "CHINA",
@@ -27042,18 +26980,6 @@
       "pqc_source": "none",
       "score": 35,
       "stars": 1
-    },
-    {
-      "site": "gmw.cn",
-      "sector": "web",
-      "country": "CHINA",
-      "tls": "TLSv1.2",
-      "kex": "ECDH, prime256v1, 256 bits",
-      "cert": "rsa_pkcs1_sha512",
-      "cdn": "Alibaba Cloud",
-      "pqc_source": "none",
-      "score": 20,
-      "stars": 0
     },
     {
       "site": "autohome.com.cn",
@@ -27560,18 +27486,6 @@
       "stars": 1
     },
     {
-      "site": "eps.go.kr",
-      "sector": "web",
-      "country": "KOREA",
-      "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
-      "pqc_source": "none",
-      "score": 35,
-      "stars": 1
-    },
-    {
       "site": "oliveyoung.co.kr",
       "sector": "web",
       "country": "KOREA",
@@ -27779,13 +27693,13 @@
       "site": "ewha.ac.kr",
       "sector": "web",
       "country": "KOREA",
-      "tls": "TLSv1.3",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
+      "tls": "TLSv1.2",
+      "kex": "ECDH, prime256v1, 256 bits",
+      "cert": "rsa_pkcs1_sha256",
       "cdn": "Self-hosted",
       "pqc_source": "none",
-      "score": 35,
-      "stars": 1
+      "score": 20,
+      "stars": 0
     },
     {
       "site": "phps.kr",
@@ -28466,7 +28380,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
-      "cdn": "Self-hosted",
+      "cdn": "Akamai",
       "pqc_source": "none",
       "score": 35,
       "stars": 1
@@ -29030,8 +28944,8 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Unknown",
-      "pqc_source": "provider",
+      "cdn": "Self-hosted",
+      "pqc_source": "own",
       "score": 75,
       "stars": 2
     },
@@ -29402,7 +29316,7 @@
       "tls": "TLSv1.3",
       "kex": "X25519MLKEM768",
       "cert": "rsa_pss_rsae_sha256",
-      "cdn": "CDN77",
+      "cdn": "OVH",
       "pqc_source": "provider",
       "score": 75,
       "stars": 2
@@ -32996,18 +32910,6 @@
       "stars": 0
     },
     {
-      "site": "greatersudbury.ca",
-      "sector": "gov",
-      "country": "CANADA",
-      "tls": "TLSv1.2",
-      "kex": "X25519, 253 bits",
-      "cert": "rsa_pss_rsae_sha256",
-      "cdn": "Self-hosted",
-      "pqc_source": "none",
-      "score": 20,
-      "stars": 0
-    },
-    {
       "site": "nanaimo.ca",
       "sector": "gov",
       "country": "CANADA",
@@ -33228,12 +33130,12 @@
       "sector": "retail",
       "country": "CANADA",
       "tls": "TLSv1.3",
-      "kex": "X25519MLKEM768",
+      "kex": "X25519, 253 bits",
       "cert": "ecdsa_secp256r1_sha256",
       "cdn": "Akamai",
-      "pqc_source": "provider",
-      "score": 75,
-      "stars": 2
+      "pqc_source": "none",
+      "score": 35,
+      "stars": 1
     },
     {
       "site": "therecord.com",

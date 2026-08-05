@@ -72,6 +72,14 @@ handshake we can read.
   connection to whatever string it is handed is the standard shape of an SSRF
   bug, so `resolves_publicly()` refuses anything resolving to a private, loopback
   or link-local address. Don't remove it.
+- **The CDN check follows redirects, so it is bounded.** `detect_cdn()` runs
+  `curl -sIL`, and the `-L` earns its place because plenty of sites answer the
+  apex with a 301 and the CDN headers are on the hop after it. But the check
+  above only ever vetted the name that was typed, and nothing looks at where a
+  redirect points, so an unbounded `-L` walks straight past it onto wherever the
+  target says to go. It is capped at two hops now, https only, on the first
+  request and on the redirects. Re-checking every hop against the public-address
+  rule would be better, and is the same piece of work as pinning the address.
 - **That check and the handshake look the name up separately.** `resolves_publicly()`
   does its own `getaddrinfo`, then `openssl`, `dig`, `curl` and `whois` each resolve
   the domain again on their own. Somebody running their own DNS with a short TTL
@@ -85,7 +93,10 @@ handshake we can read.
 - **Rate limit and cache are in memory.** 12 scans per address per 5 minutes,
   results cached for an hour. Both reset when the process restarts, which is fine
   for what they are for. On more than one machine they would need Redis or
-  similar.
+  similar. Two details: the limit is counted before the cache is read, so a
+  cached domain still costs a request instead of being free to ask for forever,
+  and neither dictionary ever drops an expired entry, so both grow until the
+  process restarts.
 - **New domains are noted, not published.** Anything scanned that isn't already
   in the corpus is appended to `data/community-scans.csv` and printed to the
   log. Nothing reads either automatically, so nobody can push rows into the
@@ -97,3 +108,6 @@ handshake we can read.
   that's a paid disk or a small database, not a bigger file.
 - **No IP addresses are stored.** The rate limiter keeps them in memory and
   nothing writes them out.
+- **CORS is open to any origin.** That costs nothing in data terms, since this
+  is GET only with no cookies and nothing worth taking, but it does mean anybody
+  can drive the scanner from a page of their own.

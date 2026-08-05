@@ -2,7 +2,7 @@
 
 A small public dashboard that tracks how quickly post-quantum cryptography (PQC) is showing up on real websites. It scans a few thousand sites across about twenty countries, with Canada as the main focus, and the map lines Canada up against the rest. For each site it makes one TLS handshake and records four things: the TLS version, the key exchange group (the one I care about is the hybrid X25519MLKEM768), the certificate signature type, and the CDN or network serving the site.
 
-As of now a bit over 40 percent of the Canadian sites I track already negotiate the hybrid key exchange, and almost every time it is a CDN like Cloudflare turning it on at the edge rather than the origin server itself. That shift is what this monitor is here to watch.
+As of now a bit over 40 percent of the Canadian sites I track already negotiate the hybrid key exchange, and almost every time the connection is terminating at a CDN edge rather than at the origin server. Whether the site asked its provider for that or the provider switched it on for every customer at once is not something one handshake can tell you, so what gets recorded is where the connection ends, not who deserves the credit. That shift is what this monitor is here to watch.
 
 NSERC summer 2026 research project, by Ekin Deveci, supervised by Prof. Samer Lahoud, Dalhousie University.
 
@@ -22,7 +22,9 @@ aggregate.py reads all of those scan files and writes a small summary file for e
 
 merge.py joins two scan files into one. I use it when I only re-scan the sites I added that week and want to fold them into the last full scan.
 
-enrich.py adds three more columns to a scan: pqc_source (for a site that does PQC, did it come from its CDN or from the organization itself), readiness_score (a 0-100 quantum-readiness number) and stars (0-3, the rating the page shows, one star per migration step fully done: TLS 1.3, PQC key exchange, PQC signature). All are worked out from columns the scan already has, so it runs on any old scan too without re-scanning. It borrows the actual rules from cdn_attribution.py and readiness_score.py so there is only one definition of each. cdn_attribution.py and readiness_score.py are the deeper analyses behind those columns, the per-country stacked bar and the CDN readiness table. The stars are what the pages show; the 0-100 stays in the CSVs as a sort key, because each of the three steps is pass/fail and a number invites an argument about the weights.
+check.html and check.js are the third tab, "Scan a site". The other two tabs only know the sites that were on the list when the scan ran, so this one contacts whatever domain you type, live, and draws the same report card. The handshake itself happens in api/app.py, a small service deployed on its own (see api/README.md), which imports scan.py rather than reimplementing it, so a live result and a published row cannot disagree about what they measured.
+
+enrich.py adds three more columns to a scan: pqc_source (for a site that does PQC, whether the handshake terminated at a CDN edge or on the organization's own infrastructure), readiness_score (a 0-100 quantum-readiness number) and stars (0-3, the rating the page shows, one star per migration step fully done: TLS 1.3, PQC key exchange, PQC signature). All are worked out from columns the scan already has, so it runs on any old scan too without re-scanning. It borrows the actual rules from cdn_attribution.py and readiness_score.py so there is only one definition of each. cdn_attribution.py and readiness_score.py are the deeper analyses behind those columns, the per-country stacked bar and the CDN readiness table. The stars are what the pages show; the 0-100 stays in the CSVs as a sort key, because each of the three steps is pass/fail and a number invites an argument about the weights.
 
 index.html, style.css and app.js are the dashboard itself: one scrolling page with the summary cards, the charts, the hover world map, and a searchable table. The CDN chart is stacked: each provider's bar splits into the sites already negotiating PQC and the ones not, so it also reads as that provider's PQC readiness. Clicking any row in the site table opens a one-sentence "next step" for that site, worked out from what the scan already knows about it and its provider. That card is report-card.js, kept in its own file because the most-visited page opens the same one. The chart and map libraries load from a CDN, so there is nothing to build or install; if that CDN is ever unreachable the page still draws the cards, the sector bars and the table, and only the charts and the map go missing.
 
@@ -93,6 +95,10 @@ site, sector, country, tls_version, key_exchange, cert, cdn. When a site does no
 ## About the "PQC signatures" number
 
 I track post-quantum certificate signatures too, but for now that count sits at zero. No public certificate authority issues them yet, so watching it climb above zero is one of the things this monitor is waiting for. Post-quantum key exchange, the X25519MLKEM768 share, is the part already rolling out, and that is what the headline percentage follows.
+
+## Security of the public scan endpoint
+
+The live tab is a public endpoint that opens a connection to whatever string it is handed, which is the shape of request people abuse, so it is worth writing down what it will and will not do. It only accepts names that look like a hostname and resolve to a public address, so it cannot be aimed at a private or internal one. It makes one TLS handshake and nothing else: it never fetches the page, follows a link, or logs in anywhere. The CDN check follows at most two redirects and only over https, because the public-address check vets the name you typed and nothing checks where a redirect points afterwards. Each address gets a limited number of scans in a five-minute window, results are cached for an hour, and the addresses behind that limit live in memory and are never written down. It is GET only, no cookies, no login, and nothing typed there changes the published numbers.
 
 ## What one scan does not catch
 

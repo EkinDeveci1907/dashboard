@@ -26,10 +26,9 @@ function setReportCard(rows, scanDate, cdnRates, options) {
   sectorPqc = options.sectorPqc || {};
 }
 
-// Everything below is built as a string and handed to innerHTML, and not all of
-// it comes from our own list: on the live scan tab the TLS version, the group,
-// the signature and the provider are whatever the server we just contacted said
-// they were. Escape once, here, so a value cannot stop being a value.
+// Everything below is built as a string and handed to innerHTML, and on the
+// live tab half of it is whatever the server we just contacted said it was.
+// Escape once, here, so a value cannot stop being a value.
 function esc(v) {
   if (v === undefined || v === null) return "";
   return String(v)
@@ -63,10 +62,8 @@ function starCell(s) {
   return "<span class='stars' title='" + title + "'>" + shown + "</span>";
 }
 
-// The pill in the "PQC endpoint" column, on both the main table and the
-// most-visited one, so the wording lives in one place instead of two. It says
-// where the connection terminates and nothing else: "via CDN" is not a claim
-// about whose doing it was, because a handshake cannot tell you that.
+// The pill in the "PQC endpoint" column, shared by both tables so the wording
+// lives in one place. It says where the connection terminates and nothing else.
 function sourceLabel(src) {
   if (src === "provider") return "via CDN";
   if (src === "own") return "own";
@@ -83,10 +80,8 @@ function adviceFor(s) {
   // print with cdn
   let cdn = esc(s.cdn);
   if (s.stars >= 2) {
-    // Name where the handshake terminated, and stop there. Behind a CDN the
-    // post-quantum group comes off that CDN's edge, and nothing in a handshake
-    // says whether the site asked for it or the provider switched it on for
-    // everyone. Claiming either would be claiming more than we measured.
+    // Name where the handshake terminated, and stop there - a handshake can't
+    // tell you whether the site asked for this or the provider did it anyway.
     let where = "";
     if (s.cdn && s.cdn !== "Self-hosted") {
       where = " It is negotiated at " + cdn + "'s edge: from outside, what we can see is that the " +

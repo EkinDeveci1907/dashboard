@@ -118,12 +118,10 @@ def get_tls(site):
     tls = ""
     kex = ""
     cert = ""
-    # Match on the start of the line, not anywhere in it. -brief also prints
-    # "Peer certificate: CN = ...", and that CN is chosen by whoever we just
-    # connected to, so a certificate with "Signature type: <script>" for a name
-    # used to land in a field the dashboard prints. openssl happens to print the
-    # real line after the certificate, so the injected one got overwritten - but
-    # that is the order openssl prints in, not a rule we enforce.
+    # Match the start of the line, not anywhere in it. -brief also prints the
+    # peer certificate's CN, which is chosen by whoever we just connected to, so
+    # a substring test let a cert named "Signature type: ..." write itself into
+    # a field the dashboard prints.
     for raw in out.splitlines():
         line = raw.strip()
         if line.startswith("Protocol version:"):
@@ -152,11 +150,9 @@ def detect_cdn(site, ip):
     # three signals, most reliable first: response headers, then the CNAME chain,
     # then the announcing AS as a last resort. AS alone is fuzzy (can't tell a real
     # CloudFront site from something just parked on AWS) so it only decides ties.
-    # -L is here because plenty of sites answer the apex with a 301 and the CDN
-    # headers are on the hop after it. It is bounded, though: the caller may have
-    # checked that the name resolves to a public address, but nothing checks
-    # where a redirect points, so an unbounded -L will happily walk onto the
-    # private address that check just refused. Two hops, https only, both ways.
+    # -L stays because plenty of sites answer the apex with a 301 and the CDN
+    # headers are on the hop after it. Bounded, though: the public-address check
+    # upstream vets the name you typed, not where a redirect sends you.
     headers = run(["curl", "-sIL", "--max-redirs", "2",
                    "--proto", "=https", "--proto-redir", "=https",
                    "--max-time", "10", "https://" + site]).lower()
