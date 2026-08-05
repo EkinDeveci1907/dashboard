@@ -139,11 +139,13 @@
          contacted with a TLS handshake; we record its TLS version, the key-exchange group it negotiates (flagging
          the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature, and the network / CDN
          that serves it.</p>
-      <p>We measure the <strong>endpoint</strong> a browser connects to. When a site sits behind a CDN,
-         the post-quantum key exchange is reachable via that CDN's edge, and the handshake gives no way to tell
-         whether the site asked for it or the provider turned it on for every customer at once. So the
-         <strong>PQC endpoint</strong> column says where the connection terminates, not who made it happen. It also
-         says nothing about the origin server behind the CDN, the internal network, or data at rest.</p>
+      <p>We measure the machine your browser actually talks to. Most sites sit behind a CDN like
+         Cloudflare or Akamai, and it is that CDN's server, not the site's own, that finishes the
+         handshake. So the <strong>PQC endpoint</strong> column says whose machine did the post-quantum
+         part: <em>via CDN</em>, or <em>own</em> for a site running it on its own servers.</p>
+      <p>It does not say who decided to turn it on: the handshake cannot tell whether a site asked its
+         provider for post-quantum or the provider switched it on for every customer at once. It also says
+         nothing about the origin server behind the CDN, the internal network, or data at rest.</p>
       <p>Why it matters: an attacker can record encrypted traffic today and decrypt it once quantum computers
          arrive ("harvest now, decrypt later"). Post-quantum key exchange closes that window. Post-quantum
          certificate <em>signatures</em> are a separate, slower migration. No public certificate authority
