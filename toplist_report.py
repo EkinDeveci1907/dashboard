@@ -124,7 +124,7 @@ PAGE = """<!DOCTYPE html>
 <p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). __LISTED__ sites on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__.</p>
 <section class='summary'>__CARDS__</section>
 <section class='card'>
-<h2>Site directory</h2>
+<h2>Measured domains</h2>
 <p class='hint'>Every site in the list, highest readiness first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
 <div id='siteDetail' class='site-detail' style='display:none'></div>
 <div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>
@@ -132,7 +132,7 @@ PAGE = """<!DOCTYPE html>
 </section>
 <section class='card'><h2>About this view</h2>
 <p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so at their CDN's edge rather than on their own servers, and the <strong>PQC endpoint</strong> column shows which. That column says where the connection terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell you.</p>
-<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream sites dropped. Nothing hand-picked, so the sample means the same thing every month.</p>
+<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream sites dropped. The selection rule is the published ranking rather than our own judgement, so the sample means the same thing every month.</p>
 </section>
 </div>
 <script src='report-card.js?v=__ASSETS__'></script>
