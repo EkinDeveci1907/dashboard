@@ -4,6 +4,10 @@
 // just plain JS loaded with defer. The per-site report card lives in
 // report-card.js, which the most-visited page uses too.
 
+// Below this many measured domains a percentage is noise, so the page shows the
+// raw count instead. Used by the sector bars and the map tooltip.
+const SMALL_SAMPLE = 5;
+
 let allSites = [];
 let currentScanDate = "";
 let sectorTotals = {};
@@ -120,14 +124,29 @@ function showCanadaCaNote(sites) {
 // the four big numbers at the top, plus the one-line headline
 function updateSummaryCards(data) {
   let tls13 = data.tls["TLSv1.3"] || 0;
-  document.getElementById("s-total").textContent = data.total;
-  document.getElementById("s-tls").textContent = Math.round(100 * tls13 / data.total) + "%";
+  let responded = data.total;
+
+  document.getElementById("s-total").textContent = responded;
+  document.getElementById("s-total-label").textContent =
+    "Canadian domains measured, of " + data.attempted + " attempted";
+
+  document.getElementById("s-tls").textContent = Math.round(100 * tls13 / responded) + "%";
+  document.getElementById("s-tls-label").textContent = "on TLS 1.3 (" + tls13 + " of " + responded + ")";
+
   document.getElementById("s-pqc").textContent = data.pqc_kex_pct + "%";
+  document.getElementById("s-pqc-label").textContent =
+    "PQC key exchange (" + data.pqc_kex + " of " + responded + ")";
+
   document.getElementById("s-sig").textContent = data.pqc_signatures;
+  document.getElementById("s-sig-label").textContent =
+    "PQC certificate signatures (of " + responded + ")";
+
+  document.getElementById("responded-note").textContent =
+    " On this scan " + responded + " of " + data.attempted + " Canadian domains answered.";
 
   document.getElementById("headline").innerHTML =
-    "<strong>" + data.pqc_kex_pct + "%</strong> of " + data.total +
-    " Canadian domains negotiate post-quantum key exchange (X25519MLKEM768).";
+    "<strong>" + data.pqc_kex + " of " + responded + "</strong> responding Canadian domains (" +
+    data.pqc_kex_pct + "%) negotiate post-quantum key exchange (X25519MLKEM768).";
 }
 
 // TLS version doughnut (green for 1.3, grey for older)
@@ -218,9 +237,12 @@ function showCdnNote(data) {
   names.sort(function (a, b) { return rate(b) - rate(a); });
   let top = names[0];
   let bottom = names[names.length - 1];
+  function fraction(name) {
+    return (pqc[name] || 0) + " of " + totals[name];
+  }
   document.getElementById("cdn-note").textContent =
-    ", which today runs from " + top + " at " + rate(top) + "% of its Canadian domains down to " +
-    bottom + " at " + rate(bottom) + "%";
+    ", which today runs from " + top + " at " + fraction(top) + " of its Canadian domains (" +
+    rate(top) + "%) down to " + bottom + " at " + fraction(bottom) + " (" + rate(bottom) + "%)";
 }
 
 // CDN bar: show the 8 most common, and roll the rest into one "Other" bar.
@@ -345,10 +367,14 @@ function drawWorldMap(countries) {
       onRegionTooltipShow: function (event, tooltip, code) {
         let c = infoByCode[code];
         let extra;
-        if (c) {
-          extra = c.pqc + " / " + c.total + " domains use PQC (" + c.pct + "%)";
-        } else {
+        if (!c) {
           extra = "no domains scanned";
+        } else if (c.total === 0) {
+          extra = "No data (" + c.attempted + " attempted, none answered)";
+        } else if (c.total < SMALL_SAMPLE) {
+          extra = c.pqc + " of " + c.total + " responding domains";
+        } else {
+          extra = c.pqc + " of " + c.total + " responding domains (" + c.pct + "%)";
         }
         tooltip.text(tooltip.text() + " - " + extra, true);
       }
@@ -406,10 +432,19 @@ function drawSectorBars(sectors) {
   for (let i = 0; i < names.length; i++) {
     let s = sectors[names[i]];
     let pct = Math.round(100 * s.pqc / s.total);
+    // Under five domains a percentage says more than the sample can support:
+    // three out of four is not "75% ready", it is four domains. Show the count
+    // and skip the percentage.
+    let figure = s.pqc + " of " + s.total + " (" + pct + "%)";
+    if (s.total === 0) {
+      figure = "No data";
+    } else if (s.total < SMALL_SAMPLE) {
+      figure = s.pqc + " of " + s.total;
+    }
     html += "<div class='sector-row'>" +
               "<div class='sector-name'>" + names[i] + "</div>" +
               "<div class='sector-track'><div class='sector-fill' style='width:" + pct + "%'></div></div>" +
-              "<div class='sector-pct'>" + pct + "%</div>" +
+              "<div class='sector-pct'>" + figure + "</div>" +
             "</div>";
   }
   document.getElementById("sectorBars").innerHTML = html;

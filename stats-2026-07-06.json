@@ -3,6 +3,10 @@
   "country_focus": "CANADA",
   "total": 384,
   "total_all": 1121,
+  "attempted": 400,
+  "attempted_all": 1158,
+  "tls13": 295,
+  "pqc_kex": 141,
   "tls": {
     "TLSv1.3": 295,
     "TLSv1.2": 89
@@ -120,181 +124,217 @@
   },
   "countries": {
     "USA": {
+      "attempted": 424,
       "total": 424,
       "pqc": 229,
       "pct": 54
     },
     "CANADA": {
+      "attempted": 400,
       "total": 384,
       "pqc": 141,
       "pct": 37
     },
     "INTL": {
+      "attempted": 8,
       "total": 8,
       "pqc": 5,
       "pct": 62
     },
     "UK": {
+      "attempted": 37,
       "total": 35,
       "pqc": 18,
       "pct": 51
     },
     "AUSTRALIA": {
+      "attempted": 13,
       "total": 13,
       "pqc": 6,
       "pct": 46
     },
     "RUSSIA": {
+      "attempted": 35,
       "total": 33,
       "pqc": 4,
       "pct": 12
     },
     "FRANCE": {
+      "attempted": 19,
       "total": 17,
       "pqc": 4,
       "pct": 24
     },
     "GERMANY": {
+      "attempted": 31,
       "total": 30,
       "pqc": 15,
       "pct": 50
     },
     "CHINA": {
+      "attempted": 37,
       "total": 34,
       "pqc": 3,
       "pct": 9
     },
     "KOREA": {
+      "attempted": 9,
       "total": 8,
       "pqc": 4,
       "pct": 50
     },
     "EU": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "JAPAN": {
+      "attempted": 19,
       "total": 19,
       "pqc": 5,
       "pct": 26
     },
     "BRAZIL": {
+      "attempted": 16,
       "total": 15,
       "pqc": 5,
       "pct": 33
     },
     "INDIA": {
+      "attempted": 13,
       "total": 10,
       "pqc": 2,
       "pct": 20
     },
     "SPAIN": {
+      "attempted": 15,
       "total": 14,
       "pqc": 6,
       "pct": 43
     },
     "INDONESIA": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "CZECHIA": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "ITALY": {
+      "attempted": 8,
       "total": 7,
       "pqc": 2,
       "pct": 29
     },
     "POLAND": {
+      "attempted": 8,
       "total": 8,
       "pqc": 4,
       "pct": 50
     },
     "QATAR": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "SINGAPORE": {
+      "attempted": 3,
       "total": 3,
       "pqc": 2,
       "pct": 67
     },
     "TAIWAN": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "SWITZERLAND": {
+      "attempted": 11,
       "total": 11,
       "pqc": 3,
       "pct": 27
     },
     "SWEDEN": {
+      "attempted": 6,
       "total": 6,
       "pqc": 2,
       "pct": 33
     },
     "NETHERLANDS": {
+      "attempted": 7,
       "total": 7,
       "pqc": 2,
       "pct": 29
     },
     "IRELAND": {
+      "attempted": 1,
       "total": 1,
       "pqc": 1,
       "pct": 100
     },
     "ARGENTINA": {
+      "attempted": 2,
       "total": 2,
       "pqc": 0,
       "pct": 0
     },
     "TURKEY": {
+      "attempted": 7,
       "total": 6,
       "pqc": 3,
       "pct": 50
     },
     "SLOVENIA": {
+      "attempted": 1,
       "total": 1,
       "pqc": 1,
       "pct": 100
     },
     "BELGIUM": {
+      "attempted": 8,
       "total": 6,
       "pqc": 3,
       "pct": 50
     },
     "MEXICO": {
+      "attempted": 6,
       "total": 5,
       "pqc": 2,
       "pct": 40
     },
     "NEW ZEALAND": {
+      "attempted": 1,
       "total": 1,
       "pqc": 1,
       "pct": 100
     },
     "KAZAKHSTAN": {
+      "attempted": 1,
       "total": 1,
       "pqc": 0,
       "pct": 0
     },
     "ISRAEL": {
+      "attempted": 1,
       "total": 1,
       "pqc": 1,
       "pct": 100
     },
     "HONGKONG": {
+      "attempted": 1,
       "total": 1,
       "pqc": 1,
       "pct": 100
     },
     "NORWAY": {
+      "attempted": 5,
       "total": 5,
       "pqc": 3,
       "pct": 60

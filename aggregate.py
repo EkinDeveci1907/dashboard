@@ -39,33 +39,52 @@ def key_exchange_group(kex):
 
 
 def summarise_one_scan(csv_path, date):
-    # 1. Read the rows, keeping only the ones where every field is filled in
-    #    (a site that didn't answer is written with blanks, and we skip those).
+    # 1. Read every row, then keep the ones where the crypto fields are filled in.
+    #    A domain that didn't answer is still written to the CSV, with blanks, so
+    #    both numbers are worth having: "attempted" is how many we asked, "scanned"
+    #    is how many answered. Every percentage on the page divides by the second
+    #    one, and the page says so.
+    attempted = []
     scanned = []
     for row in csv.DictReader(open(csv_path)):
+        attempted.append(row)
         if row["site"] and row["tls_version"] and row["key_exchange"] and row["cert"] and row["cdn"]:
             scanned.append(row)
 
+    def country_of(row):
+        if row["country"] == "":
+            return "OTHER"
+        return row["country"]
+
     # 2. Count PQC for every country, so we can compare Canada to the rest of the world.
     countries = {}
-    for row in scanned:
-        country = row["country"]
-        if country == "":
-            country = "OTHER"
+    for row in attempted:
+        country = country_of(row)
         if country not in countries:
-            countries[country] = {"total": 0, "pqc": 0, "pct": 0}
+            countries[country] = {"attempted": 0, "total": 0, "pqc": 0, "pct": 0}
+        countries[country]["attempted"] = countries[country]["attempted"] + 1
+    for row in scanned:
+        country = country_of(row)
         countries[country]["total"] = countries[country]["total"] + 1
         if has_pqc_key_exchange(row["key_exchange"]):
             countries[country]["pqc"] = countries[country]["pqc"] + 1
-    # turn each country's counts into a percentage
+    # turn each country's counts into a percentage. A country where nothing
+    # answered has no percentage to give, so leave it at zero and let the page
+    # print "No data" rather than a misleading 0%.
     for country in countries:
-        countries[country]["pct"] = round(100 * countries[country]["pqc"] / countries[country]["total"])
+        if countries[country]["total"] > 0:
+            countries[country]["pct"] = round(100 * countries[country]["pqc"] / countries[country]["total"])
 
     # 3. The headline numbers are Canada only, so pull out just the Canadian rows.
     canada = []
     for row in scanned:
         if row["country"] == "CANADA":
             canada.append(row)
+
+    canada_attempted = 0
+    for row in attempted:
+        if row["country"] == "CANADA":
+            canada_attempted = canada_attempted + 1
 
     # tallies we build up as we walk the Canadian rows
     tls_counts = {}
@@ -147,6 +166,10 @@ def summarise_one_scan(csv_path, date):
         "country_focus": "CANADA",
         "total": len(canada),
         "total_all": len(scanned),
+        "attempted": canada_attempted,
+        "attempted_all": len(attempted),
+        "tls13": tls_counts.get("TLSv1.3", 0),
+        "pqc_kex": pqc_count,
         "tls": tls_counts,
         "pqc_kex_pct": pqc_pct,
         "pqc_signatures": signature_count,

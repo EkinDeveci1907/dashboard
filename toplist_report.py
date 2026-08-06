@@ -32,7 +32,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05-4"
+ASSETS = "2026-08-05-5"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -90,10 +90,17 @@ table.sort(key=by_score, reverse=True)
 # the four number boxes across the top. the headline right above already gives the
 # percentage and how many sites answered, so these give the four numbers behind it
 # instead of repeating it
+# every percentage divides by the domains that answered, never by the list length,
+# so each box carries the fraction it came from
+if total > 0:
+    tls13_pct = round(100 * tls13 / total)
+else:
+    tls13_pct = 0
+
 boxes = [
-    (str(listed), "domains on the list"),
-    (str(tls13), "on TLS 1.3"),
-    (str(pqc), "PQC-enabled (hybrid post-quantum key exchange)"),
+    (str(listed), "domains on the list, " + str(total) + " responded"),
+    (str(tls13) + " of " + str(total), "on TLS 1.3 (" + str(tls13_pct) + "%)"),
+    (str(pqc) + " of " + str(total), "PQC-enabled (" + str(pqc_pct) + "%)"),
     (str(via) + " / " + str(own), "PQC endpoint: CDN edge / no CDN detected"),
 ]
 cards = ""
@@ -101,8 +108,8 @@ for number, label in boxes:
     cards = cards + "<div class='box'><div class='num'>" + number + "</div>"
     cards = cards + "<div class='label'>" + label + "</div></div>"
 
-headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
-            " domains Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
+headline = ("<strong>" + str(pqc) + " of " + str(total) + "</strong> responding domains (" +
+            str(pqc_pct) + "%) negotiate post-quantum key exchange (X25519MLKEM768).")
 
 # reuses the dashboard's style.css and report-card.js, so this tab matches the main 
 # one without any of that code being written out twice. report-card.js has to load before
@@ -121,7 +128,7 @@ PAGE = """<!DOCTYPE html>
 <nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a domain</a></nav>
 <p class='headline'>__HEADLINE__</p>
 <h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
-<p class='scope'>The domains Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream domains excluded). __LISTED__ domains on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__.</p>
+<p class='scope'>The domains Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream domains excluded). __LISTED__ domains on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__. Every percentage on this page divides by the __TOTAL__ that answered; the ones that did not are counted as attempted and left out.</p>
 <section class='summary'>__CARDS__</section>
 <section class='card'>
 <h2>Measured domains</h2>

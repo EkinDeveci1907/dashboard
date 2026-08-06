@@ -22,15 +22,15 @@
          curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
         integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=2026-08-05-4">
+  <link rel="stylesheet" href="style.css?v=2026-08-05-5">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
           integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
           integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
           integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
-  <script src="report-card.js?v=2026-08-05-4" defer></script>
-  <script src="app.js?v=2026-08-05-4" defer></script>
+  <script src="report-card.js?v=2026-08-05-5" defer></script>
+  <script src="app.js?v=2026-08-05-5" defer></script>
 </head>
 <body>
   <div class="page">
@@ -54,12 +54,14 @@
     <p id="headline" class="headline"></p>
 
     <h2 class="section-head">Canada at a glance <span class="tag tag-ca">Canadian domains</span></h2>
-    <p class="scope">Every card and chart in this section counts Canadian domains only.</p>
+    <p class="scope">Every card and chart in this section counts Canadian domains only. Percentages are
+       calculated over the domains that completed a TLS handshake; the ones that did not answer are
+       counted as attempted and left out of every percentage.<span id="responded-note"></span></p>
     <section class="summary">
-      <div class="box"><div class="num" id="s-total">...</div><div class="label">Canadian domains</div></div>
-      <div class="box"><div class="num" id="s-tls">...</div><div class="label">on TLS 1.3</div></div>
-      <div class="box"><div class="num" id="s-pqc">...</div><div class="label">PQC key exchange</div></div>
-      <div class="box"><div class="num" id="s-sig">...</div><div class="label">PQC signatures</div></div>
+      <div class="box"><div class="num" id="s-total">...</div><div class="label" id="s-total-label">Canadian domains</div></div>
+      <div class="box"><div class="num" id="s-tls">...</div><div class="label" id="s-tls-label">on TLS 1.3</div></div>
+      <div class="box"><div class="num" id="s-pqc">...</div><div class="label" id="s-pqc-label">PQC key exchange</div></div>
+      <div class="box"><div class="num" id="s-sig">...</div><div class="label" id="s-sig-label">PQC certificate signatures</div></div>
     </section>
 
     <section class="charts">
