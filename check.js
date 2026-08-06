@@ -23,13 +23,14 @@ function clearResult() {
 // the card shows a handshake time either way, and on a cached result that number
 // is from when it was measured, not from now.
 function measuredLine(r) {
-  // the timing itself is on the card now. this line only has to say whether the
-  // handshake happened just now or came back out of the cache, because the
-  // number means different things in those two cases.
+  // the timing itself is on the card now. this line only has to say when the
+  // handshake happened, because on a cached result the card's millisecond
+  // figure is from that earlier moment and not from now.
+  let at = r.scanned_at ? " at " + r.scanned_at : "";
   if (r.cached) {
-    return "Measured within the last hour, returned from the cache.";
+    return "Returned from the cache. Scan completed" + at + ".";
   }
-  return "Measured just now.";
+  return "Scan completed" + at + ".";
 }
 
 async function runScan(domain) {

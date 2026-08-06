@@ -32,7 +32,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05-5"
+ASSETS = "2026-08-05-6"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site

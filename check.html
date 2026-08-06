@@ -8,9 +8,9 @@
        draws the card, the same one the other two tabs open when you click a row,
        the only difference being where the row came from. check.js has to load
        after it. The ?v= is a cache buster, see the note in index.html. -->
-  <link rel="stylesheet" href="style.css?v=2026-08-05-5">
-  <script src="report-card.js?v=2026-08-05-5" defer></script>
-  <script src="check.js?v=2026-08-05-5" defer></script>
+  <link rel="stylesheet" href="style.css?v=2026-08-05-6">
+  <script src="report-card.js?v=2026-08-05-6" defer></script>
+  <script src="check.js?v=2026-08-05-6" defer></script>
 </head>
 <body>
   <div class="page">
@@ -28,8 +28,8 @@
       <a href="check.html" class="active">Scan a domain</a>
     </nav>
 
-    <p class="headline">Type any domain and the monitor runs the TLS handshake against it now, then score it
-       the same way as every domain in the monitor.</p>
+    <p class="headline">Type any domain. The service performs a live scan or returns a result cached
+       within the past hour, then scores it the same way as every domain in the monitor.</p>
 
     <section class="card">
       <h2>Scan a domain</h2>
@@ -41,6 +41,13 @@
         <button id="go" class="btn">Scan</button>
       </div>
       <p id="status" class="hint"></p>
+      <p class="hint">Results are cached for one hour, and each address is limited to 12 scans every five
+         minutes, so a repeat scan comes back instantly.</p>
+      <p class="hint">Nothing you type is stored against you. The monitor records the domain and the
+         measurement only, never the address that asked.</p>
+      <p class="hint">A result describes one connection at one moment. The same domain can answer
+         differently by time, by the location the scan runs from, by IPv4 or IPv6, by hostname (apex or
+         www), and by which CDN edge happens to serve it.</p>
       <div id="siteDetail" class="site-detail" style="display:none"></div>
     </section>
 
@@ -50,19 +57,17 @@
          the list at the time. This one runs the handshake when you ask for it, against any domain,
          and reports the same things: the TLS version, the key-exchange group and the certificate
          signature.</p>
-      <p>The handshake runs on the monitor's own machine rather than in your browser, so the result doesn't
-         depend on which browser you happen to be using. Results are cached for an hour and there is
-         a limit on how many scans one address can run, which is why a repeat scan comes back
-         instantly.</p>
+      <p>The handshake runs on the monitor's own machine rather than in your browser, so the result does
+         not depend on which browser you happen to be using. That is also why it is a scan from one place:
+         a CDN may route the monitor to a different edge than it routes you to.</p>
       <p>Because anyone can type a domain in, the service only accepts names that resolve to a public
          address; it will not connect to a private or internal one. It does one TLS handshake and nothing
-         else, so it never fetches the page, follows a link or logs in anywhere. Each address gets a limited
-         number of scans in a five-minute window, results are cached for an hour, and the addresses behind
-         that limit are held in memory only and never written down.</p>
-      <p>A domain you scan that isn't in the dataset yet is noted as a candidate for the next full
-         scan. Nothing you type here changes the published numbers, and the monitor records the domain and
-         the measurement only, never who asked. Built for the NSERC Summer 2026 research project by
-         E. Deveci, supervised by Prof. Samer Lahoud, Faculty of Computer Science, Dalhousie University.</p>
+         else, so it never fetches the page, follows a link or logs in anywhere. The addresses behind the
+         rate limit are held in memory only and never written down.</p>
+      <p>A domain you scan that is not in the dataset yet is noted as a candidate for the next full scan.
+         Nothing you type here changes the published numbers. Built for the NSERC Summer 2026 research
+         project by E. Deveci, supervised by Prof. Samer Lahoud, Faculty of Computer Science,
+         Dalhousie University.</p>
     </section>
 
   </div>

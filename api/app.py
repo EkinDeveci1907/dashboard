@@ -78,6 +78,29 @@ def clean_domain(raw):
     return d
 
 
+def tcp_reachable(domain):
+    # Called only after a handshake came back empty, to say why. openssl prints
+    # nothing useful either way, so ask the simplest question that separates the
+    # cases: can we open a TCP connection to port 443 at all?
+    #   ok            -> something answered, so TLS itself is what failed
+    #   timed out     -> nothing answered in time
+    #   refused       -> the host answered, but not on 443
+    # returns one of "ok", "timeout", "refused", "unreachable"
+    s = socket.socket()
+    s.settimeout(8)
+    try:
+        s.connect((domain, 443))
+        return "ok"
+    except socket.timeout:
+        return "timeout"
+    except ConnectionRefusedError:
+        return "refused"
+    except Exception:
+        return "unreachable"
+    finally:
+        s.close()
+
+
 def resolves_publicly(domain):
     # returns (ok, reason). every address the name resolves to has to be public -
     # one private answer among several is enough to refuse, because we don't get
@@ -303,10 +326,16 @@ def scan_domain(request: Request, domain: str = ""):
     started = time.time()
     tls, kex, cert = scan.get_tls(d)
     if tls == "" or kex == "":
-        return JSONResponse(
-            {"error": "no answer - the server didn't finish a TLS handshake we could read"},
-            status_code=502,
-        )
+        reach = tcp_reachable(d)
+        if reach == "timeout":
+            why = "connection timed out: nothing answered on port 443 within 8 seconds"
+        elif reach == "refused":
+            why = "connection refused: the host answered but nothing is listening on port 443"
+        elif reach == "unreachable":
+            why = "scan failed: could not open a connection to port 443"
+        else:
+            why = "TLS handshake failed: the connection opened but no handshake we could read completed"
+        return JSONResponse({"error": why}, status_code=502)
     cdn = scan.detect_cdn(d, scan.get_ip(d))
     took = int((time.time() - started) * 1000)
 
@@ -341,6 +370,7 @@ def scan_domain(request: Request, domain: str = ""):
         "source": source,
         "stars": stars,
         "handshake_ms": took,
+        "scanned_at": time.strftime("%H:%M UTC", time.gmtime()),
         "in_corpus": old is not None,
         "history": history_for(d),
         "context": context_for(d, stars, sector, country),
