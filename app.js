@@ -127,7 +127,7 @@ function updateSummaryCards(data) {
 
   document.getElementById("headline").innerHTML =
     "<strong>" + data.pqc_kex_pct + "%</strong> of " + data.total +
-    " Canadian sites negotiate post-quantum key exchange (X25519MLKEM768).";
+    " Canadian domains negotiate post-quantum key exchange (X25519MLKEM768).";
 }
 
 // TLS version doughnut (green for 1.3, grey for older)
@@ -219,7 +219,7 @@ function showCdnNote(data) {
   let top = names[0];
   let bottom = names[names.length - 1];
   document.getElementById("cdn-note").textContent =
-    ", which today runs from " + top + " at " + rate(top) + "% of its Canadian sites down to " +
+    ", which today runs from " + top + " at " + rate(top) + "% of its Canadian domains down to " +
     bottom + " at " + rate(bottom) + "%";
 }
 
@@ -341,14 +341,14 @@ function drawWorldMap(countries) {
         scale: ["#c7d2fe", "#312e81"],
         values: shadeByCode
       },
-      // on hover, show how many of that country's sites use PQC, e.g. "204 / 535 sites use PQC (38%)"
+      // on hover, show how many of that country's sites use PQC, e.g. "204 / 535 domains use PQC (38%)"
       onRegionTooltipShow: function (event, tooltip, code) {
         let c = infoByCode[code];
         let extra;
         if (c) {
-          extra = c.pqc + " / " + c.total + " sites use PQC (" + c.pct + "%)";
+          extra = c.pqc + " / " + c.total + " domains use PQC (" + c.pct + "%)";
         } else {
-          extra = "no sites scanned";
+          extra = "no domains scanned";
         }
         tooltip.text(tooltip.text() + " - " + extra, true);
       }
@@ -394,7 +394,7 @@ function drawTable(sites) {
   }
   document.getElementById("tableBody").innerHTML = rows;
   document.getElementById("tableCount").textContent =
-    sites.length + " of " + allSites.length + " sites shown";
+    sites.length + " of " + allSites.length + " domains shown";
 }
 
 function drawSectorBars(sectors) {

@@ -74,10 +74,10 @@ function sectorLineFor(s) {
   if (s.country !== "CANADA") return "";
   let bucket = sectorPqc[s.sector];
   if (!bucket || bucket.total < 5) return "";
-  // the count rather than the percentage: "60% of the 60 media sites" reads like
+  // the count rather than the percentage: "60% of the 60 media domains" reads like
   // a typo, and the raw fraction says how big the sample is at the same time
   let line = bucket.pqc + " of the " + bucket.total + " Canadian " + esc(s.sector) +
-             " sites the monitor scans negotiate it. ";
+             " domains the monitor scans negotiate it. ";
   if (s.kex.indexOf("MLKEM") !== -1) {
     return line + "This one is among them.";
   }

@@ -22,15 +22,15 @@
          curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
         integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=2026-08-05-3">
+  <link rel="stylesheet" href="style.css?v=2026-08-05-4">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
           integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
           integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
           integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
-  <script src="report-card.js?v=2026-08-05-3" defer></script>
-  <script src="app.js?v=2026-08-05-3" defer></script>
+  <script src="report-card.js?v=2026-08-05-4" defer></script>
+  <script src="app.js?v=2026-08-05-4" defer></script>
 </head>
 <body>
   <div class="page">
@@ -48,15 +48,15 @@
     <nav class="nav">
       <a href="index.html" class="active">Canada &amp; the world</a>
       <a href="canada-topvisited.html">Most visited by Canadians</a>
-      <a href="check.html">Scan a site</a>
+      <a href="check.html">Scan a domain</a>
     </nav>
 
     <p id="headline" class="headline"></p>
 
-    <h2 class="section-head">Canada at a glance <span class="tag tag-ca">Canadian sites</span></h2>
-    <p class="scope">Every card and chart in this section counts Canadian sites only.</p>
+    <h2 class="section-head">Canada at a glance <span class="tag tag-ca">Canadian domains</span></h2>
+    <p class="scope">Every card and chart in this section counts Canadian domains only.</p>
     <section class="summary">
-      <div class="box"><div class="num" id="s-total">...</div><div class="label">Canadian sites</div></div>
+      <div class="box"><div class="num" id="s-total">...</div><div class="label">Canadian domains</div></div>
       <div class="box"><div class="num" id="s-tls">...</div><div class="label">on TLS 1.3</div></div>
       <div class="box"><div class="num" id="s-pqc">...</div><div class="label">PQC key exchange</div></div>
       <div class="box"><div class="num" id="s-sig">...</div><div class="label">PQC signatures</div></div>
@@ -69,7 +69,7 @@
 
     <section class="card">
       <h2>CDN</h2>
-      <p>Which CDN or network serves each Canadian site, with every bar split into the sites that already
+      <p>Which CDN or network serves each Canadian domain, with every bar split into the domains that already
          negotiate PQC and the ones that don't. Read it as each provider's PQC readiness<span id="cdn-note"></span>.</p>
       <canvas id="cdnChart"></canvas>
     </section>
@@ -84,7 +84,7 @@
 
     <section class="card">
       <h2>Adoption by country</h2>
-      <p>PQC key exchange adoption by country. Darker means a larger share of that country's sites negotiate
+      <p>PQC key exchange adoption by country. Darker means a larger share of that country's domains negotiate
          post-quantum. Hover a country for its exact number. Canada is at <strong id="canada-compare">...</strong>.</p>
       <div id="worldMap" class="map"></div>
       <div id="mapLegend" class="map-legend">
@@ -97,15 +97,15 @@
 
     <section class="card">
       <h2>Measured domains</h2>
-      <p class="hint">Every site the monitor scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
+      <p class="hint">Every domain the monitor scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
       <p class="hint">Readiness is one star per migration step done: <span class="stars">★</span> TLS 1.3
          &nbsp;·&nbsp; <span class="stars">★★</span> + post-quantum key exchange
          &nbsp;·&nbsp; <span class="stars">★★★</span> + post-quantum certificate signature (no public CA issues
          these yet, so today's best is two). Hover the stars for the breakdown, and click any row for
-         that site's full report card.</p>
+         that domain's full report card.</p>
       <div id="siteDetail" class="site-detail" style="display:none"></div>
       <div class="filters">
-        <input id="search" placeholder="Search a site, e.g. rbc.com">
+        <input id="search" placeholder="Search a domain, e.g. rbc.com">
         <select id="countryFilter"></select>
         <select id="sectorFilter"></select>
         <select id="kexFilter"></select>
@@ -115,7 +115,7 @@
       <div class="table-scroll">
         <table>
           <thead>
-            <tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr>
+            <tr><th>Domain</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr>
           </thead>
           <tbody id="tableBody"></tbody>
         </table>
@@ -132,7 +132,7 @@
          separately, in
          <a href="https://www.cyber.gc.ca/en/guidance/cryptographic-algorithms-unclassified-protected-protected-b-information-itsp40111">ITSP.40.111</a>.</p>
       <p>These federal milestones do not directly assess or represent the obligations of non-federal
-         organizations. Most of the sites measured here are not federal systems. The timeline is shown as
+         organizations. Most of the domains measured here are not federal systems. The timeline is shown as
          context for progress relative to the federal migration milestones<span id="canada-ca-note"></span>.</p>
     </section>
 
@@ -140,19 +140,19 @@
       <h2>About this monitor</h2>
       <p>This is a public monitor of how fast <strong>post-quantum cryptography (PQC)</strong> is reaching
          public websites. The main view focuses on Canada; the map compares Canada to other countries. Each
-         site is contacted with a TLS handshake; the monitor records its TLS version, the key-exchange group
-         it negotiates, its certificate signature, and the network / CDN that serves it. A site counts as
+         domain is contacted with a TLS handshake; the monitor records its TLS version, the key-exchange group
+         it negotiates, its certificate signature, and the network / CDN that serves it. A domain counts as
          PQC-enabled when the group it negotiates is the hybrid <code>X25519MLKEM768</code>.</p>
       <p>ML-KEM is the key-encapsulation mechanism standardised by NIST in
          <a href="https://csrc.nist.gov/pubs/fips/203/final">FIPS 203</a>. X25519MLKEM768 is a TLS 1.3 group
          that combines classical X25519 with ML-KEM-768, specified in the IETF draft on
          <a href="https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/">post-quantum hybrid
          ECDHE-MLKEM key agreement for TLS 1.3</a>.</p>
-      <p>The monitor measures the machine your browser actually talks to. Most sites sit behind a CDN like
-         Cloudflare or Akamai, and it is that CDN's server, not the site's own, that finishes the
+      <p>The monitor measures the machine your browser actually talks to. Most domains sit behind a CDN like
+         Cloudflare or Akamai, and it is that CDN's server, not the domain's own, that finishes the
          handshake. So the <strong>PQC endpoint</strong> column says whose machine did the post-quantum
-         part: <em>CDN edge</em>, or <em>no CDN detected</em> for a site running it on its own servers.</p>
-      <p>It does not say who decided to turn it on: the handshake cannot tell whether a site asked its
+         part: <em>CDN edge</em>, or <em>no CDN detected</em> for a domain running it on its own servers.</p>
+      <p>It does not say who decided to turn it on: the handshake cannot tell whether a domain asked its
          provider for post-quantum or the provider switched it on for every customer at once. It also says
          nothing about the origin server behind the CDN, internal services, stored data,
          certificate-management processes, or overall cryptographic agility.</p>

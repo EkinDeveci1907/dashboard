@@ -32,7 +32,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05-3"
+ASSETS = "2026-08-05-4"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -91,7 +91,7 @@ table.sort(key=by_score, reverse=True)
 # percentage and how many sites answered, so these give the four numbers behind it
 # instead of repeating it
 boxes = [
-    (str(listed), "sites on the list"),
+    (str(listed), "domains on the list"),
     (str(tls13), "on TLS 1.3"),
     (str(pqc), "PQC-enabled (hybrid post-quantum key exchange)"),
     (str(via) + " / " + str(own), "PQC endpoint: CDN edge / no CDN detected"),
@@ -102,7 +102,7 @@ for number, label in boxes:
     cards = cards + "<div class='label'>" + label + "</div></div>"
 
 headline = ("<strong>" + str(pqc_pct) + "%</strong> of the " + str(total) +
-            " sites Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
+            " domains Canadians visit most negotiate post-quantum key exchange (X25519MLKEM768).")
 
 # reuses the dashboard's style.css and report-card.js, so this tab matches the main 
 # one without any of that code being written out twice. report-card.js has to load before
@@ -118,21 +118,21 @@ PAGE = """<!DOCTYPE html>
 <body>
 <div class='page'>
 <header class='header'><div><h1>PQC Deployment Monitor</h1><p class='tagline'>Tracking post-quantum TLS deployment, with a focus on Canadian websites</p></div></header>
-<nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a site</a></nav>
+<nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a domain</a></nav>
 <p class='headline'>__HEADLINE__</p>
 <h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
-<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). __LISTED__ sites on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__.</p>
+<p class='scope'>The domains Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream domains excluded). __LISTED__ domains on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__.</p>
 <section class='summary'>__CARDS__</section>
 <section class='card'>
 <h2>Measured domains</h2>
-<p class='hint'>Every site in the list, highest readiness first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
+<p class='hint'>Every domain in the list, highest readiness first. Domains showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that domain's full report card.</p>
 <div id='siteDetail' class='site-detail' style='display:none'></div>
-<div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>
-<div class='table-scroll'><table><thead><tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
+<div class='filters'><input id='search' placeholder='Search a domain, e.g. netflix.com' oninput='draw()'></div>
+<div class='table-scroll'><table><thead><tr><th>Domain</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
 </section>
 <section class='card'><h2>About this view</h2>
-<p>This page answers a simple question: of the websites Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most sites that pass do so at their CDN's edge rather than on their own servers, and the <strong>PQC endpoint</strong> column shows which. That column says where the connection terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell you.</p>
-<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream sites dropped. The selection rule is the published ranking rather than our own judgement, so the sample means the same thing every month.</p>
+<p>This page answers a simple question: of the domains Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most domains that pass do so at their CDN's edge rather than on their own servers, and the <strong>PQC endpoint</strong> column shows which. That column says where the connection terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell you.</p>
+<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream domains dropped. The selection rule is the published ranking rather than our own judgement, so the sample means the same thing every month.</p>
 </section>
 </div>
 <script src='report-card.js?v=__ASSETS__'></script>
@@ -179,4 +179,4 @@ page = page.replace("__SCANDATEJSON__", json.dumps(scan_date))
 
 open("canada-topvisited.html", "w").write(page)
 print("wrote canada-topvisited.html")
-print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% PQC-enabled")
+print("  " + str(total) + " domains, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% PQC-enabled")
