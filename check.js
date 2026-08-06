@@ -11,25 +11,6 @@
 const LOCAL = (location.hostname === "localhost" || location.hostname === "127.0.0.1");
 const API = LOCAL ? "http://127.0.0.1:8000" : "https://pqc-monitor-scan.onrender.com";
 
-let cdnRates = {};
-
-// The corpus numbers the report card needs (each provider's PQC rate, used to
-// tell "your CDN is ready, flip it on" apart from "your CDN is the blocker").
-// aggregate.py already puts them in the stats json, so read them from there
-// rather than keeping a second copy that goes stale.
-async function loadCdnRates() {
-  try {
-    let scans = await (await fetch("scans.json", {cache: "no-store"})).json();
-    let latest = scans[scans.length - 1];
-    let stats = await (await fetch("stats-" + latest + ".json", {cache: "no-store"})).json();
-    cdnRates = stats.cdn_rates || {};
-  } catch (e) {
-    // not fatal. without the rates the card still draws, it just gives the
-    // generic next step instead of naming the provider's rate.
-    cdnRates = {};
-  }
-}
-
 function setStatus(text) {
   document.getElementById("status").textContent = text;
 }
@@ -87,7 +68,7 @@ async function runScan(domain) {
     stars: r.stars,
     handshake_ms: r.handshake_ms
   };
-  setReportCard([row], today, cdnRates);
+  setReportCard([row], today);
   showSite(0);
 
   // make the result linkable. check.html?domain=rbc.com reproduces this page,
@@ -105,7 +86,6 @@ function submit() {
 }
 
 async function start() {
-  await loadCdnRates();
 
   document.getElementById("go").onclick = submit;
   document.getElementById("domain").addEventListener("keydown", function (e) {

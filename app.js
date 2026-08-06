@@ -6,7 +6,6 @@
 
 let allSites = [];
 let currentScanDate = "";
-let cdnRates = {};
 let sectorTotals = {};
 let tlsChart = null;
 let kexChart = null;
@@ -61,7 +60,6 @@ async function showScan(date) {
   let data = await response.json();
 
   currentScanDate = date;
-  cdnRates = data.cdn_rates || {};
   sectorTotals = data.sectors;
 
   updateSummaryCards(data);
@@ -370,7 +368,7 @@ function drawWorldMap(countries) {
 function drawTable(sites) {
   // hand the rows to report-card.js so a click can find the site again, plus
   // what the card needs to put a site in context
-  setReportCard(sites, currentScanDate, cdnRates, {sectorPqc: sectorTotals});
+  setReportCard(sites, currentScanDate, {sectorPqc: sectorTotals});
   let rows = "";
   for (let i = 0; i < sites.length; i++) {
     let s = sites[i];

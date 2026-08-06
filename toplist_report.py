@@ -16,8 +16,6 @@ import glob
 import json
 import os
 
-from cdn_attribution import provider_pqc_rates
-
 if len(sys.argv) > 1:
     in_file = sys.argv[1]
 else:
@@ -34,7 +32,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05-2"
+ASSETS = "2026-08-05-3"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -69,20 +67,6 @@ pqc_pct = round(100 * pqc / total)
 # how many sites were on the list to begin with, so the line under the heading
 # can say how many we asked, otherwise the ones that never replied vanish
 listed = len(list(csv.DictReader(open("data/sites-ca-toplist.csv"))))
-
-# the rates the report card quotes come off the main scan, not this list. ninety
-# odd sites is nowhere near enough to say what Akamai is doing
-
-main_scans = []
-for path in sorted(glob.glob("data/scan-*.csv")):
-    if "-enriched" not in path:
-        main_scans.append(path)
-if not main_scans:
-    print("No data/scan-*.csv found, and the report card needs the provider rates")
-    print("off the main scan. Run:  python3 scan.py")
-    sys.exit(1)
-cdn_rates = provider_pqc_rates(list(csv.DictReader(open(main_scans[-1]))))
-
 
 def by_score(row):
     return row["score"]
@@ -155,12 +139,10 @@ PAGE = """<!DOCTYPE html>
 <script>
 const DATA = __DATA__;
 const SCAN_DATE = __SCANDATEJSON__;
-const CDN_RATES = __CDNRATES__;
-
 // report-card.js holds starCell(), showSite() and the rest, the same code the
 // main dashboard uses. All this page has to do is hand it the rows and draw
 // the table.
-setReportCard(DATA, SCAN_DATE, CDN_RATES);
+setReportCard(DATA, SCAN_DATE);
 
 function draw() {
   let q = document.getElementById('search').value.toLowerCase();
@@ -194,7 +176,6 @@ page = page.replace("__STARS__", "★★")
 # reason to escape a slash, so do it here.
 page = page.replace("__DATA__", json.dumps(table).replace("</", "<\\/"))
 page = page.replace("__SCANDATEJSON__", json.dumps(scan_date))
-page = page.replace("__CDNRATES__", json.dumps(cdn_rates))
 
 open("canada-topvisited.html", "w").write(page)
 print("wrote canada-topvisited.html")

@@ -198,7 +198,6 @@ tbody tr:hover { background: #f9fafb; }
 .rc-no { color: #dc2626; font-weight: 700; }
 .rc-step { font-weight: 600; color: var(--ink); width: 250px; }
 .rc-detail { color: var(--muted); font-size: 13px; }
-.rc-next { font-size: 13px; color: var(--ink); margin: 12px 0 0; }
 
 /* how it sits against the other Canadian sites in its sector */
 .rc-peer { font-size: 13px; color: var(--muted); margin: 10px 0 0; }

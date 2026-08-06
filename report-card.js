@@ -6,26 +6,19 @@
 // written out twice.
 //
 // A page hands us its rows before drawing the table:
-//     setReportCard(rows, "2026-07-22", cdnRates)
+//     setReportCard(rows, "2026-07-22", {sectorPqc: sectors})
 // after that, a row's onclick just calls showSite(i) with its index.
 
 let reportRows = [];
 let reportDate = "";
-let cdnPqcRate = {};
 let sectorPqc = {};
 
-// cdnRates is provider name -> what percent of that provider's sites already
-// negotiate PQC, measured in the same scan. Careful: this one counts every
-// country, while the CDN bar on the main page counts Canadian sites only, so
-// the two give different numbers for the same provider. Hence "worldwide" in
-// the sentences below - without it the card looks like it disagrees with the
-// chart sitting right above it. aggregate.py works it out and puts
-// it in the stats json; toplist_report.py bakes the same numbers into its page.
-// It used to be a table typed in by hand, which went stale every scan.
-function setReportCard(rows, scanDate, cdnRates, options) {
+// options.sectorPqc is sector name -> {total, pqc} for the Canadian sites in
+// this scan. It is the only extra the card needs; everything else on the card
+// comes off the row itself.
+function setReportCard(rows, scanDate, options) {
   reportRows = rows;
   reportDate = scanDate;
-  cdnPqcRate = cdnRates || {};
   options = options || {};
   sectorPqc = options.sectorPqc || {};
 }
@@ -74,58 +67,6 @@ function sourceLabel(src) {
   return "no PQC";
 }
 
-// One plain sentence on what a site's next step is, worked out from the same
-// measurements the row already shows. The idea comes from pqc-monitor, which
-// attaches a recommendation to every finding. ours is per site instead.
-// Knowing the provider's own PQC rate is what lets this tell "your CDN is
-// ready, flip it on" apart from "your CDN is the blocker".
-function adviceFor(s) {
-  // the rates are keyed by the raw provider name, so look up with s.cdn and
-  // print with cdn
-  let cdn = esc(s.cdn);
-  if (s.stars >= 2) {
-    // Name where the handshake terminated, and stop there - a handshake can't
-    // tell you whether the site asked for this or the provider did it anyway.
-    let where = "";
-    if (s.cdn && s.cdn !== "Self-hosted") {
-      where = " It is negotiated at " + cdn + "'s edge: from outside, what the monitor can see is that the " +
-              "endpoint is reachable with a post-quantum key exchange, not whether " + cdn +
-              " or the site turned it on.";
-    }
-    return "PQC-enabled today: the connection negotiates a hybrid post-quantum key exchange." + where +
-           " The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
-  }
-  if (s.stars === 1) {
-    let rate = cdnPqcRate[s.cdn];
-    if (rate !== undefined && rate >= 50) {
-      return "TLS 1.3 is done, and its provider (" + cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites the monitor scans worldwide, so this site is likely one configuration change away from its second star.";
-    }
-    if (rate !== undefined) {
-      return "TLS 1.3 is done, but its provider (" + cdn + ") has PQC on only about " + rate +
-             "% of the sites the monitor scans worldwide, so this site is mostly waiting on " + cdn + " to move.";
-    }
-    // self-hosted, or a provider we see too few sites on to quote a rate for
-    return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
-           "(OpenSSL 3.5+ or equivalent) on whatever terminates TLS for this site.";
-  }
-  // no stars: TLS 1.2, so the key exchange is not even reachable yet. Still worth
-  // saying where the provider stands, because that decides whether the second
-  // star follows on its own once TLS 1.3 is on or turns into another wait.
-  let first = "First step: enable TLS 1.3. The post-quantum key exchange cannot be negotiated on TLS 1.2, " +
-              "so this site is two steps behind.";
-  let rate = cdnPqcRate[s.cdn];
-  if (rate !== undefined && rate >= 50) {
-    return first + " Its provider (" + cdn + ") already negotiates PQC on about " + rate +
-           "% of the sites the monitor scans worldwide, so the second star should follow once TLS 1.3 is on.";
-  }
-  if (rate !== undefined) {
-    return first + " After that it would still be waiting on " + cdn +
-           ", which has PQC on only about " + rate + "% of the sites the monitor scans worldwide.";
-  }
-  return first;
-}
-
 // How this site sits against others doing the same job. The sector shares are
 // Canadian, so only say it for a Canadian site. quoting a Canadian rate at a
 // German bank would be wrong.
@@ -151,9 +92,10 @@ function checkRow(done, label, detail) {
          "<span class='rc-detail'>" + esc(detail) + "</span></div>";
 }
 
-// open the report card for one site: its stars up top, a three-line
-// checklist of what we actually measured, and the next step. Meant to be
-// readable on its own, so you can screenshot it and hand it to someone.
+// open the report card for one site: its stars up top and a three-line
+// checklist of what was actually measured. No advice and no next step: the card
+// reports the handshake and stops there. Meant to be readable on its own, so you
+// can screenshot it and hand it to someone.
 function showSite(i) {
   let s = reportRows[i];
   if (!s) return;
@@ -178,7 +120,7 @@ function showSite(i) {
   // A live scan is the one case where they don't. A domain nobody has added has
   // no sector or country, and printing "unknown · unknown" is worse than printing
   // nothing. So a live result shows the one thing it does know, the handshake
-  // time; the provider is named in the next-step line underneath either way.
+  // time; the provider is named in the row it was opened from either way.
   let sub = "";
   if (s.handshake_ms !== undefined) {
     sub = "handshake " + esc(s.handshake_ms) + " ms";
@@ -205,8 +147,6 @@ function showSite(i) {
   if (sectorLine !== "") {
     card += "<p class='rc-peer'>" + sectorLine + "</p>";
   }
-
-  card += "<p class='rc-next'><strong>Next step:</strong> " + adviceFor(s) + "</p>";
 
   let box = document.getElementById("siteDetail");
   box.style.display = "block";
