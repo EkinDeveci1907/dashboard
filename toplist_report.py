@@ -133,7 +133,7 @@ PAGE = """<!DOCTYPE html>
 </head>
 <body>
 <div class='page'>
-<header class='header'><div><h1>PQC Deployment Monitor</h1><p class='tagline'>Post-quantum readiness of Canadian websites</p></div></header>
+<header class='header'><div><h1>PQC Deployment Monitor</h1><p class='tagline'>Tracking post-quantum TLS deployment, with a focus on Canadian websites</p></div></header>
 <nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a site</a></nav>
 <p class='headline'>__HEADLINE__</p>
 <h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
