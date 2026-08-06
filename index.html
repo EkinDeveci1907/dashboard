@@ -22,15 +22,15 @@
          curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
         integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=2026-08-05">
+  <link rel="stylesheet" href="style.css?v=2026-08-05-2">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
           integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
           integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
           integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
-  <script src="report-card.js?v=2026-08-05" defer></script>
-  <script src="app.js?v=2026-08-05" defer></script>
+  <script src="report-card.js?v=2026-08-05-2" defer></script>
+  <script src="app.js?v=2026-08-05-2" defer></script>
 </head>
 <body>
   <div class="page">
@@ -80,7 +80,7 @@
     </section>
 
     <h2 class="section-head">Canada vs the world <span class="tag tag-world">All countries</span></h2>
-    <p class="scope">These two panels compare every country we scanned, not just Canada.</p>
+    <p class="scope">These two panels compare every country the monitor scanned, not just Canada.</p>
 
     <section class="card">
       <h2>Adoption by country</h2>
@@ -97,7 +97,7 @@
 
     <section class="card">
       <h2>Site directory</h2>
-      <p class="hint">Every site we scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
+      <p class="hint">Every site the monitor scanned, in Canada and abroad. Filtered to Canada by default. <span id="tableCount"></span></p>
       <p class="hint">Readiness is one star per migration step done: <span class="stars">★</span> TLS 1.3
          &nbsp;·&nbsp; <span class="stars">★★</span> + post-quantum key exchange
          &nbsp;·&nbsp; <span class="stars">★★★</span> + post-quantum certificate signature (no public CA issues
@@ -136,13 +136,14 @@
       <h2>About this monitor</h2>
       <p>This is a public monitor of how fast <strong>post-quantum cryptography (PQC)</strong> is reaching real
          websites. The main view focuses on Canada; the map compares Canada to other countries. Each site is
-         contacted with a TLS handshake; we record its TLS version, the key-exchange group it negotiates (flagging
+         contacted with a TLS handshake; the monitor records its TLS version, the key-exchange group it negotiates (flagging
          the post-quantum hybrid <code>X25519MLKEM768</code>), its certificate signature, and the network / CDN
-         that serves it.</p>
-      <p>We measure the machine your browser actually talks to. Most sites sit behind a CDN like
+         that serves it. A site counts as PQC-enabled when that group is the hybrid
+         <code>X25519MLKEM768</code>.</p>
+      <p>The monitor measures the machine your browser actually talks to. Most sites sit behind a CDN like
          Cloudflare or Akamai, and it is that CDN's server, not the site's own, that finishes the
          handshake. So the <strong>PQC endpoint</strong> column says whose machine did the post-quantum
-         part: <em>via CDN</em>, or <em>own</em> for a site running it on its own servers.</p>
+         part: <em>CDN edge</em>, or <em>no CDN detected</em> for a site running it on its own servers.</p>
       <p>It does not say who decided to turn it on: the handshake cannot tell whether a site asked its
          provider for post-quantum or the provider switched it on for every customer at once. It also says
          nothing about the origin server behind the CDN, the internal network, or data at rest.</p>

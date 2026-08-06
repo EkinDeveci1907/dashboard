@@ -45,7 +45,7 @@ function esc(v) {
 
 // The readiness cell: one star per migration step fully done (TLS 1.3, PQC key
 // exchange, PQC signature). Filled stars first, empty ones after, and the hover
-// title spells out which step is done and which is not. A typical quantum-safe
+// title spells out which step is done and which is not. A typical PQC-enabled
 // site today shows 2 of 3. the signature star is still open for everyone,
 // because no public CA issues PQC certificates yet.
 function starCell(s) {
@@ -69,9 +69,9 @@ function starCell(s) {
 // The pill in the "PQC endpoint" column, shared by both tables so the wording
 // lives in one place. It says where the connection terminates and nothing else.
 function sourceLabel(src) {
-  if (src === "provider") return "via CDN";
-  if (src === "own") return "own";
-  return "none";
+  if (src === "provider") return "CDN edge";
+  if (src === "own") return "no CDN detected";
+  return "no PQC";
 }
 
 // One plain sentence on what a site's next step is, worked out from the same
@@ -88,22 +88,22 @@ function adviceFor(s) {
     // tell you whether the site asked for this or the provider did it anyway.
     let where = "";
     if (s.cdn && s.cdn !== "Self-hosted") {
-      where = " It is negotiated at " + cdn + "'s edge: from outside, what we can see is that the " +
+      where = " It is negotiated at " + cdn + "'s edge: from outside, what the monitor can see is that the " +
               "endpoint is reachable with a post-quantum key exchange, not whether " + cdn +
               " or the site turned it on.";
     }
-    return "Quantum-safe today: the connection negotiates a post-quantum key exchange." + where +
+    return "PQC-enabled today: the connection negotiates a hybrid post-quantum key exchange." + where +
            " The third star (a post-quantum certificate) is not available from any public CA yet, so there is nothing more this site can do.";
   }
   if (s.stars === 1) {
     let rate = cdnPqcRate[s.cdn];
     if (rate !== undefined && rate >= 50) {
       return "TLS 1.3 is done, and its provider (" + cdn + ") already negotiates PQC on about " + rate +
-             "% of the sites we scan worldwide, so this site is likely one configuration change away from its second star.";
+             "% of the sites the monitor scans worldwide, so this site is likely one configuration change away from its second star.";
     }
     if (rate !== undefined) {
       return "TLS 1.3 is done, but its provider (" + cdn + ") has PQC on only about " + rate +
-             "% of the sites we scan worldwide, so this site is mostly waiting on " + cdn + " to move.";
+             "% of the sites the monitor scans worldwide, so this site is mostly waiting on " + cdn + " to move.";
     }
     // self-hosted, or a provider we see too few sites on to quote a rate for
     return "TLS 1.3 is done. The next step is negotiating ML-KEM, which needs a recent TLS stack " +
@@ -117,11 +117,11 @@ function adviceFor(s) {
   let rate = cdnPqcRate[s.cdn];
   if (rate !== undefined && rate >= 50) {
     return first + " Its provider (" + cdn + ") already negotiates PQC on about " + rate +
-           "% of the sites we scan worldwide, so the second star should follow once TLS 1.3 is on.";
+           "% of the sites the monitor scans worldwide, so the second star should follow once TLS 1.3 is on.";
   }
   if (rate !== undefined) {
     return first + " After that it would still be waiting on " + cdn +
-           ", which has PQC on only about " + rate + "% of the sites we scan worldwide.";
+           ", which has PQC on only about " + rate + "% of the sites the monitor scans worldwide.";
   }
   return first;
 }
@@ -136,7 +136,7 @@ function sectorLineFor(s) {
   // the count rather than the percentage: "60% of the 60 media sites" reads like
   // a typo, and the raw fraction says how big the sample is at the same time
   let line = bucket.pqc + " of the " + bucket.total + " Canadian " + esc(s.sector) +
-             " sites we scan negotiate it. ";
+             " sites the monitor scans negotiate it. ";
   if (s.kex.indexOf("MLKEM") !== -1) {
     return line + "This one is among them.";
   }

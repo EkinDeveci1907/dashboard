@@ -34,7 +34,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05"
+ASSETS = "2026-08-05-2"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -109,8 +109,8 @@ table.sort(key=by_score, reverse=True)
 boxes = [
     (str(listed), "sites on the list"),
     (str(tls13), "on TLS 1.3"),
-    (str(pqc), "quantum-safe (PQC key exchange)"),
-    (str(via) + " / " + str(own), "PQC endpoint: via CDN / own"),
+    (str(pqc), "PQC-enabled (hybrid post-quantum key exchange)"),
+    (str(via) + " / " + str(own), "PQC endpoint: CDN edge / no CDN detected"),
 ]
 cards = ""
 for number, label in boxes:
@@ -137,11 +137,11 @@ PAGE = """<!DOCTYPE html>
 <nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a site</a></nav>
 <p class='headline'>__HEADLINE__</p>
 <h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
-<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). __LISTED__ sites on the list, __TOTAL__ answered a TLS handshake when we scanned on __SCANDATE__.</p>
+<p class='scope'>The sites Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream sites excluded). __LISTED__ sites on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__.</p>
 <section class='summary'>__CARDS__</section>
 <section class='card'>
 <h2>Site directory</h2>
-<p class='hint'>Every site in the list, most quantum-ready first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
+<p class='hint'>Every site in the list, highest readiness first. Sites showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that site's full report card.</p>
 <div id='siteDetail' class='site-detail' style='display:none'></div>
 <div class='filters'><input id='search' placeholder='Search a site, e.g. netflix.com' oninput='draw()'></div>
 <div class='table-scroll'><table><thead><tr><th>Site</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
@@ -198,4 +198,4 @@ page = page.replace("__CDNRATES__", json.dumps(cdn_rates))
 
 open("canada-topvisited.html", "w").write(page)
 print("wrote canada-topvisited.html")
-print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% quantum-safe")
+print("  " + str(total) + " sites, " + str(tls13) + " on TLS 1.3, " + str(pqc_pct) + "% PQC-enabled")
