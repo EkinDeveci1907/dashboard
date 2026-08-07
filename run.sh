@@ -15,6 +15,7 @@ cd "$(dirname "$0")"
 
 echo "Rebuilding the summary files from the committed scan data..."
 python3 aggregate.py
+python3 toplist_report.py
 
 echo ""
 echo "Numbers rebuilt. Starting a local web server."

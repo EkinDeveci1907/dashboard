@@ -151,7 +151,7 @@ CloudFront both come back as Amazon. When the announcing network is the
 organisation's own, the domain is recorded as self-hosted rather than as a CDN.
 
 [`cdn-sources.md`](cdn-sources.md) is where every keyword in those three tables
-came from, with the vendor page behind each one.
+came from, with the vendor page behind the ones a vendor documents publicly.
 
 ## The scan file columns
 

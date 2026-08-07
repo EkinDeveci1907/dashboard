@@ -21,6 +21,10 @@ data/cdn-readiness-*.csv
 data/stacked-bar-*.csv
 data/readiness-*.csv
 
+# the scan service appends a row here when someone scans a domain that is not
+# in the corpus. Running it locally should not leave the repository dirty.
+data/community-scans.csv
+
 # the scan service runs in a venv, don't commit it
 api/.venv/
 _to_delete/

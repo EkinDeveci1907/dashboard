@@ -218,7 +218,10 @@ function showCdnNote(data) {
   let pqc = data.cdn_pqc || {};
   let names = [];
   for (let name in totals) {
-    if (name !== "Unknown" && totals[name] >= 20) {
+    // "Self-hosted" means no provider was found, so it cannot be the best or
+    // worst provider. cdn_attribution.py leaves it out of its tables for the
+    // same reason.
+    if (name !== "Unknown" && name !== "Self-hosted" && totals[name] >= 20) {
       names.push(name);
     }
   }

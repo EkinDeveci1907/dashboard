@@ -24,8 +24,10 @@ Then:
     pip install -r requirements.txt
     uvicorn app:app --reload --port 8000
 
-and open `check.html` from the dashboard folder. `check.js` points at
-`http://127.0.0.1:8000` by default.
+then serve the dashboard from the folder above with `./run.sh` and open
+http://localhost:8080/check.html. `check.js` only points at
+`http://127.0.0.1:8000` when the page itself is on localhost, so opening the
+file directly will not reach your local service.
 
     curl "localhost:8000/api/health"
     curl "localhost:8000/api/scan?domain=cloudflare.com"
@@ -42,11 +44,7 @@ about fifteen minutes of no traffic and takes a moment to wake, which is why the
 first scan of the day is slow. `check.js` calls `/api/health` on page load, so
 the machine is usually awake by the time anyone has typed a domain in.
 
-because the free plan does not need a credit card. I left the file in, since the
-Dockerfile is the same either way, so `fly launch --no-deploy && fly deploy` still
-works if the Render side ever goes away.
-
-Whichever host it is, the URL goes in `API` at the top of `check.js`, and it has
+The URL goes in `API` at the top of `check.js`, and it has
 to be https or the browser blocks the call from the GitHub Pages site as mixed
 content.
 
