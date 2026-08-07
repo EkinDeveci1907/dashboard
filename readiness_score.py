@@ -31,7 +31,7 @@ import glob
 TLS_1_3_POINTS   = 20   # TLS 1.3 present, the floor you need before any PQC
 TLS_1_2_POINTS   = 5    # still on TLS 1.2, safe today but a dead end for PQC
 PQC_KEX_POINTS   = 55   # post-quantum key exchange (ML-KEM), the urgent part
-MODERN_KEX_POINTS = 15  # no PQC yet, but a modern curve (X25519 / P-256), ready to flip
+MODERN_KEX_POINTS = 15  # no PQC yet, but a modern curve (X25519 or a NIST P- curve)
 PQC_SIG_POINTS   = 25   # post-quantum certificate signature, the second half
 
 
@@ -86,11 +86,14 @@ BAND_TLS13_ONLY = "TLS 1.3, no PQC key exchange"
 BAND_OLDER = "TLS 1.2 or older"
 
 
-def band_for(score):
-    # a plain-language label to go with the number
-    if score >= 75:
+def band_for(tls, kex):
+    # a plain-language label to go with the number. It reads the TLS and
+    # key-exchange parts rather than the total, because it is a statement about
+    # what was measured. A domain on TLS 1.3 with an old finite-field group
+    # scores 20, but it is still on TLS 1.3 and must not be called older.
+    if kex == PQC_KEX_POINTS:
         return BAND_PQC
-    if score >= 35:
+    if tls == TLS_1_3_POINTS:
         return BAND_TLS13_ONLY
     return BAND_OLDER
 
@@ -114,8 +117,8 @@ def stars_for(tls, kex, sig):
 
 def score_site(row):
     # add up the three parts and return the total plus the breakdown. The band is
-    # not in here: only the report at the bottom of this file wants it, and every
-    # other caller was unpacking a value it then ignored. Call band_for(total).
+    # not in here: only the report at the bottom of this file wants it. Callers
+    # that need it pass the parts to band_for().
     tls = tls_points(row["tls_version"])
     kex = kex_points(row["key_exchange"])
     sig = sig_points(row["cert"])
@@ -151,7 +154,7 @@ def main():
         if row["tls_version"].strip() == "" or row["key_exchange"].strip() == "":
             continue
         total, tls, kex, sig = score_site(row)
-        band = band_for(total)
+        band = band_for(tls, kex)
         scored.append({"site": row["site"], "sector": row.get("sector", ""),
                        "country": row.get("country", ""),
                        "tls_version": row["tls_version"], "key_exchange": row["key_exchange"],

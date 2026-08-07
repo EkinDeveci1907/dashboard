@@ -1,7 +1,7 @@
 # The scan service
 
 The dashboard is static, so it can only show sites that were in `data/sites.csv`
-when the last scan ran. This is the small service behind the **Scan a site** tab
+when the last scan ran. This is the small service behind the **Scan a domain** tab
 that handles anything else: you give it a domain, it runs the same handshake
 `scan.py` runs, and it hands back the same fields the site table shows, plus the
 history and the comparison the corpus makes possible.

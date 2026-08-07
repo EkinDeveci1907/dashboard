@@ -128,8 +128,11 @@ def get_tls(site):
         # on TLS 1.3 the group is printed here (e.g. X25519MLKEM768)
         elif line.startswith("Negotiated TLS1.3 group:"):
             kex = line.split(":", 1)[1].strip()
-        # on TLS 1.2 there's no "group" line, the temp key line has the curve instead
-        elif line.startswith("Peer Temp Key:"):
+        # on TLS 1.2 there's no "group" line, the temp key line has the curve
+        # instead. openssl 3.5 calls it "Peer Temp Key"; older builds print
+        # "Server Temp Key", so accept both and an old binary still reports the
+        # version and the curve rather than coming back empty.
+        elif line.startswith("Peer Temp Key:") or line.startswith("Server Temp Key:"):
             kex = line.split(":", 1)[1].strip()
         elif line.startswith("Signature type:"):
             cert = line.split(":", 1)[1].strip()

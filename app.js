@@ -130,7 +130,8 @@ function updateSummaryCards(data) {
   document.getElementById("s-total-label").textContent =
     "Canadian domains measured, of " + data.attempted + " attempted";
 
-  document.getElementById("s-tls").textContent = Math.round(100 * tls13 / responded) + "%";
+  let tls13Pct = responded > 0 ? Math.round(100 * tls13 / responded) : 0;
+  document.getElementById("s-tls").textContent = tls13Pct + "%";
   document.getElementById("s-tls-label").textContent = "on TLS 1.3 (" + tls13 + " of " + responded + ")";
 
   document.getElementById("s-pqc").textContent = data.pqc_kex_pct + "%";
@@ -167,10 +168,8 @@ function drawTlsChart(data) {
       labels: tlsLabels,
       datasets: [{ data: Object.values(data.tls), backgroundColor: tlsColors }]
     },
-    // a 2:1 shape, worked out from the chart's own width. a doughnut left alone
-    // draws itself square and enormous, and taking the height from the box around
-    // it broke the day a browser had an older index.html cached. static chart,
-    // plain legend below.
+    // a 2:1 shape worked out from the chart's own width, because a doughnut left
+    // alone draws itself square and enormous. static chart, plain legend below.
     options: { events: [], aspectRatio: 2, plugins: { legend: { display: false } } }
   });
 
@@ -205,11 +204,9 @@ function drawKexChart(data) {
   });
 }
 
-// The sentence under the CDN heading used to name Cloudflare and Akamai and say
-// which way round they were. That was true when it was typed and later stopped
-// being true, which is the trouble with writing a finding into a page: the chart
-// keeps up with the data and the paragraph does not. So work the sentence out
-// from the same two tallies the bars are drawn from.
+// The sentence under the CDN heading names the strongest and weakest provider.
+// Work it out from the same two tallies the bars are drawn from, so it cannot
+// drift away from the chart underneath it as the data changes.
 //
 // Those two are Canadian domains only, like everything else in this section.
 //
@@ -250,7 +247,7 @@ function drawCdnChart(data) {
   let names = Object.keys(data.cdn_families);
   names.sort(function (a, b) { return data.cdn_families[b] - data.cdn_families[a]; });
 
-  let pqcByCdn = data.cdn_pqc || {};   // a summary from before this split just shows all-grey bars
+  let pqcByCdn = data.cdn_pqc || {};   // no per-provider PQC counts means all-grey bars
 
   let cdnLabels = [];
   let pqcValues = [];
@@ -349,7 +346,10 @@ function drawWorldMap(countries) {
     worldMap = null;
   }
   box.innerHTML = "";
-  if (typeof jsVectorMap === "undefined") return;
+  if (typeof jsVectorMap === "undefined") {
+    box.innerHTML = "<p class='hint'>Map could not load.</p>";
+    return;
+  }
 
   try {
     worldMap = new jsVectorMap({
@@ -365,7 +365,7 @@ function drawWorldMap(countries) {
         scale: ["#c7d2fe", "#312e81"],
         values: shadeByCode
       },
-      // on hover, show how many of that country's sites use PQC, e.g. "204 / 535 domains use PQC (38%)"
+      // on hover, e.g. "CANADA - 333 of 746 responding domains (45%)"
       onRegionTooltipShow: function (event, tooltip, code) {
         let c = infoByCode[code];
         let extra;
@@ -488,8 +488,6 @@ function fillFilter(id, values, allLabel) {
   for (let i = 0; i < values.length; i++) {
     options += "<option>" + values[i] + "</option>";
   }
-  // build the whole list first and set it once, rather than appending to
-  // innerHTML in the loop, which makes the browser re-parse the menu each time
   document.getElementById(id).innerHTML = options;
 }
 

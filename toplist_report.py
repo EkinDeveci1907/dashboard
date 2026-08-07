@@ -32,7 +32,7 @@ scan_date = os.path.basename(in_file).replace("toplist-", "").replace("-enriched
 # bump this when style.css or report-card.js changes, and bump the matching one
 # in index.html too. Pages tells browsers to hold on to js and css, so without it
 # a returning visitor runs last week's script against this week's page.
-ASSETS = "2026-08-05-9"
+ASSETS = "2026-08-07-1"
 
 # keep the sites that actually answered. same test aggregate.py uses, so this
 # tab and the main one agree on what counts as a scanned site
@@ -77,8 +77,8 @@ def by_score(row):
 # enriched csv, where enrich.py already worked them out. no reason to redo it here.
 # Both have to be numbers, not the strings csv hands back, or the star cell's
 # stars === 3 test never fires.
-# cert is not in the table itself, but the report card prints it on the signature
-# line, and leaving it out is why that line used to read "undefined".
+# cert is not in the table itself, but the report card prints it on the
+# signature line, so it has to be carried through here.
 table = []
 for r in sites:
     table.append({"site": r["site"], "sector": r["sector"], "country": r["country"],
@@ -92,16 +92,13 @@ table.sort(key=by_score, reverse=True)
 # instead of repeating it
 # every percentage divides by the domains that answered, never by the list length,
 # so each box carries the fraction it came from
-if total > 0:
-    tls13_pct = round(100 * tls13 / total)
-else:
-    tls13_pct = 0
+tls13_pct = round(100 * tls13 / total)
 
 boxes = [
     (str(listed), "domains on the list, " + str(total) + " responded"),
     (str(tls13) + " of " + str(total), "on TLS 1.3 (" + str(tls13_pct) + "%)"),
     (str(pqc) + " of " + str(total), "PQC-enabled (" + str(pqc_pct) + "%)"),
-    (str(via) + " / " + str(own), "PQC endpoint: CDN edge / no CDN detected"),
+    (str(via) + " / " + str(own), "PQC endpoint: CDN edge / own infrastructure"),
 ]
 cards = ""
 for number, label in boxes:

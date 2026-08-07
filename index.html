@@ -26,15 +26,15 @@
          curl -sL <url> | openssl dgst -sha384 -binary | openssl base64 -A -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.css"
         integrity="sha384-MrwTqJxj6y8ZHkNV+BHWg1mH0FyrEsFczIkX+QL81NLXjYCH74i1lwh4BbSUEj6a" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css?v=2026-08-05-9">
+  <link rel="stylesheet" href="style.css?v=2026-08-07-1">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"
           integrity="sha384-jb8JQMbMoBUzgWatfe6COACi2ljcDdZQ2OxczGA3bGNeWe+6DChMTBJemed7ZnvJ" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/jsvectormap.min.js"
           integrity="sha384-BEJncmOheJY/jyZrAd3+piL709jKDBV0+sZY3wDAfoj3Q7nxojiTAIu+R9+i6+tE" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/jsvectormap@1.6.0/dist/maps/world.js"
           integrity="sha384-sGlkSOVF9H+QNNQrLV9xrMIyghEgioD3M3gPd9/tV0mh9qJX75AyCl0l7+OVJ3CD" crossorigin="anonymous" defer></script>
-  <script src="report-card.js?v=2026-08-05-9" defer></script>
-  <script src="app.js?v=2026-08-05-9" defer></script>
+  <script src="report-card.js?v=2026-08-07-1" defer></script>
+  <script src="app.js?v=2026-08-07-1" defer></script>
 </head>
 <body>
   <div class="page">
@@ -157,7 +157,8 @@
       <p>The monitor measures the machine your browser actually talks to. Most domains sit behind a CDN like
          Cloudflare or Akamai, and it is that CDN's server, not the domain's own, that finishes the
          handshake. So the <strong>PQC endpoint</strong> column says whose machine did the post-quantum
-         part: <em>CDN edge</em>, or <em>no CDN detected</em> for a domain running it on its own servers.</p>
+         part: <em>CDN edge</em>, or <em>own infrastructure</em> for a domain running it on its own
+         machines, including a company serving from a CDN it owns.</p>
       <p>It does not say who decided to turn it on: the handshake cannot tell whether a domain asked its
          provider for post-quantum or the provider switched it on for every customer at once. It also says
          nothing about the origin server behind the CDN, internal services, stored data,

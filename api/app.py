@@ -1,4 +1,4 @@
-# The live scan endpoint behind the "Scan a site" tab.
+# The live scan endpoint behind the "Scan a domain" tab.
 #
 # The dashboard can only show sites that were in data/sites.csv when the last
 # scan ran. This takes a domain over HTTP, runs the same handshake, and hands
@@ -225,10 +225,10 @@ def history_for(domain):
     # looked like at the time. Sites we never scanned come back empty, which is
     # the normal case for a domain somebody just typed in.
     #
-    # The card stopped drawing this. One live measurement next to a row of old
-    # dots was more clutter than it was worth. But it stays in the JSON, because
-    # a site's history over time is the one thing this project has that a
-    # one-shot scanner doesn't, and anyone calling the API directly wants it.
+    # The card does not draw this: one live measurement next to a row of old
+    # dots is more clutter than it is worth. It stays in the JSON because a
+    # domain's history over time is the one thing this project has that a
+    # one-shot scanner does not, and anyone calling the API directly wants it.
     # It does mean reading every scan file per uncached request; at eight files
     # that is fine, and if it stops being fine the answer is an index, not
     # dropping the field.
@@ -247,7 +247,7 @@ def history_for(domain):
     return out
 
 
-def context_for(domain, stars, sector, country):
+def context_for(stars, sector, country):
     # where this site sits against the corpus.
     #
     # Two deliberate limits. The comparison population is Canadian sites only,
@@ -407,8 +407,8 @@ def scan_domain(request: Request, domain: str = ""):
     # score it with the same functions the published dataset uses. Only the three
     # part-scores are wanted here. stars_for() turns them into one star per
     # migration step done. The 0-100 total comes back too, but the dashboard
-    # stopped showing it when the score became stars, so it stops here rather
-    # than going out in the JSON.
+    # shows stars rather than the number, so it stops here instead of going out
+    # in the JSON.
     row = {"site": d, "tls_version": tls, "key_exchange": kex, "cert": cert, "cdn": cdn}
     total, tls_pts, kex_pts, sig_pts = readiness_score.score_site(row)
     stars = readiness_score.stars_for(tls_pts, kex_pts, sig_pts)
@@ -438,7 +438,7 @@ def scan_domain(request: Request, domain: str = ""):
         "scanned_at": time.strftime("%H:%M UTC", time.gmtime()),
         "in_corpus": old is not None,
         "history": history_for(d),
-        "context": context_for(d, stars, sector, country),
+        "context": context_for(stars, sector, country),
         "cached": False,
     }
 

@@ -103,10 +103,9 @@ async function start() {
   // scan. Running locally, a failure here is not fatal: it means you are not
   // running your own copy, so fall back to the deployed one and carry on.
   //
-  // This has to happen before the ?domain= shortcut below. It used to come
-  // after, which meant a shared link opened on localhost went straight to a
-  // local service that usually is not running, and reported the scanner as
-  // unreachable while a perfectly good deployed one sat there unused.
+  // This has to happen before the ?domain= shortcut below, so that a shared
+  // link opened on localhost still reaches the deployed service instead of
+  // reporting the scanner unreachable.
   let health = await healthOf(API);
   if (!health && LOCAL) {
     API = DEPLOYED_API;

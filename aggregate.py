@@ -19,11 +19,9 @@ def has_pqc_key_exchange(kex):
 
 def clean_cdn_name(raw):
     # the scanner already writes a clean name like "Cloudflare" or "Self-hosted",
-    # so we just trim spaces and label the blank ones (sites that didn't answer).
-    raw = raw.strip()
-    if raw == "":
-        return "Unknown"
-    return raw
+    # so there is nothing to do but trim. Domains that did not answer are
+    # dropped before this is called, so a blank never reaches it.
+    return raw.strip()
 
 
 def key_exchange_group(kex):

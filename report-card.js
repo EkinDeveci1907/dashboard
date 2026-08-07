@@ -61,9 +61,12 @@ function starCell(s) {
 
 // The pill in the "PQC endpoint" column, shared by both tables so the wording
 // lives in one place. It says where the connection terminates and nothing else.
+// "own infrastructure" covers two cases: a domain with no CDN in front of it,
+// and a company serving from a CDN it owns, like google.ca on Google. Both are
+// the organisation's own machines, which is what the column is asking.
 function sourceLabel(src) {
   if (src === "provider") return "CDN edge";
-  if (src === "own") return "no CDN detected";
+  if (src === "own") return "own infrastructure";
   return "no PQC";
 }
 
@@ -115,20 +118,28 @@ function showSite(i) {
   // checkRow() escapes the detail, so sigDetail stays raw until then
 
   let card = "";
-  // The line under the site name. A stored row gets the full version, since the
-  // sector, the country and the scan date all come from the corpus it's part of.
-  // A live scan is the one case where they don't. A domain nobody has added has
-  // no sector or country, and printing "unknown · unknown" is worse than printing
-  // nothing. So a live result shows the one thing it does know, the handshake
-  // time; the provider is named in the row it was opened from either way.
-  let sub = "";
-  if (s.handshake_ms !== undefined) {
-    sub = "handshake " + esc(s.handshake_ms) + " ms";
-  } else {
+  // The line under the domain name, built from the parts that are actually known.
+  // A domain in the corpus has a sector and a country; one a visitor typed for the
+  // first time has neither, and printing "unknown · unknown" is worse than leaving
+  // them out. Every row knows its provider. The last part is the handshake time on
+  // a live scan and the scan date on a stored row.
+  let parts = [];
+  if (s.sector && s.sector !== "unknown") {
     // only the sector wants capitalising. the rest already reads how it should
-    sub = "<span class='rc-sector'>" + esc(s.sector) + "</span> · " + esc(s.country) +
-          " · served by " + esc(s.cdn) + " · scanned " + esc(reportDate);
+    parts.push("<span class='rc-sector'>" + esc(s.sector) + "</span>");
   }
+  if (s.country && s.country !== "unknown") {
+    parts.push(esc(s.country));
+  }
+  if (s.cdn) {
+    parts.push("served by " + esc(s.cdn));
+  }
+  if (s.handshake_ms !== undefined) {
+    parts.push("handshake " + esc(s.handshake_ms) + " ms");
+  } else {
+    parts.push("scanned " + esc(reportDate));
+  }
+  let sub = parts.join(" · ");
 
   card += "<div class='rc-head'>";
   card += "<div><div class='rc-site'>" + esc(s.site) + "</div>";
