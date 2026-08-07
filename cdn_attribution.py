@@ -3,9 +3,9 @@
 # ("Self-hosted", "Cloudflare", "Amazon CloudFront", ...), so if a site does
 # ML-KEM from behind a CDN, the edge doing it belongs to the CDN. If it does
 # ML-KEM while self-hosted, it is happening on the org's own machines.
-#   "PQC via provider" - a CDN/cloud terminates TLS, so that edge is the endpoint
-#   "PQC own effort"   - self-hosted (or the provider's own site) and still PQC
-#   "No PQC"           - classical key exchange only
+#   "CDN edge"           - a CDN/cloud terminates TLS, so that edge is the endpoint
+#   "own infrastructure" - self-hosted, or a company on a CDN it owns, and still PQC
+#   "no PQC"             - classical key exchange only
 #
 # Read these as statements about the endpoint, not about credit. A handshake
 # cannot tell you whether a site asked its CDN for post-quantum or the CDN
@@ -77,15 +77,15 @@ def brand_owns(site, word):
 # the short value that goes in the pqc_source column and the site table.
 # aggregate.py and enrich.py both read it from here so there's one copy.
 PQC_SOURCE = {
-    "PQC via provider": "provider",
-    "PQC own effort": "own",
-    "No PQC": "none",
+    "CDN edge": "provider",
+    "own infrastructure": "own",
+    "no PQC": "none",
     "unreachable": "",
 }
 
 
 def attribution_for(row):
-    # returns one of: "PQC via provider", "PQC own effort", "No PQC", "unreachable"
+    # returns one of: "CDN edge", "own infrastructure", "no PQC", "unreachable"
     #
     # A row only counts if the scan filled in everything. scan.py leaves the cdn
     # blank whenever any of the crypto fields came back empty, since it skips the
@@ -110,10 +110,10 @@ def attribution_for(row):
             break
 
     if not pqc:
-        return "No PQC"
+        return "no PQC"
     if own_infra:
-        return "PQC own effort"
-    return "PQC via provider"
+        return "own infrastructure"
+    return "CDN edge"
 
 
 def provider_counts(rows):
@@ -129,7 +129,7 @@ def provider_counts(rows):
         if cdn not in counts:
             counts[cdn] = {"n": 0, "pqc": 0}
         counts[cdn]["n"] = counts[cdn]["n"] + 1
-        if attribution != "No PQC":
+        if attribution != "no PQC":
             counts[cdn]["pqc"] = counts[cdn]["pqc"] + 1
     return counts
 
@@ -177,7 +177,7 @@ def main():
         writer.writerow(r)
     out.close()
 
-    # roll up per country: via provider / own effort / no PQC (this is the stacked bar)
+    # roll up per country: CDN edge / own infrastructure / no PQC (the stacked bar)
     countries = {}
     for r in results:
         if r["attribution"] == "unreachable":
@@ -186,9 +186,9 @@ def main():
         if name not in countries:
             countries[name] = {"n": 0, "via": 0, "own": 0, "no": 0}
         countries[name]["n"] = countries[name]["n"] + 1
-        if r["attribution"] == "PQC via provider":
+        if r["attribution"] == "CDN edge":
             countries[name]["via"] = countries[name]["via"] + 1
-        elif r["attribution"] == "PQC own effort":
+        elif r["attribution"] == "own infrastructure":
             countries[name]["own"] = countries[name]["own"] + 1
         else:
             countries[name]["no"] = countries[name]["no"] + 1
@@ -246,10 +246,10 @@ def main():
         if r["attribution"] == "unreachable":
             continue
         reachable = reachable + 1
-        if r["attribution"] == "PQC via provider":
+        if r["attribution"] == "CDN edge":
             n_pqc = n_pqc + 1
             n_via = n_via + 1
-        if r["attribution"] == "PQC own effort":
+        if r["attribution"] == "own infrastructure":
             n_pqc = n_pqc + 1
             n_own = n_own + 1
 
@@ -259,11 +259,11 @@ def main():
 
     print("reachable: " + str(reachable) + " | PQC: " + str(n_pqc) +
           " (" + str(round(100 * n_pqc / reachable, 1)) + "%)")
-    print("  via provider: " + str(n_via) + " | own effort: " + str(n_own))
+    print("  CDN edge: " + str(n_via) + " | own infrastructure: " + str(n_own))
     for name in ["CANADA", "USA"]:
         if name in countries:
             c = countries[name]
-            print(name + " - " + str(c["n"]) + " sites | PQC " +
+            print(name + " - " + str(c["n"]) + " domains | PQC " +
                   str(round(100 * (c["via"] + c["own"]) / c["n"], 1)) + "% = " +
                   str(round(100 * c["via"] / c["n"], 1)) + "% provider + " +
                   str(round(100 * c["own"] / c["n"], 1)) + "% own")

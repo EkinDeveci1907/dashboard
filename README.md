@@ -1,10 +1,10 @@
 # PQC Deployment Monitor
 
-A public dashboard tracking how fast post-quantum cryptography is reaching real
-websites. It makes one TLS handshake to each of a few thousand domains across
-about twenty countries, Canada being the focus, and records four things: the TLS
-version, the key-exchange group, the certificate signature type, and the network
-or CDN serving the domain.
+A public dashboard tracking how fast post-quantum cryptography is reaching public
+websites. It makes one TLS handshake to each of 2,761 domains across 34 countries
+and territories, Canada being the focus, and records four things: the TLS version,
+the key-exchange group, the certificate signature type, and the network or CDN
+serving the domain.
 
 **Live: https://ekindeveci1907.github.io/dashboard/**
 
