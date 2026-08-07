@@ -52,7 +52,9 @@ async function runScan(domain) {
   } catch (e) {
     // the usual cause is the scanner not being up, so say that rather than
     // showing the browser's own network error, which tells the reader nothing.
-    setStatus("Could not reach the scanner. It is a separate service: on the published site it may be waking up, so try again in a moment. Running locally, start it with  cd api && uvicorn app:app --port 8000");
+    setStatus("Could not reach the scanner. It is a separate service. On the published " +
+              "site it may be waking up, so try again in a moment. Running locally, " +
+              "start it with  cd api && uvicorn app:app --port 8000");
     return;
   }
 

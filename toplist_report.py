@@ -129,18 +129,42 @@ PAGE = """<!DOCTYPE html>
 <nav class='nav'><a href='index.html'>Canada &amp; the world</a><a href='canada-topvisited.html' class='active'>Most visited by Canadians</a><a href='check.html'>Scan a domain</a></nav>
 <p class='headline'>__HEADLINE__</p>
 <h2 class='section-head'>Most visited by Canadians <span class='tag tag-ca'>this list</span></h2>
-<p class='scope'>The domains Canadians actually connect to most, from Semrush's Most Visited Websites in Canada ranking (adult and pirate-stream domains excluded). __LISTED__ domains on the list, __TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__. Every percentage on this page divides by the __TOTAL__ that answered; the ones that did not are counted as attempted and left out.</p>
+<p class='scope'>
+The domains Canadians actually connect to most, from Semrush's Most Visited Websites in
+Canada ranking (adult and pirate-stream domains excluded). __LISTED__ domains on the list,
+__TOTAL__ answered a TLS handshake when the monitor scanned on __SCANDATE__. Every
+percentage on this page divides by the __TOTAL__ that answered; the ones that did not are
+counted as attempted and left out.
+</p>
 <section class='summary'>__CARDS__</section>
 <section class='card'>
 <h2>Measured domains</h2>
-<p class='hint'>Every domain in the list, highest readiness first. Domains showing the post-quantum group are highlighted. Stars work like on the main page: one per migration step done, best today is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any row for that domain's full report card.</p>
+<p class='hint'>
+Every domain in the list, highest readiness first. Domains showing the post-quantum group
+are highlighted. Stars work like on the main page: one per migration step done, best today
+is <span class='stars'>__STARS__</span>. Hover the stars for the breakdown, and click any
+row for that domain's full report card.
+</p>
 <div id='siteDetail' class='site-detail' style='display:none'></div>
 <div class='filters'><input id='search' placeholder='Search a domain, e.g. netflix.com' oninput='draw()'></div>
 <div class='table-scroll'><table><thead><tr><th>Domain</th><th>Sector</th><th>Country</th><th>TLS</th><th>Key exchange</th><th>CDN</th><th>PQC endpoint</th><th>Readiness</th></tr></thead><tbody id='rows'></tbody></table></div>
 </section>
 <section class='card'><h2>About this view</h2>
-<p>This page answers a simple question: of the domains Canadians actually visit most, how many already protect the connection against a future quantum computer? It is the same scan as the main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions list. Most domains that pass do so at their CDN's edge rather than on their own servers, and the <strong>PQC endpoint</strong> column shows which. That column says where the connection terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell you.</p>
-<p>The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream domains dropped. The selection rule is the published ranking rather than our own judgement, so the sample means the same thing every month.</p>
+<p>
+This page answers a simple question: of the domains Canadians actually visit most, how many
+already protect the connection against a future quantum computer? It is the same scan as the
+main monitor, run over a most-visited-by-Canadians list instead of the Canadian-institutions
+list. Most domains that pass do so at their CDN's edge rather than on their own servers, and
+the <strong>PQC endpoint</strong> column shows which. That column says where the connection
+terminates, not who turned the post-quantum key exchange on, which a handshake cannot tell
+you.
+</p>
+<p>
+The list itself is <a href='https://www.semrush.com/trending-websites/ca/all'>Semrush's Most
+Visited Websites in Canada</a> ranking, in rank order, with the adult and pirate-stream
+domains dropped. The selection rule is the published ranking rather than our own judgement,
+so the sample means the same thing every month.
+</p>
 </section>
 </div>
 <script src='report-card.js?v=__ASSETS__'></script>

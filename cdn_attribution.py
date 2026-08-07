@@ -30,15 +30,21 @@ import glob
 # is their own effort, not outsourced. google.com on Google and cloudflare.com
 # on Cloudflare are the companies eating their own cooking; twitch.tv on Amazon
 # is Amazon's own site too. Keyed by the cdn label, values are name fragments.
+# Two companies show up under more than one label, because the scanner tells
+# CloudFront apart from plain AWS and Front Door apart from plain Azure. The
+# brand list is the same either way, so name it once. Written out twice, the two
+# copies drift the first time someone adds a brand to one and not the other.
+AMAZON_BRANDS = ["amazon", "aws", "primevideo", "audible", "twitch", "imdb"]
+MICROSOFT_BRANDS = ["microsoft", "bing", "live.com", "office", "outlook", "azure",
+                    "msn", "linkedin", "github", "skype", "xbox", "windows"]
+
 OWN_BRANDS = {
     "Google":            ["google", "youtube", "gmail", "blogger", "blogspot",
                           "gstatic", "android", "goo.gl", "youtu.be", "doubleclick"],
-    "Amazon CloudFront": ["amazon", "aws", "primevideo", "audible", "twitch", "imdb"],
-    "Amazon (AWS)":      ["amazon", "aws", "primevideo", "audible", "twitch", "imdb"],
-    "Microsoft (Azure)": ["microsoft", "bing", "live.com", "office", "outlook",
-                          "azure", "msn", "linkedin", "github", "skype", "xbox", "windows"],
-    "Azure Front Door":  ["microsoft", "bing", "live.com", "office", "outlook",
-                          "azure", "msn", "linkedin", "github", "skype", "xbox", "windows"],
+    "Amazon CloudFront": AMAZON_BRANDS,
+    "Amazon (AWS)":      AMAZON_BRANDS,
+    "Microsoft (Azure)": MICROSOFT_BRANDS,
+    "Azure Front Door":  MICROSOFT_BRANDS,
     "Cloudflare":        ["cloudflare"],
     "Fastly":            ["fastly"],
     "Akamai":            ["akamai", "linode"],
