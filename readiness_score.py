@@ -47,10 +47,10 @@ def kex_points(key_exchange):
     text = key_exchange.upper()
     if "MLKEM" in text:
         return PQC_KEX_POINTS
-    # a modern classical curve isn't post-quantum, but the site is one config
-    # change away from it, so give partial credit. secp384r1 and secp521r1
+    # a modern classical curve is not post-quantum, but it is the closest
+    # configuration to it, so give partial credit. secp384r1 and secp521r1
     # belong here too. they are stronger than P-256, not weaker, and leaving
-    # them out scored bing.com (TLS 1.3, 521-bit curve) the same as a site
+    # them out scored bing.com (TLS 1.3, 521-bit curve) the same as a domain
     # still on TLS 1.2. Plain finite-field DH stays at zero: that is old
     # machinery, not a curve a server flips to ML-KEM from.
     if "X25519" in text:

@@ -187,5 +187,5 @@ row is a snapshot and not a verdict. The provider call can miss on unusual
 setups, since the weakest of its three signals is the announcing network. Nothing
 here says anything about the origin server behind a CDN, internal services,
 stored data, certificate-management processes, or overall cryptographic agility.
-And the sample is a defined list of domains, not the Canadian web. Better to
+And the sample is a defined list of domains, not every Canadian domain. Better to
 state that plainly than to pretend one handshake settles it.
