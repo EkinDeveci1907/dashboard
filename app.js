@@ -428,12 +428,13 @@ function drawTable(sites) {
 function drawSectorBars(sectors) {
   let names = Object.keys(sectors);
   names.sort(function (a, b) {
-    return (sectors[b].pqc / sectors[b].total) - (sectors[a].pqc / sectors[a].total);
+    let rate = function (x) { return x.total > 0 ? x.pqc / x.total : 0; };
+    return rate(sectors[b]) - rate(sectors[a]);
   });
   let html = "";
   for (let i = 0; i < names.length; i++) {
     let s = sectors[names[i]];
-    let pct = Math.round(100 * s.pqc / s.total);
+    let pct = s.total > 0 ? Math.round(100 * s.pqc / s.total) : 0;
     // Under five domains a percentage says more than the sample can support:
     // three out of four is not "75% ready", it is four domains. Show the count
     // and skip the percentage.

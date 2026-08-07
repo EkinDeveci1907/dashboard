@@ -5,7 +5,7 @@
 #   readiness_score - the 0-100 quantum-readiness score.
 #   stars           - the 0-3 rating the tables show, one per migration step done.
 #
-# Both are worked out from columns the scan already has (tls_version, key_exchange,
+# All three are worked out from columns the scan already has (tls_version, key_exchange,
 # cert, cdn), so this runs on ANY scan we've ever taken. no re-scanning needed.
 # It imports the exact rules from cdn_attribution.py and readiness_score.py, so
 # there's still only one definition of each and the numbers can't drift apart.

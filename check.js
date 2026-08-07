@@ -1,4 +1,4 @@
-// The "Scan a site" tab. The page is static like the rest of the dashboard, so
+// The "Scan a domain" tab. The page is static like the rest of the dashboard, so
 // api/app.py does the handshake and hands back JSON; this asks it for a domain
 // and draws the answer.
 //
@@ -26,13 +26,10 @@ function clearResult() {
   document.getElementById("siteDetail").style.display = "none";
 }
 
-// Whether this was a fresh handshake or a cached answer. Worth saying plainly:
-// the card shows a handshake time either way, and on a cached result that number
-// is from when it was measured, not from now.
+// When the handshake happened, and whether it came out of the cache. Worth
+// saying plainly, because the card shows a millisecond figure either way and on
+// a cached result that number is from the earlier moment, not from now.
 function measuredLine(r) {
-  // the timing itself is on the card now. this line only has to say when the
-  // handshake happened, because on a cached result the card's millisecond
-  // figure is from that earlier moment and not from now.
   let at = r.scanned_at ? " at " + r.scanned_at : "";
   if (r.cached) {
     return "Returned from the cache. Scan completed" + at + ".";
@@ -100,6 +97,20 @@ async function start() {
     if (e.key === "Enter") submit();
   });
 
+  // Settle which scanner we are talking to before anything else asks it for a
+  // scan. Running locally, a failure here is not fatal: it means you are not
+  // running your own copy, so fall back to the deployed one and carry on.
+  //
+  // This has to happen before the ?domain= shortcut below. It used to come
+  // after, which meant a shared link opened on localhost went straight to a
+  // local service that usually is not running, and reported the scanner as
+  // unreachable while a perfectly good deployed one sat there unused.
+  let health = await healthOf(API);
+  if (!health && LOCAL) {
+    API = DEPLOYED_API;
+    health = await healthOf(API);
+  }
+
   // if the page was opened with ?domain=, run it straight away so shared links work
   let asked = new URLSearchParams(window.location.search).get("domain");
   if (asked) {
@@ -108,16 +119,8 @@ async function start() {
     return;
   }
 
-  // Otherwise check the scanner is actually up, so someone typing a domain into
-  // a dead service is told before they wait on it rather than after. Running
-  // locally, a failure here is not fatal: it just means you are not running your
-  // own copy, so fall back to the deployed one and carry on.
-  let health = await healthOf(API);
-  if (!health && LOCAL) {
-    API = DEPLOYED_API;
-    health = await healthOf(API);
-  }
-
+  // Nothing asked for yet, so say up front whether a scan would even work,
+  // rather than letting someone type a domain and wait on a dead service.
   if (!health) {
     setStatus("The scanner service is not responding, so live scans will not work right now.");
     return;
