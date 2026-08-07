@@ -98,7 +98,7 @@ handshake we can read.
   or a lapsed address is dropped rather than kept until restart, and the cache has
   a hard ceiling of 500 entries as a backstop. And the address the limit counts is
   read from the right-hand end of `X-Forwarded-For`, not from `request.client.host`
-  — see below.
+  See below.
 - **Behind Render, `request.client.host` is Render.** It is the proxy's address,
   identical for every visitor, so counting it made the rate limit a single shared
   bucket: twelve scans per five minutes for the whole internet. `client_address()`
@@ -118,8 +118,8 @@ handshake we can read.
 - **No IP addresses are stored.** The rate limiter keeps them in memory and
   nothing writes them out.
 - **CORS names the origins that actually call this.** The published dashboard on
-  GitHub Pages, plus localhost for development. It used to be a wildcard. That was
-  not a data problem — GET only, no cookies, nothing worth taking — but it let any
-  page on the web embed the scanner and spend the rate limit. Worth remembering
-  what CORS is not: a browser rule. `curl` ignores it. The rate limit is what
-  protects the service.
+  GitHub Pages, plus localhost for development. A wildcard would not be a data
+  problem (GET only, no cookies, nothing worth taking) but it would let any page
+  on the web embed the scanner and spend the rate limit. And CORS is a browser
+  rule, not a lock: `curl` ignores it. The rate limit is what protects the
+  service.

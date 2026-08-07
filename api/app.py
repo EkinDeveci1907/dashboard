@@ -42,15 +42,15 @@ DATA_DIR = os.path.join(DASHBOARD, "data")
 app = FastAPI(title="PQC Monitor scan API")
 
 # The dashboard is served from GitHub Pages and this runs somewhere else, so the
-# browser has to be told it's allowed to call us. This used to be a wildcard.
-# A wildcard is not a security hole here (the endpoint is public, GET only, no
-# cookies, so there is no session for another page to ride on), but it does
-# invite any site on the web to embed our scanner in theirs and spend our rate
-# limit. Naming the origins we actually serve costs nothing and stops that.
+# browser has to be told it's allowed to call us. A wildcard would work and would
+# not be a security hole (public endpoint, GET only, no cookies, so there is no
+# session for another page to ride on), but it would let any site on the web
+# embed this scanner in theirs and spend the rate limit. Listing the origins we
+# actually serve costs nothing and stops that.
 #
-# Note what this is not: CORS is a browser rule. curl ignores it entirely. The
-# rate limit below is what protects the service; this only decides which pages a
-# browser will hand the answer to.
+# CORS is a browser rule, not a lock: curl ignores it. The rate limit below is
+# what protects the service. This only decides which pages a browser will hand
+# the answer to.
 ALLOWED_ORIGINS = [
     "https://ekindeveci1907.github.io",   # the published dashboard
     "http://localhost:8080",              # run.sh serves the dashboard here
@@ -130,14 +130,13 @@ def resolves_publicly(domain):
 
 
 # Rate limit and cache, both plain dictionaries in memory. They empty out when
-# the process restarts, which is fine. the cache is a courtesy and the limit is
+# the process restarts, which is fine. The cache is a courtesy and the limit is
 # to stop someone looping over a wordlist, not to be airtight.
 #
-# Both used to grow forever. Nothing ever removed a cache entry once its hour was
-# up, or an address once its window had passed, so a long-running process on a
-# 512 MB instance would keep one row per domain ever scanned and one per address
-# ever seen. Neither is large, but "grows without limit" is the wrong shape for
-# something anyone can call, so both are swept below.
+# sweep() below drops expired entries from both on every request. Without it a
+# long-running process keeps one row per domain ever scanned and one per address
+# ever seen, and "grows without limit" is the wrong shape for something anyone
+# can call.
 
 WINDOW = 300          # seconds
 MAX_IN_WINDOW = 12    # scans per address per window

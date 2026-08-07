@@ -31,7 +31,7 @@ group, printed on `Negotiated TLS1.3 group:` under TLS 1.3, or read off
 `Peer Temp Key:` under TLS 1.2 where there is no group line; and the
 certificate's `Signature type:`.
 
-A domain counts as PQC-enabled when that group is the hybrid `X25519MLKEM768` —
+A domain counts as PQC-enabled when that group is the hybrid `X25519MLKEM768`,
 classical X25519 run alongside ML-KEM, the key encapsulation NIST standardised
 in FIPS 203. A domain that does not answer still gets a row, with those fields
 blank, so the miss stays visible. Then the provider is worked out. No login, no
@@ -138,7 +138,7 @@ for.
 
 Three signals, checked in order.
 
-**Response headers** first, since the edge usually names itself — `cf-ray` is
+**Response headers** first, since the edge usually names itself. `cf-ray` is
 Cloudflare, `x-served-by` is Fastly. **Then the DNS CNAME**, like
 `cloudfront.net` or `fastly.net`. **Then the network announcing the IP address**,
 looked up through Team Cymru.
@@ -172,7 +172,7 @@ The live tab opens a connection to whatever string it is handed, which is the
 shape of request people abuse, so what it will and will not do is worth stating.
 It accepts only names that look like a hostname and resolve to a public address,
 so it cannot be aimed at anything private or internal. It makes one TLS handshake
-and nothing else — it never fetches the page, follows a link or logs in. The
+and nothing else: it never fetches the page, follows a link or logs in. The
 provider check follows at most two redirects and only over https. Each address is
 limited to a number of scans per five-minute window, results are cached for an
 hour, and the addresses behind that limit are held in memory and never written

@@ -39,8 +39,8 @@ are substrings of names in a routing registry.
 
 The one source that matters is the service the names come from:
 
-- [Team Cymru IP-to-ASN Mapping Service](https://www.team-cymru.com/ip-asn-mapping)
-  — free, built from BGP data across 50+ peers and refreshed every four hours,
+- [Team Cymru IP-to-ASN Mapping Service](https://www.team-cymru.com/ip-asn-mapping).
+  Free, built from BGP data across 50+ peers and refreshed every four hours,
   queryable over whois at `whois.cymru.com`, which is how `scan.py` asks.
 
 Because it is registration data it says who owns the address block, not who
@@ -51,7 +51,7 @@ an organisation's own network is recorded as self-hosted rather than as a CDN.
 
 What is being measured, as opposed to how the network is named:
 
-- [NIST FIPS 203](https://csrc.nist.gov/pubs/fips/203/final) — ML-KEM, the key
+- [NIST FIPS 203](https://csrc.nist.gov/pubs/fips/203/final). ML-KEM, the key
   encapsulation mechanism.
-- [draft-ietf-tls-ecdhe-mlkem](https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/)
-  — X25519MLKEM768, the hybrid TLS 1.3 group combining X25519 with ML-KEM-768.
+- [draft-ietf-tls-ecdhe-mlkem](https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/).
+  X25519MLKEM768, the hybrid TLS 1.3 group combining X25519 with ML-KEM-768.
