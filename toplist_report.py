@@ -120,6 +120,7 @@ PAGE = """<!DOCTYPE html>
 <meta charset='UTF-8'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 <title>PQC Monitor - Most visited by Canadians</title>
+<link rel='icon' href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%234f46e5'/><rect x='4.5' y='7.5' width='7' height='5' rx='1' fill='white'/><path d='M6 7.5V5.8a2 2 0 0 1 4 0v1.7' stroke='white' stroke-width='1.3' fill='none'/></svg>">
 <link rel='stylesheet' href='style.css?v=__ASSETS__'>
 </head>
 <body>
