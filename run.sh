@@ -18,7 +18,10 @@ python3 aggregate.py
 
 echo ""
 echo "Numbers rebuilt. Starting a local web server."
-echo "Open this address in your browser:  http://localhost:8000"
+echo "Open this address in your browser:  http://localhost:8080"
 echo "Press Ctrl+C here when you are done."
 echo ""
-python3 -m http.server 8000
+# 8080, not 8000: the scan service uses 8000 when you run it locally, and the
+# two cannot share a port. See api/README.md if you want the Scan tab working
+# on your own machine as well.
+python3 -m http.server 8080

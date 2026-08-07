@@ -53,8 +53,8 @@ app = FastAPI(title="PQC Monitor scan API")
 # browser will hand the answer to.
 ALLOWED_ORIGINS = [
     "https://ekindeveci1907.github.io",   # the published dashboard
-    "http://localhost:8000",              # python3 -m http.server, for development
-    "http://127.0.0.1:8000",
+    "http://localhost:8080",              # run.sh serves the dashboard here
+    "http://127.0.0.1:8080",
 ]
 
 app.add_middleware(

@@ -63,7 +63,7 @@ That scans only that one site and prints its TLS version, key exchange (marked i
 
 To see the dashboard, start a small local server and open the address it prints:
 
-    python3 -m http.server
+    python3 -m http.server 8080
 
 Opening index.html straight off disk stops the page from loading its own data, so the little server is the easy way around that.
 
@@ -75,10 +75,10 @@ The quickest way, on any machine with python3:
 
     ./run.sh
 
-That rebuilds every summary from the committed scan data and starts a local server, so you can open http://localhost:8000 and see the same dashboard, built on your own machine from the raw files. By hand it is just two lines:
+That rebuilds every summary from the committed scan data and starts a local server, so you can open http://localhost:8080 and see the same dashboard, built on your own machine from the raw files. By hand it is just two lines:
 
     python3 aggregate.py
-    python3 -m http.server
+    python3 -m http.server 8080
 
 Running aggregate.py on the same scan files always gives byte-for-byte identical summaries, so if your numbers ever come out different, it is the data that differs and not the method. Collecting a fresh scan needs the extra tools above, but reproducing the published numbers only needs python3.
 
