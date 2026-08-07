@@ -206,7 +206,11 @@ tbody tr:hover { background: #f9fafb; }
    (#tableBody is the main page, #rows is the most-visited page) */
 #tableBody tr, #rows tr { cursor: pointer; }
 
-/* small pill showing where a site's PQC comes from, in both site tables */
+/* The pill in the "PQC endpoint" column, on both tables. The three modifier
+   classes look unused if you search for them: nothing writes pill-provider in
+   any file. They are built at runtime, "pill pill-" + the row's source value,
+   in app.js and in the table that toplist_report.py generates. Rename one and
+   you break the colours silently. */
 .pill { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 10px; }
 .pill-provider { background: #eef2ff; color: #4f46e5; }
 .pill-own { background: #dcfce7; color: #166534; }

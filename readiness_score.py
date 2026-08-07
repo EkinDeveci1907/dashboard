@@ -77,13 +77,22 @@ def sig_points(cert):
     return 0
 
 
+# The three labels that go with the 0-100 score. Named, because the report at
+# the bottom of this file counts how many domains fall in each one, and comparing
+# against a bare string is the kind of thing that breaks silently when someone
+# reworded the label and not the comparison.
+BAND_PQC = "PQC-enabled"
+BAND_TLS13_ONLY = "TLS 1.3, no PQC key exchange"
+BAND_OLDER = "TLS 1.2 or older"
+
+
 def band_for(score):
     # a plain-language label to go with the number
     if score >= 75:
-        return "Quantum-ready"
+        return BAND_PQC
     if score >= 35:
-        return "Modern, not quantum-safe"
-    return "Legacy"
+        return BAND_TLS13_ONLY
+    return BAND_OLDER
 
 
 def stars_for(tls, kex, sig):
@@ -104,17 +113,19 @@ def stars_for(tls, kex, sig):
 
 
 def score_site(row):
-    # add up the three parts and return the total, the band, and the breakdown
+    # add up the three parts and return the total plus the breakdown. The band is
+    # not in here: only the report at the bottom of this file wants it, and every
+    # other caller was unpacking a value it then ignored. Call band_for(total).
     tls = tls_points(row["tls_version"])
     kex = kex_points(row["key_exchange"])
     sig = sig_points(row["cert"])
     total = tls + kex + sig
-    return total, band_for(total), tls, kex, sig
+    return total, tls, kex, sig
 
 
 def stars_site(row):
     # the star rating for one scan row, 0 to 3
-    total, band, tls, kex, sig = score_site(row)
+    total, tls, kex, sig = score_site(row)
     return stars_for(tls, kex, sig)
 
 
@@ -145,7 +156,8 @@ def main():
     for row in rows:
         if row["tls_version"].strip() == "" or row["key_exchange"].strip() == "":
             continue
-        total, band, tls, kex, sig = score_site(row)
+        total, tls, kex, sig = score_site(row)
+        band = band_for(total)
         scored.append({"site": row["site"], "sector": row.get("sector", ""),
                        "country": row.get("country", ""),
                        "tls_version": row["tls_version"], "key_exchange": row["key_exchange"],
@@ -178,9 +190,9 @@ def main():
             countries[name] = {"n": 0, "sum": 0, "ready": 0, "modern": 0, "legacy": 0}
         countries[name]["n"] = countries[name]["n"] + 1
         countries[name]["sum"] = countries[name]["sum"] + r["score"]
-        if r["band"] == "Quantum-ready":
+        if r["band"] == BAND_PQC:
             countries[name]["ready"] = countries[name]["ready"] + 1
-        elif r["band"] == "Modern, not quantum-safe":
+        elif r["band"] == BAND_TLS13_ONLY:
             countries[name]["modern"] = countries[name]["modern"] + 1
         else:
             countries[name]["legacy"] = countries[name]["legacy"] + 1

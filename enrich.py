@@ -39,7 +39,7 @@ def enrich_one(scan_path):
             row["readiness_score"] = ""
             row["stars"] = ""
         else:
-            score, band, tls, kex, sig = score_site(row)
+            score, tls, kex, sig = score_site(row)
             row["readiness_score"] = score
             row["stars"] = stars_for(tls, kex, sig)
         writer.writerow(row)

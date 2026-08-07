@@ -407,11 +407,11 @@ def scan_domain(request: Request, domain: str = ""):
 
     # score it with the same functions the published dataset uses. Only the three
     # part-scores are wanted here. stars_for() turns them into one star per
-    # migration step done. score_site() also hands back the old 0-100 total and
-    # its band, but the dashboard stopped showing those when the score became
-    # stars, so they stop here rather than going out in the JSON.
+    # migration step done. The 0-100 total comes back too, but the dashboard
+    # stopped showing it when the score became stars, so it stops here rather
+    # than going out in the JSON.
     row = {"site": d, "tls_version": tls, "key_exchange": kex, "cert": cert, "cdn": cdn}
-    total, band, tls_pts, kex_pts, sig_pts = readiness_score.score_site(row)
+    total, tls_pts, kex_pts, sig_pts = readiness_score.score_site(row)
     stars = readiness_score.stars_for(tls_pts, kex_pts, sig_pts)
     attribution = cdn_attribution.attribution_for(row)
     source = cdn_attribution.PQC_SOURCE.get(attribution, "")

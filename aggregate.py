@@ -141,7 +141,7 @@ def summarise_one_scan(csv_path, date):
     sites = []
     for row in scanned:
         attribution = attribution_for(row)
-        score, band, tls_pts, kex_pts, sig_pts = score_site(row)
+        score, tls_pts, kex_pts, sig_pts = score_site(row)
         site = {"site": row["site"], "sector": row["sector"], "country": row["country"],
                 "tls": row["tls_version"], "kex": row["key_exchange"],
                 "cert": row["cert"], "cdn": clean_cdn_name(row["cdn"]),
