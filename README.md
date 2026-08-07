@@ -1,105 +1,191 @@
 # PQC Deployment Monitor
 
-A small public dashboard that tracks how quickly post-quantum cryptography (PQC) is showing up on real websites. It scans a few thousand sites across about twenty countries, with Canada as the main focus, and the map lines Canada up against the rest. For each site it makes one TLS handshake and records four things: the TLS version, the key exchange group (the one I care about is the hybrid X25519MLKEM768), the certificate signature type, and the CDN or network serving the site.
+A public dashboard tracking how fast post-quantum cryptography is reaching real
+websites. It makes one TLS handshake to each of a few thousand domains across
+about twenty countries, Canada being the focus, and records four things: the TLS
+version, the key-exchange group, the certificate signature type, and the network
+or CDN serving the domain.
 
-As of now a bit over 40 percent of the Canadian sites I track already negotiate the hybrid key exchange, and almost every time the connection is terminating at a CDN edge rather than at the origin server. Whether the site asked its provider for that or the provider switched it on for every customer at once is not something one handshake can tell you, so what gets recorded is where the connection ends, not who deserves the credit. That shift is what this monitor is here to watch.
+**Live: https://ekindeveci1907.github.io/dashboard/**
 
-NSERC summer 2026 research project, by Ekin Deveci, supervised by Prof. Samer Lahoud, Dalhousie University.
+In the 2026-08-05 scan, 333 of the 746 responding Canadian domains negotiate the
+hybrid post-quantum key exchange. **325 of those 333 terminate at a CDN edge and
+8 on the organisation's own infrastructure.** Adoption in Canada is mostly a
+question of which provider a domain sits behind, not of what the organisation
+decided. Whether a site asked its provider for post-quantum or the provider
+enabled it for every customer at once is not something one handshake can tell
+you, so the monitor records where the connection ends and never who deserves the
+credit.
+
+NSERC summer 2026 research project, by Ekin Deveci, supervised by Prof. Samer
+Lahoud, Faculty of Computer Science, Dalhousie University.
 
 ## How a scan works
 
-Each scan is one TLS handshake per site, the same one your browser makes. The command behind it is:
+One TLS handshake per domain, the same one a browser makes:
 
     openssl s_client -connect example.com:443 -servername example.com -brief
 
-Off that I read three lines: the protocol version, the negotiated key-exchange group (on TLS 1.3 it is printed on the `Negotiated TLS1.3 group:` line; on TLS 1.2 there is no group line so I read the curve off `Peer Temp Key:` instead), and the certificate's `Signature type:`. A site counts as post-quantum when the group it negotiates is the hybrid `X25519MLKEM768`, classical X25519 run together with ML-KEM, the key exchange NIST standardised as FIPS 203. If a site does not answer, its row is still written with those fields blank so the miss stays visible. Then the CDN is worked out (see below), and that is the whole scan. No login, no crawling.
+Three lines are read off it: the protocol version; the negotiated key-exchange
+group, printed on `Negotiated TLS1.3 group:` under TLS 1.3, or read off
+`Peer Temp Key:` under TLS 1.2 where there is no group line; and the
+certificate's `Signature type:`.
+
+A domain counts as PQC-enabled when that group is the hybrid `X25519MLKEM768` —
+classical X25519 run alongside ML-KEM, the key encapsulation NIST standardised
+in FIPS 203. A domain that does not answer still gets a row, with those fields
+blank, so the miss stays visible. Then the provider is worked out. No login, no
+crawling.
 
 ## What's in here
 
-scan.py is the scanner. For every site in data/sites.csv it makes one openssl handshake, works out the CDN, and writes a dated scan file into the data folder. You can also hand it a single domain to check just that one site.
+    scan.py             one handshake per domain, plus the provider detection
+    enrich.py           adds the pqc_source, readiness_score and stars columns
+    aggregate.py        turns the scans into the stats-<date>.json the page reads
+    merge.py            folds a small re-scan into a previous full scan
+    cdn_attribution.py  provider-vs-own-infrastructure analysis
+    readiness_score.py  the 0-100 score and the 0-3 stars behind it
+    toplist_report.py   builds the most-visited-by-Canadians page
+    index.html app.js style.css    the dashboard
+    report-card.js      the per-domain card, shared by two tabs
+    check.html check.js the live scan tab
+    api/                the scan service behind that tab (see api/README.md)
+    data/               the domain lists and one file per scan date
 
-aggregate.py reads all of those scan files and writes a small summary file for each date, plus a list of the dates. Doing the counting here is what lets the web page load a ready-made summary instead of adding up thousands of rows in the browser every time.
+**The dashboard** is one scrolling page: summary cards, charts, a hover world
+map, and a searchable table. The CDN chart is stacked, each provider's bar split
+into the domains negotiating PQC and the ones not, so it also reads as that
+provider's readiness. Clicking a row opens that domain's report card: three
+migration steps, a tick or a cross against each, and the measured value beside
+it. The card reports the handshake and stops there. It used to suggest a next
+step; that was removed because a per-domain recommendation is guesswork more
+often than not. The chart and map libraries come from a public CDN, so there is
+nothing to build, and if that CDN is unreachable the page still draws the cards,
+the sector bars and the table.
 
-merge.py joins two scan files into one. I use it when I only re-scan the sites I added that week and want to fold them into the last full scan.
+**The live tab** contacts whatever domain you type. The handshake happens in
+`api/app.py`, which imports `scan.py` rather than reimplementing it, so a live
+result and a published row cannot disagree about what they measured. You do not
+need to run that service yourself: the page looks for a local copy on port 8000
+and falls back to the deployed one. That is why `run.sh` serves the dashboard on
+8080, so the two cannot collide.
 
-check.html and check.js are the third tab, "Scan a domain". The other two tabs only know the sites that were on the list when the scan ran, so this one contacts whatever domain you type, live, and draws the same report card. The handshake itself happens in api/app.py, a small service deployed on its own (see api/README.md), which imports scan.py rather than reimplementing it, so a live result and a published row cannot disagree about what they measured. You do not have to run that service to use this tab locally: the page looks for a copy on port 8000 first, and falls back to the deployed one if you are not running your own. That is why run.sh serves the dashboard on 8080, so the two cannot collide.
+**The scores.** `readiness_score.py` produces a 0-100 number and 0-3 stars, one
+star per migration step fully done. The pages show the stars; the number stays in
+the CSVs as a sort key, because each step is pass/fail and a total invites an
+argument about the weights.
 
-enrich.py adds three more columns to a scan: pqc_source (for a site that does PQC, whether the handshake terminated at a CDN edge or on the organization's own infrastructure), readiness_score (a 0-100 quantum-readiness number) and stars (0-3, the rating the page shows, one star per migration step fully done: TLS 1.3, PQC key exchange, PQC signature). All are worked out from columns the scan already has, so it runs on any old scan too without re-scanning. It borrows the actual rules from cdn_attribution.py and readiness_score.py so there is only one definition of each. cdn_attribution.py and readiness_score.py are the deeper analyses behind those columns, the per-country stacked bar and the CDN readiness table. The stars are what the pages show; the 0-100 stays in the CSVs as a sort key, because each of the three steps is pass/fail and a number invites an argument about the weights.
-
-index.html, style.css and app.js are the dashboard itself: one scrolling page with the summary cards, the charts, the hover world map, and a searchable table. The CDN chart is stacked: each provider's bar splits into the sites already negotiating PQC and the ones not, so it also reads as that provider's PQC readiness. Clicking any row in the site table opens that domain's report card: the three migration steps with a tick or a cross against each, and the value actually measured beside it. The card reports the handshake and stops there. It used to end with a suggested next step, which was removed because a per-domain recommendation is guesswork more often than not. That card is report-card.js, kept in its own file because the most-visited page opens the same one. The chart and map libraries load from a CDN, so there is nothing to build or install; if that CDN is ever unreachable the page still draws the cards, the sector bars and the table, and only the charts and the map go missing.
-
-The data folder holds sites.csv (the list of sites, each with a sector and country) and one scan file per date. There is also sites-ca-toplist.csv, a separate list of the sites Canadians visit most. I used to hand-pick that list; now it is just Semrush's Most Visited Websites in Canada ranking (semrush.com/trending-websites/ca/all, refreshed monthly) in rank order, with the adult and pirate-stream sites dropped. That way, when someone asks what "most visited by Canadians" means, the answer is a source and not my judgement. The list is kept apart from sites.csv on purpose, so those global sites do not get counted twice on the world map.
-
-Where the two lists name the same site they now give it the same country, so nothing is Canadian on one tab and American on the other. Their sector labels do differ, and that is deliberate: sites.csv sorts institutions by what they are (bank, gov, telco, university), while the most-visited list sorts by what people go there for (search, social, video, shopping). Neither vocabulary would say anything useful about the other population.
+**The domain lists.** `data/sites.csv` is the institutional list, each row with a
+sector and a country. `data/sites-ca-toplist.csv` is separate: Semrush's Most
+Visited Websites in Canada ranking, in rank order, adult and pirate-stream
+domains dropped. Using a published ranking means "most visited by Canadians" has
+a source rather than my judgement behind it. The two lists are kept apart so
+global domains are not counted twice on the world map, and where they name the
+same domain they agree on its country. Their sector vocabularies differ on
+purpose: one sorts institutions by what they are, the other by what people go
+there for.
 
 ## Running it yourself
 
-You need python3 and the usual command line tools: openssl, curl, dig, and whois.
+You need python3, plus openssl, curl, dig and whois.
 
-The openssl version is the one thing to watch. macOS ships an old one that does not know the ML-KEM groups, so it cannot see X25519MLKEM768 no matter what the server actually offers. The fix is a recent openssl from Homebrew (openssl@3.5). You do not have to edit anything to point at it: the scanner looks for the Homebrew build first, falls back to whatever openssl is on your PATH, and lets you override both with an OPENSSL environment variable.
+OpenSSL is the one to watch. macOS ships a version that does not know the ML-KEM
+groups, so it cannot see `X25519MLKEM768` no matter what the server offers, and
+every domain comes back classical. Install a recent one (`brew install
+openssl@3.5`). Nothing needs editing: the scanner prefers the Homebrew build,
+falls back to whatever is on `PATH`, and takes an `OPENSSL` environment variable
+over both.
 
-Before your first scan, let it check the machine for you:
+Check the machine first:
 
     python3 scan.py --check
 
-That tells you whether openssl is new enough to see the post-quantum group, and whether curl, dig and whois are installed. Once it says everything looks good, run:
+Then a full run of everything, 20 to 40 minutes:
+
+    ./scan.sh
+
+Or by hand, for the main list:
 
     python3 scan.py
     python3 enrich.py
     python3 aggregate.py
 
-The first line scans every site in the list and writes today's scan file. enrich.py adds the pqc_source and readiness_score columns to it. The last line rebuilds the summary files the page reads.
+The most-visited list is the same scanner pointed at the other file:
 
-To scan the most-visited-by-Canadians list instead, point the scanner at it and enrich that file by name:
+    python3 scan.py data/sites-ca-toplist.csv data/toplist-2026-08-05.csv
+    python3 enrich.py data/toplist-2026-08-05.csv
+    python3 toplist_report.py
 
-    python3 scan.py data/sites-ca-toplist.csv data/toplist-2026-07-16.csv
-    python3 enrich.py data/toplist-2026-07-16.csv
-
-To check a single site without touching the list, just pass the domain:
+A single domain, printed and not written anywhere, handy for spot-checks:
 
     python3 scan.py cloudflare.com
 
-That scans only that one site and prints its TLS version, key exchange (marked if it is post-quantum), certificate and CDN, without writing any files. It is handy for spot-checking any website, in the list or not.
-
-To see the dashboard, start a small local server and open the address it prints:
-
-    python3 -m http.server 8080
-
-Opening index.html straight off disk stops the page from loading its own data, so the little server is the easy way around that.
-
 ## Reproducing the numbers
 
-Every figure on the dashboard is computed by aggregate.py from the scan files in the data folder, and those files are committed here, so you can regenerate the whole thing yourself and compare.
-
-The quickest way, on any machine with python3:
+Every figure comes from the scan CSVs in `data/`, which are committed, so the
+whole dashboard can be rebuilt without scanning anything:
 
     ./run.sh
 
-That rebuilds every summary from the committed scan data and starts a local server, so you can open http://localhost:8080 and see the same dashboard, built on your own machine from the raw files. By hand it is just two lines:
+That recomputes every summary and serves the site at http://localhost:8080.
+Only python3 is needed. Running `aggregate.py` on the same scan files always
+gives byte-identical summaries, so if a number comes out different it is the data
+that differs, not the method. Opening `index.html` straight off disk will not
+work, because the page fetches its own data; that is what the little server is
+for.
 
-    python3 aggregate.py
-    python3 -m http.server 8080
+## How the provider detection works
 
-Running aggregate.py on the same scan files always gives byte-for-byte identical summaries, so if your numbers ever come out different, it is the data that differs and not the method. Collecting a fresh scan needs the extra tools above, but reproducing the published numbers only needs python3.
+Three signals, checked in order.
 
-## How the CDN detection works
+**Response headers** first, since the edge usually names itself — `cf-ray` is
+Cloudflare, `x-served-by` is Fastly. **Then the DNS CNAME**, like
+`cloudfront.net` or `fastly.net`. **Then the network announcing the IP address**,
+looked up through Team Cymru.
 
-Three clues, checked from most reliable to least.
+That third one is much weaker than the other two and is only consulted when the
+first two find nothing. A header and a CNAME are a vendor identifying itself; an
+AS name is a routing-registry entry, so it says who owns the address block rather
+than who served the request. A domain parked on EC2 and one genuinely on
+CloudFront both come back as Amazon. When the announcing network is the
+organisation's own, the domain is recorded as self-hosted rather than as a CDN.
 
-First the response headers, since the edge usually names itself (cf-ray means Cloudflare, for example). Then the DNS name the site points to, like cloudfront.net or fastly.net. And as a last resort the network that owns the IP address, looked up through Team Cymru. That last signal is fuzzy on its own, because it cannot tell a real CloudFront site from something merely parked on Amazon, so when the owning network is a company's own it gets counted as self-hosted rather than a CDN.
+[`cdn-sources.md`](cdn-sources.md) is where every keyword in those three tables
+came from, with the vendor page behind each one.
 
 ## The scan file columns
 
-site, sector, country, tls_version, key_exchange, cert, cdn. When a site does not answer, the row is still written with the crypto fields left blank so the miss stays visible, and aggregate.py skips those blank rows when it adds up the numbers.
+`site, sector, country, tls_version, key_exchange, cert, cdn`. A domain that did
+not answer still gets a row with the crypto fields blank, and `aggregate.py`
+leaves those rows out of every percentage while still counting them as attempted.
 
-## About the "PQC signatures" number
+## About the PQC signatures number
 
-I track post-quantum certificate signatures too, but for now that count sits at zero. No public certificate authority issues them yet, so watching it climb above zero is one of the things this monitor is waiting for. Post-quantum key exchange, the X25519MLKEM768 share, is the part already rolling out, and that is what the headline percentage follows.
+Post-quantum certificate signatures are tracked too, and the count sits at zero.
+No public certificate authority issues them yet, so watching it rise above zero
+is one of the things this monitor is waiting for. Post-quantum key exchange is
+the part already rolling out, and that is what the headline percentage follows.
 
 ## Security of the public scan endpoint
 
-The live tab is a public endpoint that opens a connection to whatever string it is handed, which is the shape of request people abuse, so it is worth writing down what it will and will not do. It only accepts names that look like a hostname and resolve to a public address, so it cannot be aimed at a private or internal one. It makes one TLS handshake and nothing else: it never fetches the page, follows a link, or logs in anywhere. The CDN check follows at most two redirects and only over https, because the public-address check vets the name you typed and nothing checks where a redirect points afterwards. Each address gets a limited number of scans in a five-minute window, results are cached for an hour, and the addresses behind that limit live in memory and are never written down. It is GET only, no cookies, no login, and nothing typed there changes the published numbers.
+The live tab opens a connection to whatever string it is handed, which is the
+shape of request people abuse, so what it will and will not do is worth stating.
+It accepts only names that look like a hostname and resolve to a public address,
+so it cannot be aimed at anything private or internal. It makes one TLS handshake
+and nothing else — it never fetches the page, follows a link or logs in. The
+provider check follows at most two redirects and only over https. Each address is
+limited to a number of scans per five-minute window, results are cached for an
+hour, and the addresses behind that limit are held in memory and never written
+down. GET only, no cookies, no login, and nothing typed there changes the
+published numbers. `api/README.md` has the details, including the gaps.
 
 ## What one scan does not catch
 
-It is one handshake to one hostname at one moment. A site can look different at its apex than at its www host, and a big site served from many edges can answer differently on another day, so a single row is a snapshot and not a verdict. The CDN guess can miss on unusual setups, since the weakest of its three signals is the owning network. And the sample is a defined list of sites, not the whole Canadian web. I would rather state these limits plainly than pretend one handshake settles everything.
+One handshake, to one hostname, at one moment. A domain can answer differently at
+its apex than at its www host, or from another network, or on another day, so a
+row is a snapshot and not a verdict. The provider call can miss on unusual
+setups, since the weakest of its three signals is the announcing network. Nothing
+here says anything about the origin server behind a CDN, internal services,
+stored data, certificate-management processes, or overall cryptographic agility.
+And the sample is a defined list of domains, not the Canadian web. Better to
+state that plainly than to pretend one handshake settles it.
