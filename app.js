@@ -330,7 +330,11 @@ function drawWorldMap(countries) {
   let lowestPct = 100;
   for (let name in countries) {
     let code = COUNTRY_CODE[name];
-    if (!code) continue;                 // skip any country the map doesn't have
+    // Two labels in the corpus are not countries and never will be: INTL for
+    // genuinely international domains like wikipedia.org, and EU. There is
+    // nowhere to shade for either, so they are left off the map. That is why
+    // the map's domains do not add up to the whole scan.
+    if (!code) continue;
     let c = countries[name];
     shadeByCode[code] = c.pct;
     infoByCode[code] = c;

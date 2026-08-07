@@ -12,6 +12,15 @@ data/pqcmonitor-canada10.csv
 data/scan_new.csv
 data/sites_new.csv
 
+# Derived reports. cdn_attribution.py and readiness_score.py each write a couple
+# of CSVs beside the scan they were run against. They are regenerable from the
+# committed scans in one command, so running either script should not leave the
+# repository dirty.
+data/attribution-*.csv
+data/cdn-readiness-*.csv
+data/stacked-bar-*.csv
+data/readiness-*.csv
+
 # the scan service runs in a venv, don't commit it
 api/.venv/
 _to_delete/

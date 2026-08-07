@@ -110,15 +110,10 @@ def attribution_for(row):
     return "PQC via provider"
 
 
-# how many sites we need to see on a provider before quoting a percentage for it.
-# three out of three is not "100% ready", it's three sites.
-MIN_SITES_FOR_RATE = 5
-
-
 def provider_counts(rows):
-    # provider name -> {n, pqc} over the sites we actually reached. Self-hosted
-    # is not a provider so it stays out. main() and provider_pqc_rates() below
-    # both count off this, so the csv and the dashboard can't disagree.
+    # provider name -> {n, pqc} over the domains we actually reached. Self-hosted
+    # is not a provider so it stays out. The report at the bottom of this file
+    # counts off this, so its CSV cannot disagree with itself.
     counts = {}
     for row in rows:
         attribution = attribution_for(row)
@@ -131,17 +126,6 @@ def provider_counts(rows):
         if attribution != "No PQC":
             counts[cdn]["pqc"] = counts[cdn]["pqc"] + 1
     return counts
-
-
-def provider_pqc_rates(rows):
-    # the rates the report card quotes back at you. Same counts as the csv, but
-    # only for providers we've seen enough of to be worth a number.
-    counts = provider_counts(rows)
-    rates = {}
-    for cdn in counts:
-        if counts[cdn]["n"] >= MIN_SITES_FOR_RATE:
-            rates[cdn] = round(100 * counts[cdn]["pqc"] / counts[cdn]["n"])
-    return rates
 
 
 def main():

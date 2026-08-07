@@ -123,12 +123,6 @@ def score_site(row):
     return total, tls, kex, sig
 
 
-def stars_site(row):
-    # the star rating for one scan row, 0 to 3
-    total, tls, kex, sig = score_site(row)
-    return stars_for(tls, kex, sig)
-
-
 def main():
     # aggregate.py, enrich.py and toplist_report.py import the scoring functions
     # above, so the command-line handling stays in here where it only runs when

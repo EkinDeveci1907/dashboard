@@ -155,6 +155,11 @@ def detect_cdn(site, ip):
     headers = run(["curl", "-sIL", "--max-redirs", "2",
                    "--proto", "=https", "--proto-redir", "=https",
                    "--max-time", "10", "https://" + site]).lower()
+    # Worth knowing which order decides this: the outer loop is the response, not
+    # the table. The first header line that matches any rule wins, so HEADER_RULES
+    # is a set of rules and not a priority list. In practice a response carries
+    # one vendor's headers and there is nothing to prioritise, but if you ever
+    # need "Cloudflare beats CloudFront when both appear", swap the loops.
     for line in headers.splitlines():
         if ":" not in line:
             continue
@@ -174,6 +179,10 @@ def detect_cdn(site, ip):
             return label
 
     if ip:
+        # Team Cymru's IP-to-ASN service is queried over whois. The leading space
+        # and the -v are part of the query string it expects, not a typo: -v asks
+        # for the verbose form, which is the one with the AS name in it. The reply
+        # is pipe-separated, and field 7 (parts[6]) is that name.
         for line in run(["whois", "-h", "whois.cymru.com", " -v " + ip]).splitlines():
             parts = []
             for piece in line.split("|"):
