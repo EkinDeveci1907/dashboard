@@ -93,10 +93,20 @@ handshake we can read.
 - **Rate limit and cache are in memory.** 12 scans per address per 5 minutes,
   results cached for an hour. Both reset when the process restarts, which is fine
   for what they are for. On more than one machine they would need Redis or
-  similar. Two details: the limit is counted before the cache is read, so a
-  cached domain still costs a request instead of being free to ask for forever,
-  and neither dictionary ever drops an expired entry, so both grow until the
-  process restarts.
+  similar. Three details worth knowing. The limit is counted before the cache is
+  read, so a cached domain still costs a request instead of being free to ask for
+  forever. Both dictionaries are swept on every request, so an expired cache entry
+  or a lapsed address is dropped rather than kept until restart, and the cache has
+  a hard ceiling of 500 entries as a backstop. And the address the limit counts is
+  read from the right-hand end of `X-Forwarded-For`, not from `request.client.host`
+  — see below.
+- **Behind Render, `request.client.host` is Render.** It is the proxy's address,
+  identical for every visitor, so counting it made the rate limit a single shared
+  bucket: twelve scans per five minutes for the whole internet. `client_address()`
+  reads `X-Forwarded-For` instead and takes the **rightmost** entry, which is the
+  address our own proxy observed. The leftmost entry is whatever the caller chose
+  to send, so reading that end would let anyone mint a fresh identity per request
+  and walk through the limit.
 - **New domains are noted, not published.** Anything scanned that isn't already
   in the corpus is appended to `data/community-scans.csv` and printed to the
   log. Nothing reads either automatically, so nobody can push rows into the
@@ -108,6 +118,9 @@ handshake we can read.
   that's a paid disk or a small database, not a bigger file.
 - **No IP addresses are stored.** The rate limiter keeps them in memory and
   nothing writes them out.
-- **CORS is open to any origin.** That costs nothing in data terms, since this
-  is GET only with no cookies and nothing worth taking, but it does mean anybody
-  can drive the scanner from a page of their own.
+- **CORS names the origins that actually call this.** The published dashboard on
+  GitHub Pages, plus localhost for development. It used to be a wildcard. That was
+  not a data problem — GET only, no cookies, nothing worth taking — but it let any
+  page on the web embed the scanner and spend the rate limit. Worth remembering
+  what CORS is not: a browser rule. `curl` ignores it. The rate limit is what
+  protects the service.

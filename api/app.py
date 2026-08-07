@@ -41,12 +41,25 @@ DATA_DIR = os.path.join(DASHBOARD, "data")
 
 app = FastAPI(title="PQC Monitor scan API")
 
-# the dashboard is served from GitHub Pages and this runs somewhere else, so the
-# browser needs to be told it's allowed to call us. GET only, no cookies, so a
-# wildcard origin is fine here.
+# The dashboard is served from GitHub Pages and this runs somewhere else, so the
+# browser has to be told it's allowed to call us. This used to be a wildcard.
+# A wildcard is not a security hole here (the endpoint is public, GET only, no
+# cookies, so there is no session for another page to ride on), but it does
+# invite any site on the web to embed our scanner in theirs and spend our rate
+# limit. Naming the origins we actually serve costs nothing and stops that.
+#
+# Note what this is not: CORS is a browser rule. curl ignores it entirely. The
+# rate limit below is what protects the service; this only decides which pages a
+# browser will hand the answer to.
+ALLOWED_ORIGINS = [
+    "https://ekindeveci1907.github.io",   # the published dashboard
+    "http://localhost:8000",              # python3 -m http.server, for development
+    "http://127.0.0.1:8000",
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
     allow_methods=["GET"],
     allow_headers=["*"],
 )
@@ -119,13 +132,67 @@ def resolves_publicly(domain):
 # Rate limit and cache, both plain dictionaries in memory. They empty out when
 # the process restarts, which is fine. the cache is a courtesy and the limit is
 # to stop someone looping over a wordlist, not to be airtight.
+#
+# Both used to grow forever. Nothing ever removed a cache entry once its hour was
+# up, or an address once its window had passed, so a long-running process on a
+# 512 MB instance would keep one row per domain ever scanned and one per address
+# ever seen. Neither is large, but "grows without limit" is the wrong shape for
+# something anyone can call, so both are swept below.
 
 WINDOW = 300          # seconds
-MAX_IN_WINDOW = 12    # scans per IP per window
-CACHE_TTL = 3600      # a site's TLS config doesn't change minute to minute
+MAX_IN_WINDOW = 12    # scans per address per window
+CACHE_TTL = 3600      # a domain's TLS config doesn't change minute to minute
+MAX_CACHE = 500       # hard ceiling, in case the sweep can't keep up
 
 recent = {}
 cache = {}
+
+
+def client_address(request):
+    # Render terminates TLS in front of us, so request.client.host is Render's
+    # proxy, the same value for every visitor. Left alone, the rate limit is one
+    # shared bucket: twelve scans per five minutes for the whole internet, and
+    # the thirteenth person is refused because of the first twelve.
+    #
+    # The proxy appends the address it saw to X-Forwarded-For, so the RIGHTMOST
+    # entry is the one our proxy observed. Read that end, not the left one: a
+    # caller can put anything they like at the front of the header, and picking
+    # the leftmost entry would let them invent a new identity per request and
+    # walk straight through the limit.
+    forwarded = request.headers.get("x-forwarded-for", "")
+    if forwarded:
+        parts = forwarded.split(",")
+        return parts[len(parts) - 1].strip()
+    if request.client:
+        return request.client.host
+    return "unknown"
+
+
+def sweep(now):
+    # Drop what has expired from both dictionaries. Called once per request,
+    # which is often enough: the only thing that adds entries is a request.
+    for ip in list(recent.keys()):
+        kept = []
+        for t in recent[ip]:
+            if now - t < WINDOW:
+                kept.append(t)
+        if kept:
+            recent[ip] = kept
+        else:
+            del recent[ip]
+
+    for domain in list(cache.keys()):
+        if now - cache[domain][0] >= CACHE_TTL:
+            del cache[domain]
+
+    # A backstop for the case the sweep cannot keep up: drop the oldest entries
+    # until the cache is back under the ceiling.
+    while len(cache) > MAX_CACHE:
+        oldest = None
+        for domain in cache:
+            if oldest is None or cache[domain][0] < cache[oldest][0]:
+                oldest = domain
+        del cache[oldest]
 
 
 def over_limit(ip):
@@ -296,9 +363,8 @@ def scan_domain(request: Request, domain: str = ""):
     # the annotations here are the only ones in the project, and they are not
     # decoration: FastAPI reads them to know that domain is a query parameter and
     # that request is the request object. Take them off and the route breaks.
-    ip = "unknown"
-    if request.client:
-        ip = request.client.host
+    ip = client_address(request)
+    sweep(time.time())
 
     d = clean_domain(domain)
     if d == "":
