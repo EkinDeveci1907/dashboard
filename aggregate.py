@@ -8,7 +8,7 @@ import json
 import glob
 import os
 
-from cdn_attribution import attribution_for, provider_pqc_rates, PQC_SOURCE
+from cdn_attribution import attribution_for, PQC_SOURCE
 from readiness_score import score_site, stars_for, has_pqc_signature
 
 
@@ -156,11 +156,6 @@ def summarise_one_scan(csv_path, date):
     else:
         pqc_pct = 0
 
-    # 5. How much of each provider's fleet already does PQC. The report card
-    #    quotes this back at you, and it used to be a list typed in by hand that
-    #    went stale every scan, so work it out here instead.
-    cdn_rates = provider_pqc_rates(scanned)
-
     return {
         "scan_date": date,
         "country_focus": "CANADA",
@@ -176,7 +171,6 @@ def summarise_one_scan(csv_path, date):
         "kex_families": kex_counts,
         "cdn_families": cdn_counts,
         "cdn_pqc": cdn_pqc_counts,
-        "cdn_rates": cdn_rates,
         "sectors": sectors,
         "countries": countries,
         "sites": sites,

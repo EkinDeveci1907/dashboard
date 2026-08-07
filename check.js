@@ -5,11 +5,18 @@
 // report-card.js draws the card, same as the other two tabs, so a live scan and
 // a stored row look identical.
 
-// Picking the scanner by hostname means the same file works locally and once
-// published, instead of being edited before every push. The deployed one has to
-// be https or the browser blocks the call as mixed content.
+// Which scanner to talk to. Published, it is always the deployed one, and it has
+// to be https or the browser blocks the call as mixed content. Locally there are
+// two possibilities, so the page tries them in order rather than making you edit
+// this file: your own copy of the service if you happen to be running it, and
+// the deployed one if you are not. That second case is the common one. Someone
+// who clones the repo and runs ./run.sh to look at the dashboard gets a working
+// Scan tab without having to start a Python service first.
 const LOCAL = (location.hostname === "localhost" || location.hostname === "127.0.0.1");
-const API = LOCAL ? "http://127.0.0.1:8000" : "https://pqc-monitor-scan.onrender.com";
+const DEPLOYED_API = "https://pqc-monitor-scan.onrender.com";
+const LOCAL_API = "http://127.0.0.1:8000";
+
+let API = LOCAL ? LOCAL_API : DEPLOYED_API;
 
 function setStatus(text) {
   document.getElementById("status").textContent = text;
@@ -101,16 +108,33 @@ async function start() {
     return;
   }
 
-  // otherwise check the scanner is actually up, so someone typing a domain into
-  // a dead service gets told before they wait on it rather than after.
-  try {
-    let health = await (await fetch(API + "/api/health")).json();
-    if (!health.sees_mlkem) {
-      setStatus("Warning: the scanner's openssl is too old to see the post-quantum group, " +
-                "so every site will come back classical.");
-    }
-  } catch (e) {
+  // Otherwise check the scanner is actually up, so someone typing a domain into
+  // a dead service is told before they wait on it rather than after. Running
+  // locally, a failure here is not fatal: it just means you are not running your
+  // own copy, so fall back to the deployed one and carry on.
+  let health = await healthOf(API);
+  if (!health && LOCAL) {
+    API = DEPLOYED_API;
+    health = await healthOf(API);
+  }
+
+  if (!health) {
     setStatus("The scanner service is not responding, so live scans will not work right now.");
+    return;
+  }
+  if (!health.sees_mlkem) {
+    setStatus("Warning: the scanner's openssl is too old to see the post-quantum group, " +
+              "so every domain will come back classical.");
+  }
+}
+
+// Ask a scanner whether it is up. Returns its answer, or null if it is not
+// there, which is the only thing the caller needs to tell the two apart.
+async function healthOf(base) {
+  try {
+    return await (await fetch(base + "/api/health")).json();
+  } catch (e) {
+    return null;
   }
 }
 

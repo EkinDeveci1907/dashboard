@@ -42,7 +42,6 @@ about fifteen minutes of no traffic and takes a moment to wake, which is why the
 first scan of the day is slow. `check.js` calls `/api/health` on page load, so
 the machine is usually awake by the time anyone has typed a domain in.
 
-`api/fly.toml` is from an earlier attempt at putting this on fly.io. Render won
 because the free plan does not need a credit card. I left the file in, since the
 Dockerfile is the same either way, so `fly launch --no-deploy && fly deploy` still
 works if the Render side ever goes away.

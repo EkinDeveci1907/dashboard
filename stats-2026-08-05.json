@@ -63,23 +63,6 @@
     "Squarespace": 1,
     "OVH": 0
   },
-  "cdn_rates": {
-    "Google": 52,
-    "Akamai": 31,
-    "Amazon (AWS)": 19,
-    "Cloudflare": 81,
-    "Amazon CloudFront": 70,
-    "Fastly": 60,
-    "Azure Front Door": 2,
-    "Sucuri": 71,
-    "Microsoft (Azure)": 3,
-    "Imperva (Incapsula)": 91,
-    "F5": 0,
-    "Automattic": 29,
-    "Alibaba Cloud": 0,
-    "OVH": 16,
-    "Hetzner": 38
-  },
   "sectors": {
     "gov": {
       "total": 101,

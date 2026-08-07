@@ -59,19 +59,6 @@
     "Nuday": 0,
     "Automattic": 0
   },
-  "cdn_rates": {
-    "Google": 65,
-    "Akamai": 4,
-    "Amazon (AWS)": 23,
-    "Cloudflare": 79,
-    "Amazon CloudFront": 67,
-    "Fastly": 60,
-    "Azure Front Door": 0,
-    "Microsoft (Azure)": 4,
-    "Imperva (Incapsula)": 100,
-    "Automattic": 33,
-    "Alibaba Cloud": 0
-  },
   "sectors": {
     "gov": {
       "total": 57,

@@ -63,19 +63,6 @@
     "Unknown": 0,
     "Automattic": 0
   },
-  "cdn_rates": {
-    "Google": 58,
-    "Akamai": 4,
-    "Amazon (AWS)": 11,
-    "Cloudflare": 78,
-    "Amazon CloudFront": 62,
-    "Fastly": 84,
-    "Azure Front Door": 0,
-    "Microsoft (Azure)": 9,
-    "Imperva (Incapsula)": 100,
-    "Automattic": 36,
-    "Alibaba Cloud": 0
-  },
   "sectors": {
     "gov": {
       "total": 54,

@@ -211,9 +211,7 @@ function drawKexChart(data) {
 // keeps up with the data and the paragraph does not. So work the sentence out
 // from the same two tallies the bars are drawn from.
 //
-// Those two are Canadian sites only, like everything else in this section. Note
-// that stats.cdn_rates is NOT the same thing, it covers every country, so it
-// would print a number here that disagrees with the bar right above it.
+// Those two are Canadian domains only, like everything else in this section.
 //
 // Providers we have only seen a handful of Canadian sites on stay out of it.
 // Three out of three is not "100% ready", it is three sites, and naming that
